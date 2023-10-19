@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using CSSWENGxGK.Models.Domain;
+using CSSWENGxGK.Models;
 
 namespace CSSWENGxGK.Data;
 public class ApplicationDbContext : DbContext
@@ -9,5 +9,5 @@ public class ApplicationDbContext : DbContext
         
     }
     
-    public DbSet<Volunteer> T_Voluteer { get; set; }
+    public DbSet<Volunteer> T_Volunteer { get; set; }
 }

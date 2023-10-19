@@ -1,7 +1,6 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CSSWENGxGK.Models.Domain;
+namespace CSSWENGxGK.Models;
 public class Volunteer
 {
     [Key]

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "paVtSUfklzNaPNe5f5+fK2HQlpqlQcHXRb+SfZeILKA=",
+  "Hash": "Chq4T9HCQ52HJgalol6Qqbk6kg+iIwhWUO+Mg9t7iPs=",
   "Source": "CSSWENGxGK",
   "BasePath": "_content/CSSWENGxGK",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CSSWENGxGK.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\registerpage.css",
+      "SourceId": "CSSWENGxGK",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\",
+      "BasePath": "_content/CSSWENGxGK",
+      "RelativePath": "css/registerpage.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\registerpage.css"
     },
     {
       "Identity": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\site.css",

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\CSSWENGxGK.bundle.scp.css"
     },
     {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\registerpage.css",
+      "PackagePath": "staticwebassets\\css\\registerpage.css"
+    },
+    {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
