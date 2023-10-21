@@ -12,7 +12,7 @@ namespace CSSWENGxGK.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "T_Voluteer",
+                name: "T_Volunteer",
                 columns: table => new
                 {
                     VolunteerID = table.Column<int>(type: "int", nullable: false)

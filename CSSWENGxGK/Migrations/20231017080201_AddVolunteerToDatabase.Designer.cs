@@ -90,7 +90,7 @@ namespace CSSWENGxGK.Migrations
 
                     b.HasKey("VolunteerID");
 
-                    b.ToTable("T_Voluteer");
+                    b.ToTable("T_Volunteer");
                 });
 #pragma warning restore 612, 618
         }

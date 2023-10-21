@@ -46,7 +46,7 @@ public class Volunteer
     public DateTime YearStarted { get; set; }
 
     [Required]
-    public DateTime CreatedDate { get; set; } = DateTime.Now;
+    public DateTime CreatedDate { get; set; }
 
     [Required]
     public DateTime LastUpdateDate { get; set; }
