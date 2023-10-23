@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Scanner</title>
+</head>
+<body>
+    <h1>QR Code Scanner</h1>
+    <video id="webcam-preview"></video>
+    <p id="result"></p>
+    <button id="start-scan" style="display: block">Start Scanning</button>
+    <button id="scan-again" style="display: none" disabled>Scan Again</button>
+    <button id="stop-scan" style="display: none" disabled>Stop Scanning</button>
+    
+    <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
+    
+    <script>
+        const videoElement = document.getElementById('webcam-preview');
+        const resultElement = document.getElementById('result');
+        const startScanButton = document.getElementById('start-scan');
+        const scanAgainButton = document.getElementById('scan-again');
+        let codeReader;
+        let stream;
+        let scanningStarted = false;
+        
+        async function requestCameraPermission() {
+            try {
+                const codeReader = new ZXing.BrowserQRCodeReader();
+                const videoInputDevices = await codeReader.getVideoInputDevices();
+                
+                if (videoInputDevices.length === 0) {
+                    console.error('No cameras found.');
+                } else {
+                    const constraints = {
+                        video: { deviceId: videoInputDevices[0].deviceId }
+                    };
+                    
+                    stream = await navigator.mediaDevices.getUserMedia(constraints);
+                    videoElement.srcObject = stream;
+                }
+            } catch (err) {
+                console.error('Error accessing the webcam:', err);
+                if (err.name === 'NotAllowedError') {
+                    console.error('Camera access blocked by the user.');
+                }
+            }
+        }
+
+        startScanButton.addEventListener('click', () => {
+            if (!scanningStarted) {
+                startScanner();
+                scanningStarted = true;
+                startScanButton.style.display = 'none';
+            }
+        });
+        
+        async function startScanner() {
+            scanAgainButton.disabled = true;
+            
+            if (!stream) {
+                await requestCameraPermission();
+            }
+            
+            if (stream) {
+                codeReader = new ZXing.BrowserQRCodeReader();
+                
+                codeReader.decodeFromVideoDevice(null, 'webcam-preview', (result, error) => {
+                    if (result) {
+                        console.log('Found QR code!', result);
+                        resultElement.textContent = result.text;
+                        scanAgainButton.disabled = false;
+                        scanAgainButton.style.display = 'block';
+                        codeReader.reset();
+                    }
+                    
+                    if (error) {
+                        if (error instanceof ZXing.NotFoundException) {
+                            console.log('No QR code found.');
+                        } else if (error instanceof ZXing.ChecksumException) {
+                            console.log("A code was found, but its read value was not valid.");
+                        } else if (error instanceof ZXing.FormatException) {
+                            console.log('A code was found, but it was in an invalid format.');
+                        }
+                    }
+                });
+            }
+        }
+        
+        scanAgainButton.addEventListener('click', () => {
+            resultElement.textContent = '';
+            scanAgainButton.style.display = 'none';
+            startScanner();
+        });
+    </script>
+</body>
+</html>
