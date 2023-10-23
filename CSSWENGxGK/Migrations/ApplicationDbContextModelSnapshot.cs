@@ -22,7 +22,7 @@ namespace CSSWENGxGK.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CSSWENGxGK.Models.Domain.Volunteer", b =>
+            modelBuilder.Entity("CSSWENGxGK.Models.Volunteer", b =>
                 {
                     b.Property<int>("VolunteerID")
                         .ValueGeneratedOnAdd()
@@ -56,6 +56,9 @@ namespace CSSWENGxGK.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -87,7 +90,7 @@ namespace CSSWENGxGK.Migrations
 
                     b.HasKey("VolunteerID");
 
-                    b.ToTable("T_Voluteer");
+                    b.ToTable("T_Volunteer");
                 });
 #pragma warning restore 612, 618
         }

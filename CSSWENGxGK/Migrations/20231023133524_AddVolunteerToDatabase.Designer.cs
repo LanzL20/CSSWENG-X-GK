@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSSWENGxGK.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231017080201_AddVolunteerToDatabase")]
+    [Migration("20231023133524_AddVolunteerToDatabase")]
     partial class AddVolunteerToDatabase
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace CSSWENGxGK.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CSSWENGxGK.Models.Domain.Volunteer", b =>
+            modelBuilder.Entity("CSSWENGxGK.Models.Volunteer", b =>
                 {
                     b.Property<int>("VolunteerID")
                         .ValueGeneratedOnAdd()
@@ -58,6 +58,9 @@ namespace CSSWENGxGK.Migrations
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");

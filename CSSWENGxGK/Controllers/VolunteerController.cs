@@ -24,6 +24,7 @@ public class VolunteerController : Controller
         volunteer.CreatedDate = DateTime.Now;
         volunteer.LastUpdateDate = DateTime.Now;
         volunteer.IsDeleted = false;
+        volunteer.IsActive = false;
 
         if (ModelState.IsValid) {
             _db.T_Volunteer.Add(volunteer);

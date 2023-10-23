@@ -29,11 +29,12 @@ namespace CSSWENGxGK.Migrations
                     YearStarted = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastUpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_T_Voluteer", x => x.VolunteerID);
+                    table.PrimaryKey("PK_T_Volunteer", x => x.VolunteerID);
                 });
         }
 
@@ -41,7 +42,7 @@ namespace CSSWENGxGK.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "T_Voluteer");
+                name: "T_Volunteer");
         }
     }
 }
