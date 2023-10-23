@@ -32,6 +32,10 @@ public class Volunteer
 
     [Required]
     [StringLength(10)]
+    public string Country { get; set; }
+
+    [Required]
+    [StringLength(10)]
     public string PROV_CODE { get; set; }
 
     [Required]
