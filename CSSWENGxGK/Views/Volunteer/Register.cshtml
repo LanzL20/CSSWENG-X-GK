@@ -13,49 +13,59 @@
             <div class="horizontal">
                 <div class="textbox">
                     <label>First Name</label>
-                    <input asp-for="FirstName" class="form-control">
+                    <input asp-for="FirstName" class="form-control forminput">
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="textbox">
                     <label>Last Name</label>
-                    <input asp-for="LastName" class="form-control">
+                    <input asp-for="LastName" class="form-control forminput">
+                    <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
             </div>
             <div class="textbox">
                 <label>Email Address</label>
-                <input asp-for="Email" class="form-control">
+                <input asp-for="Email" class="form-control forminput">
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="textbox">
                 <label>Phone Number</label>
-                <input asp-for="MobileNumber" class="form-control">
-            </div>
-            <div>
-                @* TODO: Remove Time *@
-                <label>Birthday</label>
-                <input asp-for="BirthDate" class="form-control">
+                <input asp-for="MobileNumber" class="form-control forminput">
+                <span asp-validation-for="MobileNumber" class="text-danger"></span>
             </div>
             <div class="textbox">
-                @* TODO: Make Dropdown *@
+                <label>Birthday</label>
+                <input asp-for="BirthDate" class="form-control forminput" type="date">
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="textbox">
                 <label>Gender</label>
-                <input asp-for="Gender" class="form-control">
+                <select asp-for="Gender" class="form-control forminput">
+                    <option value="" selected disabled hidden>Select Gender:</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
             @* TODO: Connect their given db *@
             <div class="textbox">
                 <label>Province Code</label>
-                <input asp-for="PROV_CODE" class="form-control">
+                <input asp-for="PROV_CODE" class="form-control forminput">
             </div>
             <div class="textbox">
                 <label>Town Code</label>
-                <input asp-for="TOWN_CODE" class="form-control">
+                <input asp-for="TOWN_CODE" class="form-control forminput">
             </div>
             <div class="textbox">
                 <label>Barangay Code</label>
-                <input asp-for="BRGY_CODE" class="form-control">
+                <input asp-for="BRGY_CODE" class="form-control forminput">
             </div>
             <div class="textbox">
                 @* TODO: Make year only *@
                 <label>Year Started as GK Volunteer?</label>
-                <input asp-for="YearStarted" class="form-control">
+                <input asp-for="YearStarted" class="form-control forminput">
+                <span asp-validation-for="YearStarted" class="text-danger"></span>
             </div>
+            <br>
             <div class="button">
                 <button type="submit">Register</button>
             </div>

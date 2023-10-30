@@ -13,8 +13,52 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-Black.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-Black.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-BlackItalic.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-BlackItalic.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-Bold.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-Bold.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-BoldItalic.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-BoldItalic.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-Light.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-Light.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-LightItalic.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-LightItalic.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-Medium.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-Medium.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-MediumItalic.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-MediumItalic.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-Regular.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-Regular.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-RegularItalic.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-RegularItalic.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-Thin.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-Thin.otf"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-ThinItalic.otf",
+      "PackagePath": "staticwebassets\\fonts\\Colfax-ThinItalic.otf"
     },
     {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\js\\site.js",
