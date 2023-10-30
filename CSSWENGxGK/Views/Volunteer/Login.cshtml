@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Gawad Kalinga";
+}
+
+<div class="login-card">
+    <div class="login-title">
+        Login
+    </div>
+
+    <form method="post">
+        <div>
+            <label class="login-label">Email</label>
+            <input type="text" class="login-input" />
+        </div>
+        <div>
+            <label class="login-label">Password</label>
+            <input type="password" class="login-input" />
+        </div>
+        <br>
+        <div class="login-remember-container">
+            <label class="login-remember">Keep Logged In</label>
+            <input type="checkbox" class="login-checkbox" />
+        </div>
+        <br>
+        <div class="login-button">
+            <button type="submit">Login</button>
+        </div>
+        <div class="link-text">
+                <a asp-controller="Volunteer" asp-action="Register">Don't have an account? Register.</a>
+        </div>
+    </form>
+</div>

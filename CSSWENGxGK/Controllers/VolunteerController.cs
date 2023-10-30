@@ -12,6 +12,11 @@ public class VolunteerController : Controller
         _db = db;
     }
 
+    public IActionResult Login()
+    {
+        return View();
+    }
+
     public IActionResult Register()
     {
         return View();

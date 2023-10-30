@@ -65,12 +65,12 @@
                 <input asp-for="YearStarted" class="form-control forminput">
                 <span asp-validation-for="YearStarted" class="text-danger"></span>
             </div>
-            <br>
+            <br><br>
             <div class="button">
                 <button type="submit">Register</button>
             </div>
             <div class="link-text">
-                <a href="login.html">Already have an account? Login.</a>
+                <a asp-controller="Volunteer" asp-action="Login">Already have an account? Login.</a>
             </div>
         </div>
     </div>
