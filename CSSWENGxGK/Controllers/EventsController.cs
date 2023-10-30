@@ -5,7 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace CSSWENGxGK.Controllers;
 public class EventsController : Controller
 {
-    public IActionResult Display()
+    public IActionResult AllEvents()
+    {
+        return View();
+    }
+
+    public IActionResult OneEvent()
     {
         return View();
     }

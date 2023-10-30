@@ -16,8 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Codes\CSSWENG-X-GK\CSSWENGxGK
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Events/Display.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXERpc3BsYXkuY3NodG1s
+[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Events/AllEvents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEFsbEV2ZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Events/OneEvent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXE9uZUV2ZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Home/Index.cshtml]
