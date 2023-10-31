@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Gawad Kalinga";
+}
+<div class="list-card">
+    <div class="list-top">
+        <div>
+            <div class="list-title">
+                Event Name
+            </div>
+        </div>
+        <a asp-controller="Events" asp-action="OneEvent" class="list-back">
+            <- Back to Details
+        </a>
+    </div>
+    <div class="list-scan">
+        <a asp-controller="" asp-action="">Volunteer Attendance</a>
+    </div>
+    <div class="list-body-container">
+        <div class="list-body">
+            <div class="list-label">
+                Volunteer Name
+            </div>
+            <div class="list-label">
+                Volunteer ID
+            </div>
+        </div>
+        <div class="list-body">
+            <div class="list-volunteer">
+                1) John Doe
+            </div>
+            <div class="list-volunteer">
+                12345678
+            </div>
+        </div>
+
+        @* Template for Volunteer Attendance *@
+        @* <div class="list-body">
+            <div class="list-volunteer">
+                1) John Doe
+            </div>
+            <div class="list-volunteer">
+                12345678
+            </div>
+        </div> *@
+    </div>
+</div>

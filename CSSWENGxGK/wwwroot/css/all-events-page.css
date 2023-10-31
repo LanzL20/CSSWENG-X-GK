@@ -1,18 +1,4 @@
-:root{
-	--accent: #ff9900;
-	--black: #1b1b1b;
-	--white: #fdfdfd;
-	--grey: #3b3b3b;
-	--font-size-small: 20px;
-	--font-size-regular: 24px;
-	--font-size-header-small: 36px;
-	--font-size-header: 44px;
-	--corner-radius: 10px;
-	--drop-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
-	--font-family: Colfax;
-}
-
-.events-card {
+.all-events-card {
 	display: flex;
 	flex-direction: column;
 	margin: auto;
@@ -22,20 +8,20 @@
 	border-radius: var(--corner-radius);
 }
 
-.events-top{
+.all-events-top{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.events-title {
+.all-events-title {
 	font-weight: bolder;
 	font-size: var(--font-size-header);
 	color: var(--accent);
 }
 
-.events-search-bar{
+.all-events-search-bar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -56,13 +42,13 @@
 	transform: scale(1);
 }
 
-.events-search-bar:focus {
+.all-events-search-bar:focus {
 	border-color: var(--accent);
 	transition:all 50ms ease-out;
 	transform: scale(1);
 }
 
-.events-filter{
+.all-events-filter{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -83,13 +69,13 @@
 	transform: scale(1);
 }
 
-.events-filter:focus {
+.all-events-filter:focus {
 	border-color: var(--accent);
 	transition:all 50ms ease-out;
 	transform: scale(1);
 }
 
-.events-display{
+.all-events-display{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
@@ -97,7 +83,7 @@
     margin-top: 2.5rem;
 }
 
-.events-individual-display{
+.all-events-individual-display{
     background-color: var(--white);
 	box-shadow: var(--drop-shadow);
 	border-radius: var(--corner-radius);
@@ -107,24 +93,24 @@
 	text-decoration: none;
 }
 
-.events-individual-display:hover {
+.all-events-individual-display:hover {
     transform: translate(.25em, -.25em);
 }
 
-.events-individual-display > img{
+.all-events-individual-display > img{
     position: relative;
     width: 100%;
     padding-top: 56.25%;
     margin-bottom: 0.7em;
 }
 
-.events-individual-title{
+.all-events-individual-title{
     font-weight: bolder;
 	font-size: var(--font-size-small);
 	color: var(--accent);
 }
 
-.events-short-description{
+.all-events-short-description{
     font-size: 12px;
 	color: var(--black);
 }

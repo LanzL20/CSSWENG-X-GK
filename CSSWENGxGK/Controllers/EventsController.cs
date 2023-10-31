@@ -14,4 +14,9 @@ public class EventsController : Controller
     {
         return View();
     }
+
+    public IActionResult VolunteerList()
+    {
+        return View();
+    }
 }

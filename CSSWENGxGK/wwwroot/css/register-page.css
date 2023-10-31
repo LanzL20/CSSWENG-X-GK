@@ -3,20 +3,6 @@
 	src: url(CSSWENGxGK/wwwroot/fonts/Colfax-Regular.otf);
 }
 
-:root{
-	--accent: #ff9900;
-	--black: #1b1b1b;
-	--white: #fdfdfd;
-	--grey: #3b3b3b;
-	--font-size-small: 20px;
-	--font-size-regular: 24px;
-	--font-size-header-small: 36px;
-	--font-size-header: 44px;
-	--corner-radius: 10px;
-	--drop-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
-	--font-family: Colfax;
-}
-
 .horizontal {
 	display:flex;
 	justify-content: space-between;
@@ -26,7 +12,7 @@
 	display: flex;
 	flex-direction: column;
 	margin: auto;
-	padding: 3em 3em;
+	padding: 5em 7em;
 	background-color: var(--white);
 	box-shadow: var(--drop-shadow);
 	border-radius: var(--corner-radius);

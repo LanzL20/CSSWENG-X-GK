@@ -1,0 +1,91 @@
+.list-card {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 5em 7em;
+	background-color: var(--white);
+	box-shadow: var(--drop-shadow);
+	border-radius: var(--corner-radius);
+}
+
+.list-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.list-title {
+	font-weight: bolder;
+	font-size: var(--font-size-header);
+	color: var(--accent);
+}
+
+.list-back {
+    text-decoration: none;
+	color: var(--black);
+}
+
+.list-scan { 
+	display: flex; 
+    margin-bottom: 2em;
+}
+
+.list-scan > a {
+    text-decoration: none;
+	font-family: Colfax;
+	font-size: var(--font-size-regular);
+	padding: 0.5em 1.5em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--accent);
+	background-color: var(--white);
+	font-weight: bold;
+	outline: 0px solid;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.list-scan > a:hover {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.list-scan > a:active {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+.list-body-container{
+    padding: 1em 5em;
+    align-items: center;
+}
+
+.list-body{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.list-label{
+    font-weight: bolder;
+	font-size: var(--font-size-regular);
+	color: var(--accent);
+    margin-bottom: 1em;
+}
+
+.list-volunteer{
+    font-size: 16px;
+    padding-left: 1em;
+    margin-bottom: 0.5em;
+}
