@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\register-page.css"
     },
     {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\scan-page.css",
+      "PackagePath": "staticwebassets\\css\\scan-page.css"
+    },
+    {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
