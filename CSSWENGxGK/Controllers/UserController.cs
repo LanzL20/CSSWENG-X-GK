@@ -12,10 +12,8 @@ public class UserController : Controller
         this.userManager = userManager;
     }
 
-    // put acutal field in database to determine if user or admin
-    public IActionResult CheckUserRole(int userId)
+    public IActionResult CheckUserRole(string userId)
     {
-           
         var user = userManager.FindByIdAsync(userId).Result;
 
         if (user != null)
@@ -26,18 +24,19 @@ public class UserController : Controller
             {
                 // The user is an admin
                 // Handle admin-specific logic here
+                return RedirectToAction("AdminDashboard");
             }
             else
             {
                 // The user is not an admin
                 // Handle regular user-specific logic here
+                return RedirectToAction("UserDashboard");
             }
         }
         else
         {
             // Handle the case where the user does not exist
+            return RedirectToAction("UserNotFound");
         }
-
-        return View();
     }
 }
