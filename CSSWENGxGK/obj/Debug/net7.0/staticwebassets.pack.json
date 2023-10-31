@@ -5,20 +5,28 @@
       "PackagePath": "staticwebassets\\CSSWENGxGK.bundle.scp.css"
     },
     {
-      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\alleventspage.css",
-      "PackagePath": "staticwebassets\\css\\alleventspage.css"
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\all-events-page.css",
+      "PackagePath": "staticwebassets\\css\\all-events-page.css"
     },
     {
-      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\loginpage.css",
-      "PackagePath": "staticwebassets\\css\\loginpage.css"
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\login-page.css",
+      "PackagePath": "staticwebassets\\css\\login-page.css"
     },
     {
-      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\registerpage.css",
-      "PackagePath": "staticwebassets\\css\\registerpage.css"
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\one-event-page.css",
+      "PackagePath": "staticwebassets\\css\\one-event-page.css"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\register-page.css",
+      "PackagePath": "staticwebassets\\css\\register-page.css"
     },
     {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\volunteer-list-page.css",
+      "PackagePath": "staticwebassets\\css\\volunteer-list-page.css"
     },
     {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\fonts\\Colfax-Black.otf",
