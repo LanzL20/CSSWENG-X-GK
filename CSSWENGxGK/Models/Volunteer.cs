@@ -1,9 +1,10 @@
 using System;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace CSSWENGxGK.Models
 {
-    public class Volunteer
+    public class Volunteer : IdentityUser
     {
         [Key]
         public int VolunteerID { get; set; }
