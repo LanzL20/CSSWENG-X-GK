@@ -60,5 +60,24 @@ namespace CSSWENGxGK.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public IActionResult Login(Volunteer model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = _db.T_Volunteer
+                    .FirstOrDefault(v => v.Email == model.Email && v.Password == model.Password);
+
+                if (user != null)
+                {
+                    return RedirectToAction("Dashboard", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                }
+            }
+            return View(model);
+        }
     }
 }
