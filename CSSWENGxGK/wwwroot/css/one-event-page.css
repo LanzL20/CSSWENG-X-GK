@@ -38,7 +38,6 @@
 
 .one-event-button > a {
     text-decoration: none;
-	font-family: Colfax;
 	font-size: var(--font-size-regular);
 	padding: 0.5em 1.5em;
 	max-width: 100%;
@@ -96,4 +95,49 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
+}
+
+/* For Mobile View */
+@media screen and (max-width: 900px) {
+	.all-events-search-bar{
+		font-size: 16px;
+		width: 60%;
+	}
+
+	.all-events-filter{
+		font-size: 16px;
+		width: 25%;
+	}
+
+	.all-events-display{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.all-events-title {
+		font-size: var(--font-size-header-small);
+	}
+
+	.all-events-search-bar{
+		font-size: 11px;
+		width: 60%;
+	}
+
+	.all-events-filter{
+		font-size: 11px;
+		width: 30%;
+	}
+
+	.all-events-display{
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.all-events-individual-title{
+		font-size: var(--font-size-small);
+	}
+	
+	.all-events-short-description{
+		font-size: 11px;
+	}
 }
