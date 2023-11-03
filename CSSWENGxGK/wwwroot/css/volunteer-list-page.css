@@ -27,6 +27,10 @@
 	color: var(--black);
 }
 
+.list-back:hover {
+	color: var(--black);
+}
+
 .list-scan { 
 	display: flex; 
     margin-bottom: 2em;

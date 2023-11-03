@@ -9,7 +9,7 @@
 }
 
 .all-events-title {
-	font-weight: bolder;
+	font-weight: 700;
 	font-size: var(--font-size-header);
 	color: var(--accent);
 	width: fit-content;
@@ -98,7 +98,7 @@
 }
 
 .all-events-individual-title{
-    font-weight: bolder;
+    font-weight: 700;
 	font-size: var(--font-size-small);
 	color: var(--accent);
 }
@@ -108,7 +108,7 @@
 	color: var(--black);
 }
 
-/* For Mobile Views */
+/* For Mobile View */
 @media screen and (max-width: 900px) {
 	.all-events-search-bar{
 		font-size: 16px;
