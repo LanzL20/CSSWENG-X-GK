@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Register</title>
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<script src="index.js"></script>
-		<div class="card">
-			<div class="title">
-				Register
-			</div>
-			<div class="centered">
-				<div class="horizontal">
-					<div class="textbox">
-						<div class="title">
-							First Name
-						</div>
-						<input type="text" name="firstname">
-					</div>
-					<div class="textbox">
-						<div class="title">
-							Last Name
-						</div>
-						<input type="text" name="lastname">
-					</div>
-				</div>
-				<div class="textbox">
-					<div class="title">
-						Email Address
-					</div>
-					<input type="text" name="email">
-				</div>
-				<div class="textbox">
-					<div class="title">
-						Phone Number
-					</div>
-					<input type="text" name="phone">
-				</div>
-				<div class="textbox">
-					<div class="title">
-						Home Address
-					</div>
-					<input type="text" name="address">
-				</div>
-				<div class="textbox">
-					<div class="title">
-						Password
-					</div>
-					<input type="text" name="password">
-				</div>
-				<div class="textbox">
-					<div class="title">
-						Reenter Password
-					</div>
-					<input type="text" name="rpassword">
-				</div>
-				<div class="button">
-					<button type="submit">Register</button>
-				</div>
-				<div class="link-text">
-					<a href="login.html">Already have an account? Login.</a>
-				</div>
-			</div>
-		</div>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="index.js"></script>
+    <div class="card">
+        <div class="title">
+            Register
+        </div>
+        <div class="centered">
+            <form method="post" asp-controller="Volunteer" asp-action="Register">
+                <div class="horizontal">
+                    <div class="textbox">
+                        <div class="title">
+                            First Name
+                        </div>
+                        <input type="text" name="FirstName">
+                    </div>
+                    <div class="textbox">
+                        <div class = "title">
+                            Last Name
+                        </div>
+                        <input type="text" name="LastName">
+                    </div>
+                </div>
+                <div class="textbox">
+                    <div class="title">
+                        Email Address
+                    </div>
+                    <input type="text" name="Email">
+                </div>
+                <div class="textbox">
+                    <div class="title">
+                        Phone Number
+                    </div>
+                    <input type="text" name="MobileNumber">
+                </div>
+                <div class="textbox">
+                    <div class="title">
+                        Home Address
+                    </div>
+                    <input type="text" name="Address">
+                </div>
+                <div class="textbox">
+                    <div class="title">
+                        Password
+                    </div>
+                    <input type="password" name="Password">
+                </div>
+                <div class="textbox">
+                    <div class="title">
+                        Reenter Password
+                    </div>
+                    <input type="password" name="ReenteredPassword">
+                </div>
+                <div class="button">
+                    <button type="submit">Register</button>
+                </div>
+                <div class="link-text">
+                    <a href="login.html">Already have an account? Login.</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
 </html>
