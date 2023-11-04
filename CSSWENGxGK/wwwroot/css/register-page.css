@@ -65,7 +65,6 @@
 	transform: scale(1);
 }
 
-
 .button { 
 	display: flex; 
 }
@@ -125,4 +124,44 @@
 	color: var(--accent);
 	transition:all 10ms ease-out;
 	transform: scale(1);
+}
+
+/* For Mobile View */
+@media screen and (max-width: 900px) {
+	.card {
+		padding: 3em 5em;
+		width: 100%;
+	}
+
+	.centered {
+		padding: 0px
+	}
+	
+	.forminput {
+		font-size: var(--font-size-small);
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.card {
+		padding: 3em 3em;
+	}
+
+	.title {
+		font-size: var(--font-size-header-small);
+	}
+	
+
+	.textbox > label {
+		font-size: 16px;
+		margin-top: 0.5em;
+	}
+	
+	.forminput {
+		font-size: var(--font-size-smaller);
+	}
+
+	.button > button {
+		font-size: var(--font-size-small);
+	}
 }
