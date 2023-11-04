@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace CSSWENGxGK.Controllers
 {
+
     public class VolunteerController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -32,10 +33,18 @@ namespace CSSWENGxGK.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(Volunteer model)
         {
+
             if (ModelState.IsValid)
             {
+                Guid uniqueId = Guid.NewGuid();
+                byte[] bytes = uniqueId.ToByteArray();
+
+                int generatedID = BitConverter.ToInt32(bytes, 0);
+                generatedID = Math.Abs(generatedID);
+
                 var volunteer = new Volunteer
                 {
+                    VolunteerID = generatedID,
                     CreatedDate = DateTime.Now,
                     LastUpdateDate = DateTime.Now,
                     IsDeleted = false,
