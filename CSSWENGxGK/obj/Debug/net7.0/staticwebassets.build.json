@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dvUKFgexOxbW85wLMhmTRa9XMDjBEI7HADws8mpuU1Q=",
+  "Hash": "UJDmlghsDAD/z0/6yvwz/aux/pDY65bRLwxGpPb6U0U=",
   "Source": "CSSWENGxGK",
   "BasePath": "_content/CSSWENGxGK",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\one-event-page.css"
+    },
+    {
+      "Identity": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\profile-page.css",
+      "SourceId": "CSSWENGxGK",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\",
+      "BasePath": "_content/CSSWENGxGK",
+      "RelativePath": "css/profile-page.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\profile-page.css"
     },
     {
       "Identity": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\register-page.css",
