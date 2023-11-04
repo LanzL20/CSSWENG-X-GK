@@ -44,6 +44,13 @@ namespace CSSWENGxGK.Controllers
                     LastName = model.LastName,
                     Email = model.Email,
                     MobileNumber = model.MobileNumber,
+                    BirthDate = model.BirthDate,
+                    Gender = model.Gender,
+                    Country = model.Country,
+                    PROV_CODE = model.PROV_CODE,
+                    TOWN_CODE = model.TOWN_CODE,
+                    BRGY_CODE = model.BRGY_CODE,
+                    YearStarted = model.YearStarted,
                     // Set other properties here
                 };
 
