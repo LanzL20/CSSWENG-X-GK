@@ -152,6 +152,11 @@
 		font-size: 12px;
 	}
 
+	.scan-camera{
+		width: 100%;
+		margin-bottom: 1.5em;
+	}
+
 	.scan-volunteer-id{
 		font-size: 16px;
 		width: 70%;
@@ -165,5 +170,14 @@
 
 	.scan-title {
 		font-size: var(--font-size-small);
+	}
+
+	.scan-volunteer-id{
+		font-size: 16px;
+		width: 90%;
+	}
+
+	.scan-button {
+		font-size: 16px;
 	}
 }
