@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Welcome to Gawad Kalinga";
 }
 
@@ -14,24 +14,22 @@
         </a>
     </div>
 
-    <div class="scan-camera">
+    <video class="scan-camera" id="qr-video" style="transform: scaleX(1) !important;"></video>
 
-    </div>
 
-    
     <form method="post" class="scan-volunteer-id-container">
         <input class="scan-volunteer-id" type="text" placeholder="Volunteer ID">
         <div class="scan-button-container">
             <button type="submit" class="scan-button">Check Volunteer ID</button>
         </div>
     </form>
-    
+
     <div class="scan-info-container">
         <div class="scan-left-info-container">
             <div class="scan-left-text">
                 <strong>Volunteer Name:</strong>
             </div>
-            <div class="scan-left-text"> 
+            <div class="scan-left-text">
                 <strong>Volunteer ID:</strong>
             </div>
         </div>
@@ -47,4 +45,28 @@
     <div class="scan-button-container">
         <a class="scan-button">Verify Volunteer ID</a>
     </div>
+
+    <script>
+        // Get a reference to the video element
+        const videoElement = document.getElementById('qr-video');
+
+        // Initialize the QR code scanner
+        const scanner = new Instascan.Scanner({ video: videoElement });
+
+        // Listen for the "scan" event to capture the QR code data
+        scanner.addListener('scan', function (content) {
+            // Handle the scanned QR code content here
+            // You can update your UI or perform any other actions.
+            alert('Scanned QR code content: ' + content);
+        });
+
+        // Start the QR code scanner
+        Instascan.Camera.getCameras().then(function (cameras) {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]);
+            } else {
+                console.error('No cameras found.');
+            }
+        });
+    </script>
 </div>
