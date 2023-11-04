@@ -93,3 +93,49 @@
     padding-left: 1em;
     margin-bottom: 0.5em;
 }
+
+/* For Mobile View */
+@media screen and (max-width: 900px) {
+	.list-card {
+		padding: 4em 3em;
+	}
+
+	.list-title {
+		font-size: var(--font-size-header-small);
+	}
+
+	.list-back {
+		font-size: 12px;
+	}
+
+	.list-scan > a {
+		font-size: var(--font-size-small);
+		margin-bottom: 0%;
+	}
+	
+	.list-body-container{
+		padding: 1em 2em;
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.list-card {
+		padding: 3em 2em;
+	}
+
+	.list-title {
+		font-size: var(--font-size-regular);
+	}
+
+	.list-body-container{
+		padding: 1em 1em;
+	}
+
+	.list-label{
+		font-size: 16px;
+	}
+
+	.list-volunteer{
+		font-size: 14px;
+	}
+}

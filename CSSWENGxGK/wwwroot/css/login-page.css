@@ -133,3 +133,21 @@
 	transition:all 10ms ease-out;
 	transform: scale(1);
 }
+
+/* For Mobile View */
+@media screen and (max-width: 900px) {
+	.login-card {
+		padding: 3em 5em;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.login-card {
+		padding: 3em 3em;
+	}
+
+	.login-button > button {
+		font-size: var(--font-size-small);
+	}
+}
