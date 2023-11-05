@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace CSSWENGxGK.Controllers
 {
@@ -24,15 +25,42 @@ namespace CSSWENGxGK.Controllers
             return View();
         }
 
-        public IActionResult Profile()
-        {
-            return View();
-        }
-
         public IActionResult Register()
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult VerifyVolunteerID(string Vol_ID)
+        {
+            Console.WriteLine(Vol_ID);
+            if (int.TryParse(Vol_ID, out int parsedVolunteerID))
+            {
+                if (parsedVolunteerID <= 0)
+                {
+                    return Json(new { found = false });
+                }
+
+                // Assuming _db is your DbContext, query the database to find the volunteer with the given ID
+                var volunteer = _db.T_Volunteer.FirstOrDefault(v => v.VolunteerID == parsedVolunteerID);
+
+                // Check if the volunteer was found in the database
+                if (volunteer != null)
+                {
+                    // The volunteerID exists in the database
+                    return Json(new
+                    {
+                        found = true,
+                        volunteerID = parsedVolunteerID,
+                        firstName = volunteer.FirstName,
+                        lastName = volunteer.LastName
+                    });
+                }
+            }
+
+            return Json(new { found = false });
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
