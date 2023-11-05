@@ -31,36 +31,84 @@ namespace CSSWENGxGK.Controllers
         }
 
         [HttpPost]
-        public IActionResult VerifyVolunteerID(string Vol_ID)
+        public async Task<IActionResult> VerifyVolunteerID(string Vol_ID)
         {
-            Console.WriteLine(Vol_ID);
-            if (int.TryParse(Vol_ID, out int parsedVolunteerID))
+            if (int.TryParse(Vol_ID, out int parsedVolunteerID) && parsedVolunteerID > 0)
             {
-                if (parsedVolunteerID <= 0)
-                {
-                    return Json(new { found = false });
-                }
+                // change to own conneciton string
+                string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
-                // Assuming _db is your DbContext, query the database to find the volunteer with the given ID
-                var volunteer = _db.T_Volunteer.FirstOrDefault(v => v.VolunteerID == parsedVolunteerID);
-
-                // Check if the volunteer was found in the database
-                if (volunteer != null)
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    // The volunteerID exists in the database
-                    return Json(new
+                    try
                     {
-                        found = true,
-                        volunteerID = parsedVolunteerID,
-                        firstName = volunteer.FirstName,
-                        lastName = volunteer.LastName
-                    });
+                        connection.Open();
+
+                        string query = "SELECT VolunteerID, FirstName, LastName FROM T_Volunteer WHERE VolunteerID = @parsedVolunteerID";
+
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@parsedVolunteerID", parsedVolunteerID);
+
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    // The volunteer was found in the database
+                                    var volunteerID = reader["VolunteerID"];
+                                    var firstName = reader["FirstName"];
+                                    var lastName = reader["LastName"];
+
+                                    Successful_Volunteer newVolunteer = new Successful_Volunteer
+                                    {
+                                        found = true,
+                                        volunteerID = (int)volunteerID,
+                                        firstName = (string)firstName,
+                                        lastName = (string)lastName
+                                    };
+
+                                    return Json(newVolunteer);
+                                }
+                                else
+                                {
+                                    // Volunteer not found
+                                    return Json(new Successful_Volunteer
+                                    {
+                                        found = false,
+                                        volunteerID = 0,
+                                        firstName = "Volunteer",
+                                        lastName = "Not Found"
+                                    });
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle the exception, log it, or return a more meaningful error message
+                        return Json(new Successful_Volunteer
+                        {
+                            found = false,
+                            volunteerID = 0,
+                            firstName = "Error",
+                            lastName = ex.Message
+                        });
+                    }
                 }
+                // Close the connection and dispose of resources here
             }
-
-            return Json(new { found = false });
+            else
+            {
+                // Invalid volunteer ID
+                return Json(new Successful_Volunteer
+                {
+                    found = false,
+                    volunteerID = 0,
+                    firstName = "Invalid",
+                    lastName = "Volunteer ID"
+                });
+            }
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
