@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using BCrypt.Net;
 
 namespace CSSWENGxGK.Controllers
 {
@@ -126,10 +127,9 @@ namespace CSSWENGxGK.Controllers
 
                 // Define the SQL insert query
                 string query = "SET IDENTITY_INSERT T_Volunteer ON;" +
-                              "INSERT INTO T_Volunteer (VolunteerID, CreatedDate, LastUpdateDate, IsDeleted, IsActive, FirstName, LastName, Email, MobileNumber, BirthDate, Gender, Country, PROV_CODE, TOWN_CODE, BRGY_CODE, YearStarted) " +
-                              "VALUES (@GeneratedID, @CreatedDate, @LastUpdateDate, @IsDeleted, @IsActive, @FirstName, @LastName, @Email, @MobileNumber, @BirthDate, @Gender, @Country, @PROV_CODE, @TOWN_CODE, @BRGY_CODE, @YearStarted);" +
+                              "INSERT INTO T_Volunteer (VolunteerID, CreatedDate, LastUpdateDate, IsDeleted, IsActive, IsNotify, Password, FirstName, LastName, Email, MobileNumber, BirthDate, Gender, Country, PROV_CODE, TOWN_CODE, BRGY_CODE, YearStarted) " +
+                              "VALUES (@GeneratedID, @CreatedDate, @LastUpdateDate, @IsDeleted, @IsActive, @IsNotify, @Password, @FirstName, @LastName, @Email, @MobileNumber, @BirthDate, @Gender, @Country, @PROV_CODE, @TOWN_CODE, @BRGY_CODE, @YearStarted);" +
                               "SET IDENTITY_INSERT T_Volunteer OFF;";
-
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -148,9 +148,33 @@ namespace CSSWENGxGK.Controllers
                         command.Parameters.AddWithValue("@BirthDate", model.BirthDate);
                         command.Parameters.AddWithValue("@Gender", model.Gender);
                         command.Parameters.AddWithValue("@Country", model.Country);
-                        command.Parameters.AddWithValue("@PROV_CODE", model.PROV_CODE);
-                        command.Parameters.AddWithValue("@TOWN_CODE", model.TOWN_CODE);
-                        command.Parameters.AddWithValue("@BRGY_CODE", model.BRGY_CODE);
+
+                        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(model.Password,16);
+                        command.Parameters.AddWithValue("@Password", hashedPassword);
+
+                        var emailNotificationsEnabled = model.IsNotify;
+
+                        if (emailNotificationsEnabled)
+                        {
+                            command.Parameters.AddWithValue("@IsNotify", 1);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@IsNotify", 0);
+                        }
+
+                        if (model.Country.ToLower() == "philippines")
+                        {
+                            command.Parameters.AddWithValue("@PROV_CODE", model.PROV_CODE);
+                            command.Parameters.AddWithValue("@TOWN_CODE", model.TOWN_CODE);
+                            command.Parameters.AddWithValue("@BRGY_CODE", model.BRGY_CODE);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@PROV_CODE", -1);
+                            command.Parameters.AddWithValue("@TOWN_CODE", -1);
+                            command.Parameters.AddWithValue("@BRGY_CODE", -1);
+                        }
                         command.Parameters.AddWithValue("@YearStarted", model.YearStarted);
 
                         command.ExecuteNonQuery();
@@ -163,26 +187,60 @@ namespace CSSWENGxGK.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Login(LogInfo model)
+        {
+            string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
-        // [HttpPost]
-        // public IActionResult Login(Volunteer model)
-        // {
-        //     if (ModelState.IsValid)
-        //     {
-        //         var user = _db.T_Volunteer
-        //             .FirstOrDefault(v => v.Email == model.Email);
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
 
-        //         if (user != null)
-        //         {
-        //             await HttpContext.SignInAsync(user, isPersistent: true); // This will create a persistent cookie
-        //             return RedirectToAction("Dashboard", "Home");
-        //         }
-        //         else
-        //         {
-        //             ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-        //         }
-        //     }
-        //     return View(model);
-        // }
+                    string email = model.Email;
+                    string password = model.Password;
+                    bool remember = model.IsRemember;
+
+                    string query = "SELECT Password FROM T_Volunteer WHERE Email = email";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string hashedPassword = reader["Password"].ToString();
+                                if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
+                                {
+                                    // Passwords match; user can be authenticated
+                                    Console.WriteLine("Success");
+                                    //await HttpContext.SignInAsync(user, isPersistent: true);
+                                    return RedirectToAction("Dashboard", "Home");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Fail");
+                                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                                }
+                            }
+                            else
+                            {
+                                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Exception occurred: " + ex.ToString());
+                    ModelState.AddModelError(string.Empty, "An error occurred while processing your request.");
+                }
+            }
+
+            return View(model);
+        }
+
     }
 }
