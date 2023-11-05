@@ -19,6 +19,8 @@ public class Startup
         // Configure services (e.g., database, authentication, etc.)
         services.AddControllersWithViews();
 
+        services.AddSession();
+
         services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(options =>
         {
@@ -48,6 +50,8 @@ public class Startup
 
         app.UseAuthentication();
         app.UseAuthorization();
+
+        app.UseSession();
 
         app.UseEndpoints(endpoints =>
         {
