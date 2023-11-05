@@ -191,6 +191,15 @@
 		font-size: 16px;
 		width: 70%;
 	}
+
+	.scan-successful{
+		font-size: 14px;
+		color: rgb(3, 159, 3);
+	}
+	
+	.scan-failed{
+		font-size: 14px;
+	}
 }
 
 @media screen and (max-width: 510px) {
