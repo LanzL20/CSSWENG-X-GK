@@ -31,6 +31,14 @@
 	color: var(--black);
 }
 
+.scan-name{
+	font-size: var(--font-size-header-small);
+	font-weight: bold;
+	color: var(--accent);
+	margin-bottom: 1em;
+	align-self: center;
+}
+
 .scan-camera{
     position: relative;
     align-self: center;
@@ -162,6 +170,14 @@
 		font-size: var(--font-size-header-small);
 	}
 
+	.scan-name{
+		font-size: var(--font-size-regular);
+		font-weight: bold;
+		color: var(--accent);
+		margin-bottom: 1em;
+		align-self: center;
+	}
+
 	.scan-back {
 		font-size: 12px;
 	}
@@ -184,6 +200,14 @@
 
 	.scan-title {
 		font-size: var(--font-size-small);
+	}
+
+	.scan-name{
+		font-size: 16px;
+		font-weight: bold;
+		color: var(--accent);
+		margin-bottom: 1em;
+		align-self: center;
 	}
 
 	.scan-volunteer-id{
