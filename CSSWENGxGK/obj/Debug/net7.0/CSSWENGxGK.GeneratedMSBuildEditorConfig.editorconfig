@@ -9,61 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CSSWENGxGK
 build_property.RootNamespace = CSSWENGxGK
-build_property.ProjectDir = D:\Codes\CSSWENG-X-GK\CSSWENGxGK\
+build_property.ProjectDir = d:\Codes\CSSWENG-X-GK\CSSWENGxGK\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Codes\CSSWENG-X-GK\CSSWENGxGK
+build_property.MSBuildProjectDirectory = d:\Codes\CSSWENG-X-GK\CSSWENGxGK
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Events/AllEvents.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Events/AllEvents.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEFsbEV2ZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Events/OneEvent.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Events/OneEvent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXE9uZUV2ZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Events/VolunteerList.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Events/VolunteerList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXFZvbHVudGVlckxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Home/Index.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Scan/Scan.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Scan/Scan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NhblxTY2FuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Shared/Error.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Shared/_ValidationScriptsPartial.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Volunteer/Login.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Volunteer/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50ZWVyXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Volunteer/Profile.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Volunteer/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50ZWVyXFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Volunteer/Register.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Volunteer/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm9sdW50ZWVyXFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/_ViewImports.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/_ViewStart.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Shared/_Layout.cshtml]
+[d:/Codes/CSSWENG-X-GK/CSSWENGxGK/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9miyfxtooe
