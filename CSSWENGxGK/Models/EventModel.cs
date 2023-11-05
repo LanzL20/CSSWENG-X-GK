@@ -18,7 +18,7 @@ namespace CSSWENGxGK.Models
         public DateTime EventDate { get; set; }
 
         [Required]
-        public string EventTime { get; set; }
+        public DateTime EventTime { get; set; }
 
         [Required]
         public string EventLocation { get; set; }
