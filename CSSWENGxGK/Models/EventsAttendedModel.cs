@@ -1,14 +1,17 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSSWENGxGK.Models
 {
     public class EventsAttended
     {
-        [Key]
+        [Required]
+        [ForeignKey("Volunteer")]
         public int VolunteerID { get; set; }
 
-        [Key]
+        [Required]
+        [ForeignKey("Event")]
         public int EventID { get; set; }
 
         [Required]
