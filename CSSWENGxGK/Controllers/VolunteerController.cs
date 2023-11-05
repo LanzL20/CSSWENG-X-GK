@@ -115,10 +115,11 @@ namespace CSSWENGxGK.Controllers
         //     if (ModelState.IsValid)
         //     {
         //         var user = _db.T_Volunteer
-        //             .FirstOrDefault(v => v.Email == model.Email && v.Password == model.Password);
+        //             .FirstOrDefault(v => v.Email == model.Email);
 
         //         if (user != null)
         //         {
+        //             await HttpContext.SignInAsync(user, isPersistent: true); // This will create a persistent cookie
         //             return RedirectToAction("Dashboard", "Home");
         //         }
         //         else
