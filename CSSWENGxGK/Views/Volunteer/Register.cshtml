@@ -30,8 +30,8 @@
             <div class="textbox">
                 <label>Password</label>
                 @* TODO: Add here *@
-                <input asp-for="" class="form-control forminput">
-                <span asp-validation-for="" class="text-danger"></span>
+                <input asp-for="Password" class="form-control forminput">
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="textbox">
                 <label>Phone Number</label>
@@ -77,7 +77,7 @@
             <br>
             <div class="register-notify-container">
                 <label class="register-notify">Enable Email Notifications</label>
-                <input type="checkbox" class="register-checkbox" />
+                <input type="checkbox" asp-for="IsNotify" class="register-checkbox" />
             </div>
             <br>
             <div class="button">
