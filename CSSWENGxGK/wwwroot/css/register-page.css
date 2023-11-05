@@ -1,6 +1,7 @@
 .horizontal {
 	display:flex;
 	justify-content: space-between;
+	gap: 40px;
 }
 
 .card {
@@ -23,10 +24,6 @@
 	font-family: var(--font-family);
 	color: var(--accent);
 	margin-bottom: 0.5em;
-}
-
-.horizontal {
-	gap: 40px;
 }
 
 .textbox {

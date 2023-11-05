@@ -31,6 +31,14 @@
 	color: var(--black);
 }
 
+.scan-name{
+	font-size: var(--font-size-header-small);
+	font-weight: bold;
+	color: var(--accent);
+	margin-bottom: 1em;
+	align-self: center;
+}
+
 .scan-camera{
     position: relative;
     align-self: center;
@@ -138,6 +146,20 @@
     text-align: start;
 }
 
+.scan-successful{
+	font-size: var(--font-size-small);
+	color: rgb(3, 159, 3);
+	font-weight: bold;
+	text-align: center;
+}
+
+.scan-failed{
+	font-size: var(--font-size-small);
+	color: rgb(220, 4, 4);
+	font-weight: bold;
+	text-align: center;
+}
+
 /* For Mobile View */
 @media screen and (max-width: 900px) {
 	.scan-card {
@@ -146,6 +168,14 @@
 
 	.scan-title {
 		font-size: var(--font-size-header-small);
+	}
+
+	.scan-name{
+		font-size: var(--font-size-regular);
+		font-weight: bold;
+		color: var(--accent);
+		margin-bottom: 1em;
+		align-self: center;
 	}
 
 	.scan-back {
@@ -161,6 +191,15 @@
 		font-size: 16px;
 		width: 70%;
 	}
+
+	.scan-successful{
+		font-size: 14px;
+		color: rgb(3, 159, 3);
+	}
+	
+	.scan-failed{
+		font-size: 14px;
+	}
 }
 
 @media screen and (max-width: 510px) {
@@ -170,6 +209,14 @@
 
 	.scan-title {
 		font-size: var(--font-size-small);
+	}
+
+	.scan-name{
+		font-size: 16px;
+		font-weight: bold;
+		color: var(--accent);
+		margin-bottom: 1em;
+		align-self: center;
 	}
 
 	.scan-volunteer-id{

@@ -124,6 +124,162 @@
     justify-content: left;
 }
 
-.scan-right-text{
+.profile-text-right{
     text-align: start;
+}
+
+.profile-centered {
+	padding: 0px 30px
+}
+
+.profile-horizontal {
+	display:flex;
+	justify-content: space-between;
+	gap: 40px;
+}
+
+.profile-textbox {
+	max-width: 100%;
+	width: 100%;
+}
+
+.profile-textbox > label {
+	font-size: var(--font-size-small);
+	color: var(--grey);
+	margin-top: 1em;
+}
+
+.profile-forminput {
+	border-radius: var(--corner-radius);
+	font-size: 16px;
+	box-shadow: var(--drop-shadow);
+	padding: 5px 10px;
+	outline-width: 0;
+	background-color: var(--white);
+	border: 4px solid var(--white);
+	font-family: Colfax; 
+	margin-bottom: 0.2em;
+	width: 100%;
+	box-sizing: border-box;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.profile-forminput:focus {
+	border-color: var(--accent);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.profile-button { 
+	display: flex; 
+}
+
+.profile-save-button {
+	font-family: var(--font-family);
+	font-size: 16px;
+	padding: 0.5em 2em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--white);
+	background-color: var(--accent);
+	font-weight: bold;
+	outline: 0px solid;
+	text-decoration: none;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.profile-save-button:hover {
+	background-color: var(--white);
+	color: var(--accent);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.profile-save-button:active {
+	background-color: var(--white);
+	color: var(--accent);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+.profile-discard-button {
+	font-family: var(--font-family);
+	font-size: 16px;
+	padding: 0.5em 2em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--accent);
+	background-color: var(--white);
+	font-weight: bold;
+	outline: 0px solid;
+	text-decoration: none;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.profile-discard-button:hover {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.profile-discard-button:active {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+/* For Mobile View */
+@media screen and (max-width: 900px) {
+	.card {
+		padding: 3em 5em;
+		width: 100%;
+	}
+
+	.centered {
+		padding: 0px
+	}
+	
+	.forminput {
+		font-size: var(--font-size-small);
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.card {
+		padding: 3em 3em;
+	}
+
+	.title {
+		font-size: var(--font-size-header-small);
+	}
+	
+
+	.textbox > label {
+		font-size: 16px;
+		margin-top: 0.5em;
+	}
+	
+	.forminput {
+		font-size: var(--font-size-smaller);
+	}
+
+	.button > button {
+		font-size: var(--font-size-small);
+	}
 }

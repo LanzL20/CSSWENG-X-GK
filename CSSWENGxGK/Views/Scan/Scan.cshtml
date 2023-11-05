@@ -14,8 +14,11 @@
         </a>
     </div>
 
-    <video class="scan-camera" id="qr-video" style="transform: scaleX(1) !important;"></video>
+    <div class="scan-name">
+        Event Name
+    </div>
 
+    <video class="scan-camera" id="qr-video"></video>
 
     <form method="post" class="scan-volunteer-id-container">
         <input class="scan-volunteer-id" type="text" placeholder="Volunteer ID">
@@ -24,26 +27,36 @@
         </div>
     </form>
 
-    <div class="scan-info-container">
-        <div class="scan-left-info-container">
-            <div class="scan-left-text">
-                <strong>Volunteer Name:</strong>
+    <div>
+        <div class="scan-info-container">
+            <div class="scan-left-info-container">
+                <div class="scan-left-text">
+                    <strong>Volunteer Name:</strong>
+                </div>
+                <div class="scan-left-text">
+                    <strong>Volunteer ID:</strong>
+                </div>
             </div>
-            <div class="scan-left-text">
-                <strong>Volunteer ID:</strong>
+            <div class="scan-right-info-container">
+                <div class="scan-right-text">
+                    Last, First
+                </div>
+                <div class="scan-right-text">
+                    12345678
+                </div>
             </div>
         </div>
-        <div class="scan-right-info-container">
-            <div class="scan-left-text">
-                Last, First
-            </div>
-            <div class="scan-left-text">
-                12345678
-            </div>
+        <div class="scan-button-container">
+            <a class="scan-button">Verify Volunteer ID</a>
         </div>
     </div>
-    <div class="scan-button-container">
-        <a class="scan-button">Verify Volunteer ID</a>
+
+    <div>
+        <p class="scan-successful">Volunteer Successfully Verified!</p>
+    </div>
+
+    <div>
+        <p class="scan-failed">Volunteer Not Found.</p>
     </div>
 
     <!-- Include necessary libraries -->
