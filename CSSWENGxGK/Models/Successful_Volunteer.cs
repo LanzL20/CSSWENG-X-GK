@@ -2,8 +2,8 @@ namespace CSSWENGxGK.Models;
 
 public class Successful_Volunteer
 {
-    public bool found;
-    public int volunteerID;
-    public string firstName;
-    public string lastName;
+    public bool found { get; set; }
+    public int volunteerID { get; set; }
+    public string firstName { get; set; }
+    public string lastName { get; set; }
 }
