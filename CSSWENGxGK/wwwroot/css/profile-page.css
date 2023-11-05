@@ -1,0 +1,129 @@
+.profile-card {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 5em 7em;
+	background-color: var(--white);
+	box-shadow: var(--drop-shadow);
+	border-radius: var(--corner-radius);
+}
+
+.profile-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.profile-title {
+	font-weight: bolder;
+	font-size: var(--font-size-header);
+	color: var(--accent);
+    padding-right: 0.3em;
+}
+
+.profile-edit {
+	color: var(--black);
+}
+
+.profile-edit:hover {
+	color: var(--black);
+}
+
+.profile-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-qr-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    width: 45%;
+}
+
+.profile-qr{
+    max-width: 80%;
+    background-color: black;
+}
+
+.profile-save-qr-container { 
+	display: flex; 
+}
+
+.profile-save-qr {
+	font-size: var(--font-size-small);
+	padding: 0.2em 1.5em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--accent);
+	background-color: var(--white);
+	font-weight: bold;
+	outline: 0px solid;
+    text-decoration: none;
+    cursor: pointer;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.profile-save-qr:hover {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.profile-save-qr:active {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+.profile-name{
+    font-weight: 700;
+	font-size: var(--font-size-regular);
+	color: black;
+}
+
+.profile-info-container{
+    width: 45%;
+}
+
+.profile-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.profile-info-left{
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    justify-content: left;
+}
+
+.profile-text-left{
+    text-align: start;
+}
+
+.profile-info-right{
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    justify-content: left;
+}
+
+.scan-right-text{
+    text-align: start;
+}

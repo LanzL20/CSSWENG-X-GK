@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\one-event-page.css"
     },
     {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\profile-page.css",
+      "PackagePath": "staticwebassets\\css\\profile-page.css"
+    },
+    {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\register-page.css",
       "PackagePath": "staticwebassets\\css\\register-page.css"
     },
