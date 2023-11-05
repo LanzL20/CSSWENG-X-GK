@@ -12,9 +12,9 @@ namespace CSSWENGxGK.Controllers
     public class VolunteerController : Controller
     {
         private readonly ApplicationDbContext _db;
-        private readonly UserManager<Volunteer> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public VolunteerController(ApplicationDbContext db, UserManager<Volunteer> userManager)
+        public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
             _db = db;
             _userManager = userManager;
@@ -114,7 +114,6 @@ namespace CSSWENGxGK.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(Volunteer model)
         {
-
             if (ModelState.IsValid)
             {
                 Guid uniqueId = Guid.NewGuid();
@@ -123,39 +122,47 @@ namespace CSSWENGxGK.Controllers
                 int generatedID = BitConverter.ToInt32(bytes, 0);
                 generatedID = Math.Abs(generatedID);
 
-                var volunteer = new Volunteer
+                string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+
+                // Define the SQL insert query
+                string query = "SET IDENTITY_INSERT T_Volunteer ON;" +
+                              "INSERT INTO T_Volunteer (VolunteerID, CreatedDate, LastUpdateDate, IsDeleted, IsActive, FirstName, LastName, Email, MobileNumber, BirthDate, Gender, Country, PROV_CODE, TOWN_CODE, BRGY_CODE, YearStarted) " +
+                              "VALUES (@GeneratedID, @CreatedDate, @LastUpdateDate, @IsDeleted, @IsActive, @FirstName, @LastName, @Email, @MobileNumber, @BirthDate, @Gender, @Country, @PROV_CODE, @TOWN_CODE, @BRGY_CODE, @YearStarted);" +
+                              "SET IDENTITY_INSERT T_Volunteer OFF;";
+
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    VolunteerID = generatedID,
-                    CreatedDate = DateTime.Now,
-                    LastUpdateDate = DateTime.Now,
-                    IsDeleted = false,
-                    IsActive = false,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Email = model.Email,
-                    MobileNumber = model.MobileNumber,
-                    BirthDate = model.BirthDate,
-                    Gender = model.Gender,
-                    Country = model.Country,
-                    PROV_CODE = model.PROV_CODE,
-                    TOWN_CODE = model.TOWN_CODE,
-                    BRGY_CODE = model.BRGY_CODE,
-                    YearStarted = model.YearStarted,
-                    // Set other properties here
-                };
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@GeneratedID", generatedID);
+                        command.Parameters.AddWithValue("@CreatedDate", DateTime.Now);
+                        command.Parameters.AddWithValue("@LastUpdateDate", DateTime.Now);
+                        command.Parameters.AddWithValue("@IsDeleted", false);
+                        command.Parameters.AddWithValue("@IsActive", true);
+                        command.Parameters.AddWithValue("@FirstName", model.FirstName);
+                        command.Parameters.AddWithValue("@LastName", model.LastName);
+                        command.Parameters.AddWithValue("@Email", model.Email);
+                        command.Parameters.AddWithValue("@MobileNumber", model.MobileNumber);
+                        command.Parameters.AddWithValue("@BirthDate", model.BirthDate);
+                        command.Parameters.AddWithValue("@Gender", model.Gender);
+                        command.Parameters.AddWithValue("@Country", model.Country);
+                        command.Parameters.AddWithValue("@PROV_CODE", model.PROV_CODE);
+                        command.Parameters.AddWithValue("@TOWN_CODE", model.TOWN_CODE);
+                        command.Parameters.AddWithValue("@BRGY_CODE", model.BRGY_CODE);
+                        command.Parameters.AddWithValue("@YearStarted", model.YearStarted);
 
-                // Add the Volunteer to the database
-                _db.T_Volunteer.Add(volunteer);
-                _db.SaveChanges();
-
-                // Assign the "Volunteer" role
-                await _userManager.AddToRoleAsync(volunteer, "Volunteer");
+                        command.ExecuteNonQuery();
+                    }
+                }
 
                 return RedirectToAction("Register");
             }
 
             return View(model);
         }
+
 
         // [HttpPost]
         // public IActionResult Login(Volunteer model)
