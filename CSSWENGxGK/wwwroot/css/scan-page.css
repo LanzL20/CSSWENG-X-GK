@@ -138,6 +138,20 @@
     text-align: start;
 }
 
+.scan-successful{
+	font-size: var(--font-size-small);
+	color: rgb(3, 159, 3);
+	font-weight: bold;
+	text-align: center;
+}
+
+.scan-failed{
+	font-size: var(--font-size-small);
+	color: rgb(220, 4, 4);
+	font-weight: bold;
+	text-align: center;
+}
+
 /* For Mobile View */
 @media screen and (max-width: 900px) {
 	.scan-card {
