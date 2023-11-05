@@ -23,7 +23,7 @@
                 <a class="profile-save-qr">Save QR</a>
             </div>
         </div>
-        <div class="profile-info-container" hidden>
+        <div class="profile-info-container" >
             <div class="profile-name">
                 Last Name, First Name
             </div>
@@ -56,6 +56,9 @@
                     <div class="profile-text-left">
                         Last Updated:
                     </div>
+                    <div class="profile-text-left">
+                        Email Notifications:
+                    </div>
                 </div>
                 <div class="profile-info-right">
                     <div class="profile-text-right">
@@ -85,10 +88,13 @@
                     <div class="profile-text-right">
                         Last Updated:
                     </div>
+                    <div class="profile-text-right">
+                        Enabled
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="profile-info-container">
+        <div class="profile-info-container" hidden>
             <div class="profile-centered">
                 <div class="profile-horizontal">
                     <div class="profile-textbox">
@@ -148,7 +154,12 @@
                     <input asp-for="YearStarted" class="form-control profile-forminput">
                     <span asp-validation-for="YearStarted" class="text-danger"></span>
                 </div>
-                <br><br>
+                <br>
+                <div class="profile-notify-container">
+                    <label class="profile-notify">Enable Email Notifications</label>
+                    <input type="checkbox" class="profile-checkbox" />
+                </div>
+            <br>
                 <div class="profile-button">
                     <a class="profile-discard-button">Discard Changes</a>
                     <a class="profile-save-button">Save Changes</a>

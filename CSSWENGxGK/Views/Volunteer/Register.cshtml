@@ -64,12 +64,16 @@
                 <input asp-for="BRGY_CODE" class="form-control forminput">
             </div>
             <div class="textbox">
-                @* TODO: Make year only *@
                 <label>Year Started as GK Volunteer?</label>
                 <input asp-for="YearStarted" class="form-control forminput">
                 <span asp-validation-for="YearStarted" class="text-danger"></span>
             </div>
-            <br><br>
+            <br>
+            <div class="register-notify-container">
+                <label class="register-notify">Enable Email Notifications</label>
+                <input type="checkbox" class="register-checkbox" />
+            </div>
+            <br>
             <div class="button">
                 <button type="submit">Register</button>
             </div>
