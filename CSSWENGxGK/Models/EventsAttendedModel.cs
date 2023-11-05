@@ -6,11 +6,11 @@ namespace CSSWENGxGK.Models
 {
     public class EventsAttended
     {
-        [Required]
+        [Key]
         [ForeignKey("Volunteer")]
         public int VolunteerID { get; set; }
 
-        [Required]
+        [Key]
         [ForeignKey("Event")]
         public int EventID { get; set; }
 
