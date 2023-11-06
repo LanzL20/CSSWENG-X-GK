@@ -9,12 +9,21 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => 
+// Configure your DbContext
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddIdentity<User, IdentityRole>()
+// Configure Identity with your User and Role classes
+builder.Services.AddIdentity<User, IdentityRole<int>>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromHours(2); // Set session timeout to 2 hours
+    options.Cookie.HttpOnly = true; // Make the session cookie HTTP-only
+    options.Cookie.IsEssential = true; // Mark the session cookie as essential
+});
 
 var app = builder.Build();
 
@@ -32,6 +41,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+// Use session middleware
+app.UseSession(); // Add this line to enable sessions
 
 app.MapControllerRoute(
     name: "default",
