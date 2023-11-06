@@ -10,7 +10,6 @@ namespace CSSWENGxGK.Models
         [ForeignKey("Volunteer")]
         public int VolunteerID { get; set; }
 
-        [Key]
         [ForeignKey("Event")]
         public int EventID { get; set; }
 
