@@ -32,6 +32,21 @@ namespace CSSWENGxGK.Controllers
             return View();
         }
 
+        private bool EmailExists(string email)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM T_Volunteer WHERE Email = @Email";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+                    int emailCount = (int)command.ExecuteScalar();
+                    return emailCount > 0;
+                }
+            }
+        }
+        
         [HttpPost]
         public async Task<IActionResult> VerifyVolunteerID(string Vol_ID)
         {
@@ -110,12 +125,19 @@ namespace CSSWENGxGK.Controllers
             }
         }
 
+        //add verification like duplciate emails and other things
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(Volunteer model)
         {
             if (ModelState.IsValid)
             {
+                if(EmailExists(model.Email))
+                {
+                    return RedirectToAction("Register");
+                }
+                
+            
                 Guid uniqueId = Guid.NewGuid();
                 byte[] bytes = uniqueId.ToByteArray();
 
@@ -212,6 +234,16 @@ namespace CSSWENGxGK.Controllers
                                 {
                                     // Passwords match; user can be authenticated
                                     Console.WriteLine("Success");
+
+                                    if (reader["VolunteerID"] is int volunteerID)
+                                    {
+                                        HttpContext.Session.SetInt32("User_ID", volunteerID);
+                                    }
+
+                                    // Retrieve the User_ID from the session with a default value of 0 if it's null this is for debugging
+                                    int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
+                                    int userId = userIdNullable ?? 0;
+                                    
                                     //await HttpContext.SignInAsync(user, isPersistent: true);
                                     return RedirectToAction("Dashboard", "Home");
                                 }
