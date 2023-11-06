@@ -190,7 +190,7 @@ namespace CSSWENGxGK.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LogInfo model)
         {
-            string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

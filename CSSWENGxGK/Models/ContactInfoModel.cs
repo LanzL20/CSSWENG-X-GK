@@ -10,6 +10,10 @@ namespace CSSWENGxGK.Models
         public int EventID { get; set; }
 
         [Required]
-        public string Contact_Info { get; set; }
+        public string Contact_Name { get; set; }
+
+        public string Contact_Number { get; set; }
+
+        public string Contact_Email { get; set; }
     }
 }

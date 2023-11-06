@@ -11,11 +11,8 @@ namespace CSSWENGxGK.Models
         public int EventImage { get; set; }
 
         [Required(ErrorMessage = "Event Name is required.")]
-        [StringLength(30, MinimumLength = 2, ErrorMessage = "Event Name should be between 2 and 30 characters.")]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "Event Name should be between 2 and 100 characters.")]
         public string EventName { get; set; }
-
-        [Required]
-        public DateTime EventDate { get; set; }
 
         [Required]
         public DateTime EventTime { get; set; }
