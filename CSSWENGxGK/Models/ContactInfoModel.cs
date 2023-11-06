@@ -6,6 +6,7 @@ namespace CSSWENGxGK.Models
 {
     public class ContactInfo
     {
+        [Key]
         [ForeignKey("Event")]
         public int EventID { get; set; }
 
