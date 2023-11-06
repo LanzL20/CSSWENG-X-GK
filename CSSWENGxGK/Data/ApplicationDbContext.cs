@@ -9,5 +9,5 @@ public class ApplicationDbContext : DbContext
         
     }
     
-    public DbSet<Volunteer> T_Volunteer { get; set; }
+    public DbSet<User> T_User { get; set; }
 }
