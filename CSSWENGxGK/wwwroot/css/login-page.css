@@ -63,7 +63,6 @@
 .login-checkbox{
     border-radius: var(--corner-radius);
 	font-size: var(--font-size-small);
-	box-shadow: var(--drop-shadow);
 	padding: 5px 10px;
 	outline-width: 0;
 	background-color: var(--white);
