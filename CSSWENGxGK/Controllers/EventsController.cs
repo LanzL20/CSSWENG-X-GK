@@ -15,9 +15,13 @@ public class EventsController : Controller
 
     public IActionResult AllEvents()
     {
-        // Query the database to retrieve a list of all events
-        var events = _db.T_Event.ToList();
-
+        // Query the database to retrieve a list of all events with EventID and EventShortDesc
+        var events = _db.T_Event.Select(e => new Event
+        {
+            EventName = e.EventName,
+            EventShortDesc = e.EventShortDesc
+        }).ToList();
+    
         // Pass the list of events to the view
         return View(events);
     }
