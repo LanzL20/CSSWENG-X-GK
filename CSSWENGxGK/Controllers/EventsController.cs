@@ -6,7 +6,7 @@ namespace CSSWENGxGK.Controllers;
 public class EventsController : Controller
 {
     private readonly ApplicationDbContext _db;
-    string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+    string connectionString = "Server=FRANCINECHAN\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
     public EventsController(ApplicationDbContext db)
     {
@@ -25,10 +25,11 @@ public class EventsController : Controller
                 EventShortDesc = e.EventShortDesc
             })
             .ToList();
-    
+
         // Pass the list of events to the view
         return View(events);
     }
+
 
     public IActionResult OneEvent(string eventId)
     {
