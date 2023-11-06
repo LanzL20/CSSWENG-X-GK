@@ -18,14 +18,14 @@
             <label asp-for="Password" class="login-label"></label>
             <input asp-for="Password" type="password" class="login-input" />
         </div>
-
-        <div class="form-group">
+        <br>
+        <div class="form-group login-remember-container">
             <label class="login-remember">
-                <input asp-for="IsRemember" type="checkbox" />
                 Keep Me Logged In
             </label>
+            <input asp-for="IsRemember" type="checkbox" class="login-checkbox"/>
         </div>
-
+        <br>
         <div class="login-button">
             <button type="submit">Login</button>
         </div>
