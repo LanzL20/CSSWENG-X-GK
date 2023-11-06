@@ -1,10 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Welcome to Gawad Kalinga";
-}
-<div class="one-event-card">
+﻿<div class="one-event-card">
     <div class="one-event-top">
         <div class="one-event-title">
-            Event Name
+            @ViewBag.EventInfo.EventName
         </div>
         <a asp-controller="Events" asp-action="AllEvents" class="one-event-back">
             <- Back to Events
@@ -17,71 +14,37 @@
 
     <div class="one-event-body">
         <img src="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare posuere lectus maximus accumsan. Fusce eget dolor ut augue volutpat accumsan vel eget orci. Vestibulum consectetur libero at elit imperdiet, sit amet molestie massa bibendum. Aliquam erat volutpat. Nam mattis leo ut lacus ullamcorper, et tristique eros blandit. Morbi ac tellus nec turpis molestie fermentum vel vel metus. Donec hendrerit eros sem, sed fringilla ipsum commodo ac. <br><br> Mauris fringilla ex ac sagittis pellentesque. Maecenas urna lacus, placerat eu ex a, convallis varius urna. Ut fringilla mi diam, at blandit mi elementum ut. Duis nec ipsum ut lorem consectetur viverra id sed mi. Aliquam feugiat enim libero, a consectetur neque bibendum at. Curabitur ac pharetra odio. Vestibulum dignissim a urna quis tempor. Aenean semper est at nisi gravida, nec lacinia ex rutrum. Nunc tempor, sapien a iaculis egestas, neque erat dapibus magna, vitae facilisis ante tellus eu ex. Nunc volutpat nisi ut molestie faucibus. Nullam ac velit dignissim, tincidunt eros ac, porttitor libero. Nullam et condimentum tortor, luctus finibus enim. Suspendisse et ultricies orci, sit amet congue mi. Suspendisse pharetra fermentum aliquet. Praesent sit amet dolor laoreet, efficitur tellus at, fringilla ex. Quisque maximus malesuada malesuada.</p>
-        
+        <p>@ViewBag.EventInfo.EventLongDesc</p>
+
         <div class="one-event-container">
             <div class="one-event-date">
-                <strong>Date:</strong> 01/01/2020
+                <strong>Date:</strong> @ViewBag.EventInfo.EventDate.ToString("MM/dd/yyyy")
             </div>
             <div class="one-event-time">
-                <strong>Time:</strong> 01:00 PM
+                <strong>Time:</strong> @ViewBag.EventInfo.EventDate.ToString("hh:mm tt")
             </div>
             <div class="one-event-location">
-                <strong>Location:</strong> Location
+                <strong>Location:</strong> @ViewBag.EventInfo.EventLocation
             </div>
         </div>
 
         <div class="one-event-container">
             <p><strong>Organizers:</strong></p>
             <div class="one-event-contact">
+                @foreach (var organizer in ViewBag.Organizers)
+                {
                 <div>
                     <div class="one-event-contact-name">
-                        Last, First
+                        @organizer.Name
                     </div>
                     <div class="one-event-contact-number">
-                        (0912 3456 789)
+                        @organizer.PhoneNumber
                     </div>
                     <div class="one-event-contact-email">
-                        email@email.com
+                        @organizer.Email
                     </div>
                 </div>
-
-                <div>
-                    <div class="one-event-contact-name">
-                        Last, First
-                    </div>
-                    <div class="one-event-contact-number">
-                        (0912 3456 789)
-                    </div>
-                    <div class="one-event-contact-email">
-                        email@email.com
-                    </div>
-                </div>
-
-                <div>
-                    <div class="one-event-contact-name">
-                        Last, First
-                    </div>
-                    <div class="one-event-contact-number">
-                        (0912 3456 789)
-                    </div>
-                    <div class="one-event-contact-email">
-                        email@email.com
-                    </div>
-                </div>
-
-                @* Template for Organizer Contact Info *@
-                @* <div>
-                    <div class="one-event-contact-name">
-                        Last, First
-                    </div>
-                    <div class="one-event-contact-number">
-                        (0912 3456 789)
-                    </div>
-                    <div class="one-event-contact-email">
-                        email@email.com
-                    </div>
-                </div> *@
+                }
             </div>
         </div>
     </div>
