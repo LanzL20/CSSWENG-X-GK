@@ -14,6 +14,7 @@ namespace CSSWENGxGK.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
+        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -36,8 +37,6 @@ namespace CSSWENGxGK.Controllers
         {
             if (int.TryParse(Vol_ID, out int parsedVolunteerID) && parsedVolunteerID > 0)
             {
-                // change to own conneciton string
-                string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -123,8 +122,6 @@ namespace CSSWENGxGK.Controllers
                 int generatedID = BitConverter.ToInt32(bytes, 0);
                 generatedID = Math.Abs(generatedID);
 
-                string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
-
                 // Define the SQL insert query
                 string query = "SET IDENTITY_INSERT T_Volunteer ON;" +
                               "INSERT INTO T_Volunteer (VolunteerID, CreatedDate, LastUpdateDate, IsDeleted, IsActive, IsNotify, Password, FirstName, LastName, Email, MobileNumber, BirthDate, Gender, Country, PROV_CODE, TOWN_CODE, BRGY_CODE, YearStarted) " +
@@ -190,7 +187,6 @@ namespace CSSWENGxGK.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LogInfo model)
         {
-            string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
