@@ -10,4 +10,6 @@ public class ApplicationDbContext : DbContext
     }
     
     public DbSet<User> T_User { get; set; }
+    public DbSet<Event> T_Event {  get; set; }
+    public DbSet<Organizer> T_Organizer { get; set; }
 }
