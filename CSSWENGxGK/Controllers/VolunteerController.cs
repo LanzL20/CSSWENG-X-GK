@@ -14,13 +14,14 @@ namespace CSSWENGxGK.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
-        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
             _db = db;
             _userManager = userManager;
         }
+
 
         public IActionResult Login()
         {
@@ -132,12 +133,11 @@ namespace CSSWENGxGK.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(EmailExists(model.Email))
+                if (EmailExists(model.Email))
                 {
                     return RedirectToAction("Register");
                 }
-                
-            
+
                 Guid uniqueId = Guid.NewGuid();
                 byte[] bytes = uniqueId.ToByteArray();
 
@@ -168,7 +168,7 @@ namespace CSSWENGxGK.Controllers
                         command.Parameters.AddWithValue("@Gender", model.Gender);
                         command.Parameters.AddWithValue("@Country", model.Country);
 
-                        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(model.Password,16);
+                        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(model.Password, 16);
                         command.Parameters.AddWithValue("@Password", hashedPassword);
 
                         var emailNotificationsEnabled = model.IsNotify;
@@ -197,14 +197,29 @@ namespace CSSWENGxGK.Controllers
                         command.Parameters.AddWithValue("@YearStarted", model.YearStarted);
 
                         command.ExecuteNonQuery();
+
+                        // change session user
+                        HttpContext.Session.SetInt32("User_ID", generatedID);
+
+                        var new_user = new User
+                        {
+                            user_id = generatedID,
+                        };
+
+                        new_user.UserName = generatedID.ToString();
+                        new_user.Email = model.Email;
+
+                         //create user and add role
+                        await _userManager.CreateAsync(new_user, "Password123!");
                     }
                 }
-
-                return RedirectToAction("Register");
             }
 
-            return View(model);
+            return RedirectToAction("Register");
         }
+
+
+        // find a way to generate user role
 
         [HttpPost]
         public async Task<IActionResult> Login(LogInfo model)
