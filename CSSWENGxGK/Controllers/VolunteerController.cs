@@ -29,6 +29,16 @@ namespace CSSWENGxGK.Controllers
             _userManager = userManager;
         }
 
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+
         public static string GenerateQRCode(string text, int size = 300)
         {
             var barcodeWriter = new BarcodeWriter();
