@@ -17,13 +17,13 @@
     <div class="profile-body">
         <div class="profile-qr-container">
             <div class="profile-qr">
-                <img src="@ViewBag.QRCodeImageUrl" alt="QR Code" />
+                <img id="qr-code-image" src="@ViewBag.QRCodeImageUrl" alt="QR Code" />
             </div>
             <div class="profile-save-qr-container">
-                <a class="profile-save-qr">Save QR</a>
+                <a class="profile-save-qr" id="save-qr-link" href="#">Save QR</a>
             </div>
         </div>
-        <div class="profile-info-container" >
+        <div class="profile-info-container">
             <div class="profile-name">
                 @ViewBag.LastName, @ViewBag.FirstName
             </div>
@@ -159,7 +159,7 @@
                     <label class="profile-notify">Enable Email Notifications</label>
                     <input type="checkbox" class="profile-checkbox" />
                 </div>
-            <br>
+                <br>
                 <div class="profile-button">
                     <a class="profile-discard-button">Discard Changes</a>
                     <a class="profile-save-button">Save Changes</a>
@@ -169,3 +169,25 @@
     </div>
 </div>
 
+<script>
+    // Get a reference to the "Save QR" link and the QR code image
+    const saveQrLink = document.getElementById("save-qr-link");
+    const qrCodeImage = document.getElementById("qr-code-image");
+
+    // Add a click event handler to the "Save QR" link
+    saveQrLink.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevent the default link behavior
+
+        // Create a new anchor element to trigger the download
+        const downloadLink = document.createElement("a");
+
+        // Combine the Volunteer ID with "qr-code.png" to create the filename
+        const fileName = `${@ViewBag.VolunteerID}-qr-code.png`;
+
+        downloadLink.href = qrCodeImage.src;
+        downloadLink.download = fileName; // Specify the filename for the downloaded image
+
+        // Trigger a click event on the download link
+        downloadLink.click();
+    });
+</script>
