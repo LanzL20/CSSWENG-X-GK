@@ -1,6 +1,7 @@
 using CSSWENGxGK.Data;
 using CSSWENGxGK.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Data.SqlClient;
 
 namespace CSSWENGxGK.Controllers;
 public class EventsController : Controller
@@ -11,6 +12,54 @@ public class EventsController : Controller
     public EventsController(ApplicationDbContext db)
     {
         _db = db;
+    }
+
+    public IActionResult edit_profile()
+    {
+        int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
+        int userId = userIdNullable ?? 0;
+
+        // Check if the user is logged in and has a valid userId
+        if (userId != 0)
+        {
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT VolunteerID, FirstName, LastName, Email, MobileNumber, BirthDate, Gender, Country, PROV_CODE, TOWN_CODE, BRGY_CODE, YearStarted, CreatedDate, LastUpdateDate, IsNotify FROM T_Volunteer WHERE VolunteerID = @parsedVolunteerID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@parsedVolunteerID", userId);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // The volunteer was found in the database
+                            ViewBag.VolunteerID = reader["VolunteerID"];
+                            ViewBag.FirstName = reader["FirstName"];
+                            ViewBag.LastName = reader["LastName"];
+                            ViewBag.Email = reader["Email"];
+                            ViewBag.MobileNumber = reader["MobileNumber"];
+                            ViewBag.BirthDate = reader["BirthDate"];
+                            ViewBag.Gender = reader["Gender"];
+                            ViewBag.Country = reader["Country"];
+                            ViewBag.Province = reader["PROV_CODE"];
+                            ViewBag.Town = reader["TOWN_CODE"];
+                            ViewBag.Barangay = reader["BRGY_CODE"];
+                            ViewBag.YearStarted = reader["YearStarted"];
+                            ViewBag.CreatedDate = reader["CreatedDate"];
+                            ViewBag.LastUpdateDate = reader["LastUpdateDate"];
+                            ViewBag.IsNotify = reader["IsNotify"];
+                        }
+                    }
+                }
+            }
+        }
+
+        return View();
     }
 
     public IActionResult AllEvents(int pageNumber = 1)
