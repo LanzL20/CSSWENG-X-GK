@@ -1,11 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Welcome to Gawad Kalinga";
-}
-<div class="list-card">
+﻿<div class="list-card">
     <div class="list-top">
         <div>
             <div class="list-title">
-                Event Name
+                @ViewBag.EventInfo.EventName
             </div>
         </div>
         <a asp-controller="Events" asp-action="OneEvent" class="list-back">
@@ -16,34 +13,20 @@
         <a asp-controller="Scan" asp-action="Scan">Record Attendance</a>
     </div>
     <div class="list-body-container">
+        @if (ViewBag.VolunteersInfo != null && ViewBag.VolunteersInfo.Count > 0)
+        {
+        <h2>List of Volunteers Attending the Event:</h2>
         <div class="list-body">
-            <div class="list-label">
-                Volunteer Name
+            @foreach (var volunteer in ViewBag.VolunteersInfo)
+                {
+            <div class="list-volunteer">
+                @volunteer.FirstName @volunteer.LastName
             </div>
-            <div class="list-label">
-                Volunteer ID
+            <div class="list-volunteer">
+                @volunteer.VolunteerID
             </div>
+                }
         </div>
-        <div class="list-body">
-            <div class="list-volunteer">
-                1) John Doe
-            </div>
-            <div class="list-volunteer">
-                12345678
-            </div>
-        </div>
-        @* Add to list-body-container class *@
-        
-        @* Template for Volunteer Attendance *@
-        @* 
-        <div class="list-body">
-            <div class="list-volunteer">
-                1) John Doe
-            </div>
-            <div class="list-volunteer">
-                12345678
-            </div>
-        </div> 
-        *@
+        }
     </div>
 </div>
