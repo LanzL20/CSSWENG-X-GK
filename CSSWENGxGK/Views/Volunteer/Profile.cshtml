@@ -17,8 +17,7 @@
     <div class="profile-body">
         <div class="profile-qr-container">
             <div class="profile-qr">
-                @* TODO: Insert generated QR here *@
-                <img src="" /> 
+                <img src="@ViewBag.QRCodeImageUrl" alt="QR Code" />
             </div>
             <div class="profile-save-qr-container">
                 <a class="profile-save-qr">Save QR</a>
@@ -26,7 +25,7 @@
         </div>
         <div class="profile-info-container" >
             <div class="profile-name">
-                Last Name, First Name
+                @ViewBag.LastName, @ViewBag.FirstName
             </div>
             <div class="profile-info">
                 <div class="profile-info-left">
@@ -63,34 +62,34 @@
                 </div>
                 <div class="profile-info-right">
                     <div class="profile-text-right">
-                        Volunteer ID:
+                        @ViewBag.VolunteerID
                     </div>
                     <div class="profile-text-right">
-                        Email:
+                        @ViewBag.Email
                     </div>
                     <div class="profile-text-right">
-                        Mobile Number:
+                        @ViewBag.MobileNumber
                     </div>
                     <div class="profile-text-right">
-                        Birthdate:
+                        @ViewBag.BirthDate.ToString("yyyy-MM-dd")
                     </div>
                     <div class="profile-text-right">
-                        Gender:
+                        @ViewBag.Gender
                     </div>
                     <div class="profile-text-right">
-                        Location:
+                        @ViewBag.Barangay, @ViewBag.Town, @ViewBag.Province, @ViewBag.Country
                     </div>
                     <div class="profile-text-right">
-                        Year Started:
+                        @ViewBag.YearStarted.ToString()
                     </div>
                     <div class="profile-text-right">
-                        Date Created:
+                        @ViewBag.CreatedDate.ToString()
                     </div>
                     <div class="profile-text-right">
-                        Last Updated:
+                        @ViewBag.LastUpdateDate.ToString()
                     </div>
                     <div class="profile-text-right">
-                        Enabled
+                        @(ViewBag.IsNotify ? "Enabled" : "Disabled")
                     </div>
                 </div>
             </div>
