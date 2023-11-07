@@ -13,14 +13,23 @@ public class EventsController : Controller
         _db = db;
     }
 
-    public IActionResult AllEvents()
+    public IActionResult AllEvents(int pageNumber = 1)
     {
-        // Query the database to retrieve the first nine events with EventID and EventShortDesc
+        pageNumber = HttpContext.Session.GetInt32("Page_number") ?? 1;
+        int pageSize = 9; // Number of events per page
+
+        // Calculate the start and end index for the events to retrieve
+        int startIndex = (pageNumber - 1) * pageSize;
+        int endIndex = pageNumber * pageSize;
+
+        // Query the database to retrieve the events in the specified range
         var events = _db.T_Event
             .OrderBy(e => e.EventID)
-            .Take(9)
+            .Skip(startIndex)
+            .Take(pageSize)
             .Select(e => new Event
             {
+                EventID = e.EventID, // Store the EventID
                 EventName = e.EventName,
                 EventShortDesc = e.EventShortDesc
             })
@@ -29,7 +38,6 @@ public class EventsController : Controller
         // Pass the list of events to the view
         return View(events);
     }
-
 
     public IActionResult OneEvent(string eventId)
     {
@@ -74,6 +82,46 @@ public class EventsController : Controller
 
     public IActionResult VolunteerList()
     {
+        int selectedEvent = -1;
+
+        selectedEvent = HttpContext.Session.GetInt32("Selected_event") ?? -1;
+
+        if (selectedEvent > 0)
+        {
+            // Retrieve the event name based on the current event ID (selectedEvent) and store it in ViewBag
+            var eventInfo = _db.T_Event.FirstOrDefault(e => e.EventID == selectedEvent);
+
+            // Retrieve the VolunteerIDs that joined the selected event
+            var volunteerIds = _db.T_EventsAttended
+                .Where(e => e.EventID == selectedEvent)
+                .Select(e => e.VolunteerID)
+                .ToList();
+
+            // Retrieve all volunteer information for the volunteer IDs
+            var volunteersInfo = _db.T_Volunteer
+                .Where(volunteer => volunteerIds.Contains(volunteer.VolunteerID))
+                .Select(volunteer => new
+                {
+                    VolunteerID = volunteer.VolunteerID,
+                    FirstName = volunteer.FirstName,
+                    LastName = volunteer.LastName
+                })
+                .ToList();
+
+            // Store the volunteersInfo list in ViewBag
+            ViewBag.EventInfo = eventInfo;
+            ViewBag.volunteersInfo = volunteersInfo;
+
+            // You can access ViewBag.volunteersInfo in your view
+            return View();
+        }
+        else
+        {
+            // Handle the case where the selectedEvent is invalid
+            return View("InvalidEvent");
+        }
+
+
         return View();
     }
 }

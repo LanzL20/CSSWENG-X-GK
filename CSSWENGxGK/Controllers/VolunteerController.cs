@@ -64,6 +64,7 @@ namespace CSSWENGxGK.Controllers
 
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
+
                             command.Parameters.AddWithValue("@parsedVolunteerID", parsedVolunteerID);
 
                             using (SqlDataReader reader = command.ExecuteReader())
@@ -83,6 +84,49 @@ namespace CSSWENGxGK.Controllers
                                         lastName = (string)lastName
                                     };
 
+
+                                    reader.Close();
+
+                                    DateTime timeIn = DateTime.Now;
+                                    DateTime? timeOut = null;
+                                    int selectedEvent = HttpContext.Session.GetInt32("Selected_event") ?? -1;
+
+                                    // Insert the record into the T_EventsAttended table
+                                    string insertQuery = "INSERT INTO T_EventsAttended (VolunteerID, EventID, TimeIn, TimeOut) " + "VALUES (@VolunteerID, @EventID, @TimeIn, @TimeOut)";
+
+                                    try
+                                    {
+                                        using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
+                                        {
+                                            Console.WriteLine("HERE");
+
+                                            insertCommand.Parameters.AddWithValue("@VolunteerID", parsedVolunteerID);
+                                            insertCommand.Parameters.AddWithValue("@EventID", selectedEvent);
+                                            insertCommand.Parameters.AddWithValue("@TimeIn", timeIn);
+                                            insertCommand.Parameters.AddWithValue("@TimeOut", DBNull.Value);
+
+                                            int rowsAffected = insertCommand.ExecuteNonQuery();
+
+                                            if (rowsAffected > 0)
+                                            {
+                                                // Log a success message
+                                                System.Diagnostics.Trace.WriteLine("INSERT operation was successful.");
+                                            }
+                                            else
+                                            {
+                                                // Log a failure message
+                                                System.Diagnostics.Trace.WriteLine("INSERT operation did not affect any rows.");
+                                            }
+                                            Console.WriteLine("OK");
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Console.WriteLine(ex);
+                                        // Log an error message if an exception occurs
+                                        System.Diagnostics.Trace.WriteLine("Error during INSERT operation: " + ex.Message);
+                                    }
+
                                     return Json(newVolunteer);
                                 }
                                 else
@@ -95,21 +139,21 @@ namespace CSSWENGxGK.Controllers
                                         firstName = "Volunteer",
                                         lastName = "Not Found"
                                     });
+                                        }
                                 }
                             }
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        // Handle the exception, log it, or return a more meaningful error message
-                        return Json(new Successful_Volunteer
+                        catch (Exception ex)
                         {
-                            found = false,
-                            volunteerID = 0,
-                            firstName = "Error",
-                            lastName = ex.Message
-                        });
-                    }
+                            // Handle the exception, log it, or return a more meaningful error message
+                            return Json(new Successful_Volunteer
+                            {
+                                found = false,
+                                volunteerID = 0,
+                                firstName = "Error",
+                                lastName = ex.Message
+                            });
+                        }
                 }
                 // Close the connection and dispose of resources here
             }
