@@ -56,14 +56,13 @@
 }
 
 .login-remember{
-    align-items: center;
+    align-self: center;
     font-size: var(--font-size-smaller);
 }
 
 .login-checkbox{
     border-radius: var(--corner-radius);
 	font-size: var(--font-size-small);
-	box-shadow: var(--drop-shadow);
 	padding: 5px 10px;
 	outline-width: 0;
 	background-color: var(--white);

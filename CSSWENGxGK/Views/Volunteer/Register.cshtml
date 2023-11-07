@@ -28,6 +28,12 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="textbox">
+                <label>Password</label>
+                @* TODO: Add here *@
+                <input asp-for="Password" class="form-control forminput">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="textbox">
                 <label>Phone Number</label>
                 <input asp-for="MobileNumber" class="form-control forminput">
                 <span asp-validation-for="MobileNumber" class="text-danger"></span>
@@ -71,7 +77,7 @@
             <br>
             <div class="register-notify-container">
                 <label class="register-notify">Enable Email Notifications</label>
-                <input type="checkbox" class="register-checkbox" />
+                <input type="checkbox" asp-for="IsNotify" class="register-checkbox" />
             </div>
             <br>
             <div class="button">

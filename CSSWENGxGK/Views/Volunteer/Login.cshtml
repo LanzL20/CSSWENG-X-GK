@@ -1,4 +1,5 @@
-﻿@{
+@model LogInfo
+@{
     ViewData["Title"] = "Welcome to Gawad Kalinga";
 }
 
@@ -7,24 +8,28 @@
         Login
     </div>
 
-    <form method="post">
-        <div>
-            <label class="login-label">Email</label>
-            <input type="text" class="login-input" />
+    <form method="post" asp-controller="Volunteer" asp-action="Login">
+        <div class="form-group">
+            <label asp-for="Email" class="login-label"></label>
+            <input asp-for="Email" class="login-input" />
         </div>
-        <div>
-            <label class="login-label">Password</label>
-            <input type="password" class="login-input" />
+
+        <div class="form-group">
+            <label asp-for="Password" class="login-label"></label>
+            <input asp-for="Password" type="password" class="login-input" />
         </div>
         <br>
-        <div class="login-remember-container">
-            <label class="login-remember">Keep Me Logged In</label>
-            <input type="checkbox" class="login-checkbox" />
+        <div class="form-group login-remember-container">
+            <label class="login-remember">
+                Keep Me Logged In
+            </label>
+            <input asp-for="IsRemember" type="checkbox" class="login-checkbox"/>
         </div>
         <br>
         <div class="login-button">
             <button type="submit">Login</button>
         </div>
+
         <div class="link-text">
             <a asp-controller="Volunteer" asp-action="Register">Don't have an account? Register.</a>
         </div>

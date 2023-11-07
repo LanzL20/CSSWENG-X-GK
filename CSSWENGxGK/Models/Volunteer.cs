@@ -1,11 +1,9 @@
 using System;
-using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSSWENGxGK.Models
 {
-    public class Volunteer : IdentityUser
+    public class Volunteer
     {
         [Key]
         public int VolunteerID { get; set; }
@@ -22,6 +20,9 @@ namespace CSSWENGxGK.Models
         [EmailAddress(ErrorMessage = "Invalid Email Address.")]
         [StringLength(100, ErrorMessage = "Email should be less than 100 characters.")]
         public string Email { get; set; }
+
+        [Required]
+        public string Password{ get; set; }
 
         [Required(ErrorMessage = "Mobile Number is required.")]
         [RegularExpression(@"^(\+[0-9]{1,4}[\s-])?(?=[0-9\s-]*\b[0-9\s-]{7,20}\b)(?=[0-9\s-]*\b[0-9\s-]{7,20}\b)(\d+[\s-]?){7,20}$", ErrorMessage = "Invalid Mobile Number.")]
@@ -67,5 +68,8 @@ namespace CSSWENGxGK.Models
 
         [Required]
         public bool IsActive { get; set; }
+
+        [Required]
+        public bool IsNotify { get; set; }
     }
 }
