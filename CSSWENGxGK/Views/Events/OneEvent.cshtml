@@ -1,7 +1,16 @@
-﻿<div class="one-event-card">
+﻿@{
+    ViewData["Title"] = "Welcome to Gawad Kalinga";
+}
+
+<div class="one-event-card">
     <div class="one-event-top">
-        <div class="one-event-title">
-            @ViewBag.EventInfo.EventName
+        <div class="one-event-top-container">
+            <div class="one-event-title">
+                @ViewBag.EventInfo.EventName
+            </div>
+            <a asp-controller="Events" asp-action="AllEvents" class="one-event-edit material-symbols-outlined">
+                Edit
+            </a>
         </div>
         <a asp-controller="Events" asp-action="AllEvents" class="one-event-back">
             <- Back to Events

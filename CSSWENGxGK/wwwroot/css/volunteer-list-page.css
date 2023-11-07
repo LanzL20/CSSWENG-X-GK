@@ -38,7 +38,6 @@
 
 .list-scan > a {
     text-decoration: none;
-	font-family: Colfax;
 	font-size: var(--font-size-regular);
 	padding: 0.5em 1.5em;
 	max-width: 100%;

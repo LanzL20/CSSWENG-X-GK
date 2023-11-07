@@ -1,0 +1,221 @@
+.edit-one-event-card {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 5em 7em;
+	background-color: var(--white);
+	box-shadow: var(--drop-shadow);
+	border-radius: var(--corner-radius);
+}
+
+.edit-one-event-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.edit-one-event-title {
+	font-weight: bolder;
+	font-size: var(--font-size-header);
+	color: var(--accent);
+}
+
+.edit-one-event-body{
+    padding: 4em 5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-one-event-body > img{
+    position: relative;
+    align-self: center;
+    width: 80%;
+    padding-top: 45%;
+    margin-bottom: 2.5em;
+}
+
+.edit-one-event-textbox {
+	max-width: 100%;
+	width: 100%;
+}
+
+.edit-one-event-textbox > label {
+	font-size: var(--font-size-small);
+	color: var(--grey);
+	margin-top: 1em;
+}
+
+.edit-one-event-forminput {
+	border-radius: var(--corner-radius);
+	font-size: var(--font-size-regular);
+	box-shadow: var(--drop-shadow);
+	padding: 5px 10px;
+	outline-width: 0;
+	background-color: var(--white);
+	border: 4px solid var(--white);
+	margin-bottom: 0.2em;
+	width: 100%;
+	box-sizing: border-box;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.edit-one-event-forminput:focus {
+	border-color: var(--accent);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.edit-one-event-container{
+    margin-top: 2em;
+}
+
+.edit-one-event-contact{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.edit-one-event-contact-textbox {
+	max-width: 100%;
+	width: 100%;
+}
+
+.edit-one-event-contact-textbox > label {
+	font-size: 14px;
+	color: var(--grey);
+	margin-top: 1em;
+}
+
+.edit-one-event-contact-forminput {
+	border-radius: var(--corner-radius);
+	font-size: 16px;
+	box-shadow: var(--drop-shadow);
+	padding: 5px 10px;
+	outline-width: 0;
+	background-color: var(--white);
+	border: 4px solid var(--white);
+	margin-bottom: 0.2em;
+	width: 100%;
+	box-sizing: border-box;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.edit-one-event-contact-forminput:focus {
+	border-color: var(--accent);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.edit-one-event-button { 
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-self: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	width: 60%;
+}
+
+.edit-one-event-save-button {
+	font-family: var(--font-family);
+	font-size: var(--font-size-small);
+	padding: 0.5em 2em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--white);
+	background-color: var(--accent);
+	font-weight: bold;
+	outline: 0px solid;
+	text-decoration: none;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.edit-one-event-save-button:hover {
+	background-color: var(--white);
+	color: var(--accent);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.edit-one-event-save-button:active {
+	background-color: var(--white);
+	color: var(--accent);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+.edit-one-event-discard-button {
+	font-family: var(--font-family);
+	font-size: var(--font-size-small);
+	padding: 0.5em 2em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--accent);
+	background-color: var(--white);
+	font-weight: bold;
+	outline: 0px solid;
+	text-decoration: none;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.edit-one-event-discard-button:hover {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.edit-one-event-discard-button:active {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+/* For Mobile View */
+@media screen and (max-width: 900px) {
+	.edit-one-event-card {
+		padding: 4em 3em;
+	}
+	
+	.edit-one-event-body{
+		padding: 0.5em;
+	}
+	
+	.edit-one-event-body > img{
+		width: 100%;
+		padding-top: 56.25%;
+	}
+
+	.edit-one-event-contact{
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.edit-one-event-card {
+		padding: 3em 2em;
+	}
+
+	.edit-one-event-contact{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

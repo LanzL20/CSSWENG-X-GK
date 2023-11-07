@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\all-events-page.css"
     },
     {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\edit-one-event-page.css",
+      "PackagePath": "staticwebassets\\css\\edit-one-event-page.css"
+    },
+    {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\login-page.css",
       "PackagePath": "staticwebassets\\css\\login-page.css"
     },

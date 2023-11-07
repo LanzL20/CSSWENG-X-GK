@@ -124,4 +124,8 @@ public class EventsController : Controller
 
         return View();
     }
+
+    public IActionResult EditOneEvent(){
+        return View();
+    }
 }

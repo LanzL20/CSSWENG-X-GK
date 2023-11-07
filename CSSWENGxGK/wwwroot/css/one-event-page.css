@@ -16,10 +16,25 @@
     margin-bottom: 2em;
 }
 
+.one-event-top-container{
+	display: flex;
+	align-items: center;
+}
+
 .one-event-title {
 	font-weight: bolder;
 	font-size: var(--font-size-header);
 	color: var(--accent);
+}
+
+.one-event-edit {
+	text-decoration: none;
+	margin-left: 0.7em;
+	color: var(--black);
+}
+
+.one-event-edit:hover {
+	color: var(--black);
 }
 
 .one-event-back {
