@@ -201,8 +201,6 @@ public class EventsController : Controller
 					command.Parameters.AddWithValue("@GeneratedID", generatedID);
 
 					command.ExecuteNonQuery();
-
-
 				}
 			}
 		}
