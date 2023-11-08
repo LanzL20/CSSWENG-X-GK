@@ -129,6 +129,13 @@ public class EventsController : Controller
         }
     }
 
+    public IActionResult BackEvent()
+    {
+        // Get the selectedEvent from the session
+        int selectedEvent = HttpContext.Session.GetInt32("Selected_event") ?? -1;
+        return RedirectToAction("OneEvent", new { eventId = selectedEvent });
+    }
+
     public IActionResult VolunteerList()
     {
         int selectedEvent = -1;
