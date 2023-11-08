@@ -94,8 +94,7 @@
                 </div>
             </div>
         </div>
-        <form asp-controller="Volunteer" asp-action="Save_Profile_Changes" method="post">
-            <div id="profile_settings" class="profile-info-container">
+            <form asp-controller="Volunteer" asp-action="Save_Profile_Changes" method="post" id="profile_settings" class="profile-info-container">
                 <div class="profile-centered">
                     <div class="profile-horizontal">
                         <div class="profile-textbox">
@@ -158,7 +157,7 @@
                     <br>
                     <div class="profile-notify-container">
                         <label class="profile-notify">Enable Email Notifications</label>
-                        <input type="checkbox" asp-for="IsNotify" class="profile-checkbox" value = "@(ViewBag.IsNotify ? "checked" : "")" />
+                        <input type="checkbox" asp-for="IsNotify" class="profile-checkbox" checked= "@(ViewBag.IsNotify ? "checked" : null)" />
                     </div>
                     <br>
                     <div class="profile-button">
@@ -166,8 +165,7 @@
                         <button type="submit" class="profile-save-button">Save Changes</button>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
     </div>
 </div>
 
