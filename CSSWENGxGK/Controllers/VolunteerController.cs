@@ -22,7 +22,7 @@ namespace CSSWENGxGK.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
-        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -83,6 +83,13 @@ namespace CSSWENGxGK.Controllers
             string dataUri = "data:image/png;base64," + Convert.ToBase64String(qrCodeBytes);
 
             return dataUri;
+        }
+
+        public IActionResult Sign_Out()
+        {
+            HttpContext.Session.Clear();
+            Response.Cookies.Delete("MyCookie");
+            return RedirectToAction("Login");
         }
 
         public IActionResult Profile()
