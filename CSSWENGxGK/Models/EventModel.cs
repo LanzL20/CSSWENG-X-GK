@@ -22,6 +22,9 @@ namespace CSSWENGxGK.Models
 
         public string EventLongDesc { get; set; }
 
-        public enum EventStatus { ongoing, finished, canceled, }
+        public int EventStatus { get; set; }
+        // 0: "Ongoing"
+        // 1: "Finished"
+        // 2: "Canceled"
     }
 }
