@@ -148,64 +148,85 @@ namespace CSSWENGxGK.Controllers
             int userId = userIdNullable ?? 0;
 
 
-            if (userId != 0 && !EmailExists(model.Email))
+            if (userId != 0)
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-
-                    string updateQuery = "UPDATE T_Volunteer SET FirstName = @FirstName, LastName = @LastName, Email = @Email, MobileNumber = @MobileNumber, BirthDate = @BirthDate, Gender = @Gender, Country = @Country, PROV_CODE = @PROV_CODE, TOWN_CODE = @TOWN_CODE, BRGY_CODE = @BRGY_CODE, YearStarted = @YearStarted, LastUpdateDate = GETDATE(), IsNotify = @IsNotify WHERE VolunteerID = @VolunteerID";
-
-                    using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                    string query = "SELECT Email FROM T_Volunteer WHERE VolunteerID = @parsedVolunteerID";
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        updateCommand.Parameters.AddWithValue("@FirstName", model.FirstName);
-                        updateCommand.Parameters.AddWithValue("@LastName", model.LastName);
-                        updateCommand.Parameters.AddWithValue("@Email", model.Email);
-                        updateCommand.Parameters.AddWithValue("@MobileNumber", model.MobileNumber);
-                        updateCommand.Parameters.AddWithValue("@BirthDate", model.BirthDate);
-                        updateCommand.Parameters.AddWithValue("@Gender", model.Gender);
-                        updateCommand.Parameters.AddWithValue("@Country", model.Country);
-                        updateCommand.Parameters.AddWithValue("@PROV_CODE", model.PROV_CODE);
-                        updateCommand.Parameters.AddWithValue("@TOWN_CODE", model.TOWN_CODE);
-                        updateCommand.Parameters.AddWithValue("@BRGY_CODE", model.BRGY_CODE);
-                        updateCommand.Parameters.AddWithValue("@YearStarted", model.YearStarted);
-                        updateCommand.Parameters.AddWithValue("@IsNotify", model.IsNotify);
-                        updateCommand.Parameters.AddWithValue("@VolunteerID", model.VolunteerID);
 
-                        Console.WriteLine($"FirstName: {model.FirstName}");
-                        Console.WriteLine($"LastName: {model.LastName}");
-                        Console.WriteLine($"Email: {model.Email}");
-                        Console.WriteLine($"MobileNumber: {model.MobileNumber}");
-                        Console.WriteLine($"BirthDate: {model.BirthDate}");
-                        Console.WriteLine($"Gender: {model.Gender}");
-                        Console.WriteLine($"Country: {model.Country}");
-                        Console.WriteLine($"PROV_CODE: {model.PROV_CODE}");
-                        Console.WriteLine($"TOWN_CODE: {model.TOWN_CODE}");
-                        Console.WriteLine($"BRGY_CODE: {model.BRGY_CODE}");
-                        Console.WriteLine($"YearStarted: {model.YearStarted}");
-                        Console.WriteLine($"IsNotify: {model.IsNotify}");
-                        Console.WriteLine($"VolunteerID: {userId}");
+                        command.Parameters.AddWithValue("@parsedVolunteerID", userId);
 
-                        int rowsAffected = updateCommand.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            // The update was successful
-                            ViewBag.Message = "Profile updated successfully.";
-                            Console.WriteLine("Good");
-                        }
-                        else
-                        {
-                            // The update failed
-                            ViewBag.Message = "Failed to update the profile.";
-                            Console.WriteLine("Bad");
+                            if (reader.Read())
+                            {
+                                // The volunteer was found in the database
+                                var current_Email = reader["Email"];
+
+                                reader.Close();
+
+                                if (!EmailExists(model.Email) || model.Email.Equals(current_Email))
+                                {
+
+                                    string updateQuery = "UPDATE T_Volunteer SET FirstName = @FirstName, LastName = @LastName, Email = @Email, MobileNumber = @MobileNumber, BirthDate = @BirthDate, Gender = @Gender, Country = @Country, PROV_CODE = @PROV_CODE, TOWN_CODE = @TOWN_CODE, BRGY_CODE = @BRGY_CODE, YearStarted = @YearStarted, LastUpdateDate = GETDATE(), IsNotify = @IsNotify WHERE VolunteerID = @VolunteerID";
+
+                                    using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                                    {
+                                        updateCommand.Parameters.AddWithValue("@FirstName", model.FirstName);
+                                        updateCommand.Parameters.AddWithValue("@LastName", model.LastName);
+                                        updateCommand.Parameters.AddWithValue("@Email", model.Email);
+                                        updateCommand.Parameters.AddWithValue("@MobileNumber", model.MobileNumber);
+                                        updateCommand.Parameters.AddWithValue("@BirthDate", model.BirthDate);
+                                        updateCommand.Parameters.AddWithValue("@Gender", model.Gender);
+                                        updateCommand.Parameters.AddWithValue("@Country", model.Country);
+                                        updateCommand.Parameters.AddWithValue("@PROV_CODE", model.PROV_CODE);
+                                        updateCommand.Parameters.AddWithValue("@TOWN_CODE", model.TOWN_CODE);
+                                        updateCommand.Parameters.AddWithValue("@BRGY_CODE", model.BRGY_CODE);
+                                        updateCommand.Parameters.AddWithValue("@YearStarted", model.YearStarted);
+                                        updateCommand.Parameters.AddWithValue("@IsNotify", model.IsNotify);
+                                        Console.WriteLine(model.IsNotify);
+                                        updateCommand.Parameters.AddWithValue("@VolunteerID", userId);
+
+                                        try
+                                        {
+                                            int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                                            if (rowsAffected > 0)
+                                            {
+                                                // The update was successful, and rows were modified
+                                                Console.WriteLine("ACCEPED");
+                                            }
+                                            else
+                                            {
+                                                // The update was successful, but no rows were modified (likely because the data is unchanged)
+                                                Console.WriteLine("No changes were made");
+                                            }
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            // Handle the exception, e.g., log or display an error message
+                                            Console.WriteLine("Error: " + ex.Message);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    ViewBag.Message = "Email already exists. Please choose a different email.";
+                                    Console.WriteLine("Email conflict");
+                                }
+                            }
                         }
                     }
                 }
             }
-
             return RedirectToAction("Profile");
         }
+
+
+        
         
         [HttpPost]
         public async Task<IActionResult> VerifyVolunteerID(string Vol_ID)
