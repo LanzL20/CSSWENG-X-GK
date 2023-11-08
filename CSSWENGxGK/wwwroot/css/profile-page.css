@@ -24,6 +24,7 @@
 
 .profile-edit {
 	text-decoration: none;
+	cursor: pointer;
 	color: var(--black);
 }
 
@@ -262,6 +263,74 @@
 }
 
 .profile-discard-button:active {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+.profile-sign-out-button {
+	font-family: var(--font-family);
+	font-size: 16px;
+	padding: 0.5em 2em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--white);
+	background-color: var(--accent);
+	font-weight: bold;
+	outline: 0px solid;
+	text-decoration: none;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.profile-sign-out-button:hover {
+	background-color: var(--white);
+	color: var(--accent);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.profile-sign-out-button:active {
+	background-color: var(--white);
+	color: var(--accent);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+.profile-delete-button {
+	font-family: var(--font-family);
+	font-size: 16px;
+	padding: 0.5em 2em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--accent);
+	background-color: var(--white);
+	font-weight: bold;
+	outline: 0px solid;
+	text-decoration: none;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.profile-delete-button:hover {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.profile-delete-button:active {
 	background-color: var(--accent);
 	color: var(--white);
 	transition:all 10ms ease-out;

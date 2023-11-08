@@ -9,9 +9,9 @@
                 Profile
             </div>
         </div>
-        <button id="editButton" class="profile-edit" asp-controller="Events" asp-action="edit_profile">
+        <a id="editButton" class="profile-edit material-symbols-outlined">
             Edit
-        </button>
+        </a>
     </div>
 
     <div class="profile-body">
@@ -93,79 +93,84 @@
                     </div>
                 </div>
             </div>
+            <div class="profile-button">
+                <a class="profile-delete-button" href="#">Delete Account</a>
+                <a class="profile-sign-out-button" href="#">Sign Out</a>
+            </div>
         </div>
-            <form asp-controller="Volunteer" asp-action="Save_Profile_Changes" method="post" id="profile_settings" class="profile-info-container">
-                <div class="profile-centered">
-                    <div class="profile-horizontal">
-                        <div class="profile-textbox">
-                            <label>First Name</label>
-                            <input asp-for="FirstName" class="form-control profile-forminput" value="@ViewBag.FirstName">
-                        </div>
-                        <div class="profile-textbox">
-                            <label>Last Name</label>
-                            <input asp-for="LastName" class="form-control profile-forminput" value="@ViewBag.LastName">
-                            <span asp-validation-for="LastName" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="profile-textbox">
-                        <label>Email Address</label>
-                        <input asp-for="Email" class="form-control profile-forminput" value="@ViewBag.Email">
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                    <div class="profile-textbox">
-                        <label>Phone Number</label>
-                        <input asp-for="MobileNumber" class="form-control profile-forminput" value="@ViewBag.MobileNumber">
-                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
-                    </div>
-                    <div class="profile-textbox">
-                        <label>Birthday</label>
-                        <input asp-for="BirthDate" class="form-control profile-forminput" type="date" value="@((ViewBag.BirthDate as DateTime?)?.ToString("yyyy-MM-dd"))">
-                        <span asp-validation-for="BirthDate" class="text-danger"></span>
-                    </div>
-                    <div class="profile-textbox">
-                        <label>Gender</label>
-                        <select asp-for="Gender" class="form-control profile-forminput">
-                            <option value="Male" selected="@(ViewBag.Gender == "Male")">Male</option>
-                            <option value="Female" selected="@(ViewBag.Gender == "Female")">Female</option>
-                        </select>
 
-                        <span asp-validation-for="Gender" class="text-danger"></span>
-                    </div>
-                    @* TODO: Connect their given db *@
+        <form asp-controller="Volunteer" asp-action="Save_Profile_Changes" method="post" id="profile_settings" class="profile-info-container">
+            <div class="profile-centered">
+                <div class="profile-horizontal">
                     <div class="profile-textbox">
-                        <label>Country</label>
-                        <input asp-for="Country" class="form-control profile-forminput" value="@ViewBag.Country">
-                    </div>
-                    <div class="profile-textbox">
-                        <label>Province Code</label>
-                        <input asp-for="PROV_CODE" class="form-control profile-forminput" value="@ViewBag.Province">
+                        <label>First Name</label>
+                        <input asp-for="FirstName" class="form-control profile-forminput" value="@ViewBag.FirstName">
                     </div>
                     <div class="profile-textbox">
-                        <label>Town Code</label>
-                        <input asp-for="TOWN_CODE" class="form-control profile-forminput" value="@ViewBag.Town">
-                    </div>
-                    <div class="profile-textbox">
-                        <label>Barangay Code</label>
-                        <input asp-for="BRGY_CODE" class="form-control profile-forminput" value="@ViewBag.Barangay">
-                    </div>
-                    <div class="profile-textbox">
-                        @* TODO: Make year only *@
-                        <label>Year Started as GK Volunteer?</label>
-                        <input asp-for="YearStarted" class="form-control profile-forminput" value="@ViewBag.YearStarted">
-                        <span asp-validation-for="YearStarted" class="text-danger"></span>
-                    </div>
-                    <br>
-                    <div class="profile-notify-container">
-                        <label class="profile-notify">Enable Email Notifications</label>
-                        <input type="checkbox" asp-for="IsNotify" class="profile-checkbox" checked= "@(ViewBag.IsNotify ? "checked" : null)" />
-                    </div>
-                    <br>
-                    <div class="profile-button">
-                        <a asp-controller="Volunteer" asp-action="Profile" id="discardButton" class="profile-discard-button">Discard Changes</a>
-                        <button type="submit" class="profile-save-button">Save Changes</button>
+                        <label>Last Name</label>
+                        <input asp-for="LastName" class="form-control profile-forminput" value="@ViewBag.LastName">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
                 </div>
-            </form>
+                <div class="profile-textbox">
+                    <label>Email Address</label>
+                    <input asp-for="Email" class="form-control profile-forminput" value="@ViewBag.Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="profile-textbox">
+                    <label>Phone Number</label>
+                    <input asp-for="MobileNumber" class="form-control profile-forminput" value="@ViewBag.MobileNumber">
+                    <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                </div>
+                <div class="profile-textbox">
+                    <label>Birthday</label>
+                    <input asp-for="BirthDate" class="form-control profile-forminput" type="date" value="@((ViewBag.BirthDate as DateTime?)?.ToString("yyyy-MM-dd"))">
+                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+                </div>
+                <div class="profile-textbox">
+                    <label>Gender</label>
+                    <select asp-for="Gender" class="form-control profile-forminput">
+                        <option value="Male" selected="@(ViewBag.Gender == "Male")">Male</option>
+                        <option value="Female" selected="@(ViewBag.Gender == "Female")">Female</option>
+                    </select>
+
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                @* TODO: Connect their given db *@
+                <div class="profile-textbox">
+                    <label>Country</label>
+                    <input asp-for="Country" class="form-control profile-forminput" value="@ViewBag.Country">
+                </div>
+                <div class="profile-textbox">
+                    <label>Province Code</label>
+                    <input asp-for="PROV_CODE" class="form-control profile-forminput" value="@ViewBag.Province">
+                </div>
+                <div class="profile-textbox">
+                    <label>Town Code</label>
+                    <input asp-for="TOWN_CODE" class="form-control profile-forminput" value="@ViewBag.Town">
+                </div>
+                <div class="profile-textbox">
+                    <label>Barangay Code</label>
+                    <input asp-for="BRGY_CODE" class="form-control profile-forminput" value="@ViewBag.Barangay">
+                </div>
+                <div class="profile-textbox">
+                    @* TODO: Make year only *@
+                    <label>Year Started as GK Volunteer?</label>
+                    <input asp-for="YearStarted" class="form-control profile-forminput" value="@ViewBag.YearStarted">
+                    <span asp-validation-for="YearStarted" class="text-danger"></span>
+                </div>
+                <br>
+                <div class="profile-notify-container">
+                    <label class="profile-notify">Enable Email Notifications</label>
+                    <input type="checkbox" asp-for="IsNotify" class="profile-checkbox" checked= "@(ViewBag.IsNotify ? "checked" : null)" />
+                </div>
+                <br>
+                <div class="profile-button">
+                    <a asp-controller="Volunteer" asp-action="Profile" id="discardButton" class="profile-discard-button">Discard Changes</a>
+                    <button type="submit" class="profile-save-button">Save Changes</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
