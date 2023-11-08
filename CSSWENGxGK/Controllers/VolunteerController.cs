@@ -10,6 +10,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ZXing;
 using ZXing.Windows.Compatibility;
@@ -31,6 +32,18 @@ namespace CSSWENGxGK.Controllers
 
         public IActionResult Login()
         {
+            // Retrieve the value of "MyCookie" from the request's cookies
+            if (HttpContext.Request.Cookies.TryGetValue("MyCookie", out string cookieValue))
+            {
+                // Check if the "UserID" value is not null or empty
+                if (!string.IsNullOrEmpty(cookieValue) && int.TryParse(cookieValue, out int userId))
+                {
+                    // Store the user ID in the session
+                    HttpContext.Session.SetInt32("User_ID", userId);
+                    return RedirectToAction("Profile");
+                }
+            }
+
             return View();
         }
 
@@ -225,9 +238,6 @@ namespace CSSWENGxGK.Controllers
             return RedirectToAction("Profile");
         }
 
-
-        
-        
         [HttpPost]
         public async Task<IActionResult> VerifyVolunteerID(string Vol_ID)
         {
@@ -483,8 +493,22 @@ namespace CSSWENGxGK.Controllers
                                     // Retrieve the User_ID from the session with a default value of 0 if it's null this is for debugging
                                     int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
                                     int userId = userIdNullable ?? 0;
- 
+
                                     //await HttpContext.SignInAsync(user, isPersistent: true);
+                                    // Create a new cookie that expires in 30 days
+                                    var cookieOptions = new CookieOptions
+                                    {
+                                        Expires = DateTime.Now.AddDays(30), // Set the expiration date to 30 days from now
+                                        HttpOnly = true, // Make the cookie HTTP-only for security
+                                        IsEssential = true, // Mark the cookie as essential
+                                    };
+
+                                    // Store the userId in the cookie
+                                    if(remember)
+                                    {
+                                        HttpContext.Response.Cookies.Append("MyCookie", userId.ToString(), cookieOptions);
+                                    }
+
                                     return RedirectToAction("Profile");
                                 }
                                 else
