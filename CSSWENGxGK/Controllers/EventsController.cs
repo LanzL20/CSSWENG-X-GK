@@ -7,9 +7,8 @@ namespace CSSWENGxGK.Controllers;
 public class EventsController : Controller
 {
 	private readonly ApplicationDbContext _db;
-	string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
-
-	public EventsController(ApplicationDbContext db)
+	string connectionString = "Server=FRANCINECHAN\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+    public EventsController(ApplicationDbContext db)
 	{
 		_db = db;
 	}
@@ -143,21 +142,21 @@ public class EventsController : Controller
 	public IActionResult AddEvent(Event model)
 	{
 		if (ModelState.IsValid)
-		{
+        {
+            var events = _db.T_Event.Select(e => new Event
+            {
+                EventID = e.EventID
+            }).ToList();
 
-			Guid uniqueId = Guid.NewGuid();
-			byte[] bytes = uniqueId.ToByteArray();
+            int generatedID = events.Any() ? events.Max(e => e.EventID) + 1 : 1;
 
-			int generatedID = BitConverter.ToInt32(bytes, 0);
-			generatedID = Math.Abs(generatedID);
-
-			// Define the SQL insert query
-			string query = "SET IDENTITY_INSERT T_Event ON;" +
+            // Define the SQL insert query
+            string query = "SET IDENTITY_INSERT T_Event ON;" +
 						  "INSERT INTO T_Event (EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus) " +
 						  "VALUES (@GeneratedID, @EventName, @EventDate, @EventLocation, @EventShortDesc, @EventLongDesc, @EventStatus);" +
 						  "SET IDENTITY_INSERT T_Event OFF;";
 
-			using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
 			{
 				connection.Open();
 				using (SqlCommand command = new SqlCommand(query, connection))
@@ -169,12 +168,10 @@ public class EventsController : Controller
 					command.Parameters.AddWithValue("@EventShortDesc", model.EventShortDesc);
 					command.Parameters.AddWithValue("@EventLongDesc", model.EventLongDesc);
 					command.Parameters.AddWithValue("@EventStatus", 0);
-
-					command.ExecuteNonQuery();
-				}
+                }
 			}
-		}
+        }
 
-		return RedirectToAction("Register");
+		return View("../Home/Index");
 	}
 }
