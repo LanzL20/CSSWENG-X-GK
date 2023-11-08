@@ -1,4 +1,4 @@
-﻿@model Volunteer
+@model Volunteer
 @{
     ViewData["Title"] = "Welcome to Gawad Kalinga";
 }
@@ -9,24 +9,23 @@
                 Profile
             </div>
         </div>
-        <a asp-controller="Events" asp-action="AllEvents" class="profile-edit material-symbols-outlined">
+        <button id="editButton" class="profile-edit" asp-controller="Events" asp-action="edit_profile">
             Edit
-        </a>
+        </button>
     </div>
 
     <div class="profile-body">
         <div class="profile-qr-container">
             <div class="profile-qr">
-                @* TODO: Insert generated QR here *@
-                <img src="" /> 
+                <img id="qr-code-image" src="@ViewBag.QRCodeImageUrl" alt="QR Code" />
             </div>
             <div class="profile-save-qr-container">
-                <a class="profile-save-qr">Save QR</a>
+                <a class="profile-save-qr" id="save-qr-link" href="#">Save QR</a>
             </div>
         </div>
-        <div class="profile-info-container" >
+        <div id="profile_info" class="profile-info-container">
             <div class="profile-name">
-                Last Name, First Name
+                @ViewBag.LastName, @ViewBag.FirstName
             </div>
             <div class="profile-info">
                 <div class="profile-info-left">
@@ -63,110 +62,144 @@
                 </div>
                 <div class="profile-info-right">
                     <div class="profile-text-right">
-                        Volunteer ID:
+                        @ViewBag.VolunteerID
                     </div>
                     <div class="profile-text-right">
-                        Email:
+                        @ViewBag.Email
                     </div>
                     <div class="profile-text-right">
-                        Mobile Number:
+                        @ViewBag.MobileNumber
                     </div>
                     <div class="profile-text-right">
-                        Birthdate:
+                        @ViewBag.BirthDate.ToString("yyyy-MM-dd")
                     </div>
                     <div class="profile-text-right">
-                        Gender:
+                        @ViewBag.Gender
                     </div>
                     <div class="profile-text-right">
-                        Location:
+                        @ViewBag.Barangay, @ViewBag.Town, @ViewBag.Province, @ViewBag.Country
                     </div>
                     <div class="profile-text-right">
-                        Year Started:
+                        @ViewBag.YearStarted.ToString()
                     </div>
                     <div class="profile-text-right">
-                        Date Created:
+                        @ViewBag.CreatedDate.ToString()
                     </div>
                     <div class="profile-text-right">
-                        Last Updated:
+                        @ViewBag.LastUpdateDate.ToString()
                     </div>
                     <div class="profile-text-right">
-                        Enabled
+                        @(ViewBag.IsNotify ? "Enabled" : "Disabled")
                     </div>
                 </div>
             </div>
         </div>
-        <div class="profile-info-container" hidden>
-            <div class="profile-centered">
-                <div class="profile-horizontal">
-                    <div class="profile-textbox">
-                        <label>First Name</label>
-                        <input asp-for="FirstName" class="form-control profile-forminput">
+            <form asp-controller="Volunteer" asp-action="Save_Profile_Changes" method="post" id="profile_settings" class="profile-info-container">
+                <div class="profile-centered">
+                    <div class="profile-horizontal">
+                        <div class="profile-textbox">
+                            <label>First Name</label>
+                            <input asp-for="FirstName" class="form-control profile-forminput" value="@ViewBag.FirstName">
+                        </div>
+                        <div class="profile-textbox">
+                            <label>Last Name</label>
+                            <input asp-for="LastName" class="form-control profile-forminput" value="@ViewBag.LastName">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
                     </div>
                     <div class="profile-textbox">
-                        <label>Last Name</label>
-                        <input asp-for="LastName" class="form-control profile-forminput">
-                        <span asp-validation-for="LastName" class="text-danger"></span>
+                        <label>Email Address</label>
+                        <input asp-for="Email" class="form-control profile-forminput" value="@ViewBag.Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="profile-textbox">
+                        <label>Phone Number</label>
+                        <input asp-for="MobileNumber" class="form-control profile-forminput" value="@ViewBag.MobileNumber">
+                        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                    </div>
+                    <div class="profile-textbox">
+                        <label>Birthday</label>
+                        <input asp-for="BirthDate" class="form-control profile-forminput" type="date" value="@((ViewBag.BirthDate as DateTime?)?.ToString("yyyy-MM-dd"))">
+                        <span asp-validation-for="BirthDate" class="text-danger"></span>
+                    </div>
+                    <div class="profile-textbox">
+                        <label>Gender</label>
+                        <select asp-for="Gender" class="form-control profile-forminput">
+                            <option value="Male" selected="@(ViewBag.Gender == "Male")">Male</option>
+                            <option value="Female" selected="@(ViewBag.Gender == "Female")">Female</option>
+                        </select>
+
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    @* TODO: Connect their given db *@
+                    <div class="profile-textbox">
+                        <label>Country</label>
+                        <input asp-for="Country" class="form-control profile-forminput" value="@ViewBag.Country">
+                    </div>
+                    <div class="profile-textbox">
+                        <label>Province Code</label>
+                        <input asp-for="PROV_CODE" class="form-control profile-forminput" value="@ViewBag.Province">
+                    </div>
+                    <div class="profile-textbox">
+                        <label>Town Code</label>
+                        <input asp-for="TOWN_CODE" class="form-control profile-forminput" value="@ViewBag.Town">
+                    </div>
+                    <div class="profile-textbox">
+                        <label>Barangay Code</label>
+                        <input asp-for="BRGY_CODE" class="form-control profile-forminput" value="@ViewBag.Barangay">
+                    </div>
+                    <div class="profile-textbox">
+                        @* TODO: Make year only *@
+                        <label>Year Started as GK Volunteer?</label>
+                        <input asp-for="YearStarted" class="form-control profile-forminput" value="@ViewBag.YearStarted">
+                        <span asp-validation-for="YearStarted" class="text-danger"></span>
+                    </div>
+                    <br>
+                    <div class="profile-notify-container">
+                        <label class="profile-notify">Enable Email Notifications</label>
+                        <input type="checkbox" asp-for="IsNotify" class="profile-checkbox" checked= "@(ViewBag.IsNotify ? "checked" : null)" />
+                    </div>
+                    <br>
+                    <div class="profile-button">
+                        <a asp-controller="Volunteer" asp-action="Profile" id="discardButton" class="profile-discard-button">Discard Changes</a>
+                        <button type="submit" class="profile-save-button">Save Changes</button>
                     </div>
                 </div>
-                <div class="profile-textbox">
-                    <label>Email Address</label>
-                    <input asp-for="Email" class="form-control profile-forminput">
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-                <div class="profile-textbox">
-                    <label>Phone Number</label>
-                    <input asp-for="MobileNumber" class="form-control profile-forminput">
-                    <span asp-validation-for="MobileNumber" class="text-danger"></span>
-                </div>
-                <div class="profile-textbox">
-                    <label>Birthday</label>
-                    <input asp-for="BirthDate" class="form-control profile-forminput" type="date">
-                    <span asp-validation-for="BirthDate" class="text-danger"></span>
-                </div>
-                <div class="profile-textbox">
-                    <label>Gender</label>
-                    <select asp-for="Gender" class="form-control profile-forminput">
-                        <option value="" selected disabled hidden>Select Gender:</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                    <span asp-validation-for="Gender" class="text-danger"></span>
-                </div>
-                @* TODO: Connect their given db *@
-                <div class="profile-textbox">
-                    <label>Country</label>
-                    <input asp-for="Country" class="form-control profile-forminput">
-                </div>
-                <div class="profile-textbox">
-                    <label>Province Code</label>
-                    <input asp-for="PROV_CODE" class="form-control profile-forminput">
-                </div>
-                <div class="profile-textbox">
-                    <label>Town Code</label>
-                    <input asp-for="TOWN_CODE" class="form-control profile-forminput">
-                </div>
-                <div class="profile-textbox">
-                    <label>Barangay Code</label>
-                    <input asp-for="BRGY_CODE" class="form-control profile-forminput">
-                </div>
-                <div class="profile-textbox">
-                    @* TODO: Make year only *@
-                    <label>Year Started as GK Volunteer?</label>
-                    <input asp-for="YearStarted" class="form-control profile-forminput">
-                    <span asp-validation-for="YearStarted" class="text-danger"></span>
-                </div>
-                <br>
-                <div class="profile-notify-container">
-                    <label class="profile-notify">Enable Email Notifications</label>
-                    <input type="checkbox" class="profile-checkbox" />
-                </div>
-            <br>
-                <div class="profile-button">
-                    <a class="profile-discard-button">Discard Changes</a>
-                    <a class="profile-save-button">Save Changes</a>
-                </div>
-            </div>
-        </div>
+            </form>
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    // Get a reference to the "Save QR" link and the QR code image
+    const saveQrLink = document.getElementById("save-qr-link");
+    const qrCodeImage = document.getElementById("qr-code-image");
+
+    // Add a click event handler to the "Save QR" link
+    saveQrLink.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevent the default link behavior
+
+        // Create a new anchor element to trigger the download
+        const downloadLink = document.createElement("a");
+
+        // Combine the Volunteer ID with "qr-code.png" to create the filename
+        const fileName = `${@ViewBag.VolunteerID}-qr-code.png`;
+
+        downloadLink.href = qrCodeImage.src;
+        downloadLink.download = fileName; // Specify the filename for the downloaded image
+
+        // Trigger a click event on the download link
+        downloadLink.click();
+    });
+
+    $(document).ready(function () {
+        $("#profile_info").show();
+        $("#profile_settings").hide();
+        $("#editButton").click(function () {
+            $("#profile_info").hide();
+            $("#editButton").hide();
+            $("#profile_settings").show();
+        });
+    });
+</script>

@@ -6,6 +6,14 @@ using System;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using BCrypt.Net;
+using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using ZXing;
+using ZXing.Windows.Compatibility;
 
 namespace CSSWENGxGK.Controllers
 {
@@ -22,9 +30,20 @@ namespace CSSWENGxGK.Controllers
             _userManager = userManager;
         }
 
-
         public IActionResult Login()
         {
+            // Retrieve the value of "MyCookie" from the request's cookies
+            if (HttpContext.Request.Cookies.TryGetValue("MyCookie", out string cookieValue))
+            {
+                // Check if the "UserID" value is not null or empty
+                if (!string.IsNullOrEmpty(cookieValue) && int.TryParse(cookieValue, out int userId))
+                {
+                    // Store the user ID in the session
+                    HttpContext.Session.SetInt32("User_ID", userId);
+                    return RedirectToAction("Profile");
+                }
+            }
+
             return View();
         }
 
@@ -33,9 +52,96 @@ namespace CSSWENGxGK.Controllers
             return View();
         }
 
+
         public IActionResult Profile()
         {
             return View();
+        }
+        
+        public static string GenerateQRCode(string text, int size = 300)
+        {
+            var barcodeWriter = new BarcodeWriter();
+            barcodeWriter.Format = BarcodeFormat.QR_CODE;
+
+            // Encode the text as a QR code
+            var qrCodeBitmap = barcodeWriter.Write(text);
+
+            // Set the size of the QR code image
+            qrCodeBitmap = new Bitmap(qrCodeBitmap, new Size(size, size));
+
+            // Create a new bitmap without the border
+            var borderlessQRCodeBitmap = new Bitmap(qrCodeBitmap.Width, qrCodeBitmap.Height);
+            using (Graphics g = Graphics.FromImage(borderlessQRCodeBitmap))
+            {
+                g.Clear(Color.White);
+                g.DrawImage(qrCodeBitmap, Point.Empty);
+            }
+
+            // Convert the borderless QR code bitmap to a byte array
+            byte[] qrCodeBytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                borderlessQRCodeBitmap.Save(ms, ImageFormat.Png);
+                qrCodeBytes = ms.ToArray();
+            }
+
+            // Convert the byte array to a base64-encoded data URI
+            string dataUri = "data:image/png;base64," + Convert.ToBase64String(qrCodeBytes);
+
+            return dataUri;
+        }
+
+        public IActionResult Profile()
+        {
+            int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
+            int userId = userIdNullable ?? 0;
+
+            // Check if the user is logged in and has a valid userId
+            if (userId != 0)
+            {
+                string userIdString = userId.ToString();
+                string qrCodeImageUrl = GenerateQRCode(userIdString);
+
+                ViewBag.QRCodeImageUrl = qrCodeImageUrl;
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT VolunteerID, FirstName, LastName, Email, MobileNumber, BirthDate, Gender, Country, PROV_CODE, TOWN_CODE, BRGY_CODE, YearStarted, CreatedDate, LastUpdateDate, IsNotify FROM T_Volunteer WHERE VolunteerID = @parsedVolunteerID";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@parsedVolunteerID", userId);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // The volunteer was found in the database
+                                ViewBag.VolunteerID = reader["VolunteerID"];
+                                ViewBag.FirstName = reader["FirstName"];
+                                ViewBag.LastName = reader["LastName"];
+                                ViewBag.Email = reader["Email"];
+                                ViewBag.MobileNumber = reader["MobileNumber"];
+                                ViewBag.BirthDate = reader["BirthDate"];
+                                ViewBag.Gender = reader["Gender"];
+                                ViewBag.Country = reader["Country"];
+                                ViewBag.Province = reader["PROV_CODE"];
+                                ViewBag.Town = reader["TOWN_CODE"];
+                                ViewBag.Barangay = reader["BRGY_CODE"];
+                                ViewBag.YearStarted = reader["YearStarted"];
+                                ViewBag.CreatedDate = reader["CreatedDate"];
+                                ViewBag.LastUpdateDate = reader["LastUpdateDate"];
+                                ViewBag.IsNotify = reader["IsNotify"];
+                            }
+                        }
+                    }
+                }
+                return View();
+            }
+
+            return RedirectToAction("Login");
         }
 
         private bool EmailExists(string email)
@@ -52,7 +158,92 @@ namespace CSSWENGxGK.Controllers
                 }
             }
         }
-        
+
+        //Fix this function cant change to same email
+        [HttpPost]
+        public IActionResult Save_Profile_Changes(Volunteer model)
+        {
+            int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
+            int userId = userIdNullable ?? 0;
+
+
+            if (userId != 0)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT Email FROM T_Volunteer WHERE VolunteerID = @parsedVolunteerID";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@parsedVolunteerID", userId);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // The volunteer was found in the database
+                                var current_Email = reader["Email"];
+
+                                reader.Close();
+
+                                if (!EmailExists(model.Email) || model.Email.Equals(current_Email))
+                                {
+
+                                    string updateQuery = "UPDATE T_Volunteer SET FirstName = @FirstName, LastName = @LastName, Email = @Email, MobileNumber = @MobileNumber, BirthDate = @BirthDate, Gender = @Gender, Country = @Country, PROV_CODE = @PROV_CODE, TOWN_CODE = @TOWN_CODE, BRGY_CODE = @BRGY_CODE, YearStarted = @YearStarted, LastUpdateDate = GETDATE(), IsNotify = @IsNotify WHERE VolunteerID = @VolunteerID";
+
+                                    using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                                    {
+                                        updateCommand.Parameters.AddWithValue("@FirstName", model.FirstName);
+                                        updateCommand.Parameters.AddWithValue("@LastName", model.LastName);
+                                        updateCommand.Parameters.AddWithValue("@Email", model.Email);
+                                        updateCommand.Parameters.AddWithValue("@MobileNumber", model.MobileNumber);
+                                        updateCommand.Parameters.AddWithValue("@BirthDate", model.BirthDate);
+                                        updateCommand.Parameters.AddWithValue("@Gender", model.Gender);
+                                        updateCommand.Parameters.AddWithValue("@Country", model.Country);
+                                        updateCommand.Parameters.AddWithValue("@PROV_CODE", model.PROV_CODE);
+                                        updateCommand.Parameters.AddWithValue("@TOWN_CODE", model.TOWN_CODE);
+                                        updateCommand.Parameters.AddWithValue("@BRGY_CODE", model.BRGY_CODE);
+                                        updateCommand.Parameters.AddWithValue("@YearStarted", model.YearStarted);
+                                        updateCommand.Parameters.AddWithValue("@IsNotify", model.IsNotify);
+                                        Console.WriteLine(model.IsNotify);
+                                        updateCommand.Parameters.AddWithValue("@VolunteerID", userId);
+
+                                        try
+                                        {
+                                            int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                                            if (rowsAffected > 0)
+                                            {
+                                                // The update was successful, and rows were modified
+                                                Console.WriteLine("ACCEPED");
+                                            }
+                                            else
+                                            {
+                                                // The update was successful, but no rows were modified (likely because the data is unchanged)
+                                                Console.WriteLine("No changes were made");
+                                            }
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            // Handle the exception, e.g., log or display an error message
+                                            Console.WriteLine("Error: " + ex.Message);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    ViewBag.Message = "Email already exists. Please choose a different email.";
+                                    Console.WriteLine("Email conflict");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return RedirectToAction("Profile");
+        }
+
         [HttpPost]
         public async Task<IActionResult> VerifyVolunteerID(string Vol_ID)
         {
@@ -144,21 +335,21 @@ namespace CSSWENGxGK.Controllers
                                         firstName = "Volunteer",
                                         lastName = "Not Found"
                                     });
-                                        }
                                 }
                             }
                         }
-                        catch (Exception ex)
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle the exception, log it, or return a more meaningful error message
+                        return Json(new Successful_Volunteer
                         {
-                            // Handle the exception, log it, or return a more meaningful error message
-                            return Json(new Successful_Volunteer
-                            {
-                                found = false,
-                                volunteerID = 0,
-                                firstName = "Error",
-                                lastName = ex.Message
-                            });
-                        }
+                            found = false,
+                            volunteerID = 0,
+                            firstName = "Error",
+                            lastName = ex.Message
+                        });
+                    }
                 }
                 // Close the connection and dispose of resources here
             }
@@ -260,6 +451,7 @@ namespace CSSWENGxGK.Controllers
 
                          //create user and add role
                         await _userManager.CreateAsync(new_user, "Password123!");
+                        return RedirectToAction("Profile");
                     }
                 }
             }
@@ -284,10 +476,11 @@ namespace CSSWENGxGK.Controllers
                     string password = model.Password;
                     bool remember = model.IsRemember;
 
-                    string query = "SELECT Password FROM T_Volunteer WHERE Email = email";
-
+                    string query = "SELECT Password, VolunteerID FROM T_Volunteer WHERE Email = @Email";
+                    Console.WriteLine(email);
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+                        command.Parameters.AddWithValue("@Email", email);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -297,19 +490,32 @@ namespace CSSWENGxGK.Controllers
                                 if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
                                 {
                                     // Passwords match; user can be authenticated
-                                    Console.WriteLine("Success");
-
                                     if (reader["VolunteerID"] is int volunteerID)
                                     {
+                                        // If "VolunteerID" is an integer, assign it to volunteerID
                                         HttpContext.Session.SetInt32("User_ID", volunteerID);
                                     }
 
                                     // Retrieve the User_ID from the session with a default value of 0 if it's null this is for debugging
                                     int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
                                     int userId = userIdNullable ?? 0;
-                                    
+
                                     //await HttpContext.SignInAsync(user, isPersistent: true);
-                                    return RedirectToAction("Dashboard", "Home");
+                                    // Create a new cookie that expires in 30 days
+                                    var cookieOptions = new CookieOptions
+                                    {
+                                        Expires = DateTime.Now.AddDays(30), // Set the expiration date to 30 days from now
+                                        HttpOnly = true, // Make the cookie HTTP-only for security
+                                        IsEssential = true, // Mark the cookie as essential
+                                    };
+
+                                    // Store the userId in the cookie
+                                    if(remember)
+                                    {
+                                        HttpContext.Response.Cookies.Append("MyCookie", userId.ToString(), cookieOptions);
+                                    }
+
+                                    return RedirectToAction("Profile");
                                 }
                                 else
                                 {

@@ -23,6 +23,7 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromHours(2); // Set session timeout to 2 hours
     options.Cookie.HttpOnly = true; // Make the session cookie HTTP-only
     options.Cookie.IsEssential = true; // Mark the session cookie as essential
+    options.Cookie.Name = "UserCookie"; // Set the name of the session cookie
 });
 
 var app = builder.Build();
