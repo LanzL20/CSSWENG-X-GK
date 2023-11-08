@@ -1,4 +1,8 @@
-﻿<div class="list-card">
+﻿@{
+    ViewData["Title"] = "Welcome to Gawad Kalinga";
+}
+
+<div class="list-card">
     <div class="list-top">
         <div>
             <div class="list-title">
@@ -15,18 +19,25 @@
     <div class="list-body-container">
         @if (ViewBag.VolunteersInfo != null && ViewBag.VolunteersInfo.Count > 0)
         {
-        <h2>List of Volunteers Attending the Event:</h2>
-        <div class="list-body">
-            @foreach (var volunteer in ViewBag.VolunteersInfo)
-                {
-            <div class="list-volunteer">
-                @volunteer.FirstName @volunteer.LastName
+            int count = 1;
+            <div class="list-body">
+                <div class="list-label">
+                    Volunteer Name
+                </div>
+                <div class="list-label">
+                    Volunteer ID
+                </div>
+                @foreach (var volunteer in ViewBag.VolunteersInfo)
+                    {
+                    <div class="list-volunteer">
+                        @count) @volunteer.FirstName @volunteer.LastName
+                    </div>
+                    <div class="list-volunteer">
+                        @volunteer.VolunteerID
+                    </div>
+                    count++;
+                    }
             </div>
-            <div class="list-volunteer">
-                @volunteer.VolunteerID
-            </div>
-                }
-        </div>
         }
     </div>
 </div>

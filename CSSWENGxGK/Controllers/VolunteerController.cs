@@ -22,7 +22,7 @@ namespace CSSWENGxGK.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
-        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -52,6 +52,12 @@ namespace CSSWENGxGK.Controllers
             return View();
         }
 
+
+        public IActionResult Profile()
+        {
+            return View();
+        }
+        
         public static string GenerateQRCode(string text, int size = 300)
         {
             var barcodeWriter = new BarcodeWriter();

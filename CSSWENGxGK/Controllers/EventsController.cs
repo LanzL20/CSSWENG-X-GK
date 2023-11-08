@@ -181,6 +181,11 @@ public class EventsController : Controller
         return View();
     }
 
+
+    public IActionResult EditOneEvent(){
+        return View();
+    }
+
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult addEvent(Event model)

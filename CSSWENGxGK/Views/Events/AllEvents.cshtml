@@ -15,23 +15,6 @@
             <option value="">Alphabetical</option>
         </select>
     </div>
-    @*<div class="all-events-display">
-        <a class="all-events-individual-display" asp-controller="Events" asp-action="OneEvent" asp-route-eventId="1">
-            <img src="">
-            <h1 class="all-events-individual-title">Event Name</h1>
-            <p class="all-events-short-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis erat tellus, vel luctus urna faucibus et. Ut molestie, arcu ut vehicula convallis, eros lectus volutpat tortor, ut dignissim tellus felis vitae enim. Donec sed sem ac elit pretium consequat. Vivamus nunc velit, pharetra in lectus vel, feugiat rutrum arcu. Mauris rhoncus ultrices efficitur. Nam quis mauris at nibh fermentum tincidunt quis sed eros. Fusce sollicitudin et eros vel vehicula.</p>
-        </a>
-        <a class="all-events-individual-display" asp-controller="Events" asp-action="OneEvent" asp-route-eventId="2">
-            <img src="">
-            <h1 class="all-events-individual-title">Event Name</h1>
-            <p class="all-events-short-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis erat tellus, vel luctus urna faucibus et. Ut molestie, arcu ut vehicula convallis, eros lectus volutpat tortor, ut dignissim tellus felis vitae enim. Donec sed sem ac elit pretium consequat. Vivamus nunc velit, pharetra in lectus vel, feugiat rutrum arcu. Mauris rhoncus ultrices efficitur. Nam quis mauris at nibh fermentum tincidunt quis sed eros. Fusce sollicitudin et eros vel vehicula.</p>
-        </a>
-        <a class="all-events-individual-display" asp-controller="Events" asp-action="OneEvent" asp-route-eventId="3">
-            <img src="">
-            <h1 class="all-events-individual-title">Event Name</h1>
-            <p class="all-events-short-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis erat tellus, vel luctus urna faucibus et. Ut molestie, arcu ut vehicula convallis, eros lectus volutpat tortor, ut dignissim tellus felis vitae enim. Donec sed sem ac elit pretium consequat. Vivamus nunc velit, pharetra in lectus vel, feugiat rutrum arcu. Mauris rhoncus ultrices efficitur. Nam quis mauris at nibh fermentum tincidunt quis sed eros. Fusce sollicitudin et eros vel vehicula.</p>
-	</a>*@
-
         @* Individual Event Display Template *@
         @* <a class="all-events-individual-display" asp-controller="" asp-action="">
                 <img src="Image Link">
@@ -48,6 +31,10 @@
                     <p class="all-events-short-description">@eventItem.EventLongDesc</p>
                 </a>
             }
+        </div>
+
+        <div class="all-event-button">
+            <a href="">Add Event</a>
         </div>
     </div>
 </div>
