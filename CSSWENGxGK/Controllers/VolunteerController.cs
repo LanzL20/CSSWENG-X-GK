@@ -191,7 +191,7 @@ namespace CSSWENGxGK.Controllers
                                 if (!EmailExists(model.Email) || model.Email.Equals(current_Email))
                                 {
 
-                                    string updateQuery = "UPDATE T_Volunteer SET FirstName = @FirstName, LastName = @LastName, Email = @Email, MobileNumber = @MobileNumber, BirthDate = @BirthDate, Gender = @Gender, Country = @Country, PROV_CODE = @PROV_CODE, TOWN_CODE = @TOWN_CODE, BRGY_CODE = @BRGY_CODE, YearStarted = @YearStarted, LastUpdateDate = GETDATE(), IsNotify = @IsNotify WHERE VolunteerID = @VolunteerID";
+                                    string updateQuery = "UPDATE T_Volunteer SET FirstName = @FirstName, LastName = @LastName, Email = @Email, MobileNumber = @MobileNumber, BirthDate = @BirthDate, Gender = @Gender, Country = @Country, PROV_CODE = @PROV_CODE, TOWN_CODE = @TOWN_CODE, BRGY_CODE = @BRGY_CODE, YearStarted = @YearStarted, IsNotify = @IsNotify WHERE VolunteerID = @VolunteerID";
 
                                     using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
                                     {
