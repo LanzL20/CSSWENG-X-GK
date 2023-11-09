@@ -3,8 +3,15 @@ using CSSWENGxGK.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Web.Http;
+using Hangfire;
+using Hangfire.Storage;
+using Hangfire.SqlServer;
+using System.Data.SqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
+
+string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -25,6 +32,14 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; // Mark the session cookie as essential
     options.Cookie.Name = "UserCookie"; // Set the name of the session cookie
 });
+
+Hangfire.GlobalConfiguration.Configuration
+    .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
+    .UseSimpleAssemblyNameTypeSerializer()
+    .UseRecommendedSerializerSettings()
+    .UseSqlServerStorage("Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;");
+
+var Active_Checker = new ActiveChecker();
 
 var app = builder.Build();
 
@@ -50,4 +65,12 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.Run();
+
+
+RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Daily);
+
+// Start Hangfire server in the background
+using (var server = new BackgroundJobServer())
+{
+    app.Run();
+}
