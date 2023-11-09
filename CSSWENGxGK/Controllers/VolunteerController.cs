@@ -379,11 +379,7 @@ namespace CSSWENGxGK.Controllers
                     return RedirectToAction("Register");
                 }
 
-                Guid uniqueId = Guid.NewGuid();
-                byte[] bytes = uniqueId.ToByteArray();
-
-                int generatedID = BitConverter.ToInt32(bytes, 0);
-                generatedID = Math.Abs(generatedID);
+                string query2 = "SELECT COUNT(*) FROM T_Volunteer";
 
                 // Define the SQL insert query
                 string query = "SET IDENTITY_INSERT T_Volunteer ON;" +
@@ -394,6 +390,17 @@ namespace CSSWENGxGK.Controllers
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
+
+                    int count = 0;
+                    int generatedID = 0;
+
+                    using (SqlCommand command = new SqlCommand(query2, connection))
+                    {
+                        count = (int)command.ExecuteScalar();
+                        generatedID = count + 1;
+                    }
+
+
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@GeneratedID", generatedID);
@@ -466,7 +473,6 @@ namespace CSSWENGxGK.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LogInfo model)
         {
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -477,8 +483,9 @@ namespace CSSWENGxGK.Controllers
                     string password = model.Password;
                     bool remember = model.IsRemember;
 
-                    string query = "SELECT Password, VolunteerID FROM T_Volunteer WHERE Email = @Email";
+                    string query = "SELECT Password, VolunteerID, IsActive FROM T_Volunteer WHERE Email = @Email";
                     Console.WriteLine(email);
+
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Email", email);
@@ -487,41 +494,50 @@ namespace CSSWENGxGK.Controllers
                         {
                             if (reader.Read())
                             {
-                                string hashedPassword = reader["Password"].ToString();
-                                if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
+                                bool isActive = reader.GetBoolean(reader.GetOrdinal("IsActive"));
+
+                                if (isActive)
                                 {
-                                    // Passwords match; user can be authenticated
-                                    if (reader["VolunteerID"] is int volunteerID)
+                                    string hashedPassword = reader["Password"].ToString();
+
+                                    if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
                                     {
-                                        // If "VolunteerID" is an integer, assign it to volunteerID
-                                        HttpContext.Session.SetInt32("User_ID", volunteerID);
+                                        // Passwords match; user can be authenticated
+                                        if (reader["VolunteerID"] is int volunteerID)
+                                        {
+                                            // If "VolunteerID" is an integer, assign it to volunteerID
+                                            HttpContext.Session.SetInt32("User_ID", volunteerID);
+                                        }
+
+                                        // Retrieve the User_ID from the session with a default value of 0 if it's null (for debugging)
+                                        int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
+                                        int userId = userIdNullable ?? 0;
+
+                                        // Create a new cookie that expires in 30 days
+                                        var cookieOptions = new CookieOptions
+                                        {
+                                            Expires = DateTime.Now.AddDays(30), // Set the expiration date to 30 days from now
+                                            HttpOnly = true, // Make the cookie HTTP-only for security
+                                            IsEssential = true, // Mark the cookie as essential
+                                        };
+
+                                        // Store the userId in the cookie
+                                        if (remember)
+                                        {
+                                            HttpContext.Response.Cookies.Append("MyCookie", userId.ToString(), cookieOptions);
+                                        }
+
+                                        return RedirectToAction("Profile");
                                     }
-
-                                    // Retrieve the User_ID from the session with a default value of 0 if it's null this is for debugging
-                                    int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
-                                    int userId = userIdNullable ?? 0;
-
-                                    //await HttpContext.SignInAsync(user, isPersistent: true);
-                                    // Create a new cookie that expires in 30 days
-                                    var cookieOptions = new CookieOptions
+                                    else
                                     {
-                                        Expires = DateTime.Now.AddDays(30), // Set the expiration date to 30 days from now
-                                        HttpOnly = true, // Make the cookie HTTP-only for security
-                                        IsEssential = true, // Mark the cookie as essential
-                                    };
-
-                                    // Store the userId in the cookie
-                                    if(remember)
-                                    {
-                                        HttpContext.Response.Cookies.Append("MyCookie", userId.ToString(), cookieOptions);
+                                        Console.WriteLine("Fail");
+                                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                                     }
-
-                                    return RedirectToAction("Profile");
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Fail");
-                                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                                    ModelState.AddModelError(string.Empty, "Your account is not active. Please contact the administrator.");
                                 }
                             }
                             else
@@ -540,6 +556,7 @@ namespace CSSWENGxGK.Controllers
 
             return View(model);
         }
+
 
         public IActionResult edit_profile()
         {
