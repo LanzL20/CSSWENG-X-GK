@@ -1,6 +1,8 @@
 using CSSWENGxGK.Data;
 using CSSWENGxGK.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Data.SqlClient;
 
 namespace CSSWENGxGK.Controllers;
@@ -132,12 +134,58 @@ public class EventsController : Controller
 		return View();
 	}
 
-	public IActionResult EditOneEvent()
-	{
-		return View();
-	}
+    public IActionResult EditOneEvent(int EventID)
+    {
+		if (EventID > 0)
+		{
+			using (SqlConnection connection = new SqlConnection(connectionString))
+			{
+				connection.Open();
 
-	[HttpPost]
+				string query = $"SELECT EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus " +
+							   $"FROM T_Event WHERE EventID = {EventID}";
+
+				using (SqlCommand command = new SqlCommand(query, connection))
+				{
+
+					using (SqlDataReader reader = command.ExecuteReader())
+					{
+						if (reader.Read())
+						{
+							// The volunteer was found in the database
+							ViewBag.EventName = reader["EventName"];
+							ViewBag.EventDate = reader["EventDate"];
+							ViewBag.EventLocation = reader["EventLocation"];
+							ViewBag.EventShortDesc = reader["EventShortDesc"];
+							ViewBag.EventLongDesc = reader["EventLongDesc"];
+
+							if (reader["EventStatus"] != null)
+							{
+								string EventStatus = reader["EventStatus"].ToString();
+
+								if (EventStatus == "Ongoing")
+								{
+									ViewBag.EventStatus = 0;
+								}
+								else if (EventStatus == "Finished")
+								{
+									ViewBag.EventStatus = 1;
+								}
+								else if (EventStatus == "Canceled")
+								{
+									ViewBag.EventStatus = 2;
+								}
+                            }
+                        }
+                    }
+				}
+			}
+            return View(EventID.ToString());
+        }
+		return View("EditOneEvent");
+    }
+
+    [HttpPost]
 	[ValidateAntiForgeryToken]
 	public IActionResult AddEvent(Event model)
 	{
