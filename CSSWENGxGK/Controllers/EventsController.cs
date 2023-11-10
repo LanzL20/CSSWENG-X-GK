@@ -133,7 +133,7 @@ public class EventsController : Controller
 
 		return View();
 	}
-
+	/*
     public IActionResult EditOneEvent(int EventID)
     {
 		if (EventID > 0)
@@ -222,4 +222,5 @@ public class EventsController : Controller
 
 		return View("../Home/Index");
 	}
+	*/
 }

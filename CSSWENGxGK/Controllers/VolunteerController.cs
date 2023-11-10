@@ -22,6 +22,7 @@ namespace CSSWENGxGK.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
+        Emailer emailer = new Emailer();
         string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
@@ -489,6 +490,7 @@ namespace CSSWENGxGK.Controllers
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Email", email);
+                        //int OTP = emailer.Send_OTP(email);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
