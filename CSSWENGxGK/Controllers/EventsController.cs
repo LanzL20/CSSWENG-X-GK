@@ -255,6 +255,49 @@ public class EventsController : Controller
         return View("AllEvents");
     }
 
+    public IActionResult DeleteEvent(int EventID)
+    {
+        if (EventID > 0)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlTransaction transaction = connection.BeginTransaction();
+
+                try
+                {
+                    // Delete Organizer details for the corresponding event
+                    string deleteOrganizerQuery = "DELETE FROM T_Organizer WHERE EventID = @EventID";
+
+                    using (SqlCommand deleteOrganizerCommand = new SqlCommand(deleteOrganizerQuery, connection, transaction))
+                    {
+                        deleteOrganizerCommand.Parameters.AddWithValue("@EventID", EventID);
+                        deleteOrganizerCommand.ExecuteNonQuery();
+                    }
+
+                    // Delete Event details
+                    string deleteEventQuery = "DELETE FROM T_Event WHERE EventID = @EventID";
+
+                    using (SqlCommand deleteEventCommand = new SqlCommand(deleteEventQuery, connection, transaction))
+                    {
+                        deleteEventCommand.Parameters.AddWithValue("@EventID", EventID);
+                        deleteEventCommand.ExecuteNonQuery();
+                    }
+
+                    transaction.Commit();
+                    return RedirectToAction("AllEvents");
+                }
+                catch (Exception ex)
+                {
+                    // Roll back the transaction in case of an error
+                    transaction.Rollback();
+                }
+            }
+        }
+        return RedirectToAction("EditEvent");
+    }
+
     [HttpPost]
 	[ValidateAntiForgeryToken]
 	public IActionResult AddEvent(Event model)
