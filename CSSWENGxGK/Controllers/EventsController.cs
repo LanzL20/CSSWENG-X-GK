@@ -15,7 +15,41 @@ public class EventsController : Controller
 		_db = db;
 	}
 
-	public IActionResult AllEvents(int pageNumber = 1)
+    private int MapEventStatus(string EventStatus)
+    {
+        if (EventStatus == "Ongoing")
+        {
+            return 0;
+        }
+        else if (EventStatus == "Finished")
+        {
+            return 1;
+        }
+        else if (EventStatus == "Canceled")
+        {
+            return 2;
+        }
+        return -1;
+    }
+
+    private string ReadEventStatus(int EventStatus)
+    {
+        if (EventStatus == 0)
+        {
+            return "Ongoing";
+        }
+        else if (EventStatus == 1)
+        {
+            return "Finished";
+        }
+        else if (EventStatus == 2)
+        {
+            return "Canceled";
+        }
+        return "Not Found";
+    }
+
+    public IActionResult AllEvents(int pageNumber = 1)
 	{
 		pageNumber = HttpContext.Session.GetInt32("Page_number") ?? 1;
 		int pageSize = 9; // Number of events per page
@@ -133,56 +167,67 @@ public class EventsController : Controller
 
 		return View();
 	}
-	/*
+
     public IActionResult EditOneEvent(int EventID)
     {
-		if (EventID > 0)
-		{
-			using (SqlConnection connection = new SqlConnection(connectionString))
-			{
-				connection.Open();
+        if (EventID > 0)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
-				string query = $"SELECT EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus " +
-							   $"FROM T_Event WHERE EventID = {EventID}";
+                string query = $"SELECT EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus " +
+                               $"FROM T_Event WHERE EventID = {EventID}";
 
-				using (SqlCommand command = new SqlCommand(query, connection))
-				{
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+					int EventStatus = -1;
 
-					using (SqlDataReader reader = command.ExecuteReader())
-					{
-						if (reader.Read())
-						{
-							// The volunteer was found in the database
-							ViewBag.EventName = reader["EventName"];
-							ViewBag.EventDate = reader["EventDate"];
-							ViewBag.EventLocation = reader["EventLocation"];
-							ViewBag.EventShortDesc = reader["EventShortDesc"];
-							ViewBag.EventLongDesc = reader["EventLongDesc"];
-
-							if (reader["EventStatus"] != null)
-							{
-								string EventStatus = reader["EventStatus"].ToString();
-
-								if (EventStatus == "Ongoing")
-								{
-									ViewBag.EventStatus = 0;
-								}
-								else if (EventStatus == "Finished")
-								{
-									ViewBag.EventStatus = 1;
-								}
-								else if (EventStatus == "Canceled")
-								{
-									ViewBag.EventStatus = 2;
-								}
-                            }
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            ViewBag.EventID = reader["EventID"];
+                            ViewBag.EventName = reader["EventName"];
+                            ViewBag.EventDate = reader["EventDate"];
+                            ViewBag.EventLocation = reader["EventLocation"];
+                            ViewBag.EventShortDesc = reader["EventShortDesc"];
+                            ViewBag.EventLongDesc = reader["EventLongDesc"];
+							ViewBag.EventStatus = ReadEventStatus(Convert.ToInt32(reader["EventStatus"]));
                         }
                     }
-				}
-			}
+                }
+            }
             return View(EventID.ToString());
         }
-		return View("EditOneEvent");
+        return RedirectToAction("EditEvent");
+
+    }
+
+    [HttpPost]
+    public IActionResult EditEvent(Event updatedEvent)
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+			
+			int EventStatus = MapEventStatus(updatedEvent.EventStatus.ToString());
+
+            string updateQuery = $"UPDATE T_Event SET EventName = '{updatedEvent.EventName}', " +
+                                $"EventDate = '{updatedEvent.EventDate}', " +
+                                $"EventLocation = '{updatedEvent.EventLocation}', " +
+                                $"EventShortDesc = '{updatedEvent.EventShortDesc}', " +
+                                $"EventLongDesc = '{updatedEvent.EventLongDesc}', " +
+                                $"EventStatus = '{EventStatus} ' " +
+                                $"WHERE EventID = {updatedEvent.EventID}";
+
+            using (SqlCommand command = new SqlCommand(updateQuery, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
+
+        return View ("AllEvents");
     }
 
     [HttpPost]
@@ -222,5 +267,5 @@ public class EventsController : Controller
 
 		return View("../Home/Index");
 	}
-	*/
+
 }
