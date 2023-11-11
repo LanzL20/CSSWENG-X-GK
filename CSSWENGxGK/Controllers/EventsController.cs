@@ -176,58 +176,83 @@ public class EventsController : Controller
             {
                 connection.Open();
 
-                string query = $"SELECT EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus " +
-                               $"FROM T_Event WHERE EventID = {EventID}";
+                // Fetch Event details
+                string eventQuery = $"SELECT EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus " +
+                                   $"FROM T_Event WHERE EventID = {EventID}";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
                 {
-					int EventStatus = -1;
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlDataReader eventReader = eventCommand.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (eventReader.Read())
                         {
-                            ViewBag.EventID = reader["EventID"];
-                            ViewBag.EventName = reader["EventName"];
-                            ViewBag.EventDate = reader["EventDate"];
-                            ViewBag.EventLocation = reader["EventLocation"];
-                            ViewBag.EventShortDesc = reader["EventShortDesc"];
-                            ViewBag.EventLongDesc = reader["EventLongDesc"];
-							ViewBag.EventStatus = ReadEventStatus(Convert.ToInt32(reader["EventStatus"]));
+                            ViewBag.EventID = eventReader["EventID"];
+                            ViewBag.EventName = eventReader["EventName"];
+                            ViewBag.EventDate = eventReader["EventDate"];
+                            ViewBag.EventLocation = eventReader["EventLocation"];
+                            ViewBag.EventShortDesc = eventReader["EventShortDesc"];
+                            ViewBag.EventLongDesc = eventReader["EventLongDesc"];
+                            ViewBag.EventStatus = ReadEventStatus(Convert.ToInt32(eventReader["EventStatus"]));
+                        }
+                    }
+                }
+
+                // Fetch Organizer details for the corresponding event
+                string organizerQuery = $"SELECT Name, PhoneNumber, Email " +
+                                        $"FROM T_Organizer WHERE EventID = {EventID}";
+
+                using (SqlCommand organizerCommand = new SqlCommand(organizerQuery, connection))
+                {
+                    using (SqlDataReader organizerReader = organizerCommand.ExecuteReader())
+                    {
+                        if (organizerReader.Read())
+                        {
+                            ViewBag.OrganizerName = organizerReader["Name"];
+                            ViewBag.OrganizerPhoneNumber = organizerReader["PhoneNumber"];
+                            ViewBag.OrganizerEmail = organizerReader["Email"];
                         }
                     }
                 }
             }
+
             return View(EventID.ToString());
         }
         return RedirectToAction("EditEvent");
-
     }
 
     [HttpPost]
-    public IActionResult EditEvent(Event updatedEvent)
+    public IActionResult EditEvent(Event updatedEvent, Organizer updatedOrganizer)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
-			
-			int EventStatus = MapEventStatus(updatedEvent.EventStatus.ToString());
 
-            string updateQuery = $"UPDATE T_Event SET EventName = '{updatedEvent.EventName}', " +
-                                $"EventDate = '{updatedEvent.EventDate}', " +
-                                $"EventLocation = '{updatedEvent.EventLocation}', " +
-                                $"EventShortDesc = '{updatedEvent.EventShortDesc}', " +
-                                $"EventLongDesc = '{updatedEvent.EventLongDesc}', " +
-                                $"EventStatus = '{EventStatus} ' " +
-                                $"WHERE EventID = {updatedEvent.EventID}";
+            // Update Event details
+            string updateEventQuery = $"UPDATE T_Event SET EventName = '{updatedEvent.EventName}', " +
+                                    $"EventDate = '{updatedEvent.EventDate}', " +
+                                    $"EventLocation = '{updatedEvent.EventLocation}', " +
+                                    $"EventShortDesc = '{updatedEvent.EventShortDesc}', " +
+                                    $"EventLongDesc = '{updatedEvent.EventLongDesc}' " +
+                                    $"WHERE EventID = {updatedEvent.EventID}";
 
-            using (SqlCommand command = new SqlCommand(updateQuery, connection))
+            using (SqlCommand eventCommand = new SqlCommand(updateEventQuery, connection))
             {
-                command.ExecuteNonQuery();
+                eventCommand.ExecuteNonQuery();
+            }
+
+            // Update Organizer details for the corresponding event
+            string updateOrganizerQuery = $"UPDATE T_Organizer SET Name = '{updatedOrganizer.Name}', " +
+                                        $"PhoneNumber = '{updatedOrganizer.PhoneNumber}', " +
+                                        $"Email = '{updatedOrganizer.Email}' " +
+                                        $"WHERE EventID = {updatedEvent.EventID}";
+
+            using (SqlCommand organizerCommand = new SqlCommand(updateOrganizerQuery, connection))
+            {
+                organizerCommand.ExecuteNonQuery();
             }
         }
 
-        return View ("AllEvents");
+        return View("AllEvents");
     }
 
     [HttpPost]
