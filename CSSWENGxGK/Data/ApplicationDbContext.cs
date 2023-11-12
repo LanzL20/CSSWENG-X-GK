@@ -1,8 +1,10 @@
-using Microsoft.EntityFrameworkCore;
 using CSSWENGxGK.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace CSSWENGxGK.Data;
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<int>, int>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
@@ -13,11 +15,11 @@ public class ApplicationDbContext : DbContext
     public DbSet<Event> T_Event {  get; set; }
     public DbSet<Organizer> T_Organizer { get; set; }
     public DbSet<EventsAttended> T_EventsAttended { get; set; }
+    public DbSet<Role> T_Role { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<EventsAttended>()
-            .HasKey(e => new { e.EventID, e.VolunteerID });
-
-        // Other entity configurations and relationships
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<EventsAttended>().HasKey(e => new { e.EventID, e.VolunteerID });
+        modelBuilder.Entity<IdentityUserLogin<int>>().HasKey(l => new { l.LoginProvider, l.ProviderKey, l.UserId });
     }
 }
