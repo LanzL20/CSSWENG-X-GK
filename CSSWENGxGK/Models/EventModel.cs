@@ -1,11 +1,17 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSSWENGxGK.Models
 {
     public class Event
     {
+        public const int Ongoing = 1;
+        public const int Finished = 2;
+        public const int Canceled = 3;
+
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EventID { get; set; }
 
         [Required(ErrorMessage = "Event Name is required.")]
