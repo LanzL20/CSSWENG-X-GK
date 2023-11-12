@@ -11,8 +11,6 @@ using System.Data.SqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -37,7 +35,7 @@ Hangfire.GlobalConfiguration.Configuration
     .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
     .UseSimpleAssemblyNameTypeSerializer()
     .UseRecommendedSerializerSettings()
-    .UseSqlServerStorage("Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;");
+    .UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnection"));
 
 var Active_Checker = new ActiveChecker();
 
