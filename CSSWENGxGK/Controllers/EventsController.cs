@@ -211,7 +211,10 @@ public class EventsController : Controller
                             ViewBag.EventLocation = eventReader["EventLocation"];
                             ViewBag.EventShortDesc = eventReader["EventShortDesc"];
                             ViewBag.EventLongDesc = eventReader["EventLongDesc"];
-                            ViewBag.EventStatus = ReadEventStatus(Convert.ToInt32(eventReader["EventStatus"]));
+                            ViewBag.EventStatus = eventReader["EventStatus"];
+                            ViewBag.EventStatusString = ReadEventStatus(Convert.ToInt32(eventReader["EventStatus"]));
+
+                            Console.WriteLine(ViewBag.EventStatus);
                         }
 
                         Console.WriteLine(ViewBag.EventDate);
@@ -249,7 +252,7 @@ public class EventsController : Controller
         {
             connection.Open();
             DateTime eventDate = updatedEvent.EventDate;
-			string updateEventQuery = "UPDATE T_Event SET EventName = @EventName, EventDate = @EventDate, EventLocation = @EventLocation, EventShortDesc = @EventShortDesc, EventLongDesc = @EventLongDesc WHERE EventID = @EventID";
+			string updateEventQuery = "UPDATE T_Event SET EventName = @EventName, EventDate = @EventDate, EventLocation = @EventLocation, EventShortDesc = @EventShortDesc, EventLongDesc = @EventLongDesc, EventStatus = @EventStatus WHERE EventID = @EventID";
             Console.WriteLine(eventDate);
             Console.WriteLine(DateTime.MinValue);
             Console.WriteLine(eventDate <= DateTime.MinValue);
@@ -280,8 +283,10 @@ public class EventsController : Controller
 				eventCommand.Parameters.AddWithValue("@EventLocation", updatedEvent.EventLocation);
 				eventCommand.Parameters.AddWithValue("@EventShortDesc", updatedEvent.EventShortDesc);
 				eventCommand.Parameters.AddWithValue("@EventLongDesc", updatedEvent.EventLongDesc);
-				eventCommand.Parameters.AddWithValue("@EventID", updatedEvent.EventID);
-
+                eventCommand.Parameters.AddWithValue("@EventStatus", updatedEvent.EventStatus);
+                eventCommand.Parameters.AddWithValue("@EventID", updatedEvent.EventID);
+                Console.WriteLine("EventStatus:");
+                Console.WriteLine(updatedEvent.EventStatus);
 				eventCommand.ExecuteNonQuery();
 			}
 
@@ -358,26 +363,26 @@ public class EventsController : Controller
 
             int generatedID = events.Any() ? events.Max(e => e.EventID) + 1 : 1;
 
-            // Define the SQL insert query
-            string query = "SET IDENTITY_INSERT T_Event ON;" +
-						  "INSERT INTO T_Event (EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus) " +
-						  "VALUES (@GeneratedID, @EventName, @EventDate, @EventLocation, @EventShortDesc, @EventLongDesc, @EventStatus);" +
-						  "SET IDENTITY_INSERT T_Event OFF;";
+        // Define the SQL insert query
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "INSERT INTO T_Event (EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus) " +
+                           "VALUES (@GeneratedID, @EventName, @EventDate, @EventLocation, @EventShortDesc, @EventLongDesc, @EventStatus);";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@GeneratedID", generatedID);
+                command.Parameters.AddWithValue("@EventName", model.EventName);
+                command.Parameters.AddWithValue("@EventDate", model.EventDate);
+                command.Parameters.AddWithValue("@EventLocation", model.EventLocation);
+                command.Parameters.AddWithValue("@EventShortDesc", model.EventShortDesc);
+                command.Parameters.AddWithValue("@EventLongDesc", model.EventLongDesc);
+                command.Parameters.AddWithValue("@EventStatus", 0);
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-			{
-				connection.Open();
-				using (SqlCommand command = new SqlCommand(query, connection))
-				{
-					command.Parameters.AddWithValue("@GeneratedID", generatedID);
-					command.Parameters.AddWithValue("@EventName", model.EventName);
-					command.Parameters.AddWithValue("@EventDate", model.EventDate);
-					command.Parameters.AddWithValue("@EventLocation", model.EventLocation);
-					command.Parameters.AddWithValue("@EventShortDesc", model.EventShortDesc);
-					command.Parameters.AddWithValue("@EventLongDesc", model.EventLongDesc);
-					command.Parameters.AddWithValue("@EventStatus", 0);
-                }
+                command.ExecuteNonQuery(); // Executes the insert command
             }
+        }
+
 
         Console.WriteLine(generatedID);
 
