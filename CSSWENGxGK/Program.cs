@@ -8,6 +8,7 @@ using Hangfire;
 using Hangfire.Storage;
 using Hangfire.SqlServer;
 using System.Data.SqlClient;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,26 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; // Mark the session cookie as essential
     options.Cookie.Name = "UserCookie"; // Set the name of the session cookie
 });
+
+
+var serviceCollection = new ServiceCollection();
+var serviceProvider = builder.Services.BuildServiceProvider();
+var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole<int>>>();
+
+
+// Create admin role if it doesn't exist
+var adminRoleExists = await roleManager.RoleExistsAsync("Admin");
+if (!adminRoleExists)
+{
+    await roleManager.CreateAsync(new IdentityRole<int>("Admin"));
+}
+
+// Create user role if it doesn't exist
+var userRoleExists = await roleManager.RoleExistsAsync("User");
+if (!userRoleExists)
+{
+    await roleManager.CreateAsync(new IdentityRole<int>("User"));
+}
 
 Hangfire.GlobalConfiguration.Configuration
     .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
