@@ -1,63 +1,78 @@
-﻿@{
+﻿@model Event
+
+@{
     ViewData["Title"] = "Welcome to Gawad Kalinga";
 }
 
-<div class="edit-one-event-card">
-    <div class="edit-one-event-top">
-        <div class="edit-one-event-textbox">
-            <label>Title</label>
-            <input  class="form-control forminput">
-        </div>
-    </div>
-
-    <div class="edit-one-event-body">
-        <img src="">
-
-        <div class="edit-one-event-textbox">
-            <label>Preview Description</label>
-            <input  class="form-control edit-one-event-forminput">
-        </div>
-
-        <div class="edit-one-event-textbox">
-            <label>Full Description</label>
-            <input  class="form-control edit-one-event-forminput">
-        </div>
-
-        <div class="edit-one-event-container">
-            <div class="edit-one-event-textbox">
-                <label>Date & Time</label>
-                <input  class="form-control edit-one-event-forminput">
-            </div>
-            <div class="edit-one-event-textbox">
-                <label>Location</label>
-                <input  class="form-control edit-one-event-forminput">
+<form method="post" asp-action="EditEvent" id="edit_event" class="edit-one-event-card">
+    <div class="edit-one-event-card">
+        <div class="edit-one-event-top">
+			<input type="hidden" asp-for="EventID" value="@ViewBag.EventID" class="form-control profile-forminput">
+            
+            <div class="profile-textbox">
+                <label>Title</label>
+                <input asp-for="EventName" class="form-control profile-forminput" value="@ViewBag.EventName">
             </div>
         </div>
 
-        <div class="edit-one-event-container">
-            <p><strong>Organizers:</strong></p>
-            <div class="edit-one-event-contact">
-                <div>
-                    <div class="edit-one-event-contact-textbox">
-                        <label>Name</label>
-                        <input  class="form-control edit-one-event-contact-forminput">
-                    </div>
-                    <div class="edit-one-event-contact-textbox">
-                        <label>Contact Number</label>
-                        <input  class="form-control edit-one-event-contact-forminput">
-                    </div>
-                    <div class="edit-one-event-contact-textbox">
-                        <label>Email Address</label>
-                        <input  class="form-control edit-one-event-contact-forminput">
+        <div class="edit-one-event-body">
+            <img src="">
+
+            <div class="edit-one-event-textbox">
+                <label>Preview Description</label>
+                <input asp-for="EventShortDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventShortDesc">
+            </div>
+
+            <div class="edit-one-event-textbox">
+                <label>Full Description</label>
+                <input asp-for="EventLongDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventLongDesc">
+            </div>
+
+            <div class="edit-one-event-container">
+                <div class="edit-one-event-textbox">
+                    <label>Date & Time: @ViewBag.EventDate</label>
+                    <input asp-for="EventDate" class="form-control edit-one-event-forminput" value="@ViewBag.EventDate">
+                </div>
+                <div class="edit-one-event-textbox">
+                    <label>Location</label>
+                    <input asp-for="EventLocation" class="form-control edit-one-event-forminput" value="@ViewBag.EventLocation">
+                </div>
+                <div class="edit-one-event-textbox">
+                    <label>Status:</label>
+                    <select asp-for="EventStatus" class="form-control edit-one-event-forminput">
+                        <option value="@Event.Ongoing">Ongoing</option>
+                        <option value="@Event.Finished">Finished</option>
+                        <option value="@Event.Canceled">Canceled</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="edit-one-event-container">
+                <p><strong>Organizers:</strong></p>
+                <div class="edit-one-event-contact">
+                    <div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Name</label>
+                            <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerName">
+                        </div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Contact Number</label>
+                            <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerPhoneNumber">
+                        </div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Email Address</label>
+                            <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerEmail">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+			<div class="edit-one-event-button">
+                <a class="edit-one-event-discard-button">Discard Changes</a>
+				<button type="submit" class="edit-one-event-save-button">Save Changes</button>
+			</div>
 
-        <div class="edit-one-event-button">
-            <a class="edit-one-event-discard-button">Discard Changes</a>
-            <a class="edit-one-event-save-button">Save Changes</a>
         </div>
-
     </div>
-</div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

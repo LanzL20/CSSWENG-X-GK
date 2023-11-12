@@ -8,7 +8,8 @@
             <div class="one-event-title">
                 @ViewBag.EventInfo.EventName
             </div>
-            <a asp-controller="Events" asp-action="AllEvents" class="one-event-edit material-symbols-outlined">
+			<a asp-controller="Events" asp-action="EditOneEvent" asp-route-EventID="@ViewBag.EventInfo.EventID" class="one-event-edit material-symbols-outlined">
+
                 Edit
             </a>
         </div>
