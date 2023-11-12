@@ -1,0 +1,68 @@
+﻿@model Event
+
+@{
+    ViewData["Title"] = "Welcome to Gawad Kalinga";
+}
+
+<form method="post" asp-action="AddEvent" id="addevent" class="edit-one-event-card">
+    <div class="edit-one-event-card">
+        <div class="edit-one-event-top">
+            <div class="profile-textbox">
+                <label>Title</label>
+                <input asp-for="EventName" class="form-control profile-forminput">
+            </div>
+        </div>
+
+        <div class="edit-one-event-body">
+            <img src="">
+
+            <div class="edit-one-event-textbox">
+                <label>Preview Description</label>
+                <input asp-for="EventShortDesc" class="form-control edit-one-event-forminput">
+            </div>
+
+            <div class="edit-one-event-textbox">
+                <label>Full Description</label>
+                <input asp-for="EventLongDesc" class="form-control edit-one-event-forminput">
+            </div>
+
+            <div class="edit-one-event-container">
+                <div class="edit-one-event-textbox">
+                    <label>Date & Time: @ViewBag.EventDate</label>
+                    <input asp-for="EventDate" class="form-control edit-one-event-forminput">
+                </div>
+                <div class="edit-one-event-textbox">
+                    <label>Location</label>
+                    <input asp-for="EventLocation" class="form-control edit-one-event-forminput">
+                </div>
+            </div>
+
+            <div class="edit-one-event-container">
+                <p><strong>Organizers:</strong></p>
+                <div class="edit-one-event-contact">
+                    <div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Name</label>
+                            <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerName">
+                        </div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Contact Number</label>
+                            <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerPhoneNumber">
+                        </div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Email Address</label>
+                            <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerEmail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="edit-one-event-button">
+                <a class="edit-one-event-discard-button">Discard Changes</a>
+                <button type="submit" class="edit-one-event-save-button">Save Changes</button>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
