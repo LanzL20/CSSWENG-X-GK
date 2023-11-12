@@ -1,6 +1,8 @@
 using CSSWENGxGK.Data;
 using CSSWENGxGK.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Data.SqlClient;
@@ -9,7 +11,7 @@ namespace CSSWENGxGK.Controllers;
 public class EventsController : Controller
 {
 	private readonly ApplicationDbContext _db;
-	string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+	string connectionString = "Server=FRANCINECHAN\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
     public EventsController(ApplicationDbContext db)
 	{
 		_db = db;
@@ -168,17 +170,34 @@ public class EventsController : Controller
 		return View();
 	}
 
-    public IActionResult EditOneEvent(int EventID)
+    public IActionResult AddEvent()
     {
-        if (EventID > 0)
+        return View();
+    }
+
+    public IActionResult EditOneEvent(string eventId)
+    {
+
+		int selectedEvent = -1;
+
+		if (int.TryParse(eventId, out int eventIdValue))
+		{
+			HttpContext.Session.SetInt32("Selected_event", eventIdValue);
+			selectedEvent = HttpContext.Session.GetInt32("Selected_event") ?? -1;
+		}
+
+		Console.WriteLine(selectedEvent);
+
+		if (selectedEvent > 0)
         {
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
                 // Fetch Event details
                 string eventQuery = $"SELECT EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus " +
-                                   $"FROM T_Event WHERE EventID = {EventID}";
+                                   $"FROM T_Event WHERE EventID = {selectedEvent}";
 
                 using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
                 {
@@ -186,7 +205,7 @@ public class EventsController : Controller
                     {
                         if (eventReader.Read())
                         {
-                            ViewBag.EventID = eventReader["EventID"];
+                            ViewBag.EventID = selectedEvent;
                             ViewBag.EventName = eventReader["EventName"];
                             ViewBag.EventDate = eventReader["EventDate"];
                             ViewBag.EventLocation = eventReader["EventLocation"];
@@ -194,12 +213,14 @@ public class EventsController : Controller
                             ViewBag.EventLongDesc = eventReader["EventLongDesc"];
                             ViewBag.EventStatus = ReadEventStatus(Convert.ToInt32(eventReader["EventStatus"]));
                         }
+
+                        Console.WriteLine(ViewBag.EventDate);
                     }
                 }
 
                 // Fetch Organizer details for the corresponding event
                 string organizerQuery = $"SELECT Name, PhoneNumber, Email " +
-                                        $"FROM T_Organizer WHERE EventID = {EventID}";
+                                        $"FROM T_Organizer WHERE EventID = {selectedEvent}";
 
                 using (SqlCommand organizerCommand = new SqlCommand(organizerQuery, connection))
                 {
@@ -215,30 +236,54 @@ public class EventsController : Controller
                 }
             }
 
-            return View(EventID.ToString());
+            return View();
         }
-        return RedirectToAction("EditEvent");
+        return View();
     }
 
     [HttpPost]
     public IActionResult EditEvent(Event updatedEvent, Organizer updatedOrganizer)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+
+		using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
+            DateTime eventDate = updatedEvent.EventDate;
+			string updateEventQuery = "UPDATE T_Event SET EventName = @EventName, EventDate = @EventDate, EventLocation = @EventLocation, EventShortDesc = @EventShortDesc, EventLongDesc = @EventLongDesc WHERE EventID = @EventID";
+            Console.WriteLine(eventDate);
+            Console.WriteLine(DateTime.MinValue);
+            Console.WriteLine(eventDate <= DateTime.MinValue);
 
-            // Update Event details
-            string updateEventQuery = $"UPDATE T_Event SET EventName = '{updatedEvent.EventName}', " +
-                                    $"EventDate = '{updatedEvent.EventDate}', " +
-                                    $"EventLocation = '{updatedEvent.EventLocation}', " +
-                                    $"EventShortDesc = '{updatedEvent.EventShortDesc}', " +
-                                    $"EventLongDesc = '{updatedEvent.EventLongDesc}' " +
-                                    $"WHERE EventID = {updatedEvent.EventID}";
+            if (eventDate <= DateTime.MinValue || eventDate >= DateTime.MaxValue)
+            {
+                string eventQuery = $"SELECT EventDate " +
+                                       $"FROM T_Event WHERE EventID = {updatedEvent.EventID}";
+                using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
+                {
+                    using (SqlDataReader eventReader = eventCommand.ExecuteReader())
+                    {
+                        if (eventReader.Read())
+                        {
+                            eventDate = (DateTime)eventReader["EventDate"];
+                        }
+
+                        Console.WriteLine(eventDate);
+                    }
+                }
+            }
+
 
             using (SqlCommand eventCommand = new SqlCommand(updateEventQuery, connection))
-            {
-                eventCommand.ExecuteNonQuery();
-            }
+			{
+				eventCommand.Parameters.AddWithValue("@EventName", updatedEvent.EventName);
+				eventCommand.Parameters.AddWithValue("@EventDate", eventDate);
+				eventCommand.Parameters.AddWithValue("@EventLocation", updatedEvent.EventLocation);
+				eventCommand.Parameters.AddWithValue("@EventShortDesc", updatedEvent.EventShortDesc);
+				eventCommand.Parameters.AddWithValue("@EventLongDesc", updatedEvent.EventLongDesc);
+				eventCommand.Parameters.AddWithValue("@EventID", updatedEvent.EventID);
+
+				eventCommand.ExecuteNonQuery();
+			}
 
             // Update Organizer details for the corresponding event
             string updateOrganizerQuery = $"UPDATE T_Organizer SET Name = '{updatedOrganizer.Name}', " +
@@ -246,13 +291,17 @@ public class EventsController : Controller
                                         $"Email = '{updatedOrganizer.Email}' " +
                                         $"WHERE EventID = {updatedEvent.EventID}";
 
+            Console.WriteLine(updatedEvent.EventName);
+            Console.WriteLine("EventID:");
+            Console.WriteLine(updatedEvent.EventID);
+
             using (SqlCommand organizerCommand = new SqlCommand(updateOrganizerQuery, connection))
             {
                 organizerCommand.ExecuteNonQuery();
             }
         }
 
-        return View("AllEvents");
+        return RedirectToAction("AllEvents");
     }
 
     public IActionResult DeleteEvent(int EventID)
@@ -302,8 +351,6 @@ public class EventsController : Controller
 	[ValidateAntiForgeryToken]
 	public IActionResult AddEvent(Event model)
 	{
-		if (ModelState.IsValid)
-        {
             var events = _db.T_Event.Select(e => new Event
             {
                 EventID = e.EventID
@@ -330,10 +377,11 @@ public class EventsController : Controller
 					command.Parameters.AddWithValue("@EventLongDesc", model.EventLongDesc);
 					command.Parameters.AddWithValue("@EventStatus", 0);
                 }
-			}
-        }
+            }
 
-		return View("../Home/Index");
+        Console.WriteLine(generatedID);
+
+
+		return RedirectToAction("AllEvents");
 	}
-
 }
