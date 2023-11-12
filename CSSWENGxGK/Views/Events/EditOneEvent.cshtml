@@ -40,9 +40,10 @@
                 <div class="edit-one-event-textbox">
                     <label>Status:</label>
                     <select asp-for="EventStatus" class="form-control edit-one-event-forminput">
-                        <option value="@Event.Ongoing">Ongoing</option>
-                        <option value="@Event.Finished">Finished</option>
-                        <option value="@Event.Canceled">Canceled</option>
+                        <option value="@ViewBag.EventStatus">@ViewBag.EventStatusString</option>
+                        <option value="0">Ongoing</option>
+                        <option value="1">Finished</option>
+                        <option value="2">Canceled</option>
                     </select>
                 </div>
             </div>
