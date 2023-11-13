@@ -32,12 +32,11 @@ builder.Services.AddSession(options =>
     options.Cookie.Name = "UserCookie"; // Set the name of the session cookie
 });
 
-
 var serviceCollection = new ServiceCollection();
 var serviceProvider = builder.Services.BuildServiceProvider();
 var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole<int>>>();
 
-
+//Comment here
 // Create admin role if it doesn't exist
 var adminRoleExists = await roleManager.RoleExistsAsync("Admin");
 if (!adminRoleExists)
@@ -51,6 +50,7 @@ if (!userRoleExists)
 {
     await roleManager.CreateAsync(new IdentityRole<int>("User"));
 }
+// to here when initalizing the db
 
 Hangfire.GlobalConfiguration.Configuration
     .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
