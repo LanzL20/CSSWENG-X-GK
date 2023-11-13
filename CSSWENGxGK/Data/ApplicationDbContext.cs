@@ -11,11 +11,12 @@ public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<int>, i
         
     }
     public DbSet<Volunteer> T_Volunteer { get; set; }
-    public DbSet<User> T_User { get; set; }
     public DbSet<Event> T_Event {  get; set; }
     public DbSet<Organizer> T_Organizer { get; set; }
     public DbSet<EventsAttended> T_EventsAttended { get; set; }
     public DbSet<Role> T_Role { get; set; }
+    public DbSet<User> T_User { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
