@@ -106,6 +106,18 @@
 	color: var(--black);
 }
 
+.all-event-pagination{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2em;
+}
+
+.page-item > a{
+	cursor: pointer;
+	color: var(--black)
+}
+
 .all-event-button { 
 	display: flex; 
     margin-top: 2em;

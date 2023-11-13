@@ -159,9 +159,6 @@ namespace CSSWENGxGK.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<int>("user_id")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -228,6 +225,9 @@ namespace CSSWENGxGK.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
+                    b.Property<DateTime>("LastOtpTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("LastUpdateDate")
                         .HasColumnType("datetime2");
 
@@ -235,6 +235,9 @@ namespace CSSWENGxGK.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<bool>("OtpUsed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("PROV_CODE")
                         .IsRequired()

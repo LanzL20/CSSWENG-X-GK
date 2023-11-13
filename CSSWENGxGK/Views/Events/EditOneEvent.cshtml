@@ -25,7 +25,7 @@
 
         <div class="edit-one-event-textbox">
             <label>Full Description</label>
-            <textarea asp-for="EventLongDesc" class="form-control edit-one-event-forminput">@ViewBag.EventLongDesc</textarea>
+            <textarea asp-for="EventLongDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventLongDesc"></textarea>
         </div>
 
         <div class="edit-one-event-container">
@@ -40,7 +40,7 @@
             <div class="edit-one-event-textbox">
                 <label>Status:</label>
                 <select asp-for="EventStatus" class="form-control edit-one-event-forminput">
-                    <option value="@ViewBag.EventStatus">@ViewBag.EventStatusString</option>
+                    <option hidden disabled value="@ViewBag.EventStatus">@ViewBag.EventStatusString</option>
                     <option value="0">Ongoing</option>
                     <option value="1">Finished</option>
                     <option value="2">Canceled</option>
@@ -64,6 +64,9 @@
                         <label>Email Address</label>
                         <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerEmail">
                     </div>
+                </div>
+                <div class="edit-one-event-add-contact">
+                    <span class="material-symbols-outlined">add_box</span>
                 </div>
             </div>
         </div>

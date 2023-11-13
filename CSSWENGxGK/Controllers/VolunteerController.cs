@@ -23,7 +23,7 @@ namespace CSSWENGxGK.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
-        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -286,12 +286,10 @@ namespace CSSWENGxGK.Controllers
 
                                     reader.Close();
 
-                                    DateTime timeIn = DateTime.Now;
-                                    DateTime? timeOut = null;
                                     int selectedEvent = HttpContext.Session.GetInt32("Selected_event") ?? -1;
 
                                     // Insert the record into the T_EventsAttended table
-                                    string insertQuery = "INSERT INTO T_EventsAttended (VolunteerID, EventID, TimeIn, TimeOut) " + "VALUES (@VolunteerID, @EventID, @TimeIn, @TimeOut)";
+                                    string insertQuery = "INSERT INTO T_EventsAttended (VolunteerID, EventID) " + "VALUES (@VolunteerID, @EventID)";
 
                                     try
                                     {
@@ -301,8 +299,6 @@ namespace CSSWENGxGK.Controllers
 
                                             insertCommand.Parameters.AddWithValue("@VolunteerID", parsedVolunteerID);
                                             insertCommand.Parameters.AddWithValue("@EventID", selectedEvent);
-                                            insertCommand.Parameters.AddWithValue("@TimeIn", timeIn);
-                                            insertCommand.Parameters.AddWithValue("@TimeOut", DBNull.Value);
 
                                             int rowsAffected = insertCommand.ExecuteNonQuery();
 
@@ -412,7 +408,7 @@ namespace CSSWENGxGK.Controllers
                     using (SqlCommand command = new SqlCommand(query2, connection))
                     {
                         count = (int)command.ExecuteScalar();
-                        generatedID = count + 1;
+                        generatedID = count + 100000000;
                     }
 
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -492,9 +488,9 @@ namespace CSSWENGxGK.Controllers
                         Console.WriteLine($"Error in {entry.Key}: {entry.Value.Errors.First().ErrorMessage}");
                     }
                 }
-            }
 
-            return RedirectToAction("Register");
+                return View("Register", model);
+            }
         }
 
         private void MarkOtpAsUsed(int volunteerId)

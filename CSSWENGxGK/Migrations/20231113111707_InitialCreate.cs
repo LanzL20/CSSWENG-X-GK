@@ -11,64 +11,6 @@ namespace CSSWENGxGK.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "AccessFailedCount",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "ConcurrencyStamp",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "EmailConfirmed",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "LockoutEnabled",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "LockoutEnd",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "NormalizedEmail",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "NormalizedUserName",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "PasswordHash",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "PhoneNumber",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "PhoneNumberConfirmed",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "SecurityStamp",
-                table: "T_Volunteer");
-
-            migrationBuilder.DropColumn(
-                name: "UserName",
-                table: "T_Volunteer");
-
-            migrationBuilder.RenameColumn(
-                name: "TwoFactorEnabled",
-                table: "T_Volunteer",
-                newName: "IsNotify");
-
-            migrationBuilder.RenameColumn(
-                name: "Id",
-                table: "T_Volunteer",
-                newName: "Password");
-
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -90,7 +32,6 @@ namespace CSSWENGxGK.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    user_id = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -156,6 +97,37 @@ namespace CSSWENGxGK.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_T_Organizer", x => x.EventID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "T_Volunteer",
+                columns: table => new
+                {
+                    VolunteerID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MobileNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Gender = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    PROV_CODE = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    TOWN_CODE = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    BRGY_CODE = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    YearStarted = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastUpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsNotify = table.Column<bool>(type: "bit", nullable: false),
+                    OtpUsed = table.Column<bool>(type: "bit", nullable: false),
+                    LastOtpTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_T_Volunteer", x => x.VolunteerID);
                 });
 
             migrationBuilder.CreateTable(
@@ -333,96 +305,13 @@ namespace CSSWENGxGK.Migrations
                 name: "T_Organizer");
 
             migrationBuilder.DropTable(
+                name: "T_Volunteer");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.RenameColumn(
-                name: "Password",
-                table: "T_Volunteer",
-                newName: "Id");
-
-            migrationBuilder.RenameColumn(
-                name: "IsNotify",
-                table: "T_Volunteer",
-                newName: "TwoFactorEnabled");
-
-            migrationBuilder.AddColumn<int>(
-                name: "AccessFailedCount",
-                table: "T_Volunteer",
-                type: "int",
-                nullable: false,
-                defaultValue: 0);
-
-            migrationBuilder.AddColumn<string>(
-                name: "ConcurrencyStamp",
-                table: "T_Volunteer",
-                type: "nvarchar(max)",
-                nullable: true);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "EmailConfirmed",
-                table: "T_Volunteer",
-                type: "bit",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "LockoutEnabled",
-                table: "T_Volunteer",
-                type: "bit",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<DateTimeOffset>(
-                name: "LockoutEnd",
-                table: "T_Volunteer",
-                type: "datetimeoffset",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "NormalizedEmail",
-                table: "T_Volunteer",
-                type: "nvarchar(max)",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "NormalizedUserName",
-                table: "T_Volunteer",
-                type: "nvarchar(max)",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "PasswordHash",
-                table: "T_Volunteer",
-                type: "nvarchar(max)",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "PhoneNumber",
-                table: "T_Volunteer",
-                type: "nvarchar(max)",
-                nullable: true);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "PhoneNumberConfirmed",
-                table: "T_Volunteer",
-                type: "bit",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<string>(
-                name: "SecurityStamp",
-                table: "T_Volunteer",
-                type: "nvarchar(max)",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "UserName",
-                table: "T_Volunteer",
-                type: "nvarchar(max)",
-                nullable: true);
         }
     }
 }

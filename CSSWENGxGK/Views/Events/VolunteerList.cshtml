@@ -17,27 +17,27 @@
         <a asp-controller="Scan" asp-action="Scan">Record Attendance</a>
     </div>
     <div class="list-body-container">
-        @if (ViewBag.VolunteersInfo != null && ViewBag.VolunteersInfo.Count > 0)
-        {
-            int count = 1;
-            <div class="list-body">
-                <div class="list-label">
-                    Volunteer Name
-                </div>
-                <div class="list-label">
-                    Volunteer ID
-                </div>
-                @foreach (var volunteer in ViewBag.VolunteersInfo)
-                    {
-                    <div class="list-volunteer">
-                        @count) @volunteer.FirstName @volunteer.LastName
-                    </div>
-                    <div class="list-volunteer">
-                        @volunteer.VolunteerID
-                    </div>
-                    count++;
-                    }
+        <div class="list-body">
+            <div class="list-label">
+                Volunteer Name
             </div>
-        }
+            <div class="list-label">
+                Volunteer ID
+            </div>
+            @if (ViewBag.VolunteersInfo != null && ViewBag.VolunteersInfo.Count > 0)
+            {
+                int count = 1;
+                    @foreach (var volunteer in ViewBag.VolunteersInfo)
+                        {
+                        <div class="list-volunteer">
+                            @count) @volunteer.FirstName @volunteer.LastName
+                        </div>
+                        <div class="list-volunteer">
+                            @volunteer.VolunteerID
+                        </div>
+                        count++;
+                        }
+            }
+            </div>
     </div>
 </div>
