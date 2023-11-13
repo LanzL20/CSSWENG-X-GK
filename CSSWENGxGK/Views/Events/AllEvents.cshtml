@@ -26,7 +26,8 @@
             @foreach (var eventItem in Model)
             {
                 <a class="all-events-individual-display" asp-controller="Events" asp-action="OneEvent" asp-route-eventId="@eventItem.EventID">
-                    <img src="">
+                <img src="data:image/jpeg;base64,@Convert.ToBase64String(eventItem.EventImage)" alt="Event Image" style="padding-top: 0;"/>
+                <!-- Assuming images are JPEG; adjust data URI accordingly for different image types -->
                     <h1 class="all-events-individual-title">@eventItem.EventName</h1>
                     <p class="all-events-short-description">@eventItem.EventShortDesc</p>
                 </a>

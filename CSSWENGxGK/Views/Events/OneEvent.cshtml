@@ -23,7 +23,7 @@
     </div>
 
     <div class="one-event-body">
-        <img src="">
+        <img src="data:image/jpeg;base64,@Convert.ToBase64String(@ViewBag.EventInfo.EventImage)" alt="Event Image" style="padding-top: 0;" />
         <p>@ViewBag.EventInfo.EventLongDesc</p>
 
         <div class="one-event-container">

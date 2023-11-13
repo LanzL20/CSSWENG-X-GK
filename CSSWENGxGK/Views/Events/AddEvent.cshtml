@@ -4,7 +4,7 @@
     ViewData["Title"] = "Welcome to Gawad Kalinga";
 }
 
-<form method="post" asp-action="AddEvent" id="addevent" class="edit-one-event-card">
+<form method="post" asp-action="AddEvent" id="addevent" class="edit-one-event-card" enctype="multipart/form-data">
     <div class="edit-one-event-top">
         <div class="profile-textbox">
             <label>Title</label>
@@ -13,7 +13,13 @@
     </div>
 
     <div class="edit-one-event-body">
-        <img src="">
+        <img src="https://files.catbox.moe/bpyplc.png" alt="Current Event Image" id="current-image" style="padding-top: 0;">
+
+        
+        <div class="edit-one-event-textbox">
+            <label>Upload Image</label>
+            <input type="file" id="event-image" name="EventImage" class="form-control edit-one-event-forminput" accept="image/*">
+        </div>
 
         <div class="edit-one-event-textbox">
             <label>Preview Description</label>
@@ -67,3 +73,25 @@
 </form>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    const imageUpload = document.getElementById('event-image');
+    const currentImage = document.getElementById('current-image');
+
+    imageUpload.addEventListener('change', function () {
+        const file = imageUpload.files[0];
+
+        // Show preview if an image file is selected
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                currentImage.src = e.target.result;
+                currentImage.style.display = 'block';
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            currentImage.src = 'https://files.catbox.moe/bpyplc.png'; // Show the current image
+        }
+    });
+</script>
