@@ -14,6 +14,8 @@ namespace CSSWENGxGK.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EventID { get; set; }
 
+        public byte[] EventImage { get; set; }
+
         [Required(ErrorMessage = "Event Name is required.")]
         [StringLength(100, MinimumLength = 2, ErrorMessage = "Event Name should be between 2 and 100 characters.")]
         public string EventName { get; set; }
