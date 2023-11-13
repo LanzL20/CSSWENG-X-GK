@@ -82,7 +82,7 @@ app.UseSession(); // Add this line to enable sessions
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Volunteer}/{action=Register}/{id?}");
 
 RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Daily);
 

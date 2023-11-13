@@ -54,7 +54,7 @@ namespace CSSWENGxGK.Models
         public string BRGY_CODE { get; set; }
 
         [Required(ErrorMessage = "Year Started is required.")]
-        [Range(1900, 2100, ErrorMessage = "Year Started should be between 1900 and 2100.")]
+        [Range(1900, 2023, ErrorMessage = "Year Started should be between 1900 and 2023.")]
         public int YearStarted { get; set; }
 
         [Required]
