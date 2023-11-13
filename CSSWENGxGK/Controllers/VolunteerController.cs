@@ -23,7 +23,7 @@ namespace CSSWENGxGK.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
-        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -390,6 +390,13 @@ namespace CSSWENGxGK.Controllers
                     return RedirectToAction("Register");
                 }
 
+                bool real_email = await emailer.Send_Welcome(model.Email);
+
+                if (!real_email)
+                {
+                    return View("Register", model);
+                }
+
                 string query2 = "SELECT COUNT(*) FROM T_Volunteer";
 
                 // Define the SQL insert query
@@ -643,7 +650,7 @@ namespace CSSWENGxGK.Controllers
                                 using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
                                 {
                                     // Generate and send OTP
-                                    string OTP = emailer.Send_OTP(email);
+                                    string OTP = await emailer.Send_OTP(email);
 
                                     // Hash the OTP using BCrypt
                                     string hashedOTP = BCrypt.Net.BCrypt.HashPassword(OTP);

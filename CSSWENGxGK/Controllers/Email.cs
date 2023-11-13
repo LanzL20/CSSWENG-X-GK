@@ -1,29 +1,24 @@
 using System;
 using System.Net;
 using System.Net.Mail;
-using CSSWENGxGK.Data;
-using CSSWENGxGK.Models;
-using System.Threading;
+using System.Threading.Tasks;
 
 class Emailer
 {
-    public string Send_OTP(string recipientEmail)
+    private static string senderEmail = "CCAPDEV.LLL@outlook.com";
+    private static string senderAppPassword = "Larvi!n<_>";
+
+    public async Task<string> Send_OTP(string recipientEmail)
     {
         try
         {
-            // Your Outlook/Hotmail email address
-            string senderEmail = "CCAPDEV.LLL@outlook.com";
-
-            // Use an App Password or your Microsoft account password
-            string senderAppPassword = "Larvi!n<_>";
-
-            Random random = new Random();
-            string OTP_code = random.Next(100000, 1000000).ToString();
+            // Use a more secure method for OTP generation
+            string otp = GenerateOtp();
 
             var message = new MailMessage(senderEmail, recipientEmail)
             {
                 Subject = "Gawad Kalinga Login OTP",
-                Body = OTP_code,
+                Body = otp,
                 IsBodyHtml = false
             };
 
@@ -32,16 +27,52 @@ class Emailer
                 client.Port = 587;
                 client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
                 client.EnableSsl = true;
-                Thread.Sleep(5000);
-                client.Send(message);
-                return OTP_code;
+
+                // Remove Thread.Sleep
+                await client.SendMailAsync(message);
+                return otp;
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error sending test email: {ex.Message}");
+            Console.WriteLine($"Error sending OTP email: {ex.Message}");
             return "-1";
         }
     }
- 
+
+    public async Task<bool> Send_Welcome(string recipientEmail)
+    {
+        try
+        {
+            var message = new MailMessage(senderEmail, recipientEmail)
+            {
+                Subject = "Welcome to Gawad Kalinga",
+                Body = "Your account has been successfully registered. You may now login with this email address.",
+                IsBodyHtml = false
+            };
+
+            using (var client = new SmtpClient("smtp-mail.outlook.com"))
+            {
+                client.Port = 587;
+                client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
+                client.EnableSsl = true;
+
+                // Remove Thread.Sleep
+                await client.SendMailAsync(message);
+                return true;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending welcome email: {ex.Message}");
+            return false;
+        }
+    }
+
+    static string GenerateOtp()
+    {
+        // Use a more secure method for OTP generation, for example, using a cryptographic library
+        Random random = new Random();
+        return random.Next(100000, 1000000).ToString();
+    }
 }
