@@ -71,5 +71,11 @@ namespace CSSWENGxGK.Models
 
         [Required]
         public bool IsNotify { get; set; }
+
+        [Required]
+        public bool OtpUsed { get; set; } = false;
+
+        [Required]
+        public DateTime LastOtpTime { get; set; }
     }
 }
