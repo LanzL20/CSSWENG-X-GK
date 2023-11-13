@@ -259,7 +259,7 @@ namespace CSSWENGxGK.Controllers
                     {
                         connection.Open();
 
-                        string query = "SELECT VolunteerID, FirstName, LastName FROM T_Volunteer WHERE VolunteerID = @parsedVolunteerID";
+                        string query = "SELECT VolunteerID, FirstName, LastName, IsActive FROM T_Volunteer WHERE VolunteerID = @parsedVolunteerID";
 
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
@@ -274,6 +274,22 @@ namespace CSSWENGxGK.Controllers
                                     var volunteerID = reader["VolunteerID"];
                                     var firstName = reader["FirstName"];
                                     var lastName = reader["LastName"];
+                                    var Active = reader["IsActive"];
+
+
+                                    if (!(bool)Active)
+                                    {
+                                        // This block is executed if 'Active' is false.
+                                        // It returns a JSON object indicating an error condition.
+                                        return Json(new Successful_Volunteer
+                                        {
+                                            found = false,
+                                            volunteerID = 0,
+                                            firstName = "Volunteer",
+                                            lastName = "Not Found"
+                                        });
+                                    }
+
 
                                     Successful_Volunteer newVolunteer = new Successful_Volunteer
                                     {

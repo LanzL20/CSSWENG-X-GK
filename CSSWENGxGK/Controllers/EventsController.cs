@@ -55,8 +55,12 @@ public class EventsController : Controller
     {
         int pageSize = 9; // Number of events per page
 
-        pageNumber = HttpContext.Session.GetInt32("Page_number") ?? 1;
+        // Ensure that pageNumber is at least 1
+        pageNumber = HttpContext.Session.GetInt32("Page_number") ?? 1; ;
 
+        pageNumber = Math.Max(pageNumber, 1);
+
+        Console.WriteLine(pageNumber);
         // Query the database to retrieve the total number of events
         int totalEvents = _db.T_Event.Count();
 
@@ -79,6 +83,7 @@ public class EventsController : Controller
 
         return View(events);
     }
+
 
     public IActionResult OneEvent(string eventId)
 	{
