@@ -3,10 +3,11 @@ using System.Net;
 using System.Net.Mail;
 using CSSWENGxGK.Data;
 using CSSWENGxGK.Models;
+using System.Threading;
 
 class Emailer
 {
-    public int Send_OTP(string recipientEmail)
+    public string Send_OTP(string recipientEmail)
     {
         try
         {
@@ -17,12 +18,12 @@ class Emailer
             string senderAppPassword = "Larvi!n<_>";
 
             Random random = new Random();
-            int OTP_code = random.Next(100000, 1000000);
+            string OTP_code = random.Next(100000, 1000000).ToString();
 
             var message = new MailMessage(senderEmail, recipientEmail)
             {
                 Subject = "Gawad Kalinga Login OTP",
-                Body = OTP_code.ToString(),
+                Body = OTP_code,
                 IsBodyHtml = false
             };
 
@@ -31,7 +32,7 @@ class Emailer
                 client.Port = 587;
                 client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
                 client.EnableSsl = true;
-
+                Thread.Sleep(5000);
                 client.Send(message);
                 return OTP_code;
             }
@@ -39,7 +40,7 @@ class Emailer
         catch (Exception ex)
         {
             Console.WriteLine($"Error sending test email: {ex.Message}");
-            return -1;
+            return "-1";
         }
     }
  

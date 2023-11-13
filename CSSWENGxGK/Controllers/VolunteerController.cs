@@ -23,7 +23,7 @@ namespace CSSWENGxGK.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
-        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -369,13 +369,26 @@ namespace CSSWENGxGK.Controllers
             }
         }
 
+        private string GenerateRandomPassword()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var random = new Random();
+            var randomPassword = new string(Enumerable.Repeat(chars, 12) // Adjust the length as needed
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+
+            return randomPassword;
+        }
+
         //add verification like duplciate emails and other things
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(Volunteer model)
         {
+            model.Password = GenerateRandomPassword();
+
             if (ModelState.IsValid)
             {
+                Console.Write("VALID");
                 if (EmailExists(model.Email))
                 {
                     return RedirectToAction("Register");
@@ -385,8 +398,8 @@ namespace CSSWENGxGK.Controllers
 
                 // Define the SQL insert query
                 string query = "SET IDENTITY_INSERT T_Volunteer ON;" +
-                              "INSERT INTO T_Volunteer (VolunteerID, CreatedDate, LastUpdateDate, IsDeleted, IsActive, IsNotify, Password, FirstName, LastName, Email, MobileNumber, BirthDate, Gender, Country, PROV_CODE, TOWN_CODE, BRGY_CODE, YearStarted) " +
-                              "VALUES (@GeneratedID, @CreatedDate, @LastUpdateDate, @IsDeleted, @IsActive, @IsNotify, @Password, @FirstName, @LastName, @Email, @MobileNumber, @BirthDate, @Gender, @Country, @PROV_CODE, @TOWN_CODE, @BRGY_CODE, @YearStarted);" +
+                              "INSERT INTO T_Volunteer (VolunteerID, CreatedDate, LastUpdateDate, IsDeleted, IsActive, IsNotify, Password, FirstName, LastName, Email, MobileNumber, BirthDate, Gender, Country, PROV_CODE, TOWN_CODE, BRGY_CODE, YearStarted, LastOtpTime, OtpUsed) " +
+                              "VALUES (@GeneratedID, @CreatedDate, @LastUpdateDate, @IsDeleted, @IsActive, @IsNotify, @Password, @FirstName, @LastName, @Email, @MobileNumber, @BirthDate, @Gender, @Country, @PROV_CODE, @TOWN_CODE, @BRGY_CODE, @YearStarted, @LastOtpTime, @OtpUsed);" +
                               "SET IDENTITY_INSERT T_Volunteer OFF;";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -401,7 +414,6 @@ namespace CSSWENGxGK.Controllers
                         count = (int)command.ExecuteScalar();
                         generatedID = count + 1;
                     }
-
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -446,27 +458,38 @@ namespace CSSWENGxGK.Controllers
                         }
                         command.Parameters.AddWithValue("@YearStarted", model.YearStarted);
 
-                        command.ExecuteNonQuery();
+                        // Set LastOtpTime to now and OtpUsed to true
+                        command.Parameters.AddWithValue("@LastOtpTime", DateTime.Now);
+                        command.Parameters.AddWithValue("@OtpUsed", true);
 
-                        // change session user
-                        HttpContext.Session.SetInt32("User_ID", generatedID);
+                        command.ExecuteNonQuery();
 
                         var new_user = new User
                         {
-                            user_id = generatedID,
+
                         };
 
                         new_user.UserName = generatedID.ToString();
                         new_user.Email = model.Email;
 
-                         //create user and add role
+                        //create user and add role
                         await _userManager.CreateAsync(new_user, "Password123!");
                         await _userManager.AddToRoleAsync(new_user, "User");
 
                         var roles = await _userManager.GetRolesAsync(new_user);
                         Console.WriteLine($"Roles for user {new_user.UserName}: {string.Join(", ", roles)}");
 
-                        return RedirectToAction("Profile");
+                        return RedirectToAction("Login");
+                    }
+                }
+            }
+            else
+            {
+                foreach (var entry in ModelState)
+                {
+                    if (entry.Value.Errors.Any())
+                    {
+                        Console.WriteLine($"Error in {entry.Key}: {entry.Value.Errors.First().ErrorMessage}");
                     }
                 }
             }
@@ -474,8 +497,23 @@ namespace CSSWENGxGK.Controllers
             return RedirectToAction("Register");
         }
 
+        private void MarkOtpAsUsed(int volunteerId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
-        // find a way to generate user role
+                string updateQuery = "UPDATE T_Volunteer SET OtpUsed = 1, LastOtpTime = @CurrentTime WHERE VolunteerID = @VolunteerID";
+
+                using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                {
+                    updateCommand.Parameters.AddWithValue("@CurrentTime", DateTime.Now);
+                    updateCommand.Parameters.AddWithValue("@VolunteerID", volunteerId);
+
+                    updateCommand.ExecuteNonQuery();
+                }
+            }
+        }
 
         [HttpPost]
         public async Task<IActionResult> Login(LogInfo model)
@@ -490,57 +528,71 @@ namespace CSSWENGxGK.Controllers
                     string password = model.Password;
                     bool remember = model.IsRemember;
 
-                    string query = "SELECT Password, VolunteerID, IsActive FROM T_Volunteer WHERE Email = @Email";
-                    Console.WriteLine(email);
+                    string query = "SELECT Password, VolunteerID, IsActive, OtpUsed, LastOtpTime FROM T_Volunteer WHERE Email = @Email";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Email", email);
-                        //int OTP = emailer.Send_OTP(email);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
                                 bool isActive = reader.GetBoolean(reader.GetOrdinal("IsActive"));
+                                bool otpUsed = reader.GetBoolean(reader.GetOrdinal("OtpUsed"));
+                                DateTime lastOtpTime = reader.GetDateTime(reader.GetOrdinal("LastOtpTime"));
 
                                 if (isActive)
                                 {
-                                    string hashedPassword = reader["Password"].ToString();
-
-                                    if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
+                                    // Check if the OTP was generated more than 5 minutes ago
+                                    if ((DateTime.Now - lastOtpTime).TotalMinutes > 5)
                                     {
-                                        // Passwords match; user can be authenticated
-                                        if (reader["VolunteerID"] is int volunteerID)
-                                        {
-                                            // If "VolunteerID" is an integer, assign it to volunteerID
-                                            HttpContext.Session.SetInt32("User_ID", volunteerID);
-                                        }
-
-                                        // Retrieve the User_ID from the session with a default value of 0 if it's null (for debugging)
-                                        int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
-                                        int userId = userIdNullable ?? 0;
-
-                                        // Create a new cookie that expires in 30 days
-                                        var cookieOptions = new CookieOptions
-                                        {
-                                            Expires = DateTime.Now.AddDays(30), // Set the expiration date to 30 days from now
-                                            HttpOnly = true, // Make the cookie HTTP-only for security
-                                            IsEssential = true, // Mark the cookie as essential
-                                        };
-
-                                        // Store the userId in the cookie
-                                        if (remember)
-                                        {
-                                            HttpContext.Response.Cookies.Append("MyCookie", userId.ToString(), cookieOptions);
-                                        }
-
-                                        return RedirectToAction("Profile");
+                                        ModelState.AddModelError(string.Empty, "The OTP has expired. Please generate a new one.");
+                                    }
+                                    else if (otpUsed)
+                                    {
+                                        ModelState.AddModelError(string.Empty, "The OTP has already been used. Please generate a new one.");
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Fail");
-                                        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                                        string hashedPassword = reader["Password"].ToString();
+
+                                        if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
+                                        {
+
+                                            // Passwords match; user can be authenticated
+                                            if (reader["VolunteerID"] is int volunteerID)
+                                            {
+                                                // If "VolunteerID" is an integer, assign it to volunteerID
+                                                HttpContext.Session.SetInt32("User_ID", volunteerID);
+                                            }
+
+                                            // Retrieve the User_ID from the session with a default value of 0 if it's null (for debugging)
+                                            int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
+                                            int userId = userIdNullable ?? 0;
+
+                                            MarkOtpAsUsed(userId);
+                                            // Create a new cookie that expires in 30 days
+                                            var cookieOptions = new CookieOptions
+                                            {
+                                                Expires = DateTime.Now.AddDays(30), // Set the expiration date to 30 days from now
+                                                HttpOnly = true, // Make the cookie HTTP-only for security
+                                                IsEssential = true, // Mark the cookie as essential
+                                            };
+
+                                            // Store the userId in the cookie
+                                            if (remember)
+                                            {
+                                                HttpContext.Response.Cookies.Append("MyCookie", userId.ToString(), cookieOptions);
+                                            }
+
+                                            return RedirectToAction("Profile");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Fail");
+                                            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                                        }
                                     }
                                 }
                                 else
@@ -563,6 +615,68 @@ namespace CSSWENGxGK.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GenerateOtp(string email)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+  
+                    // Step 1: Retrieve VolunteerID based on the email
+                    string selectQuery = "SELECT VolunteerID FROM T_Volunteer WHERE Email = @Email";
+
+                    using (SqlCommand selectCommand = new SqlCommand(selectQuery, connection))
+                    {
+                        selectCommand.Parameters.AddWithValue("@Email", email);
+
+                        using (SqlDataReader reader = selectCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int volunteerId = reader.GetInt32(0);
+
+                                reader.Close();
+
+                                // Step 2: Update user information with OTP
+                                string updateQuery = "UPDATE T_Volunteer SET Password = @Otp, OtpUsed = 0, LastOtpTime = @CurrentTime WHERE VolunteerID = @VolunteerID";
+
+                                using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                                {
+                                    // Generate and send OTP
+                                    string OTP = emailer.Send_OTP(email);
+
+                                    // Hash the OTP using BCrypt
+                                    string hashedOTP = BCrypt.Net.BCrypt.HashPassword(OTP);
+
+                                    // Set parameters for the update command
+                                    updateCommand.Parameters.AddWithValue("@Otp", hashedOTP); // Fix: Use consistent parameter name
+                                    updateCommand.Parameters.AddWithValue("@CurrentTime", DateTime.Now);
+                                    updateCommand.Parameters.AddWithValue("@VolunteerID", volunteerId);
+
+                                    // Execute the update command
+                                    updateCommand.ExecuteNonQuery();
+                                }
+
+                            }
+                            else
+                            {
+                                // Handle the case when no user is found with the provided email
+                                ModelState.AddModelError(string.Empty, "User not found.");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Exception occurred: " + ex.ToString());
+                    ModelState.AddModelError(string.Empty, "An error occurred while processing your request.");
+                }
+            }
+            return Ok(new { message = "OTP generated successfully" });
         }
 
 
