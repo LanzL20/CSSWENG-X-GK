@@ -11,7 +11,7 @@ namespace CSSWENGxGK.Controllers;
 public class EventsController : Controller
 {
 	private readonly ApplicationDbContext _db;
-	string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+	string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
     public EventsController(ApplicationDbContext db)
 	{
 		_db = db;
@@ -52,32 +52,35 @@ public class EventsController : Controller
     }
 
     public IActionResult AllEvents(int pageNumber = 1)
-	{
-		pageNumber = HttpContext.Session.GetInt32("Page_number") ?? 1;
-		int pageSize = 9; // Number of events per page
+    {
+        int pageSize = 9; // Number of events per page
 
-		// Calculate the start and end index for the events to retrieve
-		int startIndex = (pageNumber - 1) * pageSize;
-		int endIndex = pageNumber * pageSize;
+        pageNumber = HttpContext.Session.GetInt32("Page_number") ?? 1;
 
-		// Query the database to retrieve the events in the specified range
-		var events = _db.T_Event
-			.OrderBy(e => e.EventID)
-			.Skip(startIndex)
-			.Take(pageSize)
-			.Select(e => new Event
-			{
-				EventID = e.EventID, // Store the EventID
-				EventName = e.EventName,
-				EventShortDesc = e.EventShortDesc
-			})
-			.ToList();
+        // Query the database to retrieve the total number of events
+        int totalEvents = _db.T_Event.Count();
 
-		// Pass the list of events to the view
-		return View(events);
-	}
+        // Calculate the start and end index for the events to retrieve
+        int startIndex = (pageNumber - 1) * pageSize;
+        int endIndex = pageNumber * pageSize;
 
-	public IActionResult OneEvent(string eventId)
+        // Query the database to retrieve the events in the specified range
+        var events = _db.T_Event
+            .OrderByDescending(e => e.EventID)
+            .Skip(startIndex)
+            .Take(pageSize)
+            .Select(e => new Event
+            {
+                EventID = e.EventID, // Store the EventID
+                EventName = e.EventName,
+                EventShortDesc = e.EventShortDesc
+            })
+            .ToList();
+
+        return View(events);
+    }
+
+    public IActionResult OneEvent(string eventId)
 	{
 		int selectedEvent = -1;
 
@@ -391,4 +394,51 @@ public class EventsController : Controller
 
 		return RedirectToAction("AllEvents");
 	}
+
+    public IActionResult EventPagePrevious()
+    {
+        // Get the current page number from the session, default to 1 if not set
+        int pageNumber = HttpContext.Session.GetInt32("Page_number") ?? 1;
+
+        // Set page_number to max(1, page_number - 1)
+        pageNumber = Math.Max(1, pageNumber - 1);
+
+        // Update the session with the new page number
+        HttpContext.Session.SetInt32("Page_number", pageNumber);
+
+        return RedirectToAction("AllEvents");
+    }
+
+    public IActionResult EventPageNext()
+    {
+        using (var connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            // SQL command to get the total number of events
+            var totalEventsQuery = "SELECT COUNT(*) FROM T_Event";
+
+            using (var command = new SqlCommand(totalEventsQuery, connection))
+            {
+                int totalEvents = (int)command.ExecuteScalar();
+
+                // Get the current page number from the session, default to 1 if not set
+                int pageNumber = HttpContext.Session.GetInt32("Page_number") ?? 1;
+
+                // Calculate the maximum page number based on the total number of events
+                int maxPageNumber = (int)Math.Ceiling((double)totalEvents / 9);
+
+                // Set page_number to min(pageNumber + 1, maxPageNumber)
+                pageNumber = Math.Min(pageNumber + 1, maxPageNumber);
+
+                // Update the session with the new page number
+                HttpContext.Session.SetInt32("Page_number", pageNumber);
+            }
+
+            connection.Close();
+        }
+
+        return RedirectToAction("AllEvents");
+    }
+
 }
