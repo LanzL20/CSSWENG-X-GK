@@ -11,7 +11,7 @@
         
         <div class="profile-textbox">
             <label>Title</label>
-            <input asp-for="EventName" class="form-control profile-forminput" value="@ViewBag.EventName">
+            <input asp-for="EventName" class="form-control edit-one-event-forminput" value="@ViewBag.EventName">
         </div>
     </div>
 
@@ -75,6 +75,7 @@
         </div>
         <div class="edit-one-event-button">
             <a asp-action="OneEvent" asp-route-eventId="@ViewBag.EventID" class="edit-one-event-discard-button">Discard Changes</a>
+            <a class="edit-one-event-delete-button">Delete Event</a>
             <button type="submit" class="edit-one-event-save-button">Save Changes</button>
         </div>
 
@@ -103,5 +104,51 @@
         } else {
             currentImage.src = 'data:image/jpeg;base64,@Convert.ToBase64String(@ViewBag.EventImage)'; // Show the current image
         }
+    });
+
+    const addContact = document.querySelector('.edit-one-event-add-contact');
+    const contactContainer = document.querySelector('.edit-one-event-contact');
+
+    addContact.addEventListener('click', function () {
+        const contact = document.createElement('div');
+
+        const contactNameContainer = document.createElement('div');
+        contactNameContainer.classList.add('edit-one-event-contact-textbox');
+
+        const contactNameLabel = document.createElement('label');
+        contactNameLabel.textContent = 'Name';
+
+        const contactName = document.createElement('input');
+        contactName.classList.add('form-control', 'edit-one-event-contact-forminput');
+
+        const contactNumberContainer = document.createElement('div');
+        contactNumberContainer.classList.add('edit-one-event-contact-textbox');
+
+        const contactNumberLabel = document.createElement('label');
+        contactNumberLabel.textContent = 'Contact Number';
+
+        const contactNumber = document.createElement('input');
+        contactNumber.classList.add('form-control', 'edit-one-event-contact-forminput');
+
+        const contactEmailContainer = document.createElement('div');
+        contactEmailContainer.classList.add('edit-one-event-contact-textbox');
+
+        const contactEmailLabel = document.createElement('label');
+        contactEmailLabel.textContent = 'Email Address';
+        
+        const contactEmail = document.createElement('input');
+        contactEmail.classList.add('form-control', 'edit-one-event-contact-forminput');
+
+        contact.appendChild(contactNameContainer);
+        contactNameContainer.appendChild(contactNameLabel);
+        contactNameContainer.appendChild(contactName);
+        contact.appendChild(contactNumberContainer);
+        contactNumberContainer.appendChild(contactNumberLabel);
+        contactNumberContainer.appendChild(contactNumber);
+        contact.appendChild(contactEmailContainer);
+        contactEmailContainer.appendChild(contactEmailLabel);
+        contactEmailContainer.appendChild(contactEmail);
+
+        contactContainer.insertBefore(contact, addContact);
     });
 </script>

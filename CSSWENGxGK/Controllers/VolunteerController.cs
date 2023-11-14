@@ -23,7 +23,7 @@ namespace CSSWENGxGK.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
-        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -493,7 +493,7 @@ namespace CSSWENGxGK.Controllers
 
                         //create user and add role
                         await _userManager.CreateAsync(new_user, "Password123!");
-                        await _userManager.AddToRoleAsync(new_user, "User");
+                        await _userManager.AddToRoleAsync(new_user, "Admin");
 
                         var roles = await _userManager.GetRolesAsync(new_user);
                         Console.WriteLine($"Roles for user {new_user.UserName}: {string.Join(", ", roles)}");

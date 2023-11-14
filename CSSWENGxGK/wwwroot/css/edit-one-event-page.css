@@ -118,7 +118,7 @@
 	justify-content: space-between;
 	align-self: center;
 	margin-top: 2em;
-	width: 60%;
+	width: 80%;
 }
 
 .edit-one-event-save-button {
@@ -151,6 +151,40 @@
 .edit-one-event-save-button:active {
 	background-color: var(--white);
 	color: var(--accent);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+.edit-one-event-delete-button {
+	font-family: var(--font-family);
+	font-size: var(--font-size-small);
+	padding: 0.5em 2em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--white);
+	background-color: rgb(195, 4, 4);
+	font-weight: bold;
+	outline: 0px solid;
+	text-decoration: none;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.edit-one-event-delete-button:hover {
+	background-color: var(--white);
+	color: rgb(195, 4, 4);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.edit-one-event-delete-button:active {
+	background-color: var(--white);
+	color: rgb(195, 4, 4);
 	transition:all 10ms ease-out;
 	transform: scale(1.1);
 }
@@ -193,6 +227,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 17rem;
 }
 
 .edit-one-event-add-contact > span{

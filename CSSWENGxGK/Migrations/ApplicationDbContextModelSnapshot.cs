@@ -33,6 +33,10 @@ namespace CSSWENGxGK.Migrations
                     b.Property<DateTime>("EventDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<byte[]>("EventImage")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("EventLocation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -65,12 +69,6 @@ namespace CSSWENGxGK.Migrations
 
                     b.Property<int>("VolunteerID")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("TimeIn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("TimeOut")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("EventID", "VolunteerID");
 

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSSWENGxGK.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231113111707_InitialCreate")]
+    [Migration("20231114014025_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -35,6 +35,10 @@ namespace CSSWENGxGK.Migrations
 
                     b.Property<DateTime>("EventDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<byte[]>("EventImage")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("EventLocation")
                         .IsRequired()
@@ -68,12 +72,6 @@ namespace CSSWENGxGK.Migrations
 
                     b.Property<int>("VolunteerID")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("TimeIn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("TimeOut")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("EventID", "VolunteerID");
 

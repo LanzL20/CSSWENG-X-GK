@@ -58,6 +58,7 @@ namespace CSSWENGxGK.Migrations
                 {
                     EventID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    EventImage = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     EventName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     EventDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EventLocation = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -75,9 +76,7 @@ namespace CSSWENGxGK.Migrations
                 columns: table => new
                 {
                     VolunteerID = table.Column<int>(type: "int", nullable: false),
-                    EventID = table.Column<int>(type: "int", nullable: false),
-                    TimeIn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TimeOut = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    EventID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
