@@ -11,7 +11,7 @@ namespace CSSWENGxGK.Controllers;
 public class EventsController : Controller
 {
 	private readonly ApplicationDbContext _db;
-	string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+	string connectionString = "Server=FRANCINECHAN\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
     public EventsController(ApplicationDbContext db)
 	{
 		_db = db;
@@ -257,20 +257,6 @@ public class EventsController : Controller
     [HttpPost]
     public IActionResult EditEvent(Event updatedEvent, Organizer updatedOrganizer, IFormFile EventImage)
     {
-
-        if (EventImage != null)
-        {
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                EventImage.CopyTo(memoryStream);
-                updatedEvent.EventImage = memoryStream.ToArray(); // Convert the uploaded image to byte array
-            }
-        }
-        else
-        {
-            Console.WriteLine("HI");
-        }
-
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
@@ -294,6 +280,29 @@ public class EventsController : Controller
                         }
 
                         Console.WriteLine(eventDate);
+                    }
+                }
+            }
+            if (EventImage != null)
+            {
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    EventImage.CopyTo(memoryStream);
+                    updatedEvent.EventImage = memoryStream.ToArray(); // Convert the uploaded image to byte array
+                }
+            }
+            else
+            {
+                string eventQuery = $"SELECT EventImage " +
+                                           $"FROM T_Event WHERE EventID = {updatedEvent.EventID}";
+                using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
+                {
+                    using (SqlDataReader eventReader = eventCommand.ExecuteReader())
+                    {
+                        if (eventReader.Read())
+                        {
+                            updatedEvent.EventImage = (byte[])eventReader["EventImage"];
+                        }
                     }
                 }
             }
