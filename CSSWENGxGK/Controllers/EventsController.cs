@@ -477,7 +477,7 @@ public class EventsController : Controller
                 }
             }
         }
-        return RedirectToAction("EditEvent");
+        return RedirectToAction("AllEvents");
     }
 
     [HttpPost]
