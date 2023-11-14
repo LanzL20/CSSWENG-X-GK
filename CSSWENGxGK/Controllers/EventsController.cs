@@ -255,12 +255,12 @@ public class EventsController : Controller
     }
 
     [HttpPost]
-    public IActionResult EditEvent(Event updatedEvent, Organizer updatedOrganizer, IFormFile EventImage)
+    public IActionResult EditEvent(EventOrganizers updatedEvent, IFormFile EventImage)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
-            DateTime eventDate = updatedEvent.EventDate;
+            DateTime eventDate = updatedEvent.Event.EventDate;
 			string updateEventQuery = "UPDATE T_Event SET EventName = @EventName, EventDate = @EventDate, EventLocation = @EventLocation, EventShortDesc = @EventShortDesc, EventLongDesc = @EventLongDesc, EventStatus = @EventStatus, EventImage = @EventImage WHERE EventID = @EventID";
             Console.WriteLine(eventDate);
             Console.WriteLine(DateTime.MinValue);
@@ -269,7 +269,7 @@ public class EventsController : Controller
             if (eventDate <= DateTime.MinValue || eventDate >= DateTime.MaxValue)
             {
                 string eventQuery = $"SELECT EventDate " +
-                                       $"FROM T_Event WHERE EventID = {updatedEvent.EventID}";
+                                       $"FROM T_Event WHERE EventID = {updatedEvent.Event.EventID}";
                 using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
                 {
                     using (SqlDataReader eventReader = eventCommand.ExecuteReader())
@@ -288,20 +288,20 @@ public class EventsController : Controller
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
                     EventImage.CopyTo(memoryStream);
-                    updatedEvent.EventImage = memoryStream.ToArray(); // Convert the uploaded image to byte array
+                    updatedEvent.Event.EventImage = memoryStream.ToArray(); // Convert the uploaded image to byte array
                 }
             }
             else
             {
                 string eventQuery = $"SELECT EventImage " +
-                                           $"FROM T_Event WHERE EventID = {updatedEvent.EventID}";
+                                           $"FROM T_Event WHERE EventID = {updatedEvent.Event.EventID}";
                 using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
                 {
                     using (SqlDataReader eventReader = eventCommand.ExecuteReader())
                     {
                         if (eventReader.Read())
                         {
-                            updatedEvent.EventImage = (byte[])eventReader["EventImage"];
+                            updatedEvent.Event.EventImage = (byte[])eventReader["EventImage"];
                         }
                     }
                 }
@@ -310,28 +310,32 @@ public class EventsController : Controller
 
             using (SqlCommand eventCommand = new SqlCommand(updateEventQuery, connection))
 			{
-				eventCommand.Parameters.AddWithValue("@EventName", updatedEvent.EventName);
+				eventCommand.Parameters.AddWithValue("@EventName", updatedEvent.Event.EventName);
 				eventCommand.Parameters.AddWithValue("@EventDate", eventDate);
-				eventCommand.Parameters.AddWithValue("@EventLocation", updatedEvent.EventLocation);
-				eventCommand.Parameters.AddWithValue("@EventShortDesc", updatedEvent.EventShortDesc);
-				eventCommand.Parameters.AddWithValue("@EventLongDesc", updatedEvent.EventLongDesc);
-                eventCommand.Parameters.AddWithValue("@EventStatus", updatedEvent.EventStatus);
-                eventCommand.Parameters.AddWithValue("@EventID", updatedEvent.EventID);
-                eventCommand.Parameters.AddWithValue("@EventImage", updatedEvent.EventImage);
+				eventCommand.Parameters.AddWithValue("@EventLocation", updatedEvent.Event.EventLocation);
+				eventCommand.Parameters.AddWithValue("@EventShortDesc", updatedEvent.Event.EventShortDesc);
+				eventCommand.Parameters.AddWithValue("@EventLongDesc", updatedEvent.Event.EventLongDesc);
+                eventCommand.Parameters.AddWithValue("@EventStatus", updatedEvent.Event.EventStatus);
+                eventCommand.Parameters.AddWithValue("@EventID", updatedEvent.Event.EventID);
+                eventCommand.Parameters.AddWithValue("@EventImage", updatedEvent.Event.EventImage);
                 Console.WriteLine("EventStatus:");
-                Console.WriteLine(updatedEvent.EventStatus);
+                Console.WriteLine(updatedEvent.Event.EventStatus);
 				eventCommand.ExecuteNonQuery();
 			}
 
             // Update Organizer details for the corresponding event
-            string updateOrganizerQuery = $"UPDATE T_Organizer SET Name = '{updatedOrganizer.Name}', " +
-                                        $"PhoneNumber = '{updatedOrganizer.PhoneNumber}', " +
-                                        $"Email = '{updatedOrganizer.Email}' " +
-                                        $"WHERE EventID = {updatedEvent.EventID}";
+            string updateOrganizerQuery = $"UPDATE T_Organizer SET Name = '{updatedEvent.Organizers[0].Name}', " +
+                                        $"PhoneNumber = '{updatedEvent.Organizers[0].PhoneNumber}', " +
+                                        $"Email = '{updatedEvent.Organizers[0].Email}' " +
+                                        $"WHERE EventID = {updatedEvent.Event.EventID}";
 
-            Console.WriteLine(updatedEvent.EventName);
+            Console.WriteLine ("Organizers:");
+            Console.WriteLine(updatedEvent.Organizers[0].Email);
+            Console.WriteLine(updatedEvent.Organizers[0].PhoneNumber);
+
+            Console.WriteLine(updatedEvent.Event.EventName);
             Console.WriteLine("EventID:");
-            Console.WriteLine(updatedEvent.EventID);
+            Console.WriteLine(updatedEvent.Event.EventID);
 
             using (SqlCommand organizerCommand = new SqlCommand(updateOrganizerQuery, connection))
             {
@@ -339,7 +343,7 @@ public class EventsController : Controller
             }
         }
 
-        return RedirectToAction("AllEvents");
+        return RedirectToAction("OneEvent", new {eventId = updatedEvent.Event.EventID});
     }
 
     public IActionResult DeleteEvent(int EventID)
@@ -387,14 +391,14 @@ public class EventsController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult AddEvent(Event model, IFormFile EventImage)
+    public IActionResult AddEvent(EventOrganizers model, IFormFile EventImage)
     {
         if (EventImage != null)
         {
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 EventImage.CopyTo(memoryStream);
-                model.EventImage = memoryStream.ToArray(); // Convert the uploaded image to byte array
+                model.Event.EventImage = memoryStream.ToArray(); // Convert the uploaded image to byte array
             }
         }
 
@@ -416,13 +420,28 @@ public class EventsController : Controller
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@GeneratedID", generatedID);
-                command.Parameters.AddWithValue("@EventName", model.EventName);
-                command.Parameters.AddWithValue("@EventDate", model.EventDate);
-                command.Parameters.AddWithValue("@EventLocation", model.EventLocation);
-                command.Parameters.AddWithValue("@EventShortDesc", model.EventShortDesc);
-                command.Parameters.AddWithValue("@EventLongDesc", model.EventLongDesc);
+                command.Parameters.AddWithValue("@EventName", model.Event.EventName);
+                command.Parameters.AddWithValue("@EventDate", model.Event.EventDate);
+                command.Parameters.AddWithValue("@EventLocation", model.Event.EventLocation);
+                command.Parameters.AddWithValue("@EventShortDesc", model.Event.EventShortDesc);
+                command.Parameters.AddWithValue("@EventLongDesc", model.Event.EventLongDesc);
                 command.Parameters.AddWithValue("@EventStatus", 0);
-                command.Parameters.AddWithValue("@EventImage", model.EventImage); // Assuming EventImage is a byte[]
+                command.Parameters.AddWithValue("@EventImage", model.Event.EventImage); // Assuming EventImage is a byte[]
+
+                command.ExecuteNonQuery();
+            }
+
+            string query2 = "SET IDENTITY_INSERT T_Organizer ON;" +
+                "INSERT INTO T_Organizer (EventID, Name, PhoneNumber, Email) " +
+                "VALUES (@GeneratedID, @Name, @PhoneNumber, @Email);" +
+                "SET IDENTITY_INSERT T_Organizer OFF;";
+
+            using (SqlCommand command = new SqlCommand(query2, connection))
+            {
+                command.Parameters.AddWithValue("@GeneratedID", generatedID);
+                command.Parameters.AddWithValue("@Name", model.Organizers[0].Name);
+                command.Parameters.AddWithValue("@PhoneNumber", model.Organizers[0].PhoneNumber);
+                command.Parameters.AddWithValue("@Email", model.Organizers[0].Email);
 
                 command.ExecuteNonQuery();
             }
