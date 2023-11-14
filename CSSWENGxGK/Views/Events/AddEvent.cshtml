@@ -1,4 +1,4 @@
-﻿@model Event
+﻿@model EventOrganizers
 
 @{
     ViewData["Title"] = "Welcome to Gawad Kalinga";
@@ -8,7 +8,7 @@
     <div class="edit-one-event-top">
         <div class="profile-textbox">
             <label>Title</label>
-            <input asp-for="EventName" class="form-control profile-forminput">
+            <input asp-for="Event.EventName" class="form-control profile-forminput">
         </div>
     </div>
 
@@ -23,22 +23,22 @@
 
         <div class="edit-one-event-textbox">
             <label>Preview Description</label>
-            <input asp-for="EventShortDesc" class="form-control edit-one-event-forminput">
+            <input asp-for="Event.EventShortDesc" class="form-control edit-one-event-forminput">
         </div>
 
         <div class="edit-one-event-textbox">
             <label>Full Description</label>
-            <textarea asp-for="EventLongDesc" class="form-control edit-one-event-forminput"></textarea>
+            <textarea asp-for="Event.EventLongDesc" class="form-control edit-one-event-forminput"></textarea>
         </div>
 
         <div class="edit-one-event-container">
             <div class="edit-one-event-textbox">
-                <label>Date & Time: @ViewBag.EventDate</label>
-                <input asp-for="EventDate" class="form-control edit-one-event-forminput">
+                <label>Date & Time:</label>
+                <input asp-for="Event.EventDate" class="form-control edit-one-event-forminput">
             </div>
             <div class="edit-one-event-textbox">
                 <label>Location</label>
-                <input asp-for="EventLocation" class="form-control edit-one-event-forminput">
+                <input asp-for="Event.EventLocation" class="form-control edit-one-event-forminput">
             </div>
         </div>
 
@@ -48,15 +48,15 @@
                 <div>
                     <div class="edit-one-event-contact-textbox">
                         <label>Name</label>
-                        <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerName">
+                        <input asp-for="Organizers[0].Name" class="form-control edit-one-event-contact-forminput">
                     </div>
                     <div class="edit-one-event-contact-textbox">
                         <label>Contact Number</label>
-                        <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerPhoneNumber">
+                        <input asp-for="Organizers[0].PhoneNumber" class="form-control edit-one-event-contact-forminput">
                     </div>
                     <div class="edit-one-event-contact-textbox">
                         <label>Email Address</label>
-                        <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerEmail">
+                        <input asp-for="Organizers[0].Email" class="form-control edit-one-event-contact-forminput">
                     </div>
                 </div>
                 <div class="edit-one-event-add-contact">
@@ -93,5 +93,44 @@
         } else {
             currentImage.src = 'https://files.catbox.moe/bpyplc.png'; // Show the current image
         }
+    });
+</script>
+<script>
+
+    // JavaScript using jQuery
+    $(document).ready(function () {
+        // Counter to track the number of organizers
+        let organizerCount = 0;
+
+        // Function to create new organizer input fields
+        function createOrganizerFields() {
+            organizerCount++;
+
+            const newOrganizerFields = `
+                <div class="edit-one-event-contact">
+                    <div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Name</label>
+                            <input type="text" name="Organizers[${organizerCount}].Name" class="form-control edit-one-event-contact-forminput">
+                        </div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Contact Number</label>
+                            <input type="text" name="Organizers[${organizerCount}].ContactNumber" class="form-control edit-one-event-contact-forminput">
+                        </div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Email Address</label>
+                            <input type="text" name="Organizers[${organizerCount}].Email" class="form-control edit-one-event-contact-forminput">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            $('#organizersContainer').append(newOrganizerFields);
+        }
+
+        // Event listener for the "Add Organizer" button
+        $('#addOrganizerBtn').click(function () {
+            createOrganizerFields();
+        });
     });
 </script>
