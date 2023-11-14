@@ -79,7 +79,7 @@
 
         <div class="edit-one-event-button">
             <a asp-action="OneEvent" asp-route-eventId="@ViewBag.EventID" class="edit-one-event-discard-button">Discard Changes</a>
-            <a class="edit-one-event-delete-button">Delete Event</a>
+            <a asp-action="DeleteEvent" asp-route-EventID="@ViewBag.EventID" class="edit-one-event-delete-button">Delete Event</a>
             <button type="submit" class="edit-one-event-save-button">Save Changes</button>
         </div>
 
