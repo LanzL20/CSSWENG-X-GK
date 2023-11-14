@@ -108,47 +108,30 @@
 
     const addContact = document.querySelector('.edit-one-event-add-contact');
     const contactContainer = document.querySelector('.edit-one-event-contact');
+    let organizerCount = 0;
 
     addContact.addEventListener('click', function () {
         const contact = document.createElement('div');
 
-        const contactNameContainer = document.createElement('div');
-        contactNameContainer.classList.add('edit-one-event-contact-textbox');
+        const newOrganizerFields = `
+            <div class="edit-one-event-contact-textbox">
+                <label>Name</label>
+                <input type="text" name="Organizers[${organizerCount}].Name" class="form-control edit-one-event-contact-forminput">
+            </div>
+            <div class="edit-one-event-contact-textbox">
+                <label>Contact Number</label>
+                <input type="text" name="Organizers[${organizerCount}].ContactNumber" class="form-control edit-one-event-contact-forminput">
+            </div>
+            <div class="edit-one-event-contact-textbox">
+                <label>Email Address</label>
+                <input type="text" name="Organizers[${organizerCount}].Email" class="form-control edit-one-event-contact-forminput">
+            </div>
+        `;
 
-        const contactNameLabel = document.createElement('label');
-        contactNameLabel.textContent = 'Name';
-
-        const contactName = document.createElement('input');
-        contactName.classList.add('form-control', 'edit-one-event-contact-forminput');
-
-        const contactNumberContainer = document.createElement('div');
-        contactNumberContainer.classList.add('edit-one-event-contact-textbox');
-
-        const contactNumberLabel = document.createElement('label');
-        contactNumberLabel.textContent = 'Contact Number';
-
-        const contactNumber = document.createElement('input');
-        contactNumber.classList.add('form-control', 'edit-one-event-contact-forminput');
-
-        const contactEmailContainer = document.createElement('div');
-        contactEmailContainer.classList.add('edit-one-event-contact-textbox');
-
-        const contactEmailLabel = document.createElement('label');
-        contactEmailLabel.textContent = 'Email Address';
-        
-        const contactEmail = document.createElement('input');
-        contactEmail.classList.add('form-control', 'edit-one-event-contact-forminput');
-
-        contact.appendChild(contactNameContainer);
-        contactNameContainer.appendChild(contactNameLabel);
-        contactNameContainer.appendChild(contactName);
-        contact.appendChild(contactNumberContainer);
-        contactNumberContainer.appendChild(contactNumberLabel);
-        contactNumberContainer.appendChild(contactNumber);
-        contact.appendChild(contactEmailContainer);
-        contactEmailContainer.appendChild(contactEmailLabel);
-        contactEmailContainer.appendChild(contactEmail);
+        contact.innerHTML += newOrganizerFields;
 
         contactContainer.insertBefore(contact, addContact);
+
+        organizerCount++;
     });
 </script>
