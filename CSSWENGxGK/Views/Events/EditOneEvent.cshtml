@@ -1,4 +1,4 @@
-@model EventOrganizers
+﻿@model EventOrganizers
 
 @{
     ViewData["Title"] = "Welcome to Gawad Kalinga";
@@ -54,25 +54,29 @@
         <div class="edit-one-event-container">
             <p><strong>Organizers:</strong></p>
             <div class="edit-one-event-contact">
-                <div>
-                    <div class="edit-one-event-contact-textbox">
-                        <label>Name</label>
-                        <input asp-for="Organizers[0].Name" class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerName">
+                @for (int i = 0; i < ViewBag.Organizers.Count; i++)
+                {
+                    <div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Name</label>
+                            <input asp-for="Organizers[i].Name" class="form-control edit-one-event-contact-forminput" value="@ViewBag.Organizers[i].Name">
+                        </div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Contact Number</label>
+                            <input asp-for="Organizers[i].PhoneNumber" class="form-control edit-one-event-contact-forminput" value="@ViewBag.Organizers[i].PhoneNumber">
+                        </div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Email Address</label>
+                            <input asp-for="Organizers[i].Email" class="form-control edit-one-event-contact-forminput" value="@ViewBag.Organizers[i].Email">
+                        </div>
                     </div>
-                    <div class="edit-one-event-contact-textbox">
-                        <label>Contact Number</label>
-                        <input asp-for="Organizers[0].PhoneNumber" class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerPhoneNumber">
-                    </div>
-                    <div class="edit-one-event-contact-textbox">
-                        <label>Email Address</label>
-                        <input asp-for="Organizers[0].Email" class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerEmail">
-                    </div>
-                </div>
+                }
                 <div class="edit-one-event-add-contact">
                     <span class="material-symbols-outlined">add_box</span>
                 </div>
             </div>
         </div>
+
         <div class="edit-one-event-button">
             <a asp-action="OneEvent" asp-route-eventId="@ViewBag.EventID" class="edit-one-event-discard-button">Discard Changes</a>
             <a class="edit-one-event-delete-button">Delete Event</a>
@@ -108,30 +112,30 @@
 
     const addContact = document.querySelector('.edit-one-event-add-contact');
     const contactContainer = document.querySelector('.edit-one-event-contact');
-    let organizerCount = 0;
+    let organizerCount = @ViewBag.Organizers.Count - 1;
 
     addContact.addEventListener('click', function () {
         const contact = document.createElement('div');
 
+        organizerCount++;
         const newOrganizerFields = `
-            <div class="edit-one-event-contact-textbox">
-                <label>Name</label>
-                <input type="text" name="Organizers[${organizerCount}].Name" class="form-control edit-one-event-contact-forminput">
-            </div>
-            <div class="edit-one-event-contact-textbox">
-                <label>Contact Number</label>
-                <input type="text" name="Organizers[${organizerCount}].ContactNumber" class="form-control edit-one-event-contact-forminput">
-            </div>
-            <div class="edit-one-event-contact-textbox">
-                <label>Email Address</label>
-                <input type="text" name="Organizers[${organizerCount}].Email" class="form-control edit-one-event-contact-forminput">
-            </div>
-        `;
+                <div class="edit-one-event-contact-textbox">
+                    <label>Name</label>
+                    <input type="text" name="Organizers[${organizerCount}].Name" class="form-control edit-one-event-contact-forminput">
+                </div>
+                <div class="edit-one-event-contact-textbox">
+                    <label>Contact Number</label>
+                    <input type="text" name="Organizers[${organizerCount}].PhoneNumber" class="form-control edit-one-event-contact-forminput">
+                </div>
+                <div class="edit-one-event-contact-textbox">
+                    <label>Email Address</label>
+                    <input type="text" name="Organizers[${organizerCount}].Email" class="form-control edit-one-event-contact-forminput">
+                </div>
+            `;
 
         contact.innerHTML += newOrganizerFields;
 
         contactContainer.insertBefore(contact, addContact);
 
-        organizerCount++;
     });
 </script>
