@@ -498,12 +498,6 @@ public class EventsController : Controller
             EventID = e.EventID
         }).ToList();
 
-        var organizers = _db.T_Organizer.Select(d => new Organizer
-        {
-            OrganizerID = d.OrganizerID
-        }).ToList();
-
-        int newOrgID = organizers.Any() ? organizers.Max(d => d.OrganizerID) + 1 : 1;
         int generatedID = events.Any() ? events.Max(e => e.EventID) + 1 : 1;
 
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -528,20 +522,31 @@ public class EventsController : Controller
                 command.ExecuteNonQuery();
             }
 
-            string query2 = "SET IDENTITY_INSERT T_Organizer ON;" +
-                "INSERT INTO T_Organizer (OrganizerID, EventID, Name, PhoneNumber, Email) " +
-                "VALUES (@newOrgID, @GeneratedID, @Name, @PhoneNumber, @Email);" +
-                "SET IDENTITY_INSERT T_Organizer OFF;";
+            int updatedOrganizerCount = model.Organizers.Count;
 
-            using (SqlCommand command = new SqlCommand(query2, connection))
+            for (int i = 0; i < updatedOrganizerCount; i++)
             {
-                command.Parameters.AddWithValue("@newOrgID", newOrgID);
-                command.Parameters.AddWithValue("@GeneratedID", generatedID);
-                command.Parameters.AddWithValue("@Name", model.Organizers[0].Name);
-                command.Parameters.AddWithValue("@PhoneNumber", model.Organizers[0].PhoneNumber);
-                command.Parameters.AddWithValue("@Email", model.Organizers[0].Email);
+                string insertOrganizerQuery = "SET IDENTITY_INSERT T_Organizer ON;" +
+                                                "INSERT INTO T_Organizer (OrganizerID, EventID, Name, PhoneNumber, Email) " +
+                                                "VALUES (@newOrgID, @GeneratedID, @Name, @PhoneNumber, @Email);" +
+                                                "SET IDENTITY_INSERT T_Organizer OFF;";
 
-                command.ExecuteNonQuery();
+                using (SqlCommand command = new SqlCommand(insertOrganizerQuery, connection))
+                {
+                    var organizers = _db.T_Organizer.Select(d => new Organizer
+                    {
+                        OrganizerID = d.OrganizerID
+                    }).ToList();
+                    int newOrgID = organizers.Any() ? organizers.Max(d => d.OrganizerID) + 1 : 1;
+
+                    command.Parameters.AddWithValue("@newOrgID", newOrgID);
+                    command.Parameters.AddWithValue("@GeneratedID", generatedID);
+                    command.Parameters.AddWithValue("@Name", model.Organizers[i].Name);
+                    command.Parameters.AddWithValue("@PhoneNumber", model.Organizers[i].PhoneNumber);
+                    command.Parameters.AddWithValue("@Email", model.Organizers[i].Email);
+
+                    command.ExecuteNonQuery();
+                }
             }
         }
 
