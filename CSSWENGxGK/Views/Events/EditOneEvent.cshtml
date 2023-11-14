@@ -1,4 +1,4 @@
-﻿@model Event
+@model EventOrganizers
 
 @{
     ViewData["Title"] = "Welcome to Gawad Kalinga";
@@ -7,11 +7,11 @@
 <form method="post" asp-action="EditEvent" id="edit_event" class="edit-one-event-card" enctype="multipart/form-data">
     
     <div class="edit-one-event-top">
-        <input type="hidden" asp-for="EventID" value="@ViewBag.EventID" class="form-control profile-forminput">
+        <input type="hidden" asp-for="Event.EventID" value="@ViewBag.EventID" class="form-control profile-forminput">
         
         <div class="profile-textbox">
             <label>Title</label>
-            <input asp-for="EventName" class="form-control edit-one-event-forminput" value="@ViewBag.EventName">
+            <input asp-for="Event.EventName" class="form-control edit-one-event-forminput" value="@ViewBag.EventName">
         </div>
     </div>
 
@@ -23,26 +23,26 @@
 
         <div class="edit-one-event-textbox">
             <label>Preview Description</label>
-            <input asp-for="EventShortDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventShortDesc">
+            <input asp-for="Event.EventShortDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventShortDesc">
         </div>
 
         <div class="edit-one-event-textbox">
             <label>Full Description</label>
-            <input asp-for="EventLongDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventLongDesc">
+            <input asp-for="Event.EventLongDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventLongDesc">
         </div>
 
         <div class="edit-one-event-container">
             <div class="edit-one-event-textbox">
                 <label>Date & Time: @ViewBag.EventDate</label>
-                <input asp-for="EventDate" class="form-control edit-one-event-forminput" value="@ViewBag.EventDate">
+                <input asp-for="Event.EventDate" class="form-control edit-one-event-forminput" value="@ViewBag.EventDate">
             </div>
             <div class="edit-one-event-textbox">
                 <label>Location:</label>
-                <input asp-for="EventLocation" class="form-control edit-one-event-forminput" value="@ViewBag.EventLocation">
+                <input asp-for="Event.EventLocation" class="form-control edit-one-event-forminput" value="@ViewBag.EventLocation">
             </div>
             <div class="edit-one-event-textbox">
                 <label>Status:</label>
-                <select asp-for="EventStatus" class="form-control edit-one-event-forminput">
+                <select asp-for="Event.EventStatus" class="form-control edit-one-event-forminput">
                     <option hidden disabled value="@ViewBag.EventStatus">@ViewBag.EventStatusString</option>
                     <option value="0">Ongoing</option>
                     <option value="1">Finished</option>
@@ -57,15 +57,15 @@
                 <div>
                     <div class="edit-one-event-contact-textbox">
                         <label>Name</label>
-                        <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerName">
+                        <input asp-for="Organizers[0].Name" class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerName">
                     </div>
                     <div class="edit-one-event-contact-textbox">
                         <label>Contact Number</label>
-                        <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerPhoneNumber">
+                        <input asp-for="Organizers[0].PhoneNumber" class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerPhoneNumber">
                     </div>
                     <div class="edit-one-event-contact-textbox">
                         <label>Email Address</label>
-                        <input class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerEmail">
+                        <input asp-for="Organizers[0].Email" class="form-control edit-one-event-contact-forminput" value="@ViewBag.OrganizerEmail">
                     </div>
                 </div>
                 <div class="edit-one-event-add-contact">
