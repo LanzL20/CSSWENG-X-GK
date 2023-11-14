@@ -387,14 +387,14 @@ public class EventsController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult AddEvent(Event model, IFormFile EventImage)
+    public IActionResult AddEvent(EventOrganizers model, IFormFile EventImage)
     {
         if (EventImage != null)
         {
             using (MemoryStream memoryStream = new MemoryStream())
             {
                 EventImage.CopyTo(memoryStream);
-                model.EventImage = memoryStream.ToArray(); // Convert the uploaded image to byte array
+                model.Event.EventImage = memoryStream.ToArray(); // Convert the uploaded image to byte array
             }
         }
 
@@ -416,13 +416,28 @@ public class EventsController : Controller
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@GeneratedID", generatedID);
-                command.Parameters.AddWithValue("@EventName", model.EventName);
-                command.Parameters.AddWithValue("@EventDate", model.EventDate);
-                command.Parameters.AddWithValue("@EventLocation", model.EventLocation);
-                command.Parameters.AddWithValue("@EventShortDesc", model.EventShortDesc);
-                command.Parameters.AddWithValue("@EventLongDesc", model.EventLongDesc);
+                command.Parameters.AddWithValue("@EventName", model.Event.EventName);
+                command.Parameters.AddWithValue("@EventDate", model.Event.EventDate);
+                command.Parameters.AddWithValue("@EventLocation", model.Event.EventLocation);
+                command.Parameters.AddWithValue("@EventShortDesc", model.Event.EventShortDesc);
+                command.Parameters.AddWithValue("@EventLongDesc", model.Event.EventLongDesc);
                 command.Parameters.AddWithValue("@EventStatus", 0);
-                command.Parameters.AddWithValue("@EventImage", model.EventImage); // Assuming EventImage is a byte[]
+                command.Parameters.AddWithValue("@EventImage", model.Event.EventImage); // Assuming EventImage is a byte[]
+
+                command.ExecuteNonQuery();
+            }
+
+            string query2 = "SET IDENTITY_INSERT T_Organizer ON;" +
+                "INSERT INTO T_Organizer (EventID, Name, PhoneNumber, Email) " +
+                "VALUES (@GeneratedID, @Name, @PhoneNumber, @Email);" +
+                "SET IDENTITY_INSERT T_Organizer OFF;";
+
+            using (SqlCommand command = new SqlCommand(query2, connection))
+            {
+                command.Parameters.AddWithValue("@GeneratedID", generatedID);
+                command.Parameters.AddWithValue("@Name", model.Organizers[0].Name);
+                command.Parameters.AddWithValue("@PhoneNumber", model.Organizers[0].PhoneNumber);
+                command.Parameters.AddWithValue("@Email", model.Organizers[0].Email);
 
                 command.ExecuteNonQuery();
             }
