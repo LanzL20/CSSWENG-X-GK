@@ -2,16 +2,32 @@
     ViewData["Title"] = "Welcome to Gawad Kalinga";
 }
 
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> _userManager
+
+@{
+    var userIdNullable = Context.Session.GetInt32("User_ID");
+    string userIdString = userIdNullable?.ToString() ?? "0";
+
+    var user = await _userManager.FindByNameAsync(userIdString);
+}
+
 <div class="one-event-card">
     <div class="one-event-top">
         <div class="one-event-top-container">
             <div class="one-event-title">
                 @ViewBag.EventInfo.EventName
             </div>
-			<a asp-controller="Events" asp-action="EditOneEvent" asp-route-EventID="@ViewBag.EventInfo.EventID" class="one-event-edit material-symbols-outlined">
-
-                Edit
-            </a>
+            @if (user != null)
+            {
+                var userRoles = await _userManager.GetRolesAsync(user);
+                if (userRoles.Contains("Admin"))
+                {
+                <a asp-controller="Events" asp-action="EditOneEvent" asp-route-EventID="@ViewBag.EventInfo.EventID" class="one-event-edit material-symbols-outlined">
+                    Edit
+                </a>
+                }
+            }
         </div>
         <a asp-controller="Events" asp-action="AllEvents" class="one-event-back">
             <- Back to Events
