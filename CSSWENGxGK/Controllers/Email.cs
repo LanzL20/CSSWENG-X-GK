@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 class Emailer
 {
-    private static string senderEmail = "CCAPDEV.LLL@outlook.com";
+    private static string senderEmail = "CSSWENGGROUP6@outlook.com";
     private static string senderAppPassword = "Larvi!n<_>";
 
     public async Task<string> Send_OTP(string recipientEmail)
@@ -22,13 +22,12 @@ class Emailer
                 IsBodyHtml = false
             };
 
-            using (var client = new SmtpClient("smtp-mail.outlook.com"))
+            using (var client = new SmtpClient("smtp.office365.com"))
             {
                 client.Port = 587;
                 client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
                 client.EnableSsl = true;
-
-                // Remove Thread.Sleep
+                Thread.Sleep(5000);
                 await client.SendMailAsync(message);
                 return otp;
             }
@@ -51,13 +50,12 @@ class Emailer
                 IsBodyHtml = false
             };
 
-            using (var client = new SmtpClient("smtp-mail.outlook.com"))
+            using (var client = new SmtpClient("smtp.office365.com"))
             {
                 client.Port = 587;
                 client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
                 client.EnableSsl = true;
-
-                // Remove Thread.Sleep
+                Thread.Sleep(5000);
                 await client.SendMailAsync(message);
                 return true;
             }
@@ -71,7 +69,6 @@ class Emailer
 
     static string GenerateOtp()
     {
-        // Use a more secure method for OTP generation, for example, using a cryptographic library
         Random random = new Random();
         return random.Next(100000, 1000000).ToString();
     }
