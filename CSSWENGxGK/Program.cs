@@ -32,6 +32,8 @@ builder.Services.AddSession(options =>
     options.Cookie.Name = "UserCookie"; // Set the name of the session cookie
 });
 
+builder.Services.AddHttpContextAccessor();
+
 var serviceCollection = new ServiceCollection();
 var serviceProvider = builder.Services.BuildServiceProvider();
 var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole<int>>>();
@@ -82,7 +84,7 @@ app.UseSession(); // Add this line to enable sessions
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Volunteer}/{action=Register}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 //daily
 //RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Daily);
