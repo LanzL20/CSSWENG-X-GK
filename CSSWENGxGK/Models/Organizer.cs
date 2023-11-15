@@ -1,10 +1,14 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSSWENGxGK.Models
 {
     public class Organizer
     {
         [Key]
+        public int OrganizerID { get; set; }
+
+        [ForeignKey("Event")]
         public int EventID { get; set; }
 
         [Required(ErrorMessage = "Name is required")]
