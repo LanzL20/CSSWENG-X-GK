@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> _userManager
+
+@{
+    var userIdNullable = Context.Session.GetInt32("User_ID");
+    string userIdString = userIdNullable?.ToString() ?? "0";
+
+    var user = await _userManager.FindByNameAsync(userIdString);
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -31,18 +41,26 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                        @if (user == null)
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Volunteer" asp-action="Register">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Volunteer" asp-action="Login">Login</a>
                         </li>
+                        }
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Events" asp-action="AllEvents">Events</a>
                         </li>
+
+                        @if (user != null)
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Volunteer" asp-action="Profile">Profile</a>
                         </li>
+                        }
                     </ul>
                 </div>
             </div>
