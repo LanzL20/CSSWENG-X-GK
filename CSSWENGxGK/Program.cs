@@ -84,7 +84,10 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Volunteer}/{action=Register}/{id?}");
 
-RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Daily);
+//daily
+//RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Daily);
+// this code for minutely checking
+RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Minutely());
 
 // Start Hangfire server in the background
 using (var server = new BackgroundJobServer())

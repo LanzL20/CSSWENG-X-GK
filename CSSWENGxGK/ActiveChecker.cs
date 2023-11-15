@@ -4,11 +4,11 @@ using System.Data.SqlClient;
 
 public class ActiveChecker
 {
-    string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+    string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
     public void PerformDatabaseCheck()
     {
-
+        Console.WriteLine("Checking db");
         try
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -21,7 +21,11 @@ public class ActiveChecker
 
                 using (SqlCommand selectCommand = new SqlCommand(selectQuery, connection))
                 {
-                    selectCommand.Parameters.AddWithValue("@CutoffDate", DateTime.Now.AddMonths(-6));
+                    
+                    // 6 months
+                    //selectCommand.Parameters.AddWithValue("@CutoffDate", DateTime.Now.AddMonths(-6));
+                    // 5 mins for now
+                    selectCommand.Parameters.AddWithValue("@CutoffDate", DateTime.Now.AddMinutes(-5));
 
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
@@ -38,7 +42,7 @@ public class ActiveChecker
 
                 foreach (int volunteerID in volunteerIDs)
                 {
-                    Console.Write(volunteerID);
+                    Console.WriteLine(volunteerID);
                     using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
                     {
                         updateCommand.Parameters.AddWithValue("@VolunteerID", volunteerID);
