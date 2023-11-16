@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 public class ActiveChecker
 {
-    string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+    string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
     public void PerformDatabaseCheck()
     {
@@ -23,9 +23,9 @@ public class ActiveChecker
                 {
                     
                     // 6 months
-                    //selectCommand.Parameters.AddWithValue("@CutoffDate", DateTime.Now.AddMonths(-6));
+                    selectCommand.Parameters.AddWithValue("@CutoffDate", DateTime.Now.AddMonths(-6));
                     // 5 mins for now
-                    selectCommand.Parameters.AddWithValue("@CutoffDate", DateTime.Now.AddMinutes(-5));
+                    // selectCommand.Parameters.AddWithValue("@CutoffDate", DateTime.Now.AddMinutes(-5));
 
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {

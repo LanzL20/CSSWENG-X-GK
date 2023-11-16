@@ -7,7 +7,7 @@ namespace CSSWENGxGK.Models
         [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Password is required")]
+        [Required(ErrorMessage = "Please input one time password.")]
         public string Password { get; set; }
 
         public bool IsRemember { get; set; }

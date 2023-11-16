@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSSWENGxGK.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231114014025_InitialCreate")]
+    [Migration("20231116010024_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -80,16 +80,19 @@ namespace CSSWENGxGK.Migrations
 
             modelBuilder.Entity("CSSWENGxGK.Models.Organizer", b =>
                 {
-                    b.Property<int>("EventID")
+                    b.Property<int>("OrganizerID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EventID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrganizerID"));
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("EventID")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -100,7 +103,7 @@ namespace CSSWENGxGK.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.HasKey("EventID");
+                    b.HasKey("OrganizerID");
 
                     b.ToTable("T_Organizer");
                 });

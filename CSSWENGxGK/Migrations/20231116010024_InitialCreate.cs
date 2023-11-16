@@ -87,15 +87,16 @@ namespace CSSWENGxGK.Migrations
                 name: "T_Organizer",
                 columns: table => new
                 {
-                    EventID = table.Column<int>(type: "int", nullable: false)
+                    OrganizerID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    EventID = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_T_Organizer", x => x.EventID);
+                    table.PrimaryKey("PK_T_Organizer", x => x.OrganizerID);
                 });
 
             migrationBuilder.CreateTable(

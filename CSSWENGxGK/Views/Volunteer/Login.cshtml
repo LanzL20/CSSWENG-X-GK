@@ -20,14 +20,16 @@
         <div class="form-group">
             <label asp-for="Email" class="login-label"></label>
             <input asp-for="Email" class="login-input" />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="Password" class="login-label">One Time Password</label>
             <div class="login-otp-container">
-                <input asp-for="Password" type="password" class="login-otp-input" />
+                <input asp-for="Password" autocomplete="off" class="login-otp-input" />
                 <a class="login-otp-button" id="getCodeButton" onclick="generateOtp()">Get Code</a>
             </div>
+            <span asp-validation-for="Password" class="text-danger"></span>
         </div>
         <br>
         <div class="form-group login-remember-container">

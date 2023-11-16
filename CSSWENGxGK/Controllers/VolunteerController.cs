@@ -23,7 +23,7 @@ namespace CSSWENGxGK.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
-        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -403,6 +403,7 @@ namespace CSSWENGxGK.Controllers
                 Console.Write("VALID");
                 if (EmailExists(model.Email))
                 {
+                    
                     return RedirectToAction("Register");
                 }
 
@@ -644,7 +645,7 @@ namespace CSSWENGxGK.Controllers
                 try
                 {
                     connection.Open();
-  
+
                     // Step 1: Retrieve VolunteerID based on the email
                     string selectQuery = "SELECT VolunteerID FROM T_Volunteer WHERE Email = @Email";
 
