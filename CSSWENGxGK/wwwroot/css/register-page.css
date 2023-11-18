@@ -29,6 +29,7 @@
 .textbox {
 	max-width: 100%;
 	width: 100%;
+	outline
 }
 
 .textbox > label {
@@ -58,8 +59,11 @@
 
 .forminput:focus {
 	border-color: var(--accent);
+	box-shadow: var(--drop-shadow);
+
+	outline:none;
+	transform: scale(1.01);
 	transition:all 50ms ease-out;
-	transform: scale(1);
 }
 
 .button { 
@@ -112,15 +116,15 @@
 }
 
 .register-checkbox{
-    border-radius: var(--corner-radius);
-	font-size: var(--font-size-small);
-	padding: 5px 10px;
-	outline-width: 0;
-	background-color: var(--white);
-	border: 4px solid var(--white);
-	font-family: Colfax;
-	box-sizing: border-box;
-    margin: 5px;
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.register-checkbox:hover {
+	
 }
 
 .link-text {

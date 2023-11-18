@@ -1,0 +1,2 @@
+cd .\CSSWENGxGK\
+dotnet run

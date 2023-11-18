@@ -13,24 +13,24 @@
             <div class="horizontal">
                 <div class="textbox">
                     <label>First Name</label>
-                    <input asp-for="FirstName" class="form-control forminput" required="required">
+                    <input asp-for="FirstName" class="form-control forminput" required="required" placeholder="First Name">
                     <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="textbox">
                     <label>Last Name</label>
-                    <input asp-for="LastName" class="form-control forminput" required="required">
+                    <input asp-for="LastName" class="form-control forminput" required="required" placeholder="Last Name">
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
             </div>
             <input asp-for="Password" type="hidden" value="ABSCA" />
             <div class="textbox">
                 <label>Email Address</label>
-                <input asp-for="Email" class="form-control forminput" required="required">
+                <input asp-for="Email" class="form-control forminput" required="required" placeholder="sample@email.com">
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="textbox">
                 <label>Phone Number</label>
-                <input asp-for="MobileNumber" class="form-control forminput" required="required">
+                <input asp-for="MobileNumber" class="form-control forminput" required="required" placeholder="Phone Number">
                 <span asp-validation-for="MobileNumber" class="text-danger"></span>
             </div>
             <div class="textbox">
@@ -50,19 +50,19 @@
             @* TODO: Connect their given db *@
             <div class="textbox">
                 <label>Country</label>
-                <input asp-for="Country" class="form-control forminput" required="required">
+                <input asp-for="Country" class="form-control forminput" required="required" placeholder="Country">
             </div>
             <div class="textbox">
                 <label>Province Code</label>
-                <input asp-for="PROV_CODE" class="form-control forminput" required="required">
+                <input asp-for="PROV_CODE" class="form-control forminput" required="required" placeholder="Province Code">
             </div>
             <div class="textbox">
                 <label>Town Code</label>
-                <input asp-for="TOWN_CODE" class="form-control forminput" required="required">
+                <input asp-for="TOWN_CODE" class="form-control forminput" required="required" placeholder="Town Code">
             </div>
             <div class="textbox">
                 <label>Barangay Code</label>
-                <input asp-for="BRGY_CODE" class="form-control forminput" required="required">
+                <input asp-for="BRGY_CODE" class="form-control forminput" required="required" placeholder="Barangay Code">
             </div>
             <div class="textbox">
                 <label>Year Started as GK Volunteer?</label>
