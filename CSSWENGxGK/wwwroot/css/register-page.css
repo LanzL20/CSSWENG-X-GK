@@ -29,7 +29,6 @@
 .textbox {
 	max-width: 100%;
 	width: 100%;
-	outline
 }
 
 .textbox > label {
@@ -39,32 +38,7 @@
 	margin-top: 1em;
 }
 
-.forminput {
-	border-radius: var(--corner-radius);
-	font-size: var(--font-size-regular);
-	font-family: var(--font-family);
-	box-shadow: var(--drop-shadow);
-	padding: 5px 10px;
-	outline-width: 0;
-	background-color: var(--white);
-	border: 4px solid var(--white);
-	font-family: Colfax; 
-	margin-bottom: 0.2em;
-	width: 100%;
-	box-sizing: border-box;
 
-	transition:all 250ms ease-out;
-	transform: scale(1);
-}
-
-.forminput:focus {
-	border-color: var(--accent);
-	box-shadow: var(--drop-shadow);
-
-	outline:none;
-	transform: scale(1.01);
-	transition:all 50ms ease-out;
-}
 
 .button { 
 	display: flex; 
@@ -112,20 +86,9 @@
 
 .register-notify{
     align-items: center;
-    font-size: 16px;
+    font-size: var(--font-size-smaller);
 }
 
-/* .register-checkbox{
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
-}
-
-.register-checkbox:hover {
-	
-} */
 
 .link-text {
 	display: flex;
