@@ -97,6 +97,39 @@
 	color: black;
 }
 
+.profile-view-past {
+	font-size: var(--font-size-small);
+	padding: 0.2em 1.5em;
+	max-width: 100%;
+	margin: 1em auto;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--accent);
+	background-color: var(--white);
+	font-weight: bold;
+	outline: 0px solid;
+    text-decoration: none;
+    cursor: pointer;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.profile-view-past:hover {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.profile-view-past:active {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
 .profile-info-container{
     width: 45%;
 }
@@ -159,7 +192,6 @@
 	outline-width: 0;
 	background-color: var(--white);
 	border: 4px solid var(--white);
-	font-family: Colfax; 
 	margin-bottom: 0.2em;
 	width: 100%;
 	box-sizing: border-box;

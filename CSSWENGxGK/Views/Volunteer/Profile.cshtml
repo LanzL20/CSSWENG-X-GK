@@ -27,6 +27,9 @@
             <div class="profile-name">
                 @ViewBag.LastName, @ViewBag.FirstName
             </div>
+            <div class="profile-button">
+                <a class="profile-view-past" asp-controller="Events" asp-action="PastEvents">View Past Events</a>
+            </div>
             <div class="profile-info">
                 <div class="profile-info-left">
                     <div class="profile-text-left">
@@ -54,7 +57,7 @@
                         Date Created:
                     </div>
                     <div class="profile-text-left">
-                        Last Updated:
+                        Last Verified:
                     </div>
                     <div class="profile-text-left">
                         Email Notifications:

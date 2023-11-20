@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Gawad Kalinga";
+}
+
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> _userManager
+
+@{
+    var searchQuery = ViewData["SearchQuery"] as string;
+    var sortOrder = ViewData["SortOrder"] as string;
+    var currentPage = ViewData["CurrentPage"] as int?;
+    var totalPages = ViewData["TotalPages"] as int?;
+}
+
+@{
+    var userIdNullable = Context.Session.GetInt32("User_ID");
+    string userIdString = userIdNullable?.ToString() ?? "0";
+
+    var user = await _userManager.FindByNameAsync(userIdString);
+}
+
+<div class="past-events-card">
+    <div class="past-events-top">
+        <div class="past-events-title">
+            Past Events
+        </div>
+        <a asp-controller="Volunteer" asp-action="Profile" class="past-events-back">
+            <- Back to Profile
+        </a>
+    </div>
+
+    @* Individual Event Display Template *@
+    @* <a class="past-events-individual-display" asp-controller="" asp-action="">
+            <img src="Image Link">
+            <h1 class="past-events-individual-title">Event Name</h1>
+            <p class="past-events-short-description">Event Short Description</p>
+        </a> *@
+
+    <div class="past-events-display">
+        @* @foreach (var eventItem in Model)
+        {
+            <a class="past-events-individual-display" asp-controller="Events" asp-action="OneEvent" asp-route-eventId="@eventItem.EventID">
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(eventItem.EventImage)" alt="Event Image" style="padding-top: 0;"/>
+            <!-- Assuming images are JPEG; adjust data URI accordingly for different image types -->
+                <h1 class="past-events-individual-title">@eventItem.EventName</h1>
+                <p class="past-events-short-description">@eventItem.EventShortDesc</p>
+            </a>
+        } *@
+    </div>
+
+    <div class="past-events-pagination">
+        <ul class="pagination">
+            <li class="page-item @(Convert.ToInt32(ViewData["CurrentPage"]) == 1 ? "disabled" : "")">
+                <a class="page-link"
+                   asp-controller="Events"
+                   asp-action="AllEvents"
+                   asp-route-searchQuery="@ViewData["SearchQuery"]"
+                   asp-route-sortOrder="@ViewData["SortOrder"]"
+                   asp-route-pageNumber="@(Convert.ToInt32(ViewData["CurrentPage"]) - 1)">Previous</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link">Page @(ViewData["CurrentPage"] ?? 1) of @(ViewData["TotalPages"] ?? 1)</a>
+            </li>
+            <li class="page-item @(Convert.ToInt32(ViewData["CurrentPage"]) == Convert.ToInt32(ViewData["TotalPages"]) ? "disabled" : "")">
+                <a class="page-link"
+                   asp-controller="Events"
+                   asp-action="AllEvents"
+                   asp-route-searchQuery="@ViewData["SearchQuery"]"
+                   asp-route-sortOrder="@ViewData["SortOrder"]"
+                   asp-route-pageNumber="@(Convert.ToInt32(ViewData["CurrentPage"]) + 1)">Next</a>
+            </li>
+        </ul>
+    </div>
+
+
+    @if (user != null)
+    {
+        var userRoles = await _userManager.GetRolesAsync(user);
+        if (userRoles.Contains("Admin"))
+        {
+            <div class="past-events-button">
+                <a asp-controller="Events" asp-action="AddEvent">Add Event</a>
+            </div>
+        }
+    }
+</div>
+
+
+

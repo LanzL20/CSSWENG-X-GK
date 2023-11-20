@@ -645,4 +645,7 @@ public class EventsController : Controller
         }
     }
 
+    public IActionResult PastEvents(){
+        return View();
+    }
 }

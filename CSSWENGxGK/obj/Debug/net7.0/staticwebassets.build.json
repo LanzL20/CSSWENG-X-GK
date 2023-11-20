@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EWwYy53ygcOQzWptOlEtfy7AQoYIQLWkgFXbEF+cMf4=",
+  "Hash": "b5YA4tW8h2/YFf2LAUMF4wE2NJicJeNZPYxOXr+y9Us=",
   "Source": "CSSWENGxGK",
   "BasePath": "_content/CSSWENGxGK",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\one-event-page.css"
+    },
+    {
+      "Identity": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\past-events-page.css",
+      "SourceId": "CSSWENGxGK",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\",
+      "BasePath": "_content/CSSWENGxGK",
+      "RelativePath": "css/past-events-page.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\past-events-page.css"
     },
     {
       "Identity": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\profile-page.css",

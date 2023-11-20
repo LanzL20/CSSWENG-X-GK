@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\one-event-page.css"
     },
     {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\past-events-page.css",
+      "PackagePath": "staticwebassets\\css\\past-events-page.css"
+    },
+    {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\profile-page.css",
       "PackagePath": "staticwebassets\\css\\profile-page.css"
     },
