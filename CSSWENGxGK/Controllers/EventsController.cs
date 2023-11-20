@@ -11,7 +11,8 @@ namespace CSSWENGxGK.Controllers;
 public class EventsController : Controller
 {
 	private readonly ApplicationDbContext _db;
-	string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+	string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+    Emailer emailer = new Emailer();
     public EventsController(ApplicationDbContext db)
 	{
 		_db = db;
@@ -511,76 +512,102 @@ public class EventsController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult AddEvent(EventOrganizers model, IFormFile EventImage)
     {
-        if (EventImage != null)
+        try
         {
-            using (MemoryStream memoryStream = new MemoryStream())
+            if (EventImage != null)
             {
-                EventImage.CopyTo(memoryStream);
-                model.Event.EventImage = memoryStream.ToArray(); // Convert the uploaded image to byte array
-            }
-        }
-
-        var events = _db.T_Event.Select(e => new Event
-        {
-            EventID = e.EventID
-        }).ToList();
-
-        int generatedID = events.Any() ? events.Max(e => e.EventID) + 1 : 1;
-
-        using (SqlConnection connection = new SqlConnection(connectionString))
-        {
-            connection.Open();
-            string query = "SET IDENTITY_INSERT T_Event ON;" +
-                "INSERT INTO T_Event (EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus, EventImage) " +
-                "VALUES (@GeneratedID, @EventName, @EventDate, @EventLocation, @EventShortDesc, @EventLongDesc, @EventStatus, @EventImage);" +
-                "SET IDENTITY_INSERT T_Event OFF;";
-
-            using (SqlCommand command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@GeneratedID", generatedID);
-                command.Parameters.AddWithValue("@EventName", model.Event.EventName);
-                command.Parameters.AddWithValue("@EventDate", model.Event.EventDate);
-                command.Parameters.AddWithValue("@EventLocation", model.Event.EventLocation);
-                command.Parameters.AddWithValue("@EventShortDesc", model.Event.EventShortDesc);
-                command.Parameters.AddWithValue("@EventLongDesc", model.Event.EventLongDesc);
-                command.Parameters.AddWithValue("@EventStatus", 0);
-                command.Parameters.AddWithValue("@EventImage", model.Event.EventImage); // Assuming EventImage is a byte[]
-
-                command.ExecuteNonQuery();
-            }
-
-            int updatedOrganizerCount = model.Organizers.Count;
-
-            for (int i = 0; i < updatedOrganizerCount; i++)
-            {
-                string insertOrganizerQuery = "SET IDENTITY_INSERT T_Organizer ON;" +
-                                                "INSERT INTO T_Organizer (OrganizerID, EventID, Name, PhoneNumber, Email) " +
-                                                "VALUES (@newOrgID, @GeneratedID, @Name, @PhoneNumber, @Email);" +
-                                                "SET IDENTITY_INSERT T_Organizer OFF;";
-
-                using (SqlCommand command = new SqlCommand(insertOrganizerQuery, connection))
+                using (MemoryStream memoryStream = new MemoryStream())
                 {
-                    var organizers = _db.T_Organizer.Select(d => new Organizer
-                    {
-                        OrganizerID = d.OrganizerID
-                    }).ToList();
-                    int newOrgID = organizers.Any() ? organizers.Max(d => d.OrganizerID) + 1 : 1;
+                    EventImage.CopyTo(memoryStream);
+                    model.Event.EventImage = memoryStream.ToArray(); // Convert the uploaded image to byte array
+                }
+            }
 
-                    command.Parameters.AddWithValue("@newOrgID", newOrgID);
+            var events = _db.T_Event.Select(e => new Event
+            {
+                EventID = e.EventID
+            }).ToList();
+
+            int generatedID = events.Any() ? events.Max(e => e.EventID) + 1 : 1;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SET IDENTITY_INSERT T_Event ON;" +
+                    "INSERT INTO T_Event (EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus, EventImage) " +
+                    "VALUES (@GeneratedID, @EventName, @EventDate, @EventLocation, @EventShortDesc, @EventLongDesc, @EventStatus, @EventImage);" +
+                    "SET IDENTITY_INSERT T_Event OFF;";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
                     command.Parameters.AddWithValue("@GeneratedID", generatedID);
-                    command.Parameters.AddWithValue("@Name", model.Organizers[i].Name);
-                    command.Parameters.AddWithValue("@PhoneNumber", model.Organizers[i].PhoneNumber);
-                    command.Parameters.AddWithValue("@Email", model.Organizers[i].Email);
+                    command.Parameters.AddWithValue("@EventName", model.Event.EventName);
+                    command.Parameters.AddWithValue("@EventDate", model.Event.EventDate);
+                    command.Parameters.AddWithValue("@EventLocation", model.Event.EventLocation);
+                    command.Parameters.AddWithValue("@EventShortDesc", model.Event.EventShortDesc);
+                    command.Parameters.AddWithValue("@EventLongDesc", model.Event.EventLongDesc);
+                    command.Parameters.AddWithValue("@EventStatus", 0);
+                    command.Parameters.AddWithValue("@EventImage", model.Event.EventImage); // Assuming EventImage is a byte[]
 
                     command.ExecuteNonQuery();
                 }
+
+                int updatedOrganizerCount = model.Organizers.Count;
+
+                for (int i = 0; i < updatedOrganizerCount; i++)
+                {
+                    string insertOrganizerQuery = "SET IDENTITY_INSERT T_Organizer ON;" +
+                        "INSERT INTO T_Organizer (OrganizerID, EventID, Name, PhoneNumber, Email) " +
+                        "VALUES (@newOrgID, @GeneratedID, @Name, @PhoneNumber, @Email);" +
+                        "SET IDENTITY_INSERT T_Organizer OFF;";
+
+                    using (SqlCommand command = new SqlCommand(insertOrganizerQuery, connection))
+                    {
+                        var organizers = _db.T_Organizer.Select(d => new Organizer
+                        {
+                            OrganizerID = d.OrganizerID
+                        }).ToList();
+                        int newOrgID = organizers.Any() ? organizers.Max(d => d.OrganizerID) + 1 : 1;
+
+                        command.Parameters.AddWithValue("@newOrgID", newOrgID);
+                        command.Parameters.AddWithValue("@GeneratedID", generatedID);
+                        command.Parameters.AddWithValue("@Name", model.Organizers[i].Name);
+                        command.Parameters.AddWithValue("@PhoneNumber", model.Organizers[i].PhoneNumber);
+                        command.Parameters.AddWithValue("@Email", model.Organizers[i].Email);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                List<string> bccRecipients = _db.T_Volunteer
+                    .Where(v => v.IsActive && v.IsNotify)
+                    .Select(v => v.Email)
+                    .ToList();
+
+                bool emailSent = emailer.Send_Notif_Email(bccRecipients, model.Event);
+
+                if (emailSent)
+                {
+                    Console.WriteLine("Bcc email sent successfully to all recipients");
+                }
+                else
+                {
+                    Console.WriteLine("Failed to send Bcc email");
+                }
             }
+
+            Console.WriteLine(generatedID);
+
+            return RedirectToAction("AllEvents");
         }
-
-        Console.WriteLine(generatedID);
-
-        return RedirectToAction("AllEvents");
+        catch (Exception ex)
+        {
+            // Handle exceptions
+            Console.WriteLine($"Error adding event: {ex.Message}");
+            return RedirectToAction("ErrorPage");
+        }
     }
+
 
     public IActionResult EventPagePrevious()
     {
@@ -645,7 +672,36 @@ public class EventsController : Controller
         }
     }
 
-    public IActionResult PastEvents(){
-        return View();
+    public IActionResult PastEvents()
+    {
+        List<Event> eventInfoList = new List<Event>();
+
+        var pastEvents = (from ea in _db.T_EventsAttended
+                          join e in _db.T_Event on ea.EventID equals e.EventID
+                          orderby e.EventDate descending  // Sort by most recent date
+                          select new Event
+                          {
+                              EventID = e.EventID,
+                              EventImage = e.EventImage,
+                              EventName = e.EventName,
+                              EventDate = e.EventDate,
+                              EventLocation = e.EventLocation,
+                              EventShortDesc = e.EventShortDesc,
+                              EventLongDesc = e.EventLongDesc,
+                              EventStatus = e.EventStatus
+                          }).ToList();
+
+        eventInfoList.AddRange(pastEvents);
+
+        // Print all event IDs to the console
+        foreach (var eventItem in eventInfoList)
+        {
+            Console.WriteLine($"Event ID: {eventItem.EventID}");
+        }
+
+        return View(eventInfoList);
     }
+
+
+
 }

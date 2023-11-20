@@ -2,6 +2,8 @@ using System;
 using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
+using CSSWENGxGK.Data;
+using CSSWENGxGK.Models;
 
 class Emailer
 {
@@ -66,6 +68,44 @@ class Emailer
             return false;
         }
     }
+
+    public bool Send_Notif_Email(List<string> bccRecipients, Event eventDetails)
+    {
+        try
+        {
+            var message = new MailMessage
+            {
+                From = new MailAddress(senderEmail),
+                Subject = "Notification for Active Volunteers",
+                Body = $"Thank you for being active volunteers. Here are the details of the latest event:\n\nEvent Name: {eventDetails.EventName}\nDate: {eventDetails.EventDate}\nLocation: {eventDetails.EventLocation}\nShort Description: {eventDetails.EventShortDesc}\nLong Description: {eventDetails.EventLongDesc}",
+                IsBodyHtml = false
+            };
+
+            // Add Bcc recipients
+            foreach (var recipient in bccRecipients)
+            {
+                message.Bcc.Add(recipient);
+            }
+
+            using (var client = new SmtpClient("smtp.office365.com"))
+            {
+                client.Port = 587;
+                client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
+                client.EnableSsl = true;
+
+                Thread.Sleep(5000);
+                client.SendMailAsync(message).Wait(); // Wait for the email to be sent before proceeding
+
+                return true;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending Bcc email: {ex.Message}");
+            return false;
+        }
+    }
+
 
     static string GenerateOtp()
     {
