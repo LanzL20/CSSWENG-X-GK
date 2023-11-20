@@ -6,6 +6,13 @@
 @inject UserManager<User> _userManager
 
 @{
+    var searchQuery = ViewData["SearchQuery"] as string;
+    var sortOrder = ViewData["SortOrder"] as string;
+    var currentPage = ViewData["CurrentPage"] as int?;
+    var totalPages = ViewData["TotalPages"] as int?;
+}
+
+@{
     var userIdNullable = Context.Session.GetInt32("User_ID");
     string userIdString = userIdNullable?.ToString() ?? "0";
 
@@ -17,52 +24,70 @@
         Events
     </div>
     <div class="all-events-top">
-        <input class="all-events-search-bar" type="text" placeholder="Search...">
-        <select class="all-events-filter" name="" id="">
-            <option value="" selected disabled hidden>Filter</option>
-            <option value="">Recent</option>
-            <option value="">Liked</option>
-            <option value="">Alphabetical</option>
-        </select>
+        <form method="get" action="@Url.Action("AllEvents", "Events")">
+            <input class="all-events-search-bar" type="text" name="searchQuery" placeholder="Search...">
+            <select class="all-events-filter" name="sortOrder" id="sortOrder">
+                <option value="date">Recent</option>
+                <option value="date_created">Latest Created</option>
+            </select>
+            <button type="submit">Apply</button>
+        </form>
     </div>
-        @* Individual Event Display Template *@
-        @* <a class="all-events-individual-display" asp-controller="" asp-action="">
-                <img src="Image Link">
-                <h1 class="all-events-individual-title">Event Name</h1>
-                <p class="all-events-short-description">Event Short Description</p>
-            </a> *@
 
-        <div class="all-events-display">
-            @foreach (var eventItem in Model)
-            {
-                <a class="all-events-individual-display" asp-controller="Events" asp-action="OneEvent" asp-route-eventId="@eventItem.EventID">
-                <img src="data:image/jpeg;base64,@Convert.ToBase64String(eventItem.EventImage)" alt="Event Image" style="padding-top: 0;"/>
-                <!-- Assuming images are JPEG; adjust data URI accordingly for different image types -->
-                    <h1 class="all-events-individual-title">@eventItem.EventName</h1>
-                    <p class="all-events-short-description">@eventItem.EventShortDesc</p>
-                </a>
-            }
-        </div>
+    @* Individual Event Display Template *@
+    @* <a class="all-events-individual-display" asp-controller="" asp-action="">
+            <img src="Image Link">
+            <h1 class="all-events-individual-title">Event Name</h1>
+            <p class="all-events-short-description">Event Short Description</p>
+        </a> *@
 
-        <div class="all-event-pagination">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" asp-controller="Events" asp-action="EventPagePrevious">Previous</a></li>
-                <li class="page-item disabled"><a class="page-link">1 of 2</a></li>
-                <li class="page-item"><a class="page-link" asp-controller="Events" asp-action="EventPageNext">Next</a></li>
-            </ul>
-        </div>
-
-        @if (user != null)
+    <div class="all-events-display">
+        @foreach (var eventItem in Model)
         {
-            var userRoles = await _userManager.GetRolesAsync(user);
-            if (userRoles.Contains("Admin"))
-            {
-                <div class="all-event-button">
-                    <a asp-controller="Events" asp-action="AddEvent">Add Event</a>
-                </div>
-            }
+            <a class="all-events-individual-display" asp-controller="Events" asp-action="OneEvent" asp-route-eventId="@eventItem.EventID">
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(eventItem.EventImage)" alt="Event Image" style="padding-top: 0;"/>
+            <!-- Assuming images are JPEG; adjust data URI accordingly for different image types -->
+                <h1 class="all-events-individual-title">@eventItem.EventName</h1>
+                <p class="all-events-short-description">@eventItem.EventShortDesc</p>
+            </a>
         }
     </div>
+
+    <div class="all-event-pagination">
+        <ul class="pagination">
+            <li class="page-item @(Convert.ToInt32(ViewData["CurrentPage"]) == 1 ? "disabled" : "")">
+                <a class="page-link"
+                   asp-controller="Events"
+                   asp-action="AllEvents"
+                   asp-route-searchQuery="@ViewData["SearchQuery"]"
+                   asp-route-sortOrder="@ViewData["SortOrder"]"
+                   asp-route-pageNumber="@(Convert.ToInt32(ViewData["CurrentPage"]) - 1)">Previous</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link">Page @(ViewData["CurrentPage"] ?? 1) of @(ViewData["TotalPages"] ?? 1)</a>
+            </li>
+            <li class="page-item @(Convert.ToInt32(ViewData["CurrentPage"]) == Convert.ToInt32(ViewData["TotalPages"]) ? "disabled" : "")">
+                <a class="page-link"
+                   asp-controller="Events"
+                   asp-action="AllEvents"
+                   asp-route-searchQuery="@ViewData["SearchQuery"]"
+                   asp-route-sortOrder="@ViewData["SortOrder"]"
+                   asp-route-pageNumber="@(Convert.ToInt32(ViewData["CurrentPage"]) + 1)">Next</a>
+            </li>
+        </ul>
+    </div>
+
+
+    @if (user != null)
+    {
+        var userRoles = await _userManager.GetRolesAsync(user);
+        if (userRoles.Contains("Admin"))
+        {
+            <div class="all-event-button">
+                <a asp-controller="Events" asp-action="AddEvent">Add Event</a>
+            </div>
+        }
+    }
 </div>
 
 

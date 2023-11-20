@@ -4,58 +4,75 @@
     ViewData["Title"] = "Welcome to Gawad Kalinga";
 }
 
-<form method="post" asp-action="EditEvent" id="edit_event" class="edit-one-event-card" enctype="multipart/form-data">
-    
-    <div class="edit-one-event-top">
-        <input type="hidden" asp-for="Event.EventID" value="@ViewBag.EventID" class="form-control profile-forminput">
-        
-        <div class="profile-textbox">
-            <label>Title</label>
-            <input asp-for="Event.EventName" class="form-control edit-one-event-forminput" value="@ViewBag.EventName">
-        </div>
-    </div>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> _userManager
 
-    <div class="edit-one-event-body">
-        <img src="data:image/jpeg;base64,@Convert.ToBase64String(@ViewBag.EventImage)" alt="Current Event Image" id="current-image" style="padding-top: 0;">
+@{
+var userIdNullable = Context.Session.GetInt32("User_ID");
+string userIdString = userIdNullable?.ToString() ?? "0";
 
-        <!-- Input field for uploading a new image -->
-        <input type="file" id="event-image" name="EventImage" class="form-control edit-one-event-forminput" accept="image/*">
+var user = await _userManager.FindByNameAsync(userIdString);
+}
 
-        <div class="edit-one-event-textbox">
-            <label>Preview Description</label>
-            <input asp-for="Event.EventShortDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventShortDesc">
-        </div>
 
-        <div class="edit-one-event-textbox">
-            <label>Full Description</label>
-            <input asp-for="Event.EventLongDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventLongDesc">
-        </div>
+@if (user != null)
+{
+    var userRoles = await _userManager.GetRolesAsync(user);
+    if (userRoles.Contains("Admin"))
+    {
 
-        <div class="edit-one-event-container">
-            <div class="edit-one-event-textbox">
-                <label>Date & Time: @ViewBag.EventDate</label>
-                <input asp-for="Event.EventDate" class="form-control edit-one-event-forminput" value="@ViewBag.EventDate">
-            </div>
-            <div class="edit-one-event-textbox">
-                <label>Location:</label>
-                <input asp-for="Event.EventLocation" class="form-control edit-one-event-forminput" value="@ViewBag.EventLocation">
-            </div>
-            <div class="edit-one-event-textbox">
-                <label>Status:</label>
-                <select asp-for="Event.EventStatus" class="form-control edit-one-event-forminput">
-                    <option hidden disabled value="@ViewBag.EventStatus">@ViewBag.EventStatusString</option>
-                    <option value="0">Ongoing</option>
-                    <option value="1">Finished</option>
-                    <option value="2">Canceled</option>
-                </select>
+    <form method="post" asp-action="EditEvent" id="edit_event" class="edit-one-event-card" enctype="multipart/form-data">
+
+        <div class="edit-one-event-top">
+            <input type="hidden" asp-for="Event.EventID" value="@ViewBag.EventID" class="form-control profile-forminput">
+
+            <div class="profile-textbox">
+                <label>Title</label>
+                <input asp-for="Event.EventName" class="form-control edit-one-event-forminput" value="@ViewBag.EventName">
             </div>
         </div>
 
-        <div class="edit-one-event-container">
-            <p><strong>Organizers:</strong></p>
-            <div class="edit-one-event-contact">
-                @for (int i = 0; i < ViewBag.Organizers.Count; i++)
-                {
+        <div class="edit-one-event-body">
+            <img src="data:image/jpeg;base64,@Convert.ToBase64String(@ViewBag.EventImage)" alt="Current Event Image" id="current-image" style="padding-top: 0;">
+
+            <!-- Input field for uploading a new image -->
+            <input type="file" id="event-image" name="EventImage" class="form-control edit-one-event-forminput" accept="image/*">
+
+            <div class="edit-one-event-textbox">
+                <label>Preview Description</label>
+                <input asp-for="Event.EventShortDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventShortDesc">
+            </div>
+
+            <div class="edit-one-event-textbox">
+                <label>Full Description</label>
+                <input asp-for="Event.EventLongDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventLongDesc">
+            </div>
+
+            <div class="edit-one-event-container">
+                <div class="edit-one-event-textbox">
+                    <label>Date & Time: @ViewBag.EventDate</label>
+                    <input asp-for="Event.EventDate" class="form-control edit-one-event-forminput" value="@ViewBag.EventDate">
+                </div>
+                <div class="edit-one-event-textbox">
+                    <label>Location:</label>
+                    <input asp-for="Event.EventLocation" class="form-control edit-one-event-forminput" value="@ViewBag.EventLocation">
+                </div>
+                <div class="edit-one-event-textbox">
+                    <label>Status:</label>
+                    <select asp-for="Event.EventStatus" class="form-control edit-one-event-forminput">
+                        <option hidden disabled value="@ViewBag.EventStatus">@ViewBag.EventStatusString</option>
+                        <option value="0">Ongoing</option>
+                        <option value="1">Finished</option>
+                        <option value="2">Canceled</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="edit-one-event-container">
+                <p><strong>Organizers:</strong></p>
+                <div class="edit-one-event-contact">
+                    @for (int i = 0; i < ViewBag.Organizers.Count; i++)
+                        {
                     <div>
                         <div class="edit-one-event-contact-textbox">
                             <label>Name</label>
@@ -70,72 +87,79 @@
                             <input asp-for="Organizers[i].Email" class="form-control edit-one-event-contact-forminput" value="@ViewBag.Organizers[i].Email">
                         </div>
                     </div>
-                }
-                <div class="edit-one-event-add-contact">
-                    <span class="material-symbols-outlined">add_box</span>
+                        }
+                    <div class="edit-one-event-add-contact">
+                        <span class="material-symbols-outlined">add_box</span>
+                    </div>
                 </div>
             </div>
+
+            <div class="edit-one-event-button">
+                <a asp-action="OneEvent" asp-route-eventId="@ViewBag.EventID" class="edit-one-event-discard-button">Discard Changes</a>
+                <a asp-action="DeleteEvent" asp-route-EventID="@ViewBag.EventID" class="edit-one-event-delete-button">Delete Event</a>
+                <button type="submit" class="edit-one-event-save-button">Save Changes</button>
+            </div>
+
         </div>
 
-        <div class="edit-one-event-button">
-            <a asp-action="OneEvent" asp-route-eventId="@ViewBag.EventID" class="edit-one-event-discard-button">Discard Changes</a>
-            <a asp-action="DeleteEvent" asp-route-EventID="@ViewBag.EventID" class="edit-one-event-delete-button">Delete Event</a>
-            <button type="submit" class="edit-one-event-save-button">Save Changes</button>
-        </div>
+    </form>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+            const imageUpload = document.getElementById('event-image');
+            const currentImage = document.getElementById('current-image');
+
+            imageUpload.addEventListener('change', function () {
+                const file = imageUpload.files[0];
+
+                // Show preview if an image file is selected
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        currentImage.src = e.target.result;
+                        currentImage.style.display = 'block';
+                    };
+
+                    reader.readAsDataURL(file);
+                } else {
+                    currentImage.src = 'data:image/jpeg;base64,@Convert.ToBase64String(@ViewBag.EventImage)'; // Show the current image
+                }
+            });
+
+            const addContact = document.querySelector('.edit-one-event-add-contact');
+            const contactContainer = document.querySelector('.edit-one-event-contact');
+            let organizerCount = @ViewBag.Organizers.Count - 1;
+
+            addContact.addEventListener('click', function () {
+                const contact = document.createElement('div');
+
+                organizerCount++;
+                const newOrganizerFields = `
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Name</label>
+                            <input type="text" name="Organizers[${organizerCount}].Name" class="form-control edit-one-event-contact-forminput">
+                        </div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Contact Number</label>
+                            <input type="text" name="Organizers[${organizerCount}].PhoneNumber" class="form-control edit-one-event-contact-forminput">
+                        </div>
+                        <div class="edit-one-event-contact-textbox">
+                            <label>Email Address</label>
+                            <input type="text" name="Organizers[${organizerCount}].Email" class="form-control edit-one-event-contact-forminput">
+                        </div>
+                    `;
+
+                contact.innerHTML += newOrganizerFields;
+
+                contactContainer.insertBefore(contact, addContact);
+
+            });
+    </script>
+    }
+}else
+{
+    <div class="warning-message">
+        <p>No access to this page.</p>
     </div>
-    
-</form>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    const imageUpload = document.getElementById('event-image');
-    const currentImage = document.getElementById('current-image');
-
-    imageUpload.addEventListener('change', function () {
-        const file = imageUpload.files[0];
-
-        // Show preview if an image file is selected
-        if (file) {
-            const reader = new FileReader();
-
-            reader.onload = function (e) {
-                currentImage.src = e.target.result;
-                currentImage.style.display = 'block';
-            };
-
-            reader.readAsDataURL(file);
-        } else {
-            currentImage.src = 'data:image/jpeg;base64,@Convert.ToBase64String(@ViewBag.EventImage)'; // Show the current image
-        }
-    });
-
-    const addContact = document.querySelector('.edit-one-event-add-contact');
-    const contactContainer = document.querySelector('.edit-one-event-contact');
-    let organizerCount = @ViewBag.Organizers.Count - 1;
-
-    addContact.addEventListener('click', function () {
-        const contact = document.createElement('div');
-
-        organizerCount++;
-        const newOrganizerFields = `
-                <div class="edit-one-event-contact-textbox">
-                    <label>Name</label>
-                    <input type="text" name="Organizers[${organizerCount}].Name" class="form-control edit-one-event-contact-forminput">
-                </div>
-                <div class="edit-one-event-contact-textbox">
-                    <label>Contact Number</label>
-                    <input type="text" name="Organizers[${organizerCount}].PhoneNumber" class="form-control edit-one-event-contact-forminput">
-                </div>
-                <div class="edit-one-event-contact-textbox">
-                    <label>Email Address</label>
-                    <input type="text" name="Organizers[${organizerCount}].Email" class="form-control edit-one-event-contact-forminput">
-                </div>
-            `;
-
-        contact.innerHTML += newOrganizerFields;
-
-        contactContainer.insertBefore(contact, addContact);
-
-    });
-</script>
+}
