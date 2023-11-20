@@ -86,6 +86,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Events}/{action=AllEvents}/{id?}");
 
+app.UseMyCookieMiddleware();
 //daily
 //RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Daily);
 // this code for minutely checking
