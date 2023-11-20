@@ -13,34 +13,34 @@
             <div class="horizontal">
                 <div class="textbox">
                     <label>First Name</label>
-                    <input asp-for="FirstName" class="form-control forminput" required="required" placeholder="First Name">
+                    <input asp-for="FirstName" class="form-control forminput" placeholder="First Name">
                     <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="textbox">
                     <label>Last Name</label>
-                    <input asp-for="LastName" class="form-control forminput" required="required" placeholder="Last Name">
+                    <input asp-for="LastName" class="form-control forminput" placeholder="Last Name">
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
             </div>
             <input asp-for="Password" type="hidden" value="ABSCA" />
             <div class="textbox">
                 <label>Email Address</label>
-                <input asp-for="Email" class="form-control forminput" required="required" placeholder="sample@email.com">
+                <input asp-for="Email" class="form-control forminput" placeholder="sample@email.com">
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="textbox">
                 <label>Phone Number</label>
-                <input asp-for="MobileNumber" class="form-control forminput" required="required" placeholder="Phone Number">
+                <input asp-for="MobileNumber" class="form-control forminput"  placeholder="Phone Number">
                 <span asp-validation-for="MobileNumber" class="text-danger"></span>
             </div>
             <div class="textbox">
                 <label>Birthday</label>
-                <input asp-for="BirthDate" class="form-control forminput" type="date" required="required">
+                <input asp-for="BirthDate" class="form-control forminput" type="date" id="BirthDate">
                 <span asp-validation-for="BirthDate" class="text-danger"></span>
             </div>
             <div class="textbox">
                 <label>Gender</label>
-                <select asp-for="Gender" class="form-control forminput" required="required">
+                <select asp-for="Gender" class="form-control forminput">
                     <option value="" selected disabled hidden>Select Gender:</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -50,23 +50,23 @@
             @* TODO: Connect their given db *@
             <div class="textbox">
                 <label>Country</label>
-                <input asp-for="Country" class="form-control forminput" required="required" placeholder="Country">
+                <input asp-for="Country" class="form-control forminput" placeholder="Country">
             </div>
             <div class="textbox">
                 <label>Province Code</label>
-                <input asp-for="PROV_CODE" class="form-control forminput" required="required" placeholder="Province Code">
+                <input asp-for="PROV_CODE" class="form-control forminput" placeholder="Province Code">
             </div>
             <div class="textbox">
                 <label>Town Code</label>
-                <input asp-for="TOWN_CODE" class="form-control forminput" required="required" placeholder="Town Code">
+                <input asp-for="TOWN_CODE" class="form-control forminput" placeholder="Town Code">
             </div>
             <div class="textbox">
                 <label>Barangay Code</label>
-                <input asp-for="BRGY_CODE" class="form-control forminput" required="required" placeholder="Barangay Code">
+                <input asp-for="BRGY_CODE" class="form-control forminput" placeholder="Barangay Code">
             </div>
             <div class="textbox">
                 <label>Year Started as GK Volunteer?</label>
-                <input asp-for="YearStarted" class="form-control forminput" required="required">
+                <input asp-for="YearStarted" class="form-control forminput" id="VolunteerStartYear">
                 <span asp-validation-for="YearStarted" class="text-danger"></span>
             </div>
             <br>
@@ -84,3 +84,22 @@
         </div>
     </div>
 </form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var today = new Date().toISOString().split('T')[0];
+
+        var birthdateInput = document.getElementById('BirthDate');
+        if (birthdateInput) {
+            birthdateInput.setAttribute('max', today);
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+            var currentYear = new Date().getFullYear();
+            var startYearSelect = document.getElementById('VolunteerStartYear');
+
+            startYearSelect.setAttribute('min', 1900);
+            startYearSelect.setAttribute('max', currentYear);
+        });
+</script>

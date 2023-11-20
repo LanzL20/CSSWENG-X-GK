@@ -9,10 +9,12 @@ namespace CSSWENGxGK.Models
         public int VolunteerID { get; set; }
 
         [Required(ErrorMessage = "First Name is required.")]
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only letters are allowed.")]
         [StringLength(30, MinimumLength = 2, ErrorMessage = "First Name should be between 2 and 30 characters.")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Last Name is required.")]
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only letters are allowed.")]
         [StringLength(30, MinimumLength = 2, ErrorMessage = "Last Name should be between 2 and 30 characters.")]
         public string LastName { get; set; }
 
