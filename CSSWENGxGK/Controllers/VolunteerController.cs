@@ -23,7 +23,7 @@ namespace CSSWENGxGK.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
-        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -33,18 +33,6 @@ namespace CSSWENGxGK.Controllers
 
         public IActionResult Login()
         {
-            // Retrieve the value of "MyCookie" from the request's cookies
-            if (HttpContext.Request.Cookies.TryGetValue("MyCookie", out string cookieValue))
-            {
-                // Check if the "UserID" value is not null or empty
-                if (!string.IsNullOrEmpty(cookieValue) && int.TryParse(cookieValue, out int userId))
-                {
-                    // Store the user ID in the session
-                    HttpContext.Session.SetInt32("User_ID", userId);
-                    return RedirectToAction("Profile");
-                }
-            }
-
             return View();
         }
 
