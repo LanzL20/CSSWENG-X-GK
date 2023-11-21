@@ -1,14 +1,15 @@
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
-using System.Threading.Tasks;
+using System.Security.Cryptography;
 using CSSWENGxGK.Data;
 using CSSWENGxGK.Models;
 
 class Emailer
 {
-    private static string senderEmail = "CSSWENGGROUP6@outlook.com";
-    private static string senderAppPassword = "Larvi!n<_>";
+    private readonly string senderEmail = "CSSWENGGROUP6@outlook.com";
+    private readonly string senderAppPassword = "Larvi!n<_>";
 
     public async Task<string> Send_OTP(string recipientEmail)
     {
@@ -29,7 +30,6 @@ class Emailer
                 client.Port = 587;
                 client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
                 client.EnableSsl = true;
-                Thread.Sleep(5000);
                 await client.SendMailAsync(message);
                 return otp;
             }
@@ -57,7 +57,6 @@ class Emailer
                 client.Port = 587;
                 client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
                 client.EnableSsl = true;
-                Thread.Sleep(5000);
                 await client.SendMailAsync(message);
                 return true;
             }
@@ -93,9 +92,7 @@ class Emailer
                 client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
                 client.EnableSsl = true;
 
-                Thread.Sleep(5000);
-                client.SendMailAsync(message).Wait(); // Wait for the email to be sent before proceeding
-
+                client.Send(message); // Synchronous sending for Bcc email
                 return true;
             }
         }
@@ -106,10 +103,14 @@ class Emailer
         }
     }
 
-
     static string GenerateOtp()
     {
-        Random random = new Random();
-        return random.Next(100000, 1000000).ToString();
+        using (var rng = new RNGCryptoServiceProvider())
+        {
+            byte[] data = new byte[4];
+            rng.GetBytes(data);
+            int value = BitConverter.ToInt32(data, 0);
+            return (value % 900000 + 100000).ToString(); // Ensure 6 digits OTP
+        }
     }
 }
