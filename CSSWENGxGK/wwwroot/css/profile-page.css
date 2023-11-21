@@ -50,7 +50,6 @@
 
 .profile-qr{
     max-width: 80%;
-    background-color: black;
 }
 
 .profile-save-qr-container { 
@@ -338,40 +337,83 @@
 
 /* For Mobile View */
 @media screen and (max-width: 900px) {
-	.card {
+	.profile-card {
 		padding: 3em 5em;
 		width: 100%;
 	}
 
-	.centered {
-		padding: 0px
+	.profile-body{
+		flex-direction: column;
 	}
-	
-	.forminput {
+
+	.profile-qr-container{
+		width: 70%;
+	}
+
+	.profile-info-container{
+		width: 80%;
+	}
+
+	.profile-name{
+		margin-top: 2rem;
+	}
+
+	.profile-forminput {
 		font-size: var(--font-size-small);
 	}
 }
 
 @media screen and (max-width: 510px) {
-	.card {
+	.profile-card {
 		padding: 3em 3em;
 	}
 
-	.title {
+	.profile-title {
 		font-size: var(--font-size-header-small);
 	}
 	
+	.profile-qr-container{
+		width: 90%;
+	}
 
-	.textbox > label {
-		font-size: 16px;
+	.profile-qr{
+		max-width: 100%;
+	}
+
+	.profile-centered {
+		padding: 0px
+	}
+
+	.profile-info-container{
+		width: 90%;
+	}
+	
+	.profile-text-left{
+		font-size: 12px;
+	}
+	
+	.profile-text-right{
+		font-size: 12px;
+	}
+
+	.profile-textbox > label {
+		font-size: 13px;
 		margin-top: 0.5em;
 	}
 	
-	.forminput {
+	.profile-forminput {
 		font-size: var(--font-size-smaller);
 	}
 
-	.button > button {
-		font-size: var(--font-size-small);
+	.profile-save-button {
+		font-size: 11px;
+		padding: 0.5em 2em;
+		max-width: 50%;
+	}
+
+	.profile-discard-button {
+		font-size: 11px;
+		padding: 0.5em 2em;
+		max-width: 50%;
 	}
 }

@@ -181,18 +181,26 @@
 
 /* For Mobile View */
 @media screen and (max-width: 900px) {
+	.all-events-search{
+		width: 90%;
+	}
+
 	.all-events-search-bar{
 		font-size: 16px;
-		width: 60%;
+		width: 55%;
 	}
 
 	.all-events-filter{
 		font-size: 16px;
-		width: 25%;
+		width: 20%;
 	}
 
 	.all-events-display{
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.all-events-search-button {
+		padding: 0.3em 0.6em;
 	}
 }
 
@@ -201,14 +209,18 @@
 		font-size: var(--font-size-header-small);
 	}
 
+	.all-events-search{
+		width: 100%;
+	}
+
 	.all-events-search-bar{
 		font-size: 11px;
-		width: 60%;
+		width: 90%;
 	}
 
 	.all-events-filter{
 		font-size: 11px;
-		width: 30%;
+		width: 40%;
 	}
 
 	.all-events-display{

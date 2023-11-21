@@ -24,6 +24,7 @@ namespace CSSWENGxGK.Controllers
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
         string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string locationConnectionString = "Data Source=203.160.180.26;Initial Catalog=YourDatabaseName;User ID=test123;Password=test@123;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -207,7 +208,7 @@ namespace CSSWENGxGK.Controllers
                                             if (rowsAffected > 0)
                                             {
                                                 // The update was successful, and rows were modified
-                                                Console.WriteLine("ACCEPED");
+                                                Console.WriteLine("ACCEPTED");
                                             }
                                             else
                                             {
