@@ -250,8 +250,34 @@
 		padding-top: 56.25%;
 	}
 
+	.edit-one-event-forminput {
+		font-size: 16px;
+	}
+
+	.edit-one-event-contact-forminput {
+		font-size: 14px;
+	}
+
 	.edit-one-event-contact{
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.edit-one-event-discard-button {
+		font-size: 13px;
+		padding: 0.5em 2em;
+		max-width: 100%;
+	}
+
+	.edit-one-event-delete-button {
+		font-size: 13px;
+		padding: 0.5em 2em;
+		max-width: 100%;
+	}
+
+	.edit-one-event-save-button {
+		font-size: 13px;
+		padding: 0.5em 2em;
+		max-width: 100%;
 	}
 }
 
@@ -262,5 +288,31 @@
 
 	.edit-one-event-contact{
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.edit-one-event-button {
+		width: 100%;
+	}
+
+	.edit-one-event-textbox > label {
+		font-size: 16px;
+	}
+	
+	.edit-one-event-discard-button {
+		font-size: 11px;
+		padding: 0.7em 1em;
+		max-width: 100%;
+	}
+
+	.edit-one-event-delete-button {
+		font-size: 11px;
+		padding: 0.7em 1em;
+		max-width: 100%;
+	}
+
+	.edit-one-event-save-button {
+		font-size: 11px;
+		padding: 0.7em 1em;
+		max-width: 100%;
 	}
 }

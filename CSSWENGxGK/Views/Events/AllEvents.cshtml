@@ -53,7 +53,7 @@
         }
     </div>
 
-    <div class="all-event-pagination">
+    <div class="all-events-pagination">
         <ul class="pagination">
             <li class="page-item @(Convert.ToInt32(ViewData["CurrentPage"]) == 1 ? "disabled" : "")">
                 <a class="page-link"
@@ -83,7 +83,7 @@
         var userRoles = await _userManager.GetRolesAsync(user);
         if (userRoles.Contains("Admin"))
         {
-            <div class="all-event-button">
+            <div class="all-events-button">
                 <a asp-controller="Events" asp-action="AddEvent">Add Event</a>
             </div>
         }

@@ -105,12 +105,7 @@ class Emailer
 
     static string GenerateOtp()
     {
-        using (var rng = new RNGCryptoServiceProvider())
-        {
-            byte[] data = new byte[4];
-            rng.GetBytes(data);
-            int value = BitConverter.ToInt32(data, 0);
-            return (value % 900000 + 100000).ToString(); // Ensure 6 digits OTP
-        }
+        Random random = new Random();
+        return random.Next(100000, 999999).ToString();
     }
 }
