@@ -88,9 +88,9 @@ app.MapControllerRoute(
 
 app.UseMyCookieMiddleware();
 //daily
-//RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Daily);
+RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Daily);
 // this code for minutely checking
-RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Minutely());
+// RecurringJob.AddOrUpdate(() => Active_Checker.PerformDatabaseCheck(), Cron.Minutely());
 
 // Start Hangfire server in the background
 using (var server = new BackgroundJobServer())
