@@ -24,7 +24,6 @@ namespace CSSWENGxGK.Controllers
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
         string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
-        string locationConnectionString = "Data Source=203.160.180.26;Initial Catalog=YourDatabaseName;User ID=test123;Password=test@123;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -392,7 +391,8 @@ namespace CSSWENGxGK.Controllers
                 Console.Write("VALID");
                 if (EmailExists(model.Email))
                 { 
-                    return RedirectToAction("Register");
+                    ViewBag.EmailErrorMessage = "Email Already Exists";
+                    return View("Register", model);
                 }
 
                 bool real_email = await emailer.Send_Welcome(model.Email);
@@ -673,7 +673,9 @@ namespace CSSWENGxGK.Controllers
                             else
                             {
                                 // Handle the case when no user is found with the provided email
+                                ViewBag.EmailErrorMessage = "Account Does Not Exist";
                                 ModelState.AddModelError(string.Empty, "User not found.");
+                                return View("Login");
                             }
                         }
                     }

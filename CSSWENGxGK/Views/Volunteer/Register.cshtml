@@ -26,11 +26,11 @@
             <div class="textbox">
                 <label>Email Address</label>
                 <input asp-for="Email" class="form-control forminput" placeholder="sample@email.com">
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <span asp-validation-for="Email" class="text-danger">@ViewBag.EmailErrorMessage</span>
             </div>
             <div class="textbox">
                 <label>Phone Number</label>
-                <input asp-for="MobileNumber" class="form-control forminput"  placeholder="Phone Number">
+                <input asp-for="MobileNumber" class="form-control forminput" placeholder="Phone Number">
                 <span asp-validation-for="MobileNumber" class="text-danger"></span>
             </div>
             <div class="textbox">
@@ -300,21 +300,24 @@
             </div>
             <div class="textbox">
                 <label>Province Name</label>
-                <select asp-for="PROV_CODE" class="form-control forminput" style="appearance: menulist;">
+                <input asp-for="PROV_CODE" class="form-control forminput">
+                @* <select asp-for="PROV_CODE" class="form-control forminput" style="appearance: menulist;">
 
-                </select>                                     
+                </select>*@
             </div>
             <div class="textbox">
                 <label>Town Code</label>
-                <select asp-for="TOWN_CODE" class="form-control forminput" placeholder="Town Code">
+                <input asp-for="TOWN_CODE" class="form-control forminput" placeholder="Town Code">
+                @* <select asp-for="TOWN_CODE" class="form-control forminput" placeholder="Town Code">
 
-                </select>
+                </select> *@
             </div>
             <div class="textbox">
                 <label>Barangay Code</label>
-                <select asp-for="BRGY_CODE" class="form-control forminput" placeholder="Barangay Code">
+                <input asp-for="BRGY_CODE" class="form-control forminput" placeholder="Barangay Code">
+                @* <select asp-for="BRGY_CODE" class="form-control forminput" placeholder="Barangay Code">
                     
-                </select>
+                </select> *@
             </div>
             <div class="textbox">
                 <label>Year Started as GK Volunteer?</label>
