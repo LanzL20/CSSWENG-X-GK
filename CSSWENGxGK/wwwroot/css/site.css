@@ -78,7 +78,7 @@ input[type="checkbox"]:focus {
 	outline: transparent;
 }
 
-.forminput, .login-otp-input, .login-input, .all-events-search-bar {
+.forminput, .login-otp-input, .login-input, .all-events-search-bar, .reactivate-input, .reactivate-otp-input {
 	border-radius: var(--corner-radius);
 	font-size: var(--font-size-regular);
 	font-family: var(--font-family);
@@ -94,7 +94,7 @@ input[type="checkbox"]:focus {
 	transform: scale(1);
 }
 
-.forminput:focus, .login-otp-input:focus, .login-input:focus, .all-events-search-bar:focus{
+.forminput:focus, .login-otp-input:focus, .login-input:focus, .all-events-search-bar:focus, .reactivate-input:focus, .reactivate-otp-input:focus{
 	border-color: var(--accent);
 	box-shadow: var(--drop-shadow);
 

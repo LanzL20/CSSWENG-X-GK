@@ -27,8 +27,8 @@
         <form method="get" action="@Url.Action("AllEvents", "Events")" class="all-events-search">
             <input class="all-events-search-bar" type="text" name="searchQuery" placeholder="Search...">
             <select class="all-events-filter" name="sortOrder" id="sortOrder">
-                <option value="date">Upcoming Event</option>
                 <option value="date_created">Latest Created</option>
+                <option value="date">Upcoming Event</option>
             </select>
             <button type="submit" class="all-events-search-button"><span class="material-symbols-outlined">search</span></button>
         </form>

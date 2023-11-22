@@ -75,14 +75,14 @@ public class EventsController : Controller
         switch (sortOrder)
         {
             case "date":
-                eventsQuery = eventsQuery.OrderByDescending(e => e.EventDate);
+                eventsQuery = eventsQuery.OrderBy(e => e.EventDate);
                 break;
             case "date_created":
                 eventsQuery = eventsQuery.OrderByDescending(e => e.EventID);
                 break;
             default:
                 // Default sorting: Most recent events first
-                eventsQuery = eventsQuery.OrderByDescending(e => e.EventDate);
+                eventsQuery = eventsQuery.OrderByDescending(e => e.EventID);
                 break;
         }
 
