@@ -21,7 +21,7 @@ namespace CSSWENGxGK.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
-        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -109,7 +109,6 @@ namespace CSSWENGxGK.Controllers
                                         }
                                         else
                                         {
-                                            Console.WriteLine("Fail");
                                             ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                                         }
                                     }
@@ -117,6 +116,7 @@ namespace CSSWENGxGK.Controllers
                                 else
                                 {
                                     ModelState.AddModelError(string.Empty, "Your account is not active. Please contact the administrator.");
+                                    return RedirectToAction("Reactivate");
                                 }
                             }
                             else
@@ -150,7 +150,6 @@ namespace CSSWENGxGK.Controllers
 
             if (ModelState.IsValid)
             {
-                Console.Write("VALID");
                 if (EmailExists(model.Email))
                 { 
                     ViewBag.EmailErrorMessage = "Email Already Exists";
@@ -252,7 +251,6 @@ namespace CSSWENGxGK.Controllers
                         await _userManager.AddToRoleAsync(new_user, "User");
 
                         var roles = await _userManager.GetRolesAsync(new_user);
-                        Console.WriteLine($"Roles for user {new_user.UserName}: {string.Join(", ", roles)}");
 
                         return RedirectToAction("Login");
                     }
@@ -557,7 +555,6 @@ namespace CSSWENGxGK.Controllers
                                         updateCommand.Parameters.AddWithValue("@BRGY_CODE", model.BRGY_CODE);
                                         updateCommand.Parameters.AddWithValue("@YearStarted", model.YearStarted);
                                         updateCommand.Parameters.AddWithValue("@IsNotify", model.IsNotify);
-                                        Console.WriteLine(model.IsNotify);
                                         updateCommand.Parameters.AddWithValue("@VolunteerID", userId);
 
                                         try
@@ -686,8 +683,6 @@ namespace CSSWENGxGK.Controllers
                                     {
                                         using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
                                         {
-                                            Console.WriteLine("HERE");
-
                                             insertCommand.Parameters.AddWithValue("@VolunteerID", parsedVolunteerID);
                                             insertCommand.Parameters.AddWithValue("@EventID", selectedEvent);
 
@@ -703,7 +698,6 @@ namespace CSSWENGxGK.Controllers
                                                 // Log a failure message
                                                 System.Diagnostics.Trace.WriteLine("INSERT operation did not affect any rows.");
                                             }
-                                            Console.WriteLine("OK");
                                         }
                                     }
                                     catch (Exception ex)
@@ -755,6 +749,147 @@ namespace CSSWENGxGK.Controllers
                 });
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Reactivate(string Email, string Password)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string email = Email;
+                    string password = Password;
+
+                    string query = "SELECT Password, VolunteerID, IsActive, OtpUsed, LastOtpTime FROM T_Volunteer WHERE Email = @Email";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Email", email);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                bool isActive = reader.GetBoolean(reader.GetOrdinal("IsActive"));
+                                bool otpUsed = reader.GetBoolean(reader.GetOrdinal("OtpUsed"));
+                                DateTime lastOtpTime = reader.GetDateTime(reader.GetOrdinal("LastOtpTime"));
+                                int volunteerId = reader.GetInt32(reader.GetOrdinal("VolunteerID"));
+                                string hashedPassword = reader["Password"].ToString(); // Retrieve hashedPassword before closing the reader
+
+                                // Close the reader
+                                reader.Close();
+
+                                if (!isActive)
+                                {
+                                    // Check if the OTP was generated more than 5 minutes ago
+                                    if ((DateTime.Now - lastOtpTime).TotalMinutes > 5)
+                                    {
+                                        ModelState.AddModelError(string.Empty, "The OTP has expired. Please generate a new one.");
+                                    }
+                                    else if (otpUsed)
+                                    {
+                                        ModelState.AddModelError(string.Empty, "The OTP has already been used. Please generate a new one.");
+                                    }
+                                    else
+                                    {
+                                        if (BCrypt.Net.BCrypt.Verify(password, hashedPassword))
+                                        {
+                                            // Update IsActive to true and set LastUpdateDate to current time
+                                            string updateQuery = "UPDATE T_Volunteer SET IsActive = 1, LastUpdateDate = GETDATE() WHERE Email = @Email";
+                                            using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                                            {
+                                                updateCommand.Parameters.AddWithValue("@Email", email);
+                                                updateCommand.ExecuteNonQuery();
+                                            }
+
+                                            // Mark OTP as used
+                                            MarkOtpAsUsed(volunteerId);
+
+                                            return RedirectToAction("Login");
+                                        }
+                                        else
+                                        {
+                                            ModelState.AddModelError(string.Empty, "Invalid Reactivate attempt.");
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    ModelState.AddModelError(string.Empty, "Your account is already active.");
+                                    return RedirectToAction("Login");
+                                }
+                            }
+                            else
+                            {
+                                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Exception occurred: " + ex.ToString());
+                    ModelState.AddModelError(string.Empty, "An error occurred while processing your request.");
+                }
+            }
+
+            return RedirectToAction("Reactivate");
+        }
+
+        public async Task<IActionResult> Renew()
+        {
+            int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
+            int userId = userIdNullable ?? 0;
+
+            if (userId != 0)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string email = string.Empty;
+                    string emailQuery = "SELECT Email FROM T_Volunteer WHERE VolunteerID = @parsedVolunteerID";
+                    using (SqlCommand emailCommand = new SqlCommand(emailQuery, connection))
+                    {
+                        emailCommand.Parameters.AddWithValue("@parsedVolunteerID", userId);
+
+                        using (SqlDataReader emailReader = emailCommand.ExecuteReader())
+                        {
+                            if (emailReader.Read())
+                            {
+                                email = emailReader["Email"].ToString();
+                            }
+                            else
+                            {
+                                // Log the reason for redirection
+                                Console.WriteLine("VolunteerID not found. Redirecting to Login.");
+                                return RedirectToAction("Login");
+                            }
+                        }
+                    }
+
+                    // Step 2: Perform the update
+                    string updateQuery = "UPDATE T_Volunteer SET LastUpdateDate = GETDATE() WHERE VolunteerID = @parsedVolunteerID";
+                    using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                    {
+                        updateCommand.Parameters.AddWithValue("@parsedVolunteerID", userId);
+                        updateCommand.ExecuteNonQuery();
+                    }
+
+                    Console.WriteLine("Update successful. Redirecting to Profile.");
+                    return RedirectToAction("Profile");
+                }
+            }
+            else
+            {
+                // Log the case where userId is 0
+                Console.WriteLine("Invalid userId. Redirecting to Login.");
+                return RedirectToAction("Login");
+            }
+        }
+
 
     }
 }
