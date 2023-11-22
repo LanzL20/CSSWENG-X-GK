@@ -39,13 +39,15 @@
 	align-self: center;
 }
 
+.scan-flip{
+	transform: scaleX(-100%);
+}
+
 .scan-camera{
     position: relative;
     align-self: center;
     width: 60%;
     margin-bottom: 2.5em;
-
-	background-color: black;
 }
 
 .scan-volunteer-id-container{

@@ -128,6 +128,10 @@
 	.forminput {
 		font-size: var(--font-size-small);
 	}
+
+	.register-notify{
+		font-size: 16px;
+	}
 }
 
 @media screen and (max-width: 510px) {
@@ -139,7 +143,6 @@
 		font-size: var(--font-size-header-small);
 	}
 	
-
 	.textbox > label {
 		font-size: 16px;
 		margin-top: 0.5em;

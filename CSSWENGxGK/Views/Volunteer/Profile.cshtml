@@ -383,7 +383,7 @@
                 <div id="provinceContainer" class="profile-textbox">
                     <label>Province Name</label>
                     <select asp-for="PROV_CODE" id="provinceInput" class="form-control profile-forminput" style="appearance: menulist;">
-                        <option value="@ViewBag.Province" selected disabled hidden>@ViewBag.Province</option>
+                        <option value="@ViewBag.Province" selected hidden>@ViewBag.Province</option>
                         <option value="Abra">Abra</option> 
                         <option value="Agusan del Norte">Agusan del Norte</option>
                         <option value="Agusan del Sur">Agusan del Sur</option>
@@ -544,7 +544,7 @@
         });
     });
 
-    function toggleInputs() {
+    function toggleCountryInputs() {
         var countryInput = document.getElementById('countryInput');
         var provinceContainer = document.getElementById('provinceContainer');
         var provinceInput = document.getElementById('provinceInput');

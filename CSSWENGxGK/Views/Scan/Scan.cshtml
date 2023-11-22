@@ -26,7 +26,9 @@ var user = await _userManager.FindByNameAsync(userIdString);
             </a>
         </div>
 
-        <video class="scan-camera" id="qr-video"></video>
+        <div class="scan-flip">
+            <video class="scan-camera" id="qr-video"></video>
+        </div>
 
         <form id="verifyVolunteerForm" method="post" class="scan-volunteer-id-container">
             <input class="scan-volunteer-id" name="Vol_ID" type="text" placeholder="Volunteer ID">
@@ -61,75 +63,6 @@ var user = await _userManager.FindByNameAsync(userIdString);
         <div>
             <p class="scan-failed">Volunteer Not Found.</p>
         </div>
-
-        <!-- Include necessary libraries -->
-        <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/dist/jsqrcode.js"></script>
-        <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
-        <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-        <script>
-            $(document).ready(function () {
-                $(".scan-successful, .scan-failed").hide();
-            });
-
-            // Get a reference to the video element
-            const videoElement = document.getElementById('qr-video');
-
-            // Initialize the QR code scanner
-            const scanner = new Instascan.Scanner({ video: videoElement });
-
-            // Listen for the "scan" event to capture the QR code data
-            scanner.addListener('scan', function (content) {
-                // Check if the scanned content is a valid ID
-                document.querySelector('.scan-volunteer-id').value = content;
-            });
-
-            // Start the QR code scanner
-            Instascan.Camera.getCameras().then(function (cameras) {
-                if (cameras.length > 0) {
-                    scanner.start(cameras[0]);
-                } else {
-                    console.error('No cameras found.');
-                }
-            });
-
-            $("#verifyVolunteerForm").on("submit", function (e) {
-                e.preventDefault(); // Prevent the default form submission
-
-                var formData = $(this).serialize();
-
-                $.ajax({
-                    url: '@Url.Action("VerifyVolunteerID", "Volunteer")',
-                    method: 'POST',
-                    data: formData,
-                    success: function (response) {
-                        if (response.found) {
-                            // Show the successful message and hide the failure message
-                            $(".scan-successful").show();
-                            $(".scan-failed").hide();
-
-                            // Change the content of the div elements with specific IDs
-                            $("#Volunteer_ID").text(response.volunteerID);
-                            $("#Full_name").text(response.firstName + " " + response.lastName);
-                        } else {
-                            // Show the failure message and hide the successful message
-                            $(".scan-successful").hide();
-                            $(".scan-failed").show();
-
-                            // Handle the case when "found" is false
-                            // For example, show an error message or clear the content
-                        }
-                    },
-                    error: function (error) {
-                        // Handle errors here
-                    }
-                });
-            });
-
-
-
-        </script>
     </div>
 }else
 {
@@ -137,3 +70,80 @@ var user = await _userManager.FindByNameAsync(userIdString);
         <p>No access to this page.</p>
     </div>
 }
+
+<!-- Include necessary libraries -->
+        <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/dist/jsqrcode.js"></script>
+        <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+        <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".scan-successful, .scan-failed").hide();
+    });
+
+    // Get a reference to the video element
+    const videoElement = document.getElementById('qr-video');
+
+    // Initialize the QR code scanner
+    const scanner = new Instascan.Scanner({ video: videoElement });
+
+    // Listen for the "scan" event to capture the QR code data
+    scanner.addListener('scan', function (content) {
+        // Check if the scanned content is a valid ID
+        document.querySelector('.scan-volunteer-id').value = content;
+    });
+
+    // Start the QR code scanner
+    Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+            // Check if back camera is available
+            var backCamera = cameras.find(function (camera) {
+                if (camera.name == null) {
+                    return false;
+                }
+                return camera.name.toLowerCase().includes("back");
+            });
+
+            // If back camera is available, use it; otherwise, use the first available camera
+            selectedCamera = backCamera || cameras[0];
+
+            scanner.start(selectedCamera);
+        } else {
+            console.error('No cameras found.');
+        }
+    });
+
+    $("#verifyVolunteerForm").on("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        var formData = $(this).serialize();
+
+        $.ajax({
+            url: '@Url.Action("VerifyVolunteerID", "Volunteer")',
+            method: 'POST',
+            data: formData,
+            success: function (response) {
+                if (response.found) {
+                    // Show the successful message and hide the failure message
+                    $(".scan-successful").show();
+                    $(".scan-failed").hide();
+
+                    // Change the content of the div elements with specific IDs
+                    $("#Volunteer_ID").text(response.volunteerID);
+                    $("#Full_name").text(response.firstName + " " + response.lastName);
+                } else {
+                    // Show the failure message and hide the successful message
+                    $(".scan-successful").hide();
+                    $(".scan-failed").show();
+
+                    // Handle the case when "found" is false
+                    // For example, show an error message or clear the content
+                }
+            },
+            error: function (error) {
+                // Handle errors here
+            }
+        });
+    });
+</script>

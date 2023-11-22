@@ -34,7 +34,7 @@ var user = await _userManager.FindByNameAsync(userIdString);
         <div class="past-events-display">
             @if (Model.Count == 0)
             {
-                <div style="align-items: center; width:max-content">
+                <div style="align-items: center; width:auto;">
                     <p>You have not participated in any events yet. Look <a asp-controller="Events" asp-action="AllEvents">here</a> for an event near you!</p>
                 </div>
             }
