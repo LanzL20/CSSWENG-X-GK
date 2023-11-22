@@ -299,7 +299,7 @@
                 </select>
                 <span asp-validation-for="Country" class="text-danger"></span>
             </div>
-            <div id="provinceContainer" class="textbox">
+            <div id="provinceContainer" class="textbox" style="display: none;">
                 <label>Province Name</label>
                 @* <input asp-for="PROV_CODE" id="provinceInput" class="form-control forminput" list="provinceList" placeholder="Provice Name"> *@
                 <select asp-for="PROV_CODE" id="provinceInput" class="form-control forminput" style="appearance: menulist;">
@@ -389,7 +389,7 @@
                 </select>
                 <span asp-validation-for="PROV_CODE" class="text-danger"></span>
             </div>
-            <div id="townContainer" class="textbox">
+            <div id="townContainer" class="textbox" style="display: none;">
                 <label>Town Name</label>
                 <input asp-for="TOWN_CODE" id="townInput" class="form-control forminput" placeholder="Town Name">
                 <span asp-validation-for="TOWN_CODE" class="text-danger"></span>
@@ -397,7 +397,7 @@
 
                 </select> *@
             </div>
-            <div id="barangayContainer" class="textbox">
+            <div id="barangayContainer" class="textbox" style="display: none;">
                 <label>Barangay</label>
                 <input asp-for="BRGY_CODE" id="barangayInput" class="form-control forminput" placeholder="Barangay">
                 <span asp-validation-for="BRGY_CODE" class="text-danger"></span>
@@ -455,8 +455,11 @@
 
         if (countryInput.value === 'Philippines') {
             provinceContainer.style.display = 'block';
+            provinceInput.value = '';
             townContainer.style.display = 'block';
+            townInput.value = '';
             barangayContainer.style.display = 'block';
+            barangayInput.value = '';
         } else {
             provinceContainer.style.display = 'none';
             provinceInput.value = '-1';

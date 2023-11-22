@@ -10,7 +10,7 @@ public class EventsController : Controller
 {
 	private readonly ApplicationDbContext _db;
     private readonly UserManager<User> _userManager;
-    string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+    string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
     Emailer emailer = new Emailer();
 
     public EventsController(ApplicationDbContext db, UserManager<User> userManager)
@@ -73,7 +73,10 @@ public class EventsController : Controller
         IQueryable<Event> eventsQuery = _db.T_Event;
 
         // Check if the user is an admin
-        bool isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+        bool isAdmin = false;
+        if (user != null) {
+            isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+        }
 
         // Apply search filter if a search query is provided
         if (!string.IsNullOrEmpty(searchQuery))
