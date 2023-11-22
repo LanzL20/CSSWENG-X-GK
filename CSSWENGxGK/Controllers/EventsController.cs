@@ -339,8 +339,8 @@ public class EventsController : Controller
             {
                 connection.Open();
                 string query = "SET IDENTITY_INSERT T_Event ON;" +
-                    "INSERT INTO T_Event (EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus, EventImage) " +
-                    "VALUES (@GeneratedID, @EventName, @EventDate, @EventLocation, @EventShortDesc, @EventLongDesc, @EventStatus, @EventImage);" +
+                    "INSERT INTO T_Event (EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus, EventImage, EventEndDate) " +
+                    "VALUES (@GeneratedID, @EventName, @EventDate, @EventLocation, @EventShortDesc, @EventLongDesc, @EventStatus, @EventImage, @EventEndDate);" +
                     "SET IDENTITY_INSERT T_Event OFF;";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -353,6 +353,7 @@ public class EventsController : Controller
                     command.Parameters.AddWithValue("@EventLongDesc", model.Event.EventLongDesc);
                     command.Parameters.AddWithValue("@EventStatus", 0);
                     command.Parameters.AddWithValue("@EventImage", model.Event.EventImage); // Assuming EventImage is a byte[]
+                    command.Parameters.AddWithValue("@EventEndDate", model.Event.EventEndDate);
 
                     command.ExecuteNonQuery();
                 }
@@ -434,7 +435,7 @@ public class EventsController : Controller
                 connection.Open();
 
                 // Fetch Event details
-                string eventQuery = $"SELECT EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus, EventImage " +
+                string eventQuery = $"SELECT EventID, EventName, EventDate, EventLocation, EventShortDesc, EventLongDesc, EventStatus, EventImage, EventEndDate " +
                                    $"FROM T_Event WHERE EventID = {selectedEvent}";
 
                 using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
@@ -452,6 +453,7 @@ public class EventsController : Controller
                             ViewBag.EventStatus = eventReader["EventStatus"];
                             ViewBag.EventStatusString = ReadEventStatus(Convert.ToInt32(eventReader["EventStatus"]));
                             ViewBag.EventImage = eventReader["EventImage"];
+                            ViewBag.EventEndDate = eventReader["EventEndDate"];
                         }
                     }
                 }
@@ -495,7 +497,8 @@ public class EventsController : Controller
         {
             connection.Open();
             DateTime eventDate = updatedEvent.Event.EventDate;
-			string updateEventQuery = "UPDATE T_Event SET EventName = @EventName, EventDate = @EventDate, EventLocation = @EventLocation, EventShortDesc = @EventShortDesc, EventLongDesc = @EventLongDesc, EventStatus = @EventStatus, EventImage = @EventImage WHERE EventID = @EventID";
+            DateTime eventEndDate = updatedEvent.Event.EventEndDate;
+            string updateEventQuery = "UPDATE T_Event SET EventName = @EventName, EventDate = @EventDate, EventLocation = @EventLocation, EventShortDesc = @EventShortDesc, EventLongDesc = @EventLongDesc, EventStatus = @EventStatus, EventImage = @EventImage, EventEndDate = @EventEndDate WHERE EventID = @EventID";
             Console.WriteLine(eventDate);
             Console.WriteLine(DateTime.MinValue);
             Console.WriteLine(eventDate <= DateTime.MinValue);
@@ -514,6 +517,23 @@ public class EventsController : Controller
                         }
 
                         Console.WriteLine(eventDate);
+                    }
+                }
+            }
+            if (eventEndDate <= DateTime.MinValue || eventEndDate >= DateTime.MaxValue || eventEndDate < eventDate)
+            {
+                string eventQuery = $"SELECT EventEndDate " +
+                                       $"FROM T_Event WHERE EventID = {updatedEvent.Event.EventID}";
+                using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
+                {
+                    using (SqlDataReader eventReader = eventCommand.ExecuteReader())
+                    {
+                        if (eventReader.Read())
+                        {
+                            eventEndDate = (DateTime)eventReader["EventEndDate"];
+                        }
+
+                        Console.WriteLine(eventEndDate);
                     }
                 }
             }
@@ -552,6 +572,7 @@ public class EventsController : Controller
                 eventCommand.Parameters.AddWithValue("@EventStatus", updatedEvent.Event.EventStatus);
                 eventCommand.Parameters.AddWithValue("@EventID", updatedEvent.Event.EventID);
                 eventCommand.Parameters.AddWithValue("@EventImage", updatedEvent.Event.EventImage);
+                eventCommand.Parameters.AddWithValue("@EventEndDate", eventEndDate);
                 Console.WriteLine("EventStatus:");
                 Console.WriteLine(updatedEvent.Event.EventStatus);
 				eventCommand.ExecuteNonQuery();
