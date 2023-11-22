@@ -49,6 +49,17 @@
             <!-- Assuming images are JPEG; adjust data URI accordingly for different image types -->
                 <h1 class="all-events-individual-title">@eventItem.EventName</h1>
                 <p class="all-events-short-description">@eventItem.EventShortDesc</p>
+                <div class="all-events-container">
+                    <div class="all-events-date">
+                        <strong>Date:</strong> @eventItem.EventDate.ToString("MM/dd/yyyy")
+                    </div>
+                    <div class="all-events-time">
+                        <strong>Time:</strong> @eventItem.EventDate.ToString("hh:mm tt")
+                    </div>
+                    <div class="all-events-location">
+                        <strong>Location:</strong> @eventItem.EventLocation
+                    </div>
+                </div>
             </a>
         }
     </div>
