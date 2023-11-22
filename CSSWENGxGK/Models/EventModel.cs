@@ -23,6 +23,9 @@ namespace CSSWENGxGK.Models
         public DateTime EventDate { get; set; }
 
         [Required]
+        public DateTime EventEndDate { get; set; }
+
+        [Required]
         public string EventLocation { get; set; }
 
         [StringLength(280, ErrorMessage = "Event Description should be less than 280 characters.")]
