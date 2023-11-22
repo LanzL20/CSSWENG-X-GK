@@ -1,8 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace CSSWENGxGK.Models
+﻿namespace CSSWENGxGK.Models
 {
     public class EventOrganizers
     {

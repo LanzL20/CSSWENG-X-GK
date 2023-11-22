@@ -97,6 +97,18 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\json\\Barangay.json",
+      "PackagePath": "staticwebassets\\json\\Barangay.json"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\json\\Province.json",
+      "PackagePath": "staticwebassets\\json\\Province.json"
+    },
+    {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\json\\Town.json",
+      "PackagePath": "staticwebassets\\json\\Town.json"
+    },
+    {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

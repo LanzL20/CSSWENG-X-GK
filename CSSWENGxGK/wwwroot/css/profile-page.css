@@ -134,8 +134,7 @@
 }
 
 .profile-info{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin-top: 1.5em;

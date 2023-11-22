@@ -1,0 +1,330 @@
+[
+  {
+    "Prov_Code": "012800000",
+    "Prov_Name": "Ilocos Norte"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Prov_Name": "Ilocos Sur"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Prov_Name": "La Union"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Prov_Name": "Pangasinan"
+  },
+  {
+    "Prov_Code": "020900000",
+    "Prov_Name": "Batanes"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Prov_Name": "Cagayan"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Prov_Name": "Isabela"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Prov_Name": "Nueva Vizcaya"
+  },
+  {
+    "Prov_Code": "025700000",
+    "Prov_Name": "Quirino"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Prov_Name": "Bataan"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Prov_Name": "Bulacan"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Prov_Name": "Nueva Ecija"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Prov_Name": "Pampanga"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Prov_Name": "Tarlac"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Prov_Name": "Zambales"
+  },
+  {
+    "Prov_Code": "037700000",
+    "Prov_Name": "Aurora"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Prov_Name": "Batangas"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Prov_Name": "Cavite"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Prov_Name": "Laguna"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Prov_Name": "Quezon"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Prov_Name": "Rizal"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Prov_Name": "Albay"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Prov_Name": "Camarines Norte"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Prov_Name": "Camarines Sur"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Prov_Name": "Catanduanes"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Prov_Name": "Masbate"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Prov_Name": "Sorsogon"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Prov_Name": "Aklan"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Prov_Name": "Antique"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Prov_Name": "Capiz"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Prov_Name": "Iloilo"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Prov_Name": "Negros Occidental"
+  },
+  {
+    "Prov_Code": "067900000",
+    "Prov_Name": "Guimaras"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Prov_Name": "Bohol"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Prov_Name": "Cebu"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Prov_Name": "Negros Oriental"
+  },
+  {
+    "Prov_Code": "076100000",
+    "Prov_Name": "Siquijor"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Prov_Name": "Eastern Samar"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Prov_Name": "Leyte"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Prov_Name": "Northern Samar"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Prov_Name": "Samar"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Prov_Name": "Southern Leyte"
+  },
+  {
+    "Prov_Code": "087800000",
+    "Prov_Name": "Biliran"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Prov_Name": "Zamboanga del Norte"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Prov_Name": "Zamboanga del Sur"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Prov_Name": "Zamboanga Sibugay"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Prov_Name": "Bukidnon"
+  },
+  {
+    "Prov_Code": "101800000",
+    "Prov_Name": "Camiguin"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Prov_Name": "Lanao del Norte"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Prov_Name": "Misamis Occidental"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Prov_Name": "Misamis Oriental"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Prov_Name": "Davao del Norte"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Prov_Name": "Davao del Sur"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Prov_Name": "Davao Oriental"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Prov_Name": "Davao de Oro"
+  },
+  {
+    "Prov_Code": "118600000",
+    "Prov_Name": "Davao Occidental"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Prov_Name": "North Cotabato"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Prov_Name": "South Cotabato"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Prov_Name": "Sultan Kudarat"
+  },
+  {
+    "Prov_Code": "128000000",
+    "Prov_Name": "Sarangani"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Prov_Name": "Metropolitan Manila"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Prov_Name": "Abra"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Prov_Name": "Benguet"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Prov_Name": "Ifugao"
+  },
+  {
+    "Prov_Code": "143200000",
+    "Prov_Name": "Kalinga"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Prov_Name": "Mountain Province"
+  },
+  {
+    "Prov_Code": "148100000",
+    "Prov_Name": "Apayao"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Prov_Name": "Basilan"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Prov_Name": "Lanao del Sur"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Prov_Name": "Maguindanao"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Prov_Name": "Sulu"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Prov_Name": "Tawi-Tawi"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Prov_Name": "Agusan del Norte"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Prov_Name": "Agusan del Sur"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Prov_Name": "Surigao del Norte"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Prov_Name": "Surigao del Sur"
+  },
+  {
+    "Prov_Code": "168500000",
+    "Prov_Name": "Dinagat Islands"
+  },
+  {
+    "Prov_Code": "174000000",
+    "Prov_Name": "Marinduque"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Prov_Name": "Occidental Mindoro"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Prov_Name": "Oriental Mindoro"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Prov_Name": "Palawan"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Prov_Name": "Romblon"
+  }
+]

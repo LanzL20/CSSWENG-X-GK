@@ -30,56 +30,30 @@
             <div class="profile-button">
                 <a class="profile-view-past" asp-controller="Events" asp-action="PastEvents">View Past Events</a>
             </div>
-            <div class="profile-info">
-                <div class="profile-info-left">
-                    <div class="profile-text-left">
-                        Volunteer ID:
-                    </div>
-                    <div class="profile-text-left">
-                        Email:
-                    </div>
-                    <div class="profile-text-left">
-                        Mobile Number:
-                    </div>
-                    <div class="profile-text-left">
-                        Birthdate:
-                    </div>
-                    <div class="profile-text-left">
-                        Gender:
-                    </div>
-                    <div class="profile-text-left">
-                        Location:
-                    </div>
-                    <div class="profile-text-left">
-                        Year Started:
-                    </div>
-                    <div class="profile-text-left">
-                        Date Created:
-                    </div>
-                    <div class="profile-text-left">
-                        Last Verified:
-                    </div>
-                    <div class="profile-text-left">
-                        Email Notifications:
-                    </div>
-                </div>
-                <div class="profile-info-right">
-                    <div class="profile-text-right">
-                        @ViewBag.VolunteerID
-                    </div>
-                    <div class="profile-text-right">
-                        @ViewBag.Email
-                    </div>
-                    <div class="profile-text-right">
-                        @ViewBag.MobileNumber
-                    </div>
-                    <div class="profile-text-right">
-                        @ViewBag.BirthDate.ToString("yyyy-MM-dd")
-                    </div>
-                    <div class="profile-text-right">
-                        @ViewBag.Gender
-                    </div>
-                    <div class="profile-text-right">
+            <table class="profile-info">
+                <tr>
+                    <td class="profile-text-left">Volunteer ID:</td>
+                    <td class="profile-text-right">@ViewBag.VolunteerID</td>
+                </tr>
+                <tr>
+                    <td class="profile-text-left">Email:</td>
+                    <td class="profile-text-right">@ViewBag.Email</td>
+                </tr>
+                <tr>
+                    <td class="profile-text-left">Mobile Number:</td>
+                    <td class="profile-text-right">@ViewBag.MobileNumber</td>
+                </tr>
+                <tr>
+                    <td class="profile-text-left">Birthdate:</td>
+                    <td class="profile-text-right">@ViewBag.BirthDate.ToString("yyyy-MM-dd")</td>
+                </tr>
+                <tr>
+                    <td class="profile-text-left">Gender:</td>
+                    <td class="profile-text-right">@ViewBag.Gender</td>
+                </tr>
+                <tr>
+                    <td class="profile-text-left">Location:</td>
+                    <td class="profile-text-right">
                         @if (ViewBag.Country != "Philippines")
                         {
                             @ViewBag.Country
@@ -88,21 +62,26 @@
                         {
                             <text>@ViewBag.Barangay, @ViewBag.Town, @ViewBag.Province, @ViewBag.Country</text>
                         }
-                    </div>
-                    <div class="profile-text-right">
-                        @ViewBag.YearStarted.ToString()
-                    </div>
-                    <div class="profile-text-right">
-                        @ViewBag.CreatedDate.ToString()
-                    </div>
-                    <div class="profile-text-right">
-                        @ViewBag.LastUpdateDate.ToString()
-                    </div>
-                    <div class="profile-text-right">
-                        @(ViewBag.IsNotify ? "Enabled" : "Disabled")
-                    </div>
-                </div>
-            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="profile-text-left">Year Started:</td>
+                    <td class="profile-text-right">@ViewBag.YearStarted.ToString()</td>
+                </tr>
+                <tr>
+                    <td class="profile-text-left">Date Created:</td>
+                    <td class="profile-text-right">@ViewBag.CreatedDate.ToString()</td>
+                </tr>
+                <tr>
+                    <td class="profile-text-left">Last Verified:</td>
+                    <td class="profile-text-right">@ViewBag.LastUpdateDate.ToString()</td>
+                </tr>
+                <tr>
+                    <td class="profile-text-left">Email Notifications:</td>
+                    <td class="profile-text-right">@(ViewBag.IsNotify ? "Enabled" : "Disabled")</td>
+                </tr>
+            </table> 
+
             <div class="profile-button">
                 <a class="profile-sign-out-button" form asp-controller="Volunteer" asp-action="Sign_Out">Sign Out</a>
             </div>
@@ -148,7 +127,7 @@
                 @* TODO: Connect their given db *@
                 <div class="profile-textbox">
                     <label>Country</label>
-                    <select asp-for="Country" id="countryInput" class="form-control profile-forminput" onchange="toggleInputs()" style="appearance: menulist;">
+                    <select asp-for="Country" id="countryInput" class="form-control profile-forminput" onchange="toggleCountryInputs()" style="appearance: menulist;">
                         <option value="@ViewBag.Country" selected hidden>@ViewBag.Country</option>
                         <option value="Philippines">Philippines</option>
                         <option value="Afghanistan">Afghanistan</option>

@@ -2,18 +2,14 @@ using CSSWENGxGK.Data;
 using CSSWENGxGK.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
-using BCrypt.Net;
-using System;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.IO;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using ZXing;
 using ZXing.Windows.Compatibility;
+using System.Text;
+using System.Globalization;
+using System.Security.Cryptography;
 
 namespace CSSWENGxGK.Controllers
 {
@@ -414,13 +410,22 @@ namespace CSSWENGxGK.Controllers
                 {
                     connection.Open();
 
-                    int count = 0;
                     int generatedID = 0;
 
-                    using (SqlCommand command = new SqlCommand(query2, connection))
+                    string salt = new Random().Next(100000, 999999).ToString();
+                    string combinedString = model.Email + salt;
+
+                    // Use SHA-256 hash
+                    using (SHA256 sha256 = SHA256.Create())
                     {
-                        count = (int)command.ExecuteScalar();
-                        generatedID = count + 100000000;
+                        byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(combinedString));
+                        string hashedString = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+
+                        // Hash the result with BCrypt
+                        string finalHash = BCrypt.Net.BCrypt.HashPassword(hashedString, 16);
+
+                        // Take the first 9 characters of the combined hash and convert to integer
+                        generatedID = int.Parse(finalHash.Substring(0, 9), NumberStyles.HexNumber);
                     }
 
                     using (SqlCommand command = new SqlCommand(query, connection))

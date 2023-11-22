@@ -50,7 +50,7 @@
             @* TODO: Connect their given db *@
             <div class="textbox">
                 <label>Country</label>
-                <select asp-for="Country" id="countryInput" class="form-control forminput" onchange="toggleInputs()" style="appearance: menulist;">
+                <select asp-for="Country" id="countryInput" class="form-control forminput" onchange="toggleCountryInputs()" style="appearance: menulist;">
                     <option value="" selected disabled hidden>Select Country:</option>
                     <option value="Philippines">Philippines</option>
                     <option value="Afghanistan">Afghanistan</option>
@@ -301,9 +301,9 @@
             <div id="provinceContainer" class="textbox">
                 <label>Province Name</label>
                 <input asp-for="PROV_CODE" id="provinceInput" class="form-control forminput" list="provinceList" placeholder="Provice Name">
-                @* <select asp-for="PROV_CODE" class="form-control forminput" style="appearance: menulist;">
-
-                </select>*@
+                @* <select asp-for="PROV_CODE" id="provinceInput" class="form-control forminput" style="appearance: menulist;">
+                    <option value="" selected disabled hidden>Select Province:</option>
+                </select> *@
             </div>
             <div id="townContainer" class="textbox">
                 <label>Town Name</label>
@@ -358,7 +358,7 @@
         startYearSelect.setAttribute('max', currentYear);
     });
 
-    function toggleInputs() {
+    function toggleCountryInputs() {
         var countryInput = document.getElementById('countryInput');
         var provinceContainer = document.getElementById('provinceContainer');
         var provinceInput = document.getElementById('provinceInput');

@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using CSSWENGxGK.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Http;
 
 namespace CSSWENGxGK.Controllers
 {

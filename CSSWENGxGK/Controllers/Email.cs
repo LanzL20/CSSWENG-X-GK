@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
-using System.Security.Cryptography;
-using CSSWENGxGK.Data;
 using CSSWENGxGK.Models;
 
 class Emailer

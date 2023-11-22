@@ -1,0 +1,8172 @@
+[
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012801000",
+    "Town_Name": "ADAMS"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012802000",
+    "Town_Name": "BACARRA"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012803000",
+    "Town_Name": "BADOC"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012804000",
+    "Town_Name": "BANGUI"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012805000",
+    "Town_Name": "BATAC CITY"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012806000",
+    "Town_Name": "BURGOS"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012807000",
+    "Town_Name": "CARASI"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012808000",
+    "Town_Name": "CURRIMAO"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012809000",
+    "Town_Name": "DINGRAS"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012810000",
+    "Town_Name": "DUMALNEG"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012811000",
+    "Town_Name": "BANNA"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012812000",
+    "Town_Name": "LAOAG CITY"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012813000",
+    "Town_Name": "MARCOS"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012814000",
+    "Town_Name": "NUEVA ERA"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012815000",
+    "Town_Name": "PAGUDPUD"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012816000",
+    "Town_Name": "PAOAY"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012817000",
+    "Town_Name": "PASUQUIN"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012818000",
+    "Town_Name": "PIDDIG"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012819000",
+    "Town_Name": "PINILI"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012820000",
+    "Town_Name": "SAN NICOLAS"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012821000",
+    "Town_Name": "SARRAT"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012822000",
+    "Town_Name": "SOLSONA"
+  },
+  {
+    "Prov_Code": "012800000",
+    "Town_Code": "012823000",
+    "Town_Name": "VINTAR"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012901000",
+    "Town_Name": "ALILEM"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012902000",
+    "Town_Name": "BANAYOYO"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012903000",
+    "Town_Name": "BANTAY"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012904000",
+    "Town_Name": "BURGOS"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012905000",
+    "Town_Name": "CABUGAO"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012906000",
+    "Town_Name": "CANDON CITY"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012907000",
+    "Town_Name": "CAOAYAN"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012908000",
+    "Town_Name": "CERVANTES"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012909000",
+    "Town_Name": "GALIMUYOD"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012910000",
+    "Town_Name": "GREGORIO DEL PILAR"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012911000",
+    "Town_Name": "LIDLIDDA"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012912000",
+    "Town_Name": "MAGSINGAL"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012913000",
+    "Town_Name": "NAGBUKEL"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012914000",
+    "Town_Name": "NARVACAN"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012915000",
+    "Town_Name": "QUIRINO"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012916000",
+    "Town_Name": "SALCEDO"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012917000",
+    "Town_Name": "SAN EMILIO"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012918000",
+    "Town_Name": "SAN ESTEBAN"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012919000",
+    "Town_Name": "SAN ILDEFONSO"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012920000",
+    "Town_Name": "SAN JUAN"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012921000",
+    "Town_Name": "SAN VICENTE"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012922000",
+    "Town_Name": "SANTA"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012923000",
+    "Town_Name": "SANTA CATALINA"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012924000",
+    "Town_Name": "SANTA CRUZ"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012925000",
+    "Town_Name": "SANTA LUCIA"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012926000",
+    "Town_Name": "SANTA MARIA"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012927000",
+    "Town_Name": "SANTIAGO"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012928000",
+    "Town_Name": "SANTO DOMINGO"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012929000",
+    "Town_Name": "SIGAY"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012930000",
+    "Town_Name": "SINAIT"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012931000",
+    "Town_Name": "SUGPON"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012932000",
+    "Town_Name": "SUYO"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012933000",
+    "Town_Name": "TAGUDIN"
+  },
+  {
+    "Prov_Code": "012900000",
+    "Town_Code": "012934000",
+    "Town_Name": "VIGAN CITY"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013301000",
+    "Town_Name": "AGOO"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013302000",
+    "Town_Name": "ARINGAY"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013303000",
+    "Town_Name": "BACNOTAN"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013304000",
+    "Town_Name": "BAGULIN"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013305000",
+    "Town_Name": "BALAOAN"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013306000",
+    "Town_Name": "BANGAR"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013307000",
+    "Town_Name": "BAUANG"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013308000",
+    "Town_Name": "BURGOS"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013309000",
+    "Town_Name": "CABA"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013310000",
+    "Town_Name": "LUNA"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013311000",
+    "Town_Name": "NAGUILIAN"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013312000",
+    "Town_Name": "PUGO"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013313000",
+    "Town_Name": "ROSARIO"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013314000",
+    "Town_Name": "SAN FERNANDO CITY"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013315000",
+    "Town_Name": "SAN GABRIEL"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013316000",
+    "Town_Name": "SAN JUAN"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013317000",
+    "Town_Name": "SANTO TOMAS"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013318000",
+    "Town_Name": "SANTOL"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013319000",
+    "Town_Name": "SUDIPEN"
+  },
+  {
+    "Prov_Code": "013300000",
+    "Town_Code": "013320000",
+    "Town_Name": "TUBAO"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015501000",
+    "Town_Name": "AGNO"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015502000",
+    "Town_Name": "AGUILAR"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015503000",
+    "Town_Name": "ALAMINOS CITY"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015504000",
+    "Town_Name": "ALCALA"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015505000",
+    "Town_Name": "ANDA"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015506000",
+    "Town_Name": "ASINGAN"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015507000",
+    "Town_Name": "BALUNGAO"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015508000",
+    "Town_Name": "BANI"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015509000",
+    "Town_Name": "BASISTA"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015510000",
+    "Town_Name": "BAUTISTA"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015511000",
+    "Town_Name": "BAYAMBANG"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015512000",
+    "Town_Name": "BINALONAN"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015513000",
+    "Town_Name": "BINMALEY"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015514000",
+    "Town_Name": "BOLINAO"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015515000",
+    "Town_Name": "BUGALLON"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015516000",
+    "Town_Name": "BURGOS"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015517000",
+    "Town_Name": "CALASIAO"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015518000",
+    "Town_Name": "DAGUPAN CITY"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015519000",
+    "Town_Name": "DASOL"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015520000",
+    "Town_Name": "INFANTA"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015521000",
+    "Town_Name": "LABRADOR"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015522000",
+    "Town_Name": "LINGAYEN"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015523000",
+    "Town_Name": "MABINI"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015524000",
+    "Town_Name": "MALASIQUI"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015525000",
+    "Town_Name": "MANAOAG"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015526000",
+    "Town_Name": "MANGALDAN"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015527000",
+    "Town_Name": "MANGATAREM"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015528000",
+    "Town_Name": "MAPANDAN"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015529000",
+    "Town_Name": "NATIVIDAD"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015530000",
+    "Town_Name": "POZORRUBIO"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015531000",
+    "Town_Name": "ROSALES"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015532000",
+    "Town_Name": "SAN CARLOS CITY"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015533000",
+    "Town_Name": "SAN FABIAN"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015534000",
+    "Town_Name": "SAN JACINTO"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015535000",
+    "Town_Name": "SAN MANUEL"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015536000",
+    "Town_Name": "SAN NICOLAS"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015537000",
+    "Town_Name": "SAN QUINTIN"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015538000",
+    "Town_Name": "SANTA BARBARA"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015539000",
+    "Town_Name": "SANTA MARIA"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015540000",
+    "Town_Name": "SANTO TOMAS"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015541000",
+    "Town_Name": "SISON"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015542000",
+    "Town_Name": "SUAL"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015543000",
+    "Town_Name": "TAYUG"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015544000",
+    "Town_Name": "UMINGAN"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015545000",
+    "Town_Name": "URBIZTONDO"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015546000",
+    "Town_Name": "URDANETA CITY"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015547000",
+    "Town_Name": "VILLASIS"
+  },
+  {
+    "Prov_Code": "015500000",
+    "Town_Code": "015548000",
+    "Town_Name": "LAOAC"
+  },
+  {
+    "Prov_Code": "020900000",
+    "Town_Code": "020901000",
+    "Town_Name": "BASCO"
+  },
+  {
+    "Prov_Code": "020900000",
+    "Town_Code": "020902000",
+    "Town_Name": "ITBAYAT"
+  },
+  {
+    "Prov_Code": "020900000",
+    "Town_Code": "020903000",
+    "Town_Name": "IVANA"
+  },
+  {
+    "Prov_Code": "020900000",
+    "Town_Code": "020904000",
+    "Town_Name": "MAHATAO"
+  },
+  {
+    "Prov_Code": "020900000",
+    "Town_Code": "020905000",
+    "Town_Name": "SABTANG"
+  },
+  {
+    "Prov_Code": "020900000",
+    "Town_Code": "020906000",
+    "Town_Name": "UYUGAN"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021501000",
+    "Town_Name": "ABULUG"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021502000",
+    "Town_Name": "ALCALA"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021503000",
+    "Town_Name": "ALLACAPAN"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021504000",
+    "Town_Name": "AMULUNG"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021505000",
+    "Town_Name": "APARRI"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021506000",
+    "Town_Name": "BAGGAO"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021507000",
+    "Town_Name": "BALLESTEROS"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021508000",
+    "Town_Name": "BUGUEY"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021509000",
+    "Town_Name": "CALAYAN"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021510000",
+    "Town_Name": "CAMALANIUGAN"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021511000",
+    "Town_Name": "CLAVERIA"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021512000",
+    "Town_Name": "ENRILE"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021513000",
+    "Town_Name": "GATTARAN"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021514000",
+    "Town_Name": "GONZAGA"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021515000",
+    "Town_Name": "IGUIG"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021516000",
+    "Town_Name": "LAL-LO"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021517000",
+    "Town_Name": "LASAM"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021518000",
+    "Town_Name": "PAMPLONA"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021519000",
+    "Town_Name": "PEÑABLANCA"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021520000",
+    "Town_Name": "PIAT"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021521000",
+    "Town_Name": "RIZAL"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021522000",
+    "Town_Name": "SANCHEZ-MIRA"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021523000",
+    "Town_Name": "SANTA ANA"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021524000",
+    "Town_Name": "SANTA PRAXEDES"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021525000",
+    "Town_Name": "SANTA TERESITA"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021526000",
+    "Town_Name": "SANTO NIÑO"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021527000",
+    "Town_Name": "SOLANA"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021528000",
+    "Town_Name": "TUAO"
+  },
+  {
+    "Prov_Code": "021500000",
+    "Town_Code": "021529000",
+    "Town_Name": "TUGUEGARAO CITY"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023101000",
+    "Town_Name": "ALICIA"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023102000",
+    "Town_Name": "ANGADANAN"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023103000",
+    "Town_Name": "AURORA"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023104000",
+    "Town_Name": "BENITO SOLIVEN"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023105000",
+    "Town_Name": "BURGOS"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023106000",
+    "Town_Name": "CABAGAN"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023107000",
+    "Town_Name": "CABATUAN"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023108000",
+    "Town_Name": "CAUAYAN CITY"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023109000",
+    "Town_Name": "CORDON"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023110000",
+    "Town_Name": "DINAPIGUE"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023111000",
+    "Town_Name": "DIVILACAN"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023112000",
+    "Town_Name": "ECHAGUE"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023113000",
+    "Town_Name": "GAMU"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023114000",
+    "Town_Name": "ILAGAN CITY"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023115000",
+    "Town_Name": "JONES"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023116000",
+    "Town_Name": "LUNA"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023117000",
+    "Town_Name": "MACONACON"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023118000",
+    "Town_Name": "DELFIN ALBANO"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023119000",
+    "Town_Name": "MALLIG"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023120000",
+    "Town_Name": "NAGUILIAN"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023121000",
+    "Town_Name": "PALANAN"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023122000",
+    "Town_Name": "QUEZON"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023123000",
+    "Town_Name": "QUIRINO"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023124000",
+    "Town_Name": "RAMON"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023125000",
+    "Town_Name": "REINA MERCEDES"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023126000",
+    "Town_Name": "ROXAS"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023127000",
+    "Town_Name": "SAN AGUSTIN"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023128000",
+    "Town_Name": "SAN GUILLERMO"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023129000",
+    "Town_Name": "SAN ISIDRO"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023130000",
+    "Town_Name": "SAN MANUEL"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023131000",
+    "Town_Name": "SAN MARIANO"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023132000",
+    "Town_Name": "SAN MATEO"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023133000",
+    "Town_Name": "SAN PABLO"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023134000",
+    "Town_Name": "SANTA MARIA"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023135000",
+    "Town_Name": "SANTIAGO CITY"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023136000",
+    "Town_Name": "SANTO TOMAS"
+  },
+  {
+    "Prov_Code": "023100000",
+    "Town_Code": "023137000",
+    "Town_Name": "TUMAUINI"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025001000",
+    "Town_Name": "AMBAGUIO"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025002000",
+    "Town_Name": "ARITAO"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025003000",
+    "Town_Name": "BAGABAG"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025004000",
+    "Town_Name": "BAMBANG"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025005000",
+    "Town_Name": "BAYOMBONG"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025006000",
+    "Town_Name": "DIADI"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025007000",
+    "Town_Name": "DUPAX DEL NORTE"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025008000",
+    "Town_Name": "DUPAX DEL SUR"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025009000",
+    "Town_Name": "KASIBU"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025010000",
+    "Town_Name": "KAYAPA"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025011000",
+    "Town_Name": "QUEZON"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025012000",
+    "Town_Name": "SANTA FE"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025013000",
+    "Town_Name": "SOLANO"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025014000",
+    "Town_Name": "VILLAVERDE"
+  },
+  {
+    "Prov_Code": "025000000",
+    "Town_Code": "025015000",
+    "Town_Name": "ALFONSO CASTANEDA"
+  },
+  {
+    "Prov_Code": "025700000",
+    "Town_Code": "025701000",
+    "Town_Name": "AGLIPAY"
+  },
+  {
+    "Prov_Code": "025700000",
+    "Town_Code": "025702000",
+    "Town_Name": "CABARROGUIS"
+  },
+  {
+    "Prov_Code": "025700000",
+    "Town_Code": "025703000",
+    "Town_Name": "DIFFUN"
+  },
+  {
+    "Prov_Code": "025700000",
+    "Town_Code": "025704000",
+    "Town_Name": "MADDELA"
+  },
+  {
+    "Prov_Code": "025700000",
+    "Town_Code": "025705000",
+    "Town_Name": "SAGUDAY"
+  },
+  {
+    "Prov_Code": "025700000",
+    "Town_Code": "025706000",
+    "Town_Name": "NAGTIPUNAN"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030801000",
+    "Town_Name": "ABUCAY"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030802000",
+    "Town_Name": "BAGAC"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030803000",
+    "Town_Name": "BALANGA CITY"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030804000",
+    "Town_Name": "DINALUPIHAN"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030805000",
+    "Town_Name": "HERMOSA"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030806000",
+    "Town_Name": "LIMAY"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030807000",
+    "Town_Name": "MARIVELES"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030808000",
+    "Town_Name": "MORONG"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030809000",
+    "Town_Name": "ORANI"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030810000",
+    "Town_Name": "ORION"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030811000",
+    "Town_Name": "PILAR"
+  },
+  {
+    "Prov_Code": "030800000",
+    "Town_Code": "030812000",
+    "Town_Name": "SAMAL"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031401000",
+    "Town_Name": "ANGAT"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031402000",
+    "Town_Name": "BALAGTAS"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031403000",
+    "Town_Name": "BALIUAG"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031404000",
+    "Town_Name": "BOCAUE"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031405000",
+    "Town_Name": "BULACAN"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031406000",
+    "Town_Name": "BUSTOS"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031407000",
+    "Town_Name": "CALUMPIT"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031408000",
+    "Town_Name": "GUIGUINTO"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031409000",
+    "Town_Name": "HAGONOY"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031410000",
+    "Town_Name": "MALOLOS CITY"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031411000",
+    "Town_Name": "MARILAO"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031412000",
+    "Town_Name": "MEYCAUAYAN CITY"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031413000",
+    "Town_Name": "NORZAGARAY"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031414000",
+    "Town_Name": "OBANDO"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031415000",
+    "Town_Name": "PANDI"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031416000",
+    "Town_Name": "PAOMBONG"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031417000",
+    "Town_Name": "PLARIDEL"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031418000",
+    "Town_Name": "PULILAN"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031419000",
+    "Town_Name": "SAN ILDEFONSO"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031420000",
+    "Town_Name": "SAN JOSE DEL MONTE CITY"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031421000",
+    "Town_Name": "SAN MIGUEL"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031422000",
+    "Town_Name": "SAN RAFAEL"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031423000",
+    "Town_Name": "SANTA MARIA"
+  },
+  {
+    "Prov_Code": "031400000",
+    "Town_Code": "031424000",
+    "Town_Name": "DOÑA REMEDIOS TRINIDAD"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034901000",
+    "Town_Name": "ALIAGA"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034902000",
+    "Town_Name": "BONGABON"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034903000",
+    "Town_Name": "CABANATUAN CITY"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034904000",
+    "Town_Name": "CABIAO"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034905000",
+    "Town_Name": "CARRANGLAN"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034906000",
+    "Town_Name": "CUYAPO"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034907000",
+    "Town_Name": "GABALDON"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034908000",
+    "Town_Name": "GAPAN CITY"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034909000",
+    "Town_Name": "GENERAL MAMERTO NATIVIDAD"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034910000",
+    "Town_Name": "GENERAL TINIO"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034911000",
+    "Town_Name": "GUIMBA"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034912000",
+    "Town_Name": "JAEN"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034913000",
+    "Town_Name": "LAUR"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034914000",
+    "Town_Name": "LICAB"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034915000",
+    "Town_Name": "LLANERA"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034916000",
+    "Town_Name": "LUPAO"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034917000",
+    "Town_Name": "MUÑOZ CITY"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034918000",
+    "Town_Name": "NAMPICUAN"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034919000",
+    "Town_Name": "PALAYAN CITY"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034920000",
+    "Town_Name": "PANTABANGAN"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034921000",
+    "Town_Name": "PEÑARANDA"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034922000",
+    "Town_Name": "QUEZON"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034923000",
+    "Town_Name": "RIZAL"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034924000",
+    "Town_Name": "SAN ANTONIO"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034925000",
+    "Town_Name": "SAN ISIDRO"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034926000",
+    "Town_Name": "SAN JOSE CITY"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034927000",
+    "Town_Name": "SAN LEONARDO"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034928000",
+    "Town_Name": "SANTA ROSA"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034929000",
+    "Town_Name": "SANTO DOMINGO"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034930000",
+    "Town_Name": "TALAVERA"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034931000",
+    "Town_Name": "TALUGTUG"
+  },
+  {
+    "Prov_Code": "034900000",
+    "Town_Code": "034932000",
+    "Town_Name": "ZARAGOZA"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035401000",
+    "Town_Name": "ANGELES CITY"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035402000",
+    "Town_Name": "APALIT"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035403000",
+    "Town_Name": "ARAYAT"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035404000",
+    "Town_Name": "BACOLOR"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035405000",
+    "Town_Name": "CANDABA"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035406000",
+    "Town_Name": "FLORIDABLANCA"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035407000",
+    "Town_Name": "GUAGUA"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035408000",
+    "Town_Name": "LUBAO"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035409000",
+    "Town_Name": "MABALACAT CITY"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035410000",
+    "Town_Name": "MACABEBE"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035411000",
+    "Town_Name": "MAGALANG"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035412000",
+    "Town_Name": "MASANTOL"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035413000",
+    "Town_Name": "MEXICO"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035414000",
+    "Town_Name": "MINALIN"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035415000",
+    "Town_Name": "PORAC"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035416000",
+    "Town_Name": "SAN FERNANDO CITY"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035417000",
+    "Town_Name": "SAN LUIS"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035418000",
+    "Town_Name": "SAN SIMON"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035419000",
+    "Town_Name": "SANTA ANA"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035420000",
+    "Town_Name": "SANTA RITA"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035421000",
+    "Town_Name": "SANTO TOMAS"
+  },
+  {
+    "Prov_Code": "035400000",
+    "Town_Code": "035422000",
+    "Town_Name": "SASMUAN"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036901000",
+    "Town_Name": "ANAO"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036902000",
+    "Town_Name": "BAMBAN"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036903000",
+    "Town_Name": "CAMILING"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036904000",
+    "Town_Name": "CAPAS"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036905000",
+    "Town_Name": "CONCEPCION"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036906000",
+    "Town_Name": "GERONA"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036907000",
+    "Town_Name": "LA PAZ"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036908000",
+    "Town_Name": "MAYANTOC"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036909000",
+    "Town_Name": "MONCADA"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036910000",
+    "Town_Name": "PANIQUI"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036911000",
+    "Town_Name": "PURA"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036912000",
+    "Town_Name": "RAMOS"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036913000",
+    "Town_Name": "SAN CLEMENTE"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036914000",
+    "Town_Name": "SAN MANUEL"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036915000",
+    "Town_Name": "SANTA IGNACIA"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036916000",
+    "Town_Name": "TARLAC CITY"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036917000",
+    "Town_Name": "VICTORIA"
+  },
+  {
+    "Prov_Code": "036900000",
+    "Town_Code": "036918000",
+    "Town_Name": "SAN JOSE"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037101000",
+    "Town_Name": "BOTOLAN"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037102000",
+    "Town_Name": "CABANGAN"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037103000",
+    "Town_Name": "CANDELARIA"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037104000",
+    "Town_Name": "CASTILLEJOS"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037105000",
+    "Town_Name": "IBA"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037106000",
+    "Town_Name": "MASINLOC"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037107000",
+    "Town_Name": "OLONGAPO CITY"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037108000",
+    "Town_Name": "PALAUIG"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037109000",
+    "Town_Name": "SAN ANTONIO"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037110000",
+    "Town_Name": "SAN FELIPE"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037111000",
+    "Town_Name": "SAN MARCELINO"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037112000",
+    "Town_Name": "SAN NARCISO"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037113000",
+    "Town_Name": "SANTA CRUZ"
+  },
+  {
+    "Prov_Code": "037100000",
+    "Town_Code": "037114000",
+    "Town_Name": "SUBIC"
+  },
+  {
+    "Prov_Code": "037700000",
+    "Town_Code": "037701000",
+    "Town_Name": "BALER"
+  },
+  {
+    "Prov_Code": "037700000",
+    "Town_Code": "037702000",
+    "Town_Name": "CASIGURAN"
+  },
+  {
+    "Prov_Code": "037700000",
+    "Town_Code": "037703000",
+    "Town_Name": "DILASAG"
+  },
+  {
+    "Prov_Code": "037700000",
+    "Town_Code": "037704000",
+    "Town_Name": "DINALUNGAN"
+  },
+  {
+    "Prov_Code": "037700000",
+    "Town_Code": "037705000",
+    "Town_Name": "DINGALAN"
+  },
+  {
+    "Prov_Code": "037700000",
+    "Town_Code": "037706000",
+    "Town_Name": "DIPACULAO"
+  },
+  {
+    "Prov_Code": "037700000",
+    "Town_Code": "037707000",
+    "Town_Name": "MARIA AURORA"
+  },
+  {
+    "Prov_Code": "037700000",
+    "Town_Code": "037708000",
+    "Town_Name": "SAN LUIS"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041001000",
+    "Town_Name": "AGONCILLO"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041002000",
+    "Town_Name": "ALITAGTAG"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041003000",
+    "Town_Name": "BALAYAN"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041004000",
+    "Town_Name": "BALETE"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041005000",
+    "Town_Name": "BATANGAS CITY"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041006000",
+    "Town_Name": "BAUAN"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041007000",
+    "Town_Name": "CALACA"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041008000",
+    "Town_Name": "CALATAGAN"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041009000",
+    "Town_Name": "CUENCA"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041010000",
+    "Town_Name": "IBAAN"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041011000",
+    "Town_Name": "LAUREL"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041012000",
+    "Town_Name": "LEMERY"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041013000",
+    "Town_Name": "LIAN"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041014000",
+    "Town_Name": "LIPA CITY"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041015000",
+    "Town_Name": "LOBO"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041016000",
+    "Town_Name": "MABINI"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041017000",
+    "Town_Name": "MALVAR"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041018000",
+    "Town_Name": "MATAAS NA KAHOY"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041019000",
+    "Town_Name": "NASUGBU"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041020000",
+    "Town_Name": "PADRE GARCIA"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041021000",
+    "Town_Name": "ROSARIO"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041022000",
+    "Town_Name": "SAN JOSE"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041023000",
+    "Town_Name": "SAN JUAN"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041024000",
+    "Town_Name": "SAN LUIS"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041025000",
+    "Town_Name": "SAN NICOLAS"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041026000",
+    "Town_Name": "SAN PASCUAL"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041027000",
+    "Town_Name": "SANTA TERESITA"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041028000",
+    "Town_Name": "SANTO TOMAS"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041029000",
+    "Town_Name": "TAAL"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041030000",
+    "Town_Name": "TALISAY"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041031000",
+    "Town_Name": "TANAUAN CITY"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041032000",
+    "Town_Name": "TAYSAN"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041033000",
+    "Town_Name": "TINGLOY"
+  },
+  {
+    "Prov_Code": "041000000",
+    "Town_Code": "041034000",
+    "Town_Name": "TUY"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042101000",
+    "Town_Name": "ALFONSO"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042102000",
+    "Town_Name": "AMADEO"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042103000",
+    "Town_Name": "BACOOR CITY"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042104000",
+    "Town_Name": "CARMONA"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042105000",
+    "Town_Name": "CAVITE CITY"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042106000",
+    "Town_Name": "DASMARIÑAS CITY"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042107000",
+    "Town_Name": "GENERAL EMILIO AGUINALDO"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042108000",
+    "Town_Name": "GENERAL TRIAS CITY"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042109000",
+    "Town_Name": "IMUS CITY"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042110000",
+    "Town_Name": "INDANG"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042111000",
+    "Town_Name": "KAWIT"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042112000",
+    "Town_Name": "MAGALLANES"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042113000",
+    "Town_Name": "MARAGONDON"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042114000",
+    "Town_Name": "MENDEZ"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042115000",
+    "Town_Name": "NAIC"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042116000",
+    "Town_Name": "NOVELETA"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042117000",
+    "Town_Name": "ROSARIO"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042118000",
+    "Town_Name": "SILANG"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042119000",
+    "Town_Name": "TAGAYTAY CITY"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042120000",
+    "Town_Name": "TANZA"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042121000",
+    "Town_Name": "TERNATE"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042122000",
+    "Town_Name": "TRECE MARTIRES CITY"
+  },
+  {
+    "Prov_Code": "042100000",
+    "Town_Code": "042123000",
+    "Town_Name": "GENERAL MARIANO ALVAREZ"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043401000",
+    "Town_Name": "ALAMINOS"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043402000",
+    "Town_Name": "BAY"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043403000",
+    "Town_Name": "BIÑAN CITY"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043404000",
+    "Town_Name": "CABUYAO CITY"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043405000",
+    "Town_Name": "CALAMBA CITY"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043406000",
+    "Town_Name": "CALAUAN"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043407000",
+    "Town_Name": "CAVINTI"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043408000",
+    "Town_Name": "FAMY"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043409000",
+    "Town_Name": "KALAYAAN"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043410000",
+    "Town_Name": "LILIW"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043411000",
+    "Town_Name": "LOS BAÑOS"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043412000",
+    "Town_Name": "LUISIANA"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043413000",
+    "Town_Name": "LUMBAN"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043414000",
+    "Town_Name": "MABITAC"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043415000",
+    "Town_Name": "MAGDALENA"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043416000",
+    "Town_Name": "MAJAYJAY"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043417000",
+    "Town_Name": "NAGCARLAN"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043418000",
+    "Town_Name": "PAETE"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043419000",
+    "Town_Name": "PAGSANJAN"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043420000",
+    "Town_Name": "PAKIL"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043421000",
+    "Town_Name": "PANGIL"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043422000",
+    "Town_Name": "PILA"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043423000",
+    "Town_Name": "RIZAL"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043424000",
+    "Town_Name": "SAN PABLO CITY"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043425000",
+    "Town_Name": "SAN PEDRO CITY"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043426000",
+    "Town_Name": "SANTA CRUZ"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043427000",
+    "Town_Name": "SANTA MARIA"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043428000",
+    "Town_Name": "SANTA ROSA CITY"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043429000",
+    "Town_Name": "SINILOAN"
+  },
+  {
+    "Prov_Code": "043400000",
+    "Town_Code": "043430000",
+    "Town_Name": "VICTORIA"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045601000",
+    "Town_Name": "AGDANGAN"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045602000",
+    "Town_Name": "ALABAT"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045603000",
+    "Town_Name": "ATIMONAN"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045605000",
+    "Town_Name": "BUENAVISTA"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045606000",
+    "Town_Name": "BURDEOS"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045607000",
+    "Town_Name": "CALAUAG"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045608000",
+    "Town_Name": "CANDELARIA"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045610000",
+    "Town_Name": "CATANAUAN"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045615000",
+    "Town_Name": "DOLORES"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045616000",
+    "Town_Name": "GENERAL LUNA"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045617000",
+    "Town_Name": "GENERAL NAKAR"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045618000",
+    "Town_Name": "GUINAYANGAN"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045619000",
+    "Town_Name": "GUMACA"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045620000",
+    "Town_Name": "INFANTA"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045621000",
+    "Town_Name": "JOMALIG"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045622000",
+    "Town_Name": "LOPEZ"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045623000",
+    "Town_Name": "LUCBAN"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045624000",
+    "Town_Name": "LUCENA CITY"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045625000",
+    "Town_Name": "MACALELON"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045627000",
+    "Town_Name": "MAUBAN"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045628000",
+    "Town_Name": "MULANAY"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045629000",
+    "Town_Name": "PADRE BURGOS"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045630000",
+    "Town_Name": "PAGBILAO"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045631000",
+    "Town_Name": "PANUKULAN"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045632000",
+    "Town_Name": "PATNANUNGAN"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045633000",
+    "Town_Name": "PEREZ"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045634000",
+    "Town_Name": "PITOGO"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045635000",
+    "Town_Name": "PLARIDEL"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045636000",
+    "Town_Name": "POLILLO"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045637000",
+    "Town_Name": "QUEZON"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045638000",
+    "Town_Name": "REAL"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045639000",
+    "Town_Name": "SAMPALOC"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045640000",
+    "Town_Name": "SAN ANDRES"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045641000",
+    "Town_Name": "SAN ANTONIO"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045642000",
+    "Town_Name": "SAN FRANCISCO"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045644000",
+    "Town_Name": "SAN NARCISO"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045645000",
+    "Town_Name": "SARIAYA"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045646000",
+    "Town_Name": "TAGKAWAYAN"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045647000",
+    "Town_Name": "TAYABAS CITY"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045648000",
+    "Town_Name": "TIAONG"
+  },
+  {
+    "Prov_Code": "045600000",
+    "Town_Code": "045649000",
+    "Town_Name": "UNISAN"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045801000",
+    "Town_Name": "ANGONO"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045802000",
+    "Town_Name": "ANTIPOLO CITY"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045803000",
+    "Town_Name": "BARAS"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045804000",
+    "Town_Name": "BINANGONAN"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045805000",
+    "Town_Name": "CAINTA"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045806000",
+    "Town_Name": "CARDONA"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045807000",
+    "Town_Name": "JALA-JALA"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045808000",
+    "Town_Name": "RODRIGUEZ"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045809000",
+    "Town_Name": "MORONG"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045810000",
+    "Town_Name": "PILILLA"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045811000",
+    "Town_Name": "SAN MATEO"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045812000",
+    "Town_Name": "TANAY"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045813000",
+    "Town_Name": "TAYTAY"
+  },
+  {
+    "Prov_Code": "045800000",
+    "Town_Code": "045814000",
+    "Town_Name": "TERESA"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050501000",
+    "Town_Name": "BACACAY"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050502000",
+    "Town_Name": "CAMALIG"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050503000",
+    "Town_Name": "DARAGA"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050504000",
+    "Town_Name": "GUINOBATAN"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050505000",
+    "Town_Name": "JOVELLAR"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050506000",
+    "Town_Name": "LEGAZPI CITY"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050507000",
+    "Town_Name": "LIBON"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050508000",
+    "Town_Name": "LIGAO CITY"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050509000",
+    "Town_Name": "MALILIPOT"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050510000",
+    "Town_Name": "MALINAO"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050511000",
+    "Town_Name": "MANITO"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050512000",
+    "Town_Name": "OAS"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050513000",
+    "Town_Name": "PIO DURAN"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050514000",
+    "Town_Name": "POLANGUI"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050515000",
+    "Town_Name": "RAPU-RAPU"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050516000",
+    "Town_Name": "SANTO DOMINGO"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050517000",
+    "Town_Name": "TABACO CITY"
+  },
+  {
+    "Prov_Code": "050500000",
+    "Town_Code": "050518000",
+    "Town_Name": "TIWI"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051601000",
+    "Town_Name": "BASUD"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051602000",
+    "Town_Name": "CAPALONGA"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051603000",
+    "Town_Name": "DAET"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051604000",
+    "Town_Name": "SAN LORENZO RUIZ"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051605000",
+    "Town_Name": "JOSE PANGANIBAN"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051606000",
+    "Town_Name": "LABO"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051607000",
+    "Town_Name": "MERCEDES"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051608000",
+    "Town_Name": "PARACALE"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051609000",
+    "Town_Name": "SAN VICENTE"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051610000",
+    "Town_Name": "SANTA ELENA"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051611000",
+    "Town_Name": "TALISAY"
+  },
+  {
+    "Prov_Code": "051600000",
+    "Town_Code": "051612000",
+    "Town_Name": "VINZONS"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051701000",
+    "Town_Name": "BAAO"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051702000",
+    "Town_Name": "BALATAN"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051703000",
+    "Town_Name": "BATO"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051704000",
+    "Town_Name": "BOMBON"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051705000",
+    "Town_Name": "BUHI"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051706000",
+    "Town_Name": "BULA"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051707000",
+    "Town_Name": "CABUSAO"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051708000",
+    "Town_Name": "CALABANGA"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051709000",
+    "Town_Name": "CAMALIGAN"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051710000",
+    "Town_Name": "CANAMAN"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051711000",
+    "Town_Name": "CARAMOAN"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051712000",
+    "Town_Name": "DEL GALLEGO"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051713000",
+    "Town_Name": "GAINZA"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051714000",
+    "Town_Name": "GARCHITORENA"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051715000",
+    "Town_Name": "GOA"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051716000",
+    "Town_Name": "IRIGA CITY"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051717000",
+    "Town_Name": "LAGONOY"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051718000",
+    "Town_Name": "LIBMANAN"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051719000",
+    "Town_Name": "LUPI"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051720000",
+    "Town_Name": "MAGARAO"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051721000",
+    "Town_Name": "MILAOR"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051722000",
+    "Town_Name": "MINALABAC"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051723000",
+    "Town_Name": "NABUA"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051724000",
+    "Town_Name": "NAGA CITY"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051725000",
+    "Town_Name": "OCAMPO"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051726000",
+    "Town_Name": "PAMPLONA"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051727000",
+    "Town_Name": "PASACAO"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051728000",
+    "Town_Name": "PILI"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051729000",
+    "Town_Name": "PRESENTACION"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051730000",
+    "Town_Name": "RAGAY"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051731000",
+    "Town_Name": "SAGÑAY"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051732000",
+    "Town_Name": "SAN FERNANDO"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051733000",
+    "Town_Name": "SAN JOSE"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051734000",
+    "Town_Name": "SIPOCOT"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051735000",
+    "Town_Name": "SIRUMA"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051736000",
+    "Town_Name": "TIGAON"
+  },
+  {
+    "Prov_Code": "051700000",
+    "Town_Code": "051737000",
+    "Town_Name": "TINAMBAC"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052001000",
+    "Town_Name": "BAGAMANOC"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052002000",
+    "Town_Name": "BARAS"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052003000",
+    "Town_Name": "BATO"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052004000",
+    "Town_Name": "CARAMORAN"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052005000",
+    "Town_Name": "GIGMOTO"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052006000",
+    "Town_Name": "PANDAN"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052007000",
+    "Town_Name": "PANGANIBAN"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052008000",
+    "Town_Name": "SAN ANDRES"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052009000",
+    "Town_Name": "SAN MIGUEL"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052010000",
+    "Town_Name": "VIGA"
+  },
+  {
+    "Prov_Code": "052000000",
+    "Town_Code": "052011000",
+    "Town_Name": "VIRAC"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054101000",
+    "Town_Name": "AROROY"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054102000",
+    "Town_Name": "BALENO"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054103000",
+    "Town_Name": "BALUD"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054104000",
+    "Town_Name": "BATUAN"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054105000",
+    "Town_Name": "CATAINGAN"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054106000",
+    "Town_Name": "CAWAYAN"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054107000",
+    "Town_Name": "CLAVERIA"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054108000",
+    "Town_Name": "DIMASALANG"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054109000",
+    "Town_Name": "ESPERANZA"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054110000",
+    "Town_Name": "MANDAON"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054111000",
+    "Town_Name": "MASBATE CITY"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054112000",
+    "Town_Name": "MILAGROS"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054113000",
+    "Town_Name": "MOBO"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054114000",
+    "Town_Name": "MONREAL"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054115000",
+    "Town_Name": "PALANAS"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054116000",
+    "Town_Name": "PIO V. CORPUZ"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054117000",
+    "Town_Name": "PLACER"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054118000",
+    "Town_Name": "SAN FERNANDO"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054119000",
+    "Town_Name": "SAN JACINTO"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054120000",
+    "Town_Name": "SAN PASCUAL"
+  },
+  {
+    "Prov_Code": "054100000",
+    "Town_Code": "054121000",
+    "Town_Name": "USON"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056202000",
+    "Town_Name": "BARCELONA"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056203000",
+    "Town_Name": "BULAN"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056204000",
+    "Town_Name": "BULUSAN"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056205000",
+    "Town_Name": "CASIGURAN"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056206000",
+    "Town_Name": "CASTILLA"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056207000",
+    "Town_Name": "DONSOL"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056208000",
+    "Town_Name": "GUBAT"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056209000",
+    "Town_Name": "IROSIN"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056210000",
+    "Town_Name": "JUBAN"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056211000",
+    "Town_Name": "MAGALLANES"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056212000",
+    "Town_Name": "MATNOG"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056213000",
+    "Town_Name": "PILAR"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056214000",
+    "Town_Name": "PRIETO DIAZ"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056215000",
+    "Town_Name": "SANTA MAGDALENA"
+  },
+  {
+    "Prov_Code": "056200000",
+    "Town_Code": "056216000",
+    "Town_Name": "SORSOGON CITY"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060401000",
+    "Town_Name": "ALTAVAS"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060402000",
+    "Town_Name": "BALETE"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060403000",
+    "Town_Name": "BANGA"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060404000",
+    "Town_Name": "BATAN"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060405000",
+    "Town_Name": "BURUANGA"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060406000",
+    "Town_Name": "IBAJAY"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060407000",
+    "Town_Name": "KALIBO"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060408000",
+    "Town_Name": "LEZO"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060409000",
+    "Town_Name": "LIBACAO"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060410000",
+    "Town_Name": "MADALAG"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060411000",
+    "Town_Name": "MAKATO"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060412000",
+    "Town_Name": "MALAY"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060413000",
+    "Town_Name": "MALINAO"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060414000",
+    "Town_Name": "NABAS"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060415000",
+    "Town_Name": "NEW WASHINGTON"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060416000",
+    "Town_Name": "NUMANCIA"
+  },
+  {
+    "Prov_Code": "060400000",
+    "Town_Code": "060417000",
+    "Town_Name": "TANGALAN"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060601000",
+    "Town_Name": "ANINI-Y"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060602000",
+    "Town_Name": "BARBAZA"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060603000",
+    "Town_Name": "BELISON"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060604000",
+    "Town_Name": "BUGASONG"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060605000",
+    "Town_Name": "CALUYA"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060606000",
+    "Town_Name": "CULASI"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060607000",
+    "Town_Name": "TOBIAS FORNIER"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060608000",
+    "Town_Name": "HAMTIC"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060609000",
+    "Town_Name": "LAUA-AN"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060610000",
+    "Town_Name": "LIBERTAD"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060611000",
+    "Town_Name": "PANDAN"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060612000",
+    "Town_Name": "PATNONGON"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060613000",
+    "Town_Name": "SAN JOSE"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060614000",
+    "Town_Name": "SAN REMIGIO"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060615000",
+    "Town_Name": "SEBASTE"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060616000",
+    "Town_Name": "SIBALOM"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060617000",
+    "Town_Name": "TIBIAO"
+  },
+  {
+    "Prov_Code": "060600000",
+    "Town_Code": "060618000",
+    "Town_Name": "VALDERRAMA"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061901000",
+    "Town_Name": "CUARTERO"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061902000",
+    "Town_Name": "DAO"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061903000",
+    "Town_Name": "DUMALAG"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061904000",
+    "Town_Name": "DUMARAO"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061905000",
+    "Town_Name": "IVISAN"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061906000",
+    "Town_Name": "JAMINDAN"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061907000",
+    "Town_Name": "MA-AYON"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061908000",
+    "Town_Name": "MAMBUSAO"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061909000",
+    "Town_Name": "PANAY"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061910000",
+    "Town_Name": "PANITAN"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061911000",
+    "Town_Name": "PILAR"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061912000",
+    "Town_Name": "PONTEVEDRA"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061913000",
+    "Town_Name": "PRESIDENT ROXAS"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061914000",
+    "Town_Name": "ROXAS CITY"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061915000",
+    "Town_Name": "SAPI-AN"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061916000",
+    "Town_Name": "SIGMA"
+  },
+  {
+    "Prov_Code": "061900000",
+    "Town_Code": "061917000",
+    "Town_Name": "TAPAZ"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063001000",
+    "Town_Name": "AJUY"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063002000",
+    "Town_Name": "ALIMODIAN"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063003000",
+    "Town_Name": "ANILAO"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063004000",
+    "Town_Name": "BADIANGAN"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063005000",
+    "Town_Name": "BALASAN"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063006000",
+    "Town_Name": "BANATE"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063007000",
+    "Town_Name": "BAROTAC NUEVO"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063008000",
+    "Town_Name": "BAROTAC VIEJO"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063009000",
+    "Town_Name": "BATAD"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063010000",
+    "Town_Name": "BINGAWAN"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063012000",
+    "Town_Name": "CABATUAN"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063013000",
+    "Town_Name": "CALINOG"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063014000",
+    "Town_Name": "CARLES"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063015000",
+    "Town_Name": "CONCEPCION"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063016000",
+    "Town_Name": "DINGLE"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063017000",
+    "Town_Name": "DUEÑAS"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063018000",
+    "Town_Name": "DUMANGAS"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063019000",
+    "Town_Name": "ESTANCIA"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063020000",
+    "Town_Name": "GUIMBAL"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063021000",
+    "Town_Name": "IGBARAS"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063022000",
+    "Town_Name": "ILOILO CITY"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063023000",
+    "Town_Name": "JANIUAY"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063025000",
+    "Town_Name": "LAMBUNAO"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063026000",
+    "Town_Name": "LEGANES"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063027000",
+    "Town_Name": "LEMERY"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063028000",
+    "Town_Name": "LEON"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063029000",
+    "Town_Name": "MAASIN"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063030000",
+    "Town_Name": "MIAGAO"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063031000",
+    "Town_Name": "MINA"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063032000",
+    "Town_Name": "NEW LUCENA"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063034000",
+    "Town_Name": "OTON"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063035000",
+    "Town_Name": "PASSI CITY"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063036000",
+    "Town_Name": "PAVIA"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063037000",
+    "Town_Name": "POTOTAN"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063038000",
+    "Town_Name": "SAN DIONISIO"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063039000",
+    "Town_Name": "SAN ENRIQUE"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063040000",
+    "Town_Name": "SAN JOAQUIN"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063041000",
+    "Town_Name": "SAN MIGUEL"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063042000",
+    "Town_Name": "SAN RAFAEL"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063043000",
+    "Town_Name": "SANTA BARBARA"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063044000",
+    "Town_Name": "SARA"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063045000",
+    "Town_Name": "TIGBAUAN"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063046000",
+    "Town_Name": "TUBUNGAN"
+  },
+  {
+    "Prov_Code": "063000000",
+    "Town_Code": "063047000",
+    "Town_Name": "ZARRAGA"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064501000",
+    "Town_Name": "BACOLOD CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064502000",
+    "Town_Name": "BAGO CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064503000",
+    "Town_Name": "BINALBAGAN"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064504000",
+    "Town_Name": "CADIZ CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064505000",
+    "Town_Name": "CALATRAVA"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064506000",
+    "Town_Name": "CANDONI"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064507000",
+    "Town_Name": "CAUAYAN"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064508000",
+    "Town_Name": "ENRIQUE B. MAGALONA"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064509000",
+    "Town_Name": "ESCALANTE CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064510000",
+    "Town_Name": "HIMAMAYLAN CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064511000",
+    "Town_Name": "HINIGARAN"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064512000",
+    "Town_Name": "HINOBA-AN"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064513000",
+    "Town_Name": "ILOG"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064514000",
+    "Town_Name": "ISABELA"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064515000",
+    "Town_Name": "KABANKALAN CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064516000",
+    "Town_Name": "LA CARLOTA CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064517000",
+    "Town_Name": "LA CASTELLANA"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064518000",
+    "Town_Name": "MANAPLA"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064519000",
+    "Town_Name": "MOISES PADILLA"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064520000",
+    "Town_Name": "MURCIA"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064521000",
+    "Town_Name": "PONTEVEDRA"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064522000",
+    "Town_Name": "PULUPANDAN"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064523000",
+    "Town_Name": "SAGAY CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064524000",
+    "Town_Name": "SAN CARLOS CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064525000",
+    "Town_Name": "SAN ENRIQUE"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064526000",
+    "Town_Name": "SILAY CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064527000",
+    "Town_Name": "SIPALAY CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064528000",
+    "Town_Name": "TALISAY CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064529000",
+    "Town_Name": "TOBOSO"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064530000",
+    "Town_Name": "VALLADOLID"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064531000",
+    "Town_Name": "VICTORIAS CITY"
+  },
+  {
+    "Prov_Code": "064500000",
+    "Town_Code": "064532000",
+    "Town_Name": "SALVADOR BENEDICTO"
+  },
+  {
+    "Prov_Code": "067900000",
+    "Town_Code": "067901000",
+    "Town_Name": "BUENAVISTA"
+  },
+  {
+    "Prov_Code": "067900000",
+    "Town_Code": "067902000",
+    "Town_Name": "JORDAN"
+  },
+  {
+    "Prov_Code": "067900000",
+    "Town_Code": "067903000",
+    "Town_Name": "NUEVA VALENCIA"
+  },
+  {
+    "Prov_Code": "067900000",
+    "Town_Code": "067904000",
+    "Town_Name": "SAN LORENZO"
+  },
+  {
+    "Prov_Code": "067900000",
+    "Town_Code": "067905000",
+    "Town_Name": "SIBUNAG"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071201000",
+    "Town_Name": "ALBUQUERQUE"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071202000",
+    "Town_Name": "ALICIA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071203000",
+    "Town_Name": "ANDA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071204000",
+    "Town_Name": "ANTEQUERA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071205000",
+    "Town_Name": "BACLAYON"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071206000",
+    "Town_Name": "BALILIHAN"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071207000",
+    "Town_Name": "BATUAN"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071208000",
+    "Town_Name": "BILAR"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071209000",
+    "Town_Name": "BUENAVISTA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071210000",
+    "Town_Name": "CALAPE"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071211000",
+    "Town_Name": "CANDIJAY"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071212000",
+    "Town_Name": "CARMEN"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071213000",
+    "Town_Name": "CATIGBIAN"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071214000",
+    "Town_Name": "CLARIN"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071215000",
+    "Town_Name": "CORELLA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071216000",
+    "Town_Name": "CORTES"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071217000",
+    "Town_Name": "DAGOHOY"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071218000",
+    "Town_Name": "DANAO"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071219000",
+    "Town_Name": "DAUIS"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071220000",
+    "Town_Name": "DIMIAO"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071221000",
+    "Town_Name": "DUERO"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071222000",
+    "Town_Name": "GARCIA HERNANDEZ"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071223000",
+    "Town_Name": "GUINDULMAN"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071224000",
+    "Town_Name": "INABANGA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071225000",
+    "Town_Name": "JAGNA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071226000",
+    "Town_Name": "JETAFE"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071227000",
+    "Town_Name": "LILA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071228000",
+    "Town_Name": "LOAY"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071229000",
+    "Town_Name": "LOBOC"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071230000",
+    "Town_Name": "LOON"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071231000",
+    "Town_Name": "MABINI"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071232000",
+    "Town_Name": "MARIBOJOC"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071233000",
+    "Town_Name": "PANGLAO"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071234000",
+    "Town_Name": "PILAR"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071235000",
+    "Town_Name": "PRES. CARLOS P. GARCIA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071236000",
+    "Town_Name": "SAGBAYAN"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071237000",
+    "Town_Name": "SAN ISIDRO"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071238000",
+    "Town_Name": "SAN MIGUEL"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071239000",
+    "Town_Name": "SEVILLA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071240000",
+    "Town_Name": "SIERRA BULLONES"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071241000",
+    "Town_Name": "SIKATUNA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071242000",
+    "Town_Name": "TAGBILARAN CITY"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071243000",
+    "Town_Name": "TALIBON"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071244000",
+    "Town_Name": "TRINIDAD"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071245000",
+    "Town_Name": "TUBIGON"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071246000",
+    "Town_Name": "UBAY"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071247000",
+    "Town_Name": "VALENCIA"
+  },
+  {
+    "Prov_Code": "071200000",
+    "Town_Code": "071248000",
+    "Town_Name": "BIEN UNIDO"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072201000",
+    "Town_Name": "ALCANTARA"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072202000",
+    "Town_Name": "ALCOY"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072203000",
+    "Town_Name": "ALEGRIA"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072204000",
+    "Town_Name": "ALOGUINSAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072205000",
+    "Town_Name": "ARGAO"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072206000",
+    "Town_Name": "ASTURIAS"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072207000",
+    "Town_Name": "BADIAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072208000",
+    "Town_Name": "BALAMBAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072209000",
+    "Town_Name": "BANTAYAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072210000",
+    "Town_Name": "BARILI"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072211000",
+    "Town_Name": "BOGO CITY"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072212000",
+    "Town_Name": "BOLJOON"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072213000",
+    "Town_Name": "BORBON"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072214000",
+    "Town_Name": "CARCAR CITY"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072215000",
+    "Town_Name": "CARMEN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072216000",
+    "Town_Name": "CATMON"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072217000",
+    "Town_Name": "CEBU CITY"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072218000",
+    "Town_Name": "COMPOSTELA"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072219000",
+    "Town_Name": "CONSOLACION"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072220000",
+    "Town_Name": "CORDOVA"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072221000",
+    "Town_Name": "DAANBANTAYAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072222000",
+    "Town_Name": "DALAGUETE"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072223000",
+    "Town_Name": "DANAO CITY"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072224000",
+    "Town_Name": "DUMANJUG"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072225000",
+    "Town_Name": "GINATILAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072226000",
+    "Town_Name": "LAPU-LAPU CITY"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072227000",
+    "Town_Name": "LILOAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072228000",
+    "Town_Name": "MADRIDEJOS"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072229000",
+    "Town_Name": "MALABUYOC"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072230000",
+    "Town_Name": "MANDAUE CITY"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072231000",
+    "Town_Name": "MEDELLIN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072232000",
+    "Town_Name": "MINGLANILLA"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072233000",
+    "Town_Name": "MOALBOAL"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072234000",
+    "Town_Name": "NAGA CITY"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072235000",
+    "Town_Name": "OSLOB"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072236000",
+    "Town_Name": "PILAR"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072237000",
+    "Town_Name": "PINAMUNGAJAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072238000",
+    "Town_Name": "PORO"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072239000",
+    "Town_Name": "RONDA"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072240000",
+    "Town_Name": "SAMBOAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072241000",
+    "Town_Name": "SAN FERNANDO"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072242000",
+    "Town_Name": "SAN FRANCISCO"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072243000",
+    "Town_Name": "SAN REMIGIO"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072244000",
+    "Town_Name": "SANTA FE"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072245000",
+    "Town_Name": "SANTANDER"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072246000",
+    "Town_Name": "SIBONGA"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072247000",
+    "Town_Name": "SOGOD"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072248000",
+    "Town_Name": "TABOGON"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072249000",
+    "Town_Name": "TABUELAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072250000",
+    "Town_Name": "TALISAY CITY"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072251000",
+    "Town_Name": "TOLEDO CITY"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072252000",
+    "Town_Name": "TUBURAN"
+  },
+  {
+    "Prov_Code": "072200000",
+    "Town_Code": "072253000",
+    "Town_Name": "TUDELA"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074601000",
+    "Town_Name": "AMLAN"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074602000",
+    "Town_Name": "AYUNGON"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074603000",
+    "Town_Name": "BACONG"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074604000",
+    "Town_Name": "BAIS CITY"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074605000",
+    "Town_Name": "BASAY"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074606000",
+    "Town_Name": "BAYAWAN CITY"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074607000",
+    "Town_Name": "BINDOY"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074608000",
+    "Town_Name": "CANLAON CITY"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074609000",
+    "Town_Name": "DAUIN"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074610000",
+    "Town_Name": "DUMAGUETE CITY"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074611000",
+    "Town_Name": "GUIHULNGAN CITY"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074612000",
+    "Town_Name": "JIMALALUD"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074613000",
+    "Town_Name": "LA LIBERTAD"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074614000",
+    "Town_Name": "MABINAY"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074615000",
+    "Town_Name": "MANJUYOD"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074616000",
+    "Town_Name": "PAMPLONA"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074617000",
+    "Town_Name": "SAN JOSE"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074618000",
+    "Town_Name": "SANTA CATALINA"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074619000",
+    "Town_Name": "SIATON"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074620000",
+    "Town_Name": "SIBULAN"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074621000",
+    "Town_Name": "TANJAY CITY"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074622000",
+    "Town_Name": "TAYASAN"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074623000",
+    "Town_Name": "VALENCIA"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074624000",
+    "Town_Name": "VALLEHERMOSO"
+  },
+  {
+    "Prov_Code": "074600000",
+    "Town_Code": "074625000",
+    "Town_Name": "ZAMBOANGUITA"
+  },
+  {
+    "Prov_Code": "076100000",
+    "Town_Code": "076101000",
+    "Town_Name": "ENRIQUE VILLANUEVA"
+  },
+  {
+    "Prov_Code": "076100000",
+    "Town_Code": "076102000",
+    "Town_Name": "LARENA"
+  },
+  {
+    "Prov_Code": "076100000",
+    "Town_Code": "076103000",
+    "Town_Name": "LAZI"
+  },
+  {
+    "Prov_Code": "076100000",
+    "Town_Code": "076104000",
+    "Town_Name": "MARIA"
+  },
+  {
+    "Prov_Code": "076100000",
+    "Town_Code": "076105000",
+    "Town_Name": "SAN JUAN"
+  },
+  {
+    "Prov_Code": "076100000",
+    "Town_Code": "076106000",
+    "Town_Name": "SIQUIJOR"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082601000",
+    "Town_Name": "ARTECHE"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082602000",
+    "Town_Name": "BALANGIGA"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082603000",
+    "Town_Name": "BALANGKAYAN"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082604000",
+    "Town_Name": "BORONGAN CITY"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082605000",
+    "Town_Name": "CAN-AVID"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082606000",
+    "Town_Name": "DOLORES"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082607000",
+    "Town_Name": "GENERAL MACARTHUR"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082608000",
+    "Town_Name": "GIPORLOS"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082609000",
+    "Town_Name": "GUIUAN"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082610000",
+    "Town_Name": "HERNANI"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082611000",
+    "Town_Name": "JIPAPAD"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082612000",
+    "Town_Name": "LAWAAN"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082613000",
+    "Town_Name": "LLORENTE"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082614000",
+    "Town_Name": "MASLOG"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082615000",
+    "Town_Name": "MAYDOLONG"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082616000",
+    "Town_Name": "MERCEDES"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082617000",
+    "Town_Name": "ORAS"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082618000",
+    "Town_Name": "QUINAPONDAN"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082619000",
+    "Town_Name": "SALCEDO"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082620000",
+    "Town_Name": "SAN JULIAN"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082621000",
+    "Town_Name": "SAN POLICARPO"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082622000",
+    "Town_Name": "SULAT"
+  },
+  {
+    "Prov_Code": "082600000",
+    "Town_Code": "082623000",
+    "Town_Name": "TAFT"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083701000",
+    "Town_Name": "ABUYOG"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083702000",
+    "Town_Name": "ALANGALANG"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083703000",
+    "Town_Name": "ALBUERA"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083705000",
+    "Town_Name": "BABATNGON"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083706000",
+    "Town_Name": "BARUGO"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083707000",
+    "Town_Name": "BATO"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083708000",
+    "Town_Name": "BAYBAY CITY"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083710000",
+    "Town_Name": "BURAUEN"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083713000",
+    "Town_Name": "CALUBIAN"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083714000",
+    "Town_Name": "CAPOOCAN"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083715000",
+    "Town_Name": "CARIGARA"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083717000",
+    "Town_Name": "DAGAMI"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083718000",
+    "Town_Name": "DULAG"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083719000",
+    "Town_Name": "HILONGOS"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083720000",
+    "Town_Name": "HINDANG"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083721000",
+    "Town_Name": "INOPACAN"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083722000",
+    "Town_Name": "ISABEL"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083723000",
+    "Town_Name": "JARO"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083724000",
+    "Town_Name": "JAVIER"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083725000",
+    "Town_Name": "JULITA"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083726000",
+    "Town_Name": "KANANGA"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083728000",
+    "Town_Name": "LA PAZ"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083729000",
+    "Town_Name": "LEYTE"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083730000",
+    "Town_Name": "MACARTHUR"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083731000",
+    "Town_Name": "MAHAPLAG"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083733000",
+    "Town_Name": "MATAG-OB"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083734000",
+    "Town_Name": "MATALOM"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083735000",
+    "Town_Name": "MAYORGA"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083736000",
+    "Town_Name": "MERIDA"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083738000",
+    "Town_Name": "ORMOC CITY"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083739000",
+    "Town_Name": "PALO"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083740000",
+    "Town_Name": "PALOMPON"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083741000",
+    "Town_Name": "PASTRANA"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083742000",
+    "Town_Name": "SAN ISIDRO"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083743000",
+    "Town_Name": "SAN MIGUEL"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083744000",
+    "Town_Name": "SANTA FE"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083745000",
+    "Town_Name": "TABANGO"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083746000",
+    "Town_Name": "TABONTABON"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083747000",
+    "Town_Name": "TACLOBAN CITY"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083748000",
+    "Town_Name": "TANAUAN"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083749000",
+    "Town_Name": "TOLOSA"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083750000",
+    "Town_Name": "TUNGA"
+  },
+  {
+    "Prov_Code": "083700000",
+    "Town_Code": "083751000",
+    "Town_Name": "VILLABA"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084801000",
+    "Town_Name": "ALLEN"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084802000",
+    "Town_Name": "BIRI"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084803000",
+    "Town_Name": "BOBON"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084804000",
+    "Town_Name": "CAPUL"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084805000",
+    "Town_Name": "CATARMAN"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084806000",
+    "Town_Name": "CATUBIG"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084807000",
+    "Town_Name": "GAMAY"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084808000",
+    "Town_Name": "LAOANG"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084809000",
+    "Town_Name": "LAPINIG"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084810000",
+    "Town_Name": "LAS NAVAS"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084811000",
+    "Town_Name": "LAVEZARES"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084812000",
+    "Town_Name": "MAPANAS"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084813000",
+    "Town_Name": "MONDRAGON"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084814000",
+    "Town_Name": "PALAPAG"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084815000",
+    "Town_Name": "PAMBUJAN"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084816000",
+    "Town_Name": "ROSARIO"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084817000",
+    "Town_Name": "SAN ANTONIO"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084818000",
+    "Town_Name": "SAN ISIDRO"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084819000",
+    "Town_Name": "SAN JOSE"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084820000",
+    "Town_Name": "SAN ROQUE"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084821000",
+    "Town_Name": "SAN VICENTE"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084822000",
+    "Town_Name": "SILVINO LOBOS"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084823000",
+    "Town_Name": "VICTORIA"
+  },
+  {
+    "Prov_Code": "084800000",
+    "Town_Code": "084824000",
+    "Town_Name": "LOPE DE VEGA"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086001000",
+    "Town_Name": "ALMAGRO"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086002000",
+    "Town_Name": "BASEY"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086003000",
+    "Town_Name": "CALBAYOG CITY"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086004000",
+    "Town_Name": "CALBIGA"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086005000",
+    "Town_Name": "CATBALOGAN CITY"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086006000",
+    "Town_Name": "DARAM"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086007000",
+    "Town_Name": "GANDARA"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086008000",
+    "Town_Name": "HINABANGAN"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086009000",
+    "Town_Name": "JIABONG"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086010000",
+    "Town_Name": "MARABUT"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086011000",
+    "Town_Name": "MATUGUINAO"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086012000",
+    "Town_Name": "MOTIONG"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086013000",
+    "Town_Name": "PINABACDAO"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086014000",
+    "Town_Name": "SAN JOSE DE BUAN"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086015000",
+    "Town_Name": "SAN SEBASTIAN"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086016000",
+    "Town_Name": "SANTA MARGARITA"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086017000",
+    "Town_Name": "SANTA RITA"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086018000",
+    "Town_Name": "SANTO NIÑO"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086019000",
+    "Town_Name": "TALALORA"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086020000",
+    "Town_Name": "TARANGNAN"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086021000",
+    "Town_Name": "VILLAREAL"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086022000",
+    "Town_Name": "PARANAS"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086023000",
+    "Town_Name": "ZUMARRAGA"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086024000",
+    "Town_Name": "TAGAPUL-AN"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086025000",
+    "Town_Name": "SAN JORGE"
+  },
+  {
+    "Prov_Code": "086000000",
+    "Town_Code": "086026000",
+    "Town_Name": "PAGSANGHAN"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086401000",
+    "Town_Name": "ANAHAWAN"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086402000",
+    "Town_Name": "BONTOC"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086403000",
+    "Town_Name": "HINUNANGAN"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086404000",
+    "Town_Name": "HINUNDAYAN"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086405000",
+    "Town_Name": "LIBAGON"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086406000",
+    "Town_Name": "LILOAN"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086407000",
+    "Town_Name": "MAASIN CITY"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086408000",
+    "Town_Name": "MACROHON"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086409000",
+    "Town_Name": "MALITBOG"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086410000",
+    "Town_Name": "PADRE BURGOS"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086411000",
+    "Town_Name": "PINTUYAN"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086412000",
+    "Town_Name": "SAINT BERNARD"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086413000",
+    "Town_Name": "SAN FRANCISCO"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086414000",
+    "Town_Name": "SAN JUAN"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086415000",
+    "Town_Name": "SAN RICARDO"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086416000",
+    "Town_Name": "SILAGO"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086417000",
+    "Town_Name": "SOGOD"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086418000",
+    "Town_Name": "TOMAS OPPUS"
+  },
+  {
+    "Prov_Code": "086400000",
+    "Town_Code": "086419000",
+    "Town_Name": "LIMASAWA"
+  },
+  {
+    "Prov_Code": "087800000",
+    "Town_Code": "087801000",
+    "Town_Name": "ALMERIA"
+  },
+  {
+    "Prov_Code": "087800000",
+    "Town_Code": "087802000",
+    "Town_Name": "BILIRAN"
+  },
+  {
+    "Prov_Code": "087800000",
+    "Town_Code": "087803000",
+    "Town_Name": "CABUCGAYAN"
+  },
+  {
+    "Prov_Code": "087800000",
+    "Town_Code": "087804000",
+    "Town_Name": "CAIBIRAN"
+  },
+  {
+    "Prov_Code": "087800000",
+    "Town_Code": "087805000",
+    "Town_Name": "CULABA"
+  },
+  {
+    "Prov_Code": "087800000",
+    "Town_Code": "087806000",
+    "Town_Name": "KAWAYAN"
+  },
+  {
+    "Prov_Code": "087800000",
+    "Town_Code": "087807000",
+    "Town_Name": "MARIPIPI"
+  },
+  {
+    "Prov_Code": "087800000",
+    "Town_Code": "087808000",
+    "Town_Name": "NAVAL"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097201000",
+    "Town_Name": "DAPITAN CITY"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097202000",
+    "Town_Name": "DIPOLOG CITY"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097203000",
+    "Town_Name": "KATIPUNAN"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097204000",
+    "Town_Name": "LA LIBERTAD"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097205000",
+    "Town_Name": "LABASON"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097206000",
+    "Town_Name": "LILOY"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097207000",
+    "Town_Name": "MANUKAN"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097208000",
+    "Town_Name": "MUTIA"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097209000",
+    "Town_Name": "PIÑAN"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097210000",
+    "Town_Name": "POLANCO"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097211000",
+    "Town_Name": "PRES. MANUEL A. ROXAS"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097212000",
+    "Town_Name": "RIZAL"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097213000",
+    "Town_Name": "SALUG"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097214000",
+    "Town_Name": "SERGIO OSMEÑA SR."
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097215000",
+    "Town_Name": "SIAYAN"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097216000",
+    "Town_Name": "SIBUCO"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097217000",
+    "Town_Name": "SIBUTAD"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097218000",
+    "Town_Name": "SINDANGAN"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097219000",
+    "Town_Name": "SIOCON"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097220000",
+    "Town_Name": "SIRAWAI"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097221000",
+    "Town_Name": "TAMPILISAN"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097222000",
+    "Town_Name": "JOSE DALMAN"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097223000",
+    "Town_Name": "GUTALAC"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097224000",
+    "Town_Name": "BALIGUIAN"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097225000",
+    "Town_Name": "GODOD"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097226000",
+    "Town_Name": "BACUNGAN"
+  },
+  {
+    "Prov_Code": "097200000",
+    "Town_Code": "097227000",
+    "Town_Name": "KALAWIT"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097302000",
+    "Town_Name": "AURORA"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097303000",
+    "Town_Name": "BAYOG"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097305000",
+    "Town_Name": "DIMATALING"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097306000",
+    "Town_Name": "DINAS"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097307000",
+    "Town_Name": "DUMALINAO"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097308000",
+    "Town_Name": "DUMINGAG"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097311000",
+    "Town_Name": "KUMALARANG"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097312000",
+    "Town_Name": "LABANGAN"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097313000",
+    "Town_Name": "LAPUYAN"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097315000",
+    "Town_Name": "MAHAYAG"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097317000",
+    "Town_Name": "MARGOSATUBIG"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097318000",
+    "Town_Name": "MIDSALIP"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097319000",
+    "Town_Name": "MOLAVE"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097322000",
+    "Town_Name": "PAGADIAN CITY"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097323000",
+    "Town_Name": "RAMON MAGSAYSAY"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097324000",
+    "Town_Name": "SAN MIGUEL"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097325000",
+    "Town_Name": "SAN PABLO"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097327000",
+    "Town_Name": "TABINA"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097328000",
+    "Town_Name": "TAMBULIG"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097330000",
+    "Town_Name": "TUKURAN"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097332000",
+    "Town_Name": "ZAMBOANGA CITY"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097333000",
+    "Town_Name": "LAKEWOOD"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097337000",
+    "Town_Name": "JOSEFINA"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097338000",
+    "Town_Name": "PITOGO"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097340000",
+    "Town_Name": "SOMINOT"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097341000",
+    "Town_Name": "VINCENZO A. SAGUN"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097343000",
+    "Town_Name": "GUIPOS"
+  },
+  {
+    "Prov_Code": "097300000",
+    "Town_Code": "097344000",
+    "Town_Name": "TIGBAO"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098301000",
+    "Town_Name": "ALICIA"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098302000",
+    "Town_Name": "BUUG"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098303000",
+    "Town_Name": "DIPLAHAN"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098304000",
+    "Town_Name": "IMELDA"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098305000",
+    "Town_Name": "IPIL"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098306000",
+    "Town_Name": "KABASALAN"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098307000",
+    "Town_Name": "MABUHAY"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098308000",
+    "Town_Name": "MALANGAS"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098309000",
+    "Town_Name": "NAGA"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098310000",
+    "Town_Name": "OLUTANGA"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098311000",
+    "Town_Name": "PAYAO"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098312000",
+    "Town_Name": "ROSELLER LIM"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098313000",
+    "Town_Name": "SIAY"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098314000",
+    "Town_Name": "TALUSAN"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098315000",
+    "Town_Name": "TITAY"
+  },
+  {
+    "Prov_Code": "098300000",
+    "Town_Code": "098316000",
+    "Town_Name": "TUNGAWAN"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101301000",
+    "Town_Name": "BAUNGON"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101302000",
+    "Town_Name": "DAMULOG"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101303000",
+    "Town_Name": "DANGCAGAN"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101304000",
+    "Town_Name": "DON CARLOS"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101305000",
+    "Town_Name": "IMPASUG-ONG"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101306000",
+    "Town_Name": "KADINGILAN"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101307000",
+    "Town_Name": "KALILANGAN"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101308000",
+    "Town_Name": "KIBAWE"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101309000",
+    "Town_Name": "KITAOTAO"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101310000",
+    "Town_Name": "LANTAPAN"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101311000",
+    "Town_Name": "LIBONA"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101312000",
+    "Town_Name": "MALAYBALAY CITY"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101313000",
+    "Town_Name": "MALITBOG"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101314000",
+    "Town_Name": "MANOLO FORTICH"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101315000",
+    "Town_Name": "MARAMAG"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101316000",
+    "Town_Name": "PANGANTUCAN"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101317000",
+    "Town_Name": "QUEZON"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101318000",
+    "Town_Name": "SAN FERNANDO"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101319000",
+    "Town_Name": "SUMILAO"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101320000",
+    "Town_Name": "TALAKAG"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101321000",
+    "Town_Name": "VALENCIA CITY"
+  },
+  {
+    "Prov_Code": "101300000",
+    "Town_Code": "101322000",
+    "Town_Name": "CABANGLASAN"
+  },
+  {
+    "Prov_Code": "101800000",
+    "Town_Code": "101801000",
+    "Town_Name": "CATARMAN"
+  },
+  {
+    "Prov_Code": "101800000",
+    "Town_Code": "101802000",
+    "Town_Name": "GUINSILIBAN"
+  },
+  {
+    "Prov_Code": "101800000",
+    "Town_Code": "101803000",
+    "Town_Name": "MAHINOG"
+  },
+  {
+    "Prov_Code": "101800000",
+    "Town_Code": "101804000",
+    "Town_Name": "MAMBAJAO"
+  },
+  {
+    "Prov_Code": "101800000",
+    "Town_Code": "101805000",
+    "Town_Name": "SAGAY"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103501000",
+    "Town_Name": "BACOLOD"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103502000",
+    "Town_Name": "BALOI"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103503000",
+    "Town_Name": "BAROY"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103504000",
+    "Town_Name": "ILIGAN CITY"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103505000",
+    "Town_Name": "KAPATAGAN"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103506000",
+    "Town_Name": "SULTAN NAGA DIMAPORO"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103507000",
+    "Town_Name": "KAUSWAGAN"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103508000",
+    "Town_Name": "KOLAMBUGAN"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103509000",
+    "Town_Name": "LALA"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103510000",
+    "Town_Name": "LINAMON"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103511000",
+    "Town_Name": "MAGSAYSAY"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103512000",
+    "Town_Name": "MAIGO"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103513000",
+    "Town_Name": "MATUNGAO"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103514000",
+    "Town_Name": "MUNAI"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103515000",
+    "Town_Name": "NUNUNGAN"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103516000",
+    "Town_Name": "PANTAO RAGAT"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103517000",
+    "Town_Name": "POONA PIAGAPO"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103518000",
+    "Town_Name": "SALVADOR"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103519000",
+    "Town_Name": "SAPAD"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103520000",
+    "Town_Name": "TAGOLOAN"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103521000",
+    "Town_Name": "TANGCAL"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103522000",
+    "Town_Name": "TUBOD"
+  },
+  {
+    "Prov_Code": "103500000",
+    "Town_Code": "103523000",
+    "Town_Name": "PANTAR"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104201000",
+    "Town_Name": "ALORAN"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104202000",
+    "Town_Name": "BALIANGAO"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104203000",
+    "Town_Name": "BONIFACIO"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104204000",
+    "Town_Name": "CALAMBA"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104205000",
+    "Town_Name": "CLARIN"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104206000",
+    "Town_Name": "CONCEPCION"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104207000",
+    "Town_Name": "JIMENEZ"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104208000",
+    "Town_Name": "LOPEZ JAENA"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104209000",
+    "Town_Name": "OROQUIETA CITY"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104210000",
+    "Town_Name": "OZAMIS CITY"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104211000",
+    "Town_Name": "PANAON"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104212000",
+    "Town_Name": "PLARIDEL"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104213000",
+    "Town_Name": "SAPANG DALAGA"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104214000",
+    "Town_Name": "SINACABAN"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104215000",
+    "Town_Name": "TANGUB CITY"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104216000",
+    "Town_Name": "TUDELA"
+  },
+  {
+    "Prov_Code": "104200000",
+    "Town_Code": "104217000",
+    "Town_Name": "DON VICTORIANO CHIONGBIAN"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104301000",
+    "Town_Name": "ALUBIJID"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104302000",
+    "Town_Name": "BALINGASAG"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104303000",
+    "Town_Name": "BALINGOAN"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104304000",
+    "Town_Name": "BINUANGAN"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104305000",
+    "Town_Name": "CAGAYAN DE ORO CITY"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104306000",
+    "Town_Name": "CLAVERIA"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104307000",
+    "Town_Name": "EL SALVADOR CITY"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104308000",
+    "Town_Name": "GINGOOG CITY"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104309000",
+    "Town_Name": "GITAGUM"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104310000",
+    "Town_Name": "INITAO"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104311000",
+    "Town_Name": "JASAAN"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104312000",
+    "Town_Name": "KINOGUITAN"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104313000",
+    "Town_Name": "LAGONGLONG"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104314000",
+    "Town_Name": "LAGUINDINGAN"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104315000",
+    "Town_Name": "LIBERTAD"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104316000",
+    "Town_Name": "LUGAIT"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104317000",
+    "Town_Name": "MAGSAYSAY"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104318000",
+    "Town_Name": "MANTICAO"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104319000",
+    "Town_Name": "MEDINA"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104320000",
+    "Town_Name": "NAAWAN"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104321000",
+    "Town_Name": "OPOL"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104322000",
+    "Town_Name": "SALAY"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104323000",
+    "Town_Name": "SUGBONGCOGON"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104324000",
+    "Town_Name": "TAGOLOAN"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104325000",
+    "Town_Name": "TALISAYAN"
+  },
+  {
+    "Prov_Code": "104300000",
+    "Town_Code": "104326000",
+    "Town_Name": "VILLANUEVA"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112301000",
+    "Town_Name": "ASUNCION"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112303000",
+    "Town_Name": "CARMEN"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112305000",
+    "Town_Name": "KAPALONG"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112314000",
+    "Town_Name": "NEW CORELLA"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112315000",
+    "Town_Name": "PANABO CITY"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112317000",
+    "Town_Name": "SAMAL CITY"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112318000",
+    "Town_Name": "SANTO TOMAS"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112319000",
+    "Town_Name": "TAGUM CITY"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112322000",
+    "Town_Name": "TALAINGOD"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112323000",
+    "Town_Name": "BRAULIO E. DUJALI"
+  },
+  {
+    "Prov_Code": "112300000",
+    "Town_Code": "112324000",
+    "Town_Name": "SAN ISIDRO"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112401000",
+    "Town_Name": "BANSALAN"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112402000",
+    "Town_Name": "DAVAO CITY"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112403000",
+    "Town_Name": "DIGOS CITY"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112404000",
+    "Town_Name": "HAGONOY"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112406000",
+    "Town_Name": "KIBLAWAN"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112407000",
+    "Town_Name": "MAGSAYSAY"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112408000",
+    "Town_Name": "MALALAG"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112410000",
+    "Town_Name": "MATANAO"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112411000",
+    "Town_Name": "PADADA"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112412000",
+    "Town_Name": "SANTA CRUZ"
+  },
+  {
+    "Prov_Code": "112400000",
+    "Town_Code": "112414000",
+    "Town_Name": "SULOP"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112501000",
+    "Town_Name": "BAGANGA"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112502000",
+    "Town_Name": "BANAYBANAY"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112503000",
+    "Town_Name": "BOSTON"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112504000",
+    "Town_Name": "CARAGA"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112505000",
+    "Town_Name": "CATEEL"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112506000",
+    "Town_Name": "GOVERNOR GENEROSO"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112507000",
+    "Town_Name": "LUPON"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112508000",
+    "Town_Name": "MANAY"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112509000",
+    "Town_Name": "MATI CITY"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112510000",
+    "Town_Name": "SAN ISIDRO"
+  },
+  {
+    "Prov_Code": "112500000",
+    "Town_Code": "112511000",
+    "Town_Name": "TARRAGONA"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118201000",
+    "Town_Name": "COMPOSTELA"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118202000",
+    "Town_Name": "LAAK"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118203000",
+    "Town_Name": "MABINI"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118204000",
+    "Town_Name": "MACO"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118205000",
+    "Town_Name": "MARAGUSAN"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118206000",
+    "Town_Name": "MAWAB"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118207000",
+    "Town_Name": "MONKAYO"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118208000",
+    "Town_Name": "MONTEVISTA"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118209000",
+    "Town_Name": "NABUNTURAN"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118210000",
+    "Town_Name": "NEW BATAAN"
+  },
+  {
+    "Prov_Code": "118200000",
+    "Town_Code": "118211000",
+    "Town_Name": "PANTUKAN"
+  },
+  {
+    "Prov_Code": "118600000",
+    "Town_Code": "118601000",
+    "Town_Name": "DON MARCELINO"
+  },
+  {
+    "Prov_Code": "118600000",
+    "Town_Code": "118602000",
+    "Town_Name": "JOSE ABAD SANTOS"
+  },
+  {
+    "Prov_Code": "118600000",
+    "Town_Code": "118603000",
+    "Town_Name": "MALITA"
+  },
+  {
+    "Prov_Code": "118600000",
+    "Town_Code": "118604000",
+    "Town_Name": "SANTA MARIA"
+  },
+  {
+    "Prov_Code": "118600000",
+    "Town_Code": "118605000",
+    "Town_Name": "SARANGANI"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124701000",
+    "Town_Name": "ALAMADA"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124702000",
+    "Town_Name": "CARMEN"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124703000",
+    "Town_Name": "KABACAN"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124704000",
+    "Town_Name": "KIDAPAWAN CITY"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124705000",
+    "Town_Name": "LIBUNGAN"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124706000",
+    "Town_Name": "MAGPET"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124707000",
+    "Town_Name": "MAKILALA"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124708000",
+    "Town_Name": "MATALAM"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124709000",
+    "Town_Name": "MIDSAYAP"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124710000",
+    "Town_Name": "M'LANG"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124711000",
+    "Town_Name": "PIGKAWAYAN"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124712000",
+    "Town_Name": "PIKIT"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124713000",
+    "Town_Name": "PRESIDENT ROXAS"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124714000",
+    "Town_Name": "TULUNAN"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124715000",
+    "Town_Name": "ANTIPAS"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124716000",
+    "Town_Name": "BANISILAN"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124717000",
+    "Town_Name": "ALEOSAN"
+  },
+  {
+    "Prov_Code": "124700000",
+    "Town_Code": "124718000",
+    "Town_Name": "ARAKAN"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126302000",
+    "Town_Name": "BANGA"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126303000",
+    "Town_Name": "GENERAL SANTOS CITY"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126304000",
+    "Town_Name": "COTABATO CITY"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126306000",
+    "Town_Name": "KORONADAL CITY"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126311000",
+    "Town_Name": "NORALA"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126312000",
+    "Town_Name": "POLOMOLOK"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126313000",
+    "Town_Name": "SURALLAH"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126314000",
+    "Town_Name": "TAMPAKAN"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126315000",
+    "Town_Name": "TANTANGAN"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126316000",
+    "Town_Name": "T'BOLI"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126317000",
+    "Town_Name": "TUPI"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126318000",
+    "Town_Name": "SANTO NIÑO"
+  },
+  {
+    "Prov_Code": "126300000",
+    "Town_Code": "126319000",
+    "Town_Name": "LAKE SEBU"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126501000",
+    "Town_Name": "BAGUMBAYAN"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126502000",
+    "Town_Name": "COLUMBIO"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126503000",
+    "Town_Name": "ESPERANZA"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126504000",
+    "Town_Name": "ISULAN"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126505000",
+    "Town_Name": "KALAMANSIG"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126506000",
+    "Town_Name": "LEBAK"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126507000",
+    "Town_Name": "LUTAYAN"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126508000",
+    "Town_Name": "LAMBAYONG"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126509000",
+    "Town_Name": "PALIMBANG"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126510000",
+    "Town_Name": "PRESIDENT QUIRINO"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126511000",
+    "Town_Name": "TACURONG CITY"
+  },
+  {
+    "Prov_Code": "126500000",
+    "Town_Code": "126512000",
+    "Town_Name": "SEN. NINOY AQUINO"
+  },
+  {
+    "Prov_Code": "128000000",
+    "Town_Code": "128001000",
+    "Town_Name": "ALABEL"
+  },
+  {
+    "Prov_Code": "128000000",
+    "Town_Code": "128002000",
+    "Town_Name": "GLAN"
+  },
+  {
+    "Prov_Code": "128000000",
+    "Town_Code": "128003000",
+    "Town_Name": "KIAMBA"
+  },
+  {
+    "Prov_Code": "128000000",
+    "Town_Code": "128004000",
+    "Town_Name": "MAASIM"
+  },
+  {
+    "Prov_Code": "128000000",
+    "Town_Code": "128005000",
+    "Town_Name": "MAITUM"
+  },
+  {
+    "Prov_Code": "128000000",
+    "Town_Code": "128006000",
+    "Town_Name": "MALAPATAN"
+  },
+  {
+    "Prov_Code": "128000000",
+    "Town_Code": "128007000",
+    "Town_Name": "MALUNGON"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "133900000",
+    "Town_Name": "MANILA"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137401000",
+    "Town_Name": "MANDALUYONG"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137402000",
+    "Town_Name": "MARIKINA"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137403000",
+    "Town_Name": "PASIG"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137404000",
+    "Town_Name": "QUEZON"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137405000",
+    "Town_Name": "SAN JUAN"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137501000",
+    "Town_Name": "CALOOCAN"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137502000",
+    "Town_Name": "MALABON"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137503000",
+    "Town_Name": "NAVOTAS"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137504000",
+    "Town_Name": "VALENZUELA"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137601000",
+    "Town_Name": "LAS PIÑAS"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137602000",
+    "Town_Name": "MAKATI"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137603000",
+    "Town_Name": "MUNTINLUPA"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137604000",
+    "Town_Name": "PARAÑAQUE"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137605000",
+    "Town_Name": "PASAY"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137606000",
+    "Town_Name": "PATEROS"
+  },
+  {
+    "Prov_Code": "130000000",
+    "Town_Code": "137607000",
+    "Town_Name": "TAGUIG"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140101000",
+    "Town_Name": "BANGUED"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140102000",
+    "Town_Name": "BOLINEY"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140103000",
+    "Town_Name": "BUCAY"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140104000",
+    "Town_Name": "BUCLOC"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140105000",
+    "Town_Name": "DAGUIOMAN"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140106000",
+    "Town_Name": "DANGLAS"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140107000",
+    "Town_Name": "DOLORES"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140108000",
+    "Town_Name": "LA PAZ"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140109000",
+    "Town_Name": "LACUB"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140110000",
+    "Town_Name": "LAGANGILANG"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140111000",
+    "Town_Name": "LAGAYAN"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140112000",
+    "Town_Name": "LANGIDEN"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140113000",
+    "Town_Name": "LICUAN-BAAY"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140114000",
+    "Town_Name": "LUBA"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140115000",
+    "Town_Name": "MALIBCONG"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140116000",
+    "Town_Name": "MANABO"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140117000",
+    "Town_Name": "PEÑARRUBIA"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140118000",
+    "Town_Name": "PIDIGAN"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140119000",
+    "Town_Name": "PILAR"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140120000",
+    "Town_Name": "SALLAPADAN"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140121000",
+    "Town_Name": "SAN ISIDRO"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140122000",
+    "Town_Name": "SAN JUAN"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140123000",
+    "Town_Name": "SAN QUINTIN"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140124000",
+    "Town_Name": "TAYUM"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140125000",
+    "Town_Name": "TINEG"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140126000",
+    "Town_Name": "TUBO"
+  },
+  {
+    "Prov_Code": "140100000",
+    "Town_Code": "140127000",
+    "Town_Name": "VILLAVICIOSA"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141101000",
+    "Town_Name": "ATOK"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141102000",
+    "Town_Name": "BAGUIO CITY"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141103000",
+    "Town_Name": "BAKUN"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141104000",
+    "Town_Name": "BOKOD"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141105000",
+    "Town_Name": "BUGUIAS"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141106000",
+    "Town_Name": "ITOGON"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141107000",
+    "Town_Name": "KABAYAN"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141108000",
+    "Town_Name": "KAPANGAN"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141109000",
+    "Town_Name": "KIBUNGAN"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141110000",
+    "Town_Name": "LA TRINIDAD"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141111000",
+    "Town_Name": "MANKAYAN"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141112000",
+    "Town_Name": "SABLAN"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141113000",
+    "Town_Name": "TUBA"
+  },
+  {
+    "Prov_Code": "141100000",
+    "Town_Code": "141114000",
+    "Town_Name": "TUBLAY"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142701000",
+    "Town_Name": "BANAUE"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142702000",
+    "Town_Name": "HUNGDUAN"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142703000",
+    "Town_Name": "KIANGAN"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142704000",
+    "Town_Name": "LAGAWE"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142705000",
+    "Town_Name": "LAMUT"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142706000",
+    "Town_Name": "MAYOYAO"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142707000",
+    "Town_Name": "ALFONSO LISTA"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142708000",
+    "Town_Name": "AGUINALDO"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142709000",
+    "Town_Name": "HINGYON"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142710000",
+    "Town_Name": "TINOC"
+  },
+  {
+    "Prov_Code": "142700000",
+    "Town_Code": "142711000",
+    "Town_Name": "ASIPULO"
+  },
+  {
+    "Prov_Code": "143200000",
+    "Town_Code": "143201000",
+    "Town_Name": "BALBALAN"
+  },
+  {
+    "Prov_Code": "143200000",
+    "Town_Code": "143206000",
+    "Town_Name": "LUBUAGAN"
+  },
+  {
+    "Prov_Code": "143200000",
+    "Town_Code": "143208000",
+    "Town_Name": "PASIL"
+  },
+  {
+    "Prov_Code": "143200000",
+    "Town_Code": "143209000",
+    "Town_Name": "PINUKPUK"
+  },
+  {
+    "Prov_Code": "143200000",
+    "Town_Code": "143211000",
+    "Town_Name": "RIZAL"
+  },
+  {
+    "Prov_Code": "143200000",
+    "Town_Code": "143213000",
+    "Town_Name": "TABUK CITY"
+  },
+  {
+    "Prov_Code": "143200000",
+    "Town_Code": "143214000",
+    "Town_Name": "TANUDAN"
+  },
+  {
+    "Prov_Code": "143200000",
+    "Town_Code": "143215000",
+    "Town_Name": "TINGLAYAN"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Town_Code": "144401000",
+    "Town_Name": "BARLIG"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Town_Code": "144402000",
+    "Town_Name": "BAUKO"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Town_Code": "144403000",
+    "Town_Name": "BESAO"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Town_Code": "144404000",
+    "Town_Name": "BONTOC"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Town_Code": "144405000",
+    "Town_Name": "NATONIN"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Town_Code": "144406000",
+    "Town_Name": "PARACELIS"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Town_Code": "144407000",
+    "Town_Name": "SABANGAN"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Town_Code": "144408000",
+    "Town_Name": "SADANGA"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Town_Code": "144409000",
+    "Town_Name": "SAGADA"
+  },
+  {
+    "Prov_Code": "144400000",
+    "Town_Code": "144410000",
+    "Town_Name": "TADIAN"
+  },
+  {
+    "Prov_Code": "148100000",
+    "Town_Code": "148101000",
+    "Town_Name": "CALANASAN"
+  },
+  {
+    "Prov_Code": "148100000",
+    "Town_Code": "148102000",
+    "Town_Name": "CONNER"
+  },
+  {
+    "Prov_Code": "148100000",
+    "Town_Code": "148103000",
+    "Town_Name": "FLORA"
+  },
+  {
+    "Prov_Code": "148100000",
+    "Town_Code": "148104000",
+    "Town_Name": "KABUGAO"
+  },
+  {
+    "Prov_Code": "148100000",
+    "Town_Code": "148105000",
+    "Town_Name": "LUNA"
+  },
+  {
+    "Prov_Code": "148100000",
+    "Town_Code": "148106000",
+    "Town_Name": "PUDTOL"
+  },
+  {
+    "Prov_Code": "148100000",
+    "Town_Code": "148107000",
+    "Town_Name": "SANTA MARCELA"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150701000",
+    "Town_Name": "ISABELA CITY"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150702000",
+    "Town_Name": "LAMITAN CITY"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150703000",
+    "Town_Name": "LANTAWAN"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150704000",
+    "Town_Name": "MALUSO"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150705000",
+    "Town_Name": "SUMISIP"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150706000",
+    "Town_Name": "TIPO-TIPO"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150707000",
+    "Town_Name": "TUBURAN"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150708000",
+    "Town_Name": "AKBAR"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150709000",
+    "Town_Name": "AL-BARKA"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150710000",
+    "Town_Name": "HADJI MOHAMMAD AJUL"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150711000",
+    "Town_Name": "UNGKAYA PUKAN"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150712000",
+    "Town_Name": "HADJI MUHTAMAD"
+  },
+  {
+    "Prov_Code": "150700000",
+    "Town_Code": "150713000",
+    "Town_Name": "TABUAN-LASA"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153601000",
+    "Town_Name": "BACOLOD-KALAWI"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153602000",
+    "Town_Name": "BALABAGAN"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153603000",
+    "Town_Name": "BALINDONG"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153604000",
+    "Town_Name": "BAYANG"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153605000",
+    "Town_Name": "BINIDAYAN"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153606000",
+    "Town_Name": "BUBONG"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153607000",
+    "Town_Name": "BUTIG"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153609000",
+    "Town_Name": "GANASSI"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153610000",
+    "Town_Name": "KAPAI"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153611000",
+    "Town_Name": "LUMBA-BAYABAO"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153612000",
+    "Town_Name": "LUMBATAN"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153613000",
+    "Town_Name": "MADALUM"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153614000",
+    "Town_Name": "MADAMBA"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153615000",
+    "Town_Name": "MALABANG"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153616000",
+    "Town_Name": "MARANTAO"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153617000",
+    "Town_Name": "MARAWI CITY"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153618000",
+    "Town_Name": "MASIU"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153619000",
+    "Town_Name": "MULONDO"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153620000",
+    "Town_Name": "PAGAYAWAN"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153621000",
+    "Town_Name": "PIAGAPO"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153622000",
+    "Town_Name": "POONA BAYABAO"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153623000",
+    "Town_Name": "PUALAS"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153624000",
+    "Town_Name": "DITSAAN-RAMAIN"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153625000",
+    "Town_Name": "SAGUIARAN"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153626000",
+    "Town_Name": "TAMPARAN"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153627000",
+    "Town_Name": "TARAKA"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153628000",
+    "Town_Name": "TUBARAN"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153629000",
+    "Town_Name": "TUGAYA"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153630000",
+    "Town_Name": "WAO"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153631000",
+    "Town_Name": "MAROGONG"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153632000",
+    "Town_Name": "CALANOGAS"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153633000",
+    "Town_Name": "BUADIPOSO-BUNTONG"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153634000",
+    "Town_Name": "MAGUING"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153635000",
+    "Town_Name": "PICONG"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153636000",
+    "Town_Name": "LUMBAYANAGUE"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153637000",
+    "Town_Name": "AMAI MANABILANG"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153638000",
+    "Town_Name": "TAGOLOAN II"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153639000",
+    "Town_Name": "KAPATAGAN"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153640000",
+    "Town_Name": "SULTAN DUMALONDONG"
+  },
+  {
+    "Prov_Code": "153600000",
+    "Town_Code": "153641000",
+    "Town_Name": "LUMBACA-UNAYAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153801000",
+    "Town_Name": "AMPATUAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153802000",
+    "Town_Name": "BULDON"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153803000",
+    "Town_Name": "BULUAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153805000",
+    "Town_Name": "DATU PAGLAS"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153806000",
+    "Town_Name": "DATU PIANG"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153807000",
+    "Town_Name": "DATU ODIN SINSUAT"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153808000",
+    "Town_Name": "SHARIFF AGUAK"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153809000",
+    "Town_Name": "MATANOG"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153810000",
+    "Town_Name": "PAGALUNGAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153811000",
+    "Town_Name": "PARANG"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153812000",
+    "Town_Name": "SULTAN KUDARAT"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153813000",
+    "Town_Name": "SULTAN SA BARONGIS"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153814000",
+    "Town_Name": "KABUNTALAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153815000",
+    "Town_Name": "UPI"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153816000",
+    "Town_Name": "TALAYAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153817000",
+    "Town_Name": "SOUTH UPI"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153818000",
+    "Town_Name": "BARIRA"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153819000",
+    "Town_Name": "GEN. S. K. PENDATUN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153820000",
+    "Town_Name": "MAMASAPANO"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153821000",
+    "Town_Name": "TALITAY"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153822000",
+    "Town_Name": "PAGAGAWAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153823000",
+    "Town_Name": "PAGLAT"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153824000",
+    "Town_Name": "SULTAN MASTURA"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153825000",
+    "Town_Name": "GUINDULUNGAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153826000",
+    "Town_Name": "DATU SAUDI-AMPATUAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153827000",
+    "Town_Name": "DATU UNSAY"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153828000",
+    "Town_Name": "DATU ABDULLAH SANGKI"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153829000",
+    "Town_Name": "RAJAH BUAYAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153830000",
+    "Town_Name": "DATU BLAH T. SINSUAT"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153831000",
+    "Town_Name": "DATU ANGGAL MIDTIMBANG"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153832000",
+    "Town_Name": "MANGUDADATU"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153833000",
+    "Town_Name": "PANDAG"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153834000",
+    "Town_Name": "NORTHERN KABUNTALAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153835000",
+    "Town_Name": "DATU HOFFER AMPATUAN"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153836000",
+    "Town_Name": "DATU SALIBO"
+  },
+  {
+    "Prov_Code": "153800000",
+    "Town_Code": "153837000",
+    "Town_Name": "SHARIFF SAYDONA MUSTAPHA"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156601000",
+    "Town_Name": "INDANAN"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156602000",
+    "Town_Name": "JOLO"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156603000",
+    "Town_Name": "KALINGALAN CALUANG"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156604000",
+    "Town_Name": "LUUK"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156605000",
+    "Town_Name": "MAIMBUNG"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156606000",
+    "Town_Name": "HADJI PANGLIMA TAHIL"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156607000",
+    "Town_Name": "OLD PANAMAO"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156608000",
+    "Town_Name": "PANGUTARAN"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156609000",
+    "Town_Name": "PARANG"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156610000",
+    "Town_Name": "PATA"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156611000",
+    "Town_Name": "PATIKUL"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156612000",
+    "Town_Name": "SIASI"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156613000",
+    "Town_Name": "TALIPAO"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156614000",
+    "Town_Name": "TAPUL"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156615000",
+    "Town_Name": "TONGKIL"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156616000",
+    "Town_Name": "PANGLIMA ESTINO"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156617000",
+    "Town_Name": "LUGUS"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156618000",
+    "Town_Name": "PANDAMI"
+  },
+  {
+    "Prov_Code": "156600000",
+    "Town_Code": "156619000",
+    "Town_Name": "OMAR"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157001000",
+    "Town_Name": "PANGLIMA SUGALA"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157002000",
+    "Town_Name": "BONGAO"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157003000",
+    "Town_Name": "MAPUN"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157004000",
+    "Town_Name": "SIMUNUL"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157005000",
+    "Town_Name": "SITANGKAI"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157006000",
+    "Town_Name": "SOUTH UBIAN"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157007000",
+    "Town_Name": "TANDUBAS"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157008000",
+    "Town_Name": "TURTLE ISLANDS"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157009000",
+    "Town_Name": "LANGUYAN"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157010000",
+    "Town_Name": "SAPA-SAPA"
+  },
+  {
+    "Prov_Code": "157000000",
+    "Town_Code": "157011000",
+    "Town_Name": "SIBUTU"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160201000",
+    "Town_Name": "BUENAVISTA"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160202000",
+    "Town_Name": "BUTUAN CITY"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160203000",
+    "Town_Name": "CABADBARAN CITY"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160204000",
+    "Town_Name": "CARMEN"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160205000",
+    "Town_Name": "JABONGA"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160206000",
+    "Town_Name": "KITCHARAO"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160207000",
+    "Town_Name": "LAS NIEVES"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160208000",
+    "Town_Name": "MAGALLANES"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160209000",
+    "Town_Name": "NASIPIT"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160210000",
+    "Town_Name": "SANTIAGO"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160211000",
+    "Town_Name": "TUBAY"
+  },
+  {
+    "Prov_Code": "160200000",
+    "Town_Code": "160212000",
+    "Town_Name": "REMEDIOS T. ROMUALDEZ"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160301000",
+    "Town_Name": "BAYUGAN CITY"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160302000",
+    "Town_Name": "BUNAWAN"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160303000",
+    "Town_Name": "ESPERANZA"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160304000",
+    "Town_Name": "LA PAZ"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160305000",
+    "Town_Name": "LORETO"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160306000",
+    "Town_Name": "PROSPERIDAD"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160307000",
+    "Town_Name": "ROSARIO"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160308000",
+    "Town_Name": "SAN FRANCISCO"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160309000",
+    "Town_Name": "SAN LUIS"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160310000",
+    "Town_Name": "SANTA JOSEFA"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160311000",
+    "Town_Name": "TALACOGON"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160312000",
+    "Town_Name": "TRENTO"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160313000",
+    "Town_Name": "VERUELA"
+  },
+  {
+    "Prov_Code": "160300000",
+    "Town_Code": "160314000",
+    "Town_Name": "SIBAGAT"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166701000",
+    "Town_Name": "ALEGRIA"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166702000",
+    "Town_Name": "BACUAG"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166704000",
+    "Town_Name": "BURGOS"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166706000",
+    "Town_Name": "CLAVER"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166707000",
+    "Town_Name": "DAPA"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166708000",
+    "Town_Name": "DEL CARMEN"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166710000",
+    "Town_Name": "GENERAL LUNA"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166711000",
+    "Town_Name": "GIGAQUIT"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166714000",
+    "Town_Name": "MAINIT"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166715000",
+    "Town_Name": "MALIMONO"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166716000",
+    "Town_Name": "PILAR"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166717000",
+    "Town_Name": "PLACER"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166718000",
+    "Town_Name": "SAN BENITO"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166719000",
+    "Town_Name": "SAN FRANCISCO"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166720000",
+    "Town_Name": "SAN ISIDRO"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166721000",
+    "Town_Name": "SANTA MONICA"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166722000",
+    "Town_Name": "SISON"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166723000",
+    "Town_Name": "SOCORRO"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166724000",
+    "Town_Name": "SURIGAO CITY"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166725000",
+    "Town_Name": "TAGANA-AN"
+  },
+  {
+    "Prov_Code": "166700000",
+    "Town_Code": "166727000",
+    "Town_Name": "TUBOD"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166801000",
+    "Town_Name": "BAROBO"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166802000",
+    "Town_Name": "BAYABAS"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166803000",
+    "Town_Name": "BISLIG CITY"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166804000",
+    "Town_Name": "CAGWAIT"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166805000",
+    "Town_Name": "CANTILAN"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166806000",
+    "Town_Name": "CARMEN"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166807000",
+    "Town_Name": "CARRASCAL"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166808000",
+    "Town_Name": "CORTES"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166809000",
+    "Town_Name": "HINATUAN"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166810000",
+    "Town_Name": "LANUZA"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166811000",
+    "Town_Name": "LIANGA"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166812000",
+    "Town_Name": "LINGIG"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166813000",
+    "Town_Name": "MADRID"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166814000",
+    "Town_Name": "MARIHATAG"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166815000",
+    "Town_Name": "SAN AGUSTIN"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166816000",
+    "Town_Name": "SAN MIGUEL"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166817000",
+    "Town_Name": "TAGBINA"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166818000",
+    "Town_Name": "TAGO"
+  },
+  {
+    "Prov_Code": "166800000",
+    "Town_Code": "166819000",
+    "Town_Name": "TANDAG CITY"
+  },
+  {
+    "Prov_Code": "168500000",
+    "Town_Code": "168501000",
+    "Town_Name": "BASILISA"
+  },
+  {
+    "Prov_Code": "168500000",
+    "Town_Code": "168502000",
+    "Town_Name": "CAGDIANAO"
+  },
+  {
+    "Prov_Code": "168500000",
+    "Town_Code": "168503000",
+    "Town_Name": "DINAGAT"
+  },
+  {
+    "Prov_Code": "168500000",
+    "Town_Code": "168504000",
+    "Town_Name": "LIBJO"
+  },
+  {
+    "Prov_Code": "168500000",
+    "Town_Code": "168505000",
+    "Town_Name": "LORETO"
+  },
+  {
+    "Prov_Code": "168500000",
+    "Town_Code": "168506000",
+    "Town_Name": "SAN JOSE"
+  },
+  {
+    "Prov_Code": "168500000",
+    "Town_Code": "168507000",
+    "Town_Name": "TUBAJON"
+  },
+  {
+    "Prov_Code": "174000000",
+    "Town_Code": "174001000",
+    "Town_Name": "BOAC"
+  },
+  {
+    "Prov_Code": "174000000",
+    "Town_Code": "174002000",
+    "Town_Name": "BUENAVISTA"
+  },
+  {
+    "Prov_Code": "174000000",
+    "Town_Code": "174003000",
+    "Town_Name": "GASAN"
+  },
+  {
+    "Prov_Code": "174000000",
+    "Town_Code": "174004000",
+    "Town_Name": "MOGPOG"
+  },
+  {
+    "Prov_Code": "174000000",
+    "Town_Code": "174005000",
+    "Town_Name": "SANTA CRUZ"
+  },
+  {
+    "Prov_Code": "174000000",
+    "Town_Code": "174006000",
+    "Town_Name": "TORRIJOS"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175101000",
+    "Town_Name": "ABRA DE ILOG"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175102000",
+    "Town_Name": "CALINTAAN"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175103000",
+    "Town_Name": "LOOC"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175104000",
+    "Town_Name": "LUBANG"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175105000",
+    "Town_Name": "MAGSAYSAY"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175106000",
+    "Town_Name": "MAMBURAO"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175107000",
+    "Town_Name": "PALUAN"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175108000",
+    "Town_Name": "RIZAL"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175109000",
+    "Town_Name": "SABLAYAN"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175110000",
+    "Town_Name": "SAN JOSE"
+  },
+  {
+    "Prov_Code": "175100000",
+    "Town_Code": "175111000",
+    "Town_Name": "SANTA CRUZ"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175201000",
+    "Town_Name": "BACO"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175202000",
+    "Town_Name": "BANSUD"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175203000",
+    "Town_Name": "BONGABONG"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175204000",
+    "Town_Name": "BULALACAO"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175205000",
+    "Town_Name": "CALAPAN CITY"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175206000",
+    "Town_Name": "GLORIA"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175207000",
+    "Town_Name": "MANSALAY"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175208000",
+    "Town_Name": "NAUJAN"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175209000",
+    "Town_Name": "PINAMALAYAN"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175210000",
+    "Town_Name": "POLA"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175211000",
+    "Town_Name": "PUERTO GALERA"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175212000",
+    "Town_Name": "ROXAS"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175213000",
+    "Town_Name": "SAN TEODORO"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175214000",
+    "Town_Name": "SOCORRO"
+  },
+  {
+    "Prov_Code": "175200000",
+    "Town_Code": "175215000",
+    "Town_Name": "VICTORIA"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175301000",
+    "Town_Name": "ABORLAN"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175302000",
+    "Town_Name": "AGUTAYA"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175303000",
+    "Town_Name": "ARACELI"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175304000",
+    "Town_Name": "BALABAC"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175305000",
+    "Town_Name": "BATARAZA"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175306000",
+    "Town_Name": "BROOKE'S POINT"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175307000",
+    "Town_Name": "BUSUANGA"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175308000",
+    "Town_Name": "CAGAYANCILLO"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175309000",
+    "Town_Name": "CORON"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175310000",
+    "Town_Name": "CUYO"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175311000",
+    "Town_Name": "DUMARAN"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175312000",
+    "Town_Name": "EL NIDO"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175313000",
+    "Town_Name": "LINAPACAN"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175314000",
+    "Town_Name": "MAGSAYSAY"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175315000",
+    "Town_Name": "NARRA"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175316000",
+    "Town_Name": "PUERTO PRINCESA CITY"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175317000",
+    "Town_Name": "QUEZON"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175318000",
+    "Town_Name": "ROXAS"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175319000",
+    "Town_Name": "SAN VICENTE"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175320000",
+    "Town_Name": "TAYTAY"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175321000",
+    "Town_Name": "KALAYAAN"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175322000",
+    "Town_Name": "CULION"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175323000",
+    "Town_Name": "RIZAL"
+  },
+  {
+    "Prov_Code": "175300000",
+    "Town_Code": "175324000",
+    "Town_Name": "SOFRONIO ESPAÑOLA"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175901000",
+    "Town_Name": "ALCANTARA"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175902000",
+    "Town_Name": "BANTON"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175903000",
+    "Town_Name": "CAJIDIOCAN"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175904000",
+    "Town_Name": "CALATRAVA"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175905000",
+    "Town_Name": "CONCEPCION"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175906000",
+    "Town_Name": "CORCUERA"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175907000",
+    "Town_Name": "LOOC"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175908000",
+    "Town_Name": "MAGDIWANG"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175909000",
+    "Town_Name": "ODIONGAN"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175910000",
+    "Town_Name": "ROMBLON"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175911000",
+    "Town_Name": "SAN AGUSTIN"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175912000",
+    "Town_Name": "SAN ANDRES"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175913000",
+    "Town_Name": "SAN FERNANDO"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175914000",
+    "Town_Name": "SAN JOSE"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175915000",
+    "Town_Name": "SANTA FE"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175916000",
+    "Town_Name": "FERROL"
+  },
+  {
+    "Prov_Code": "175900000",
+    "Town_Code": "175917000",
+    "Town_Name": "SANTA MARIA"
+  }
+]

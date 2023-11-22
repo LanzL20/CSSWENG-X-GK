@@ -32,6 +32,12 @@ var user = await _userManager.FindByNameAsync(userIdString);
         </div>
 
         <div class="past-events-display">
+            @if (Model.Count == 0)
+            {
+                <div style="align-items: center;">
+                    <p>You have not participated in any events yet. Look <a asp-controller="Events">here</a> for an event near you!</p>
+                </div>
+            }
             @foreach (var eventItem in Model)
             {
                 <a class="past-events-individual-display" asp-controller="Events" asp-action="OneEvent" asp-route-eventId="@eventItem.EventID">

@@ -1,10 +1,7 @@
 using CSSWENGxGK.Data;
 using CSSWENGxGK.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Data.SqlClient;
 
 namespace CSSWENGxGK.Controllers;
@@ -676,9 +673,13 @@ public class EventsController : Controller
     {
         List<Event> eventInfoList = new List<Event>();
 
+        int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
+        int userId = userIdNullable ?? 0;
+
         var pastEvents = (from ea in _db.T_EventsAttended
                           join e in _db.T_Event on ea.EventID equals e.EventID
-                          orderby e.EventDate descending  // Sort by most recent date
+                          where ea.VolunteerID == userId
+                          orderby e.EventDate descending
                           select new Event
                           {
                               EventID = e.EventID,
@@ -693,15 +694,6 @@ public class EventsController : Controller
 
         eventInfoList.AddRange(pastEvents);
 
-        // Print all event IDs to the console
-        foreach (var eventItem in eventInfoList)
-        {
-            Console.WriteLine($"Event ID: {eventItem.EventID}");
-        }
-
         return View(eventInfoList);
     }
-
-
-
 }
