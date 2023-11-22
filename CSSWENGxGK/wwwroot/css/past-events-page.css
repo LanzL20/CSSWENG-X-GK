@@ -45,7 +45,7 @@
 	box-shadow: var(--drop-shadow);
 	border-radius: var(--corner-radius);
     width: 95%;
-    height: 95%;
+    height: 100%;
     padding: 1.5em;
 	margin: auto;
 	text-decoration: none;
@@ -71,6 +71,26 @@
 .past-events-short-description{
     font-size: 12px;
 	color: var(--black);
+}
+
+.past-events-container{
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+.past-events-date{
+	font-size: 12px;
+	color: black;
+}
+
+.past-events-time{
+	font-size: 12px;
+	color: black;
+}
+
+.past-events-location{
+	font-size: 12px;
+	color: black;
 }
 
 .past-events-pagination{

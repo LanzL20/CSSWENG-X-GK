@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Gawad Kalinga";
+}
+
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> _userManager
+
+@{
+    var userIdNullable = Context.Session.GetInt32("User_ID");
+    string userIdString = userIdNullable?.ToString() ?? "0";
+
+    var user = await _userManager.FindByNameAsync(userIdString);
+}
+
+<div class="one-event-card">
+    <div class="one-event-top">
+        <div class="one-event-top-container">
+            <div class="one-event-title">
+                @ViewBag.EventInfo.EventName
+            </div>
+            @if (user != null)
+            {
+                var userRoles = await _userManager.GetRolesAsync(user);
+                if (userRoles.Contains("Admin"))
+                {
+                <a asp-controller="Events" asp-action="EditOneEvent" asp-route-EventID="@ViewBag.EventInfo.EventID" class="one-event-edit material-symbols-outlined">
+                    Edit
+                </a>
+                }
+            }
+        </div>
+        <a asp-controller="Events" asp-action="PastEvents" class="one-event-back">
+            <- Back to Past Events
+        </a>
+    </div>
+    
+    @if (user != null)
+    {
+        var userRoles = await _userManager.GetRolesAsync(user);
+        if (userRoles.Contains("Admin"))
+        {
+            <div class="one-event-button">
+                <a asp-controller="Events" asp-action="VolunteerList">Volunteer List</a>
+            </div>
+        }
+    }
+
+    <div class="one-event-body">
+        <img src="data:image/jpeg;base64,@Convert.ToBase64String(@ViewBag.EventInfo.EventImage)" alt="Event Image" style="padding-top: 0;" />
+        <p>@ViewBag.EventInfo.EventLongDesc</p>
+
+        <div class="one-event-container">
+            <div class="one-event-date">
+                <strong>Date:</strong> @ViewBag.EventInfo.EventDate.ToString("MM/dd/yyyy")
+            </div>
+            <div class="one-event-time">
+                <strong>Time:</strong> @ViewBag.EventInfo.EventDate.ToString("hh:mm tt")
+            </div>
+            <div class="one-event-location">
+                <strong>Location:</strong> @ViewBag.EventInfo.EventLocation
+            </div>
+        </div>
+
+        <div class="one-event-container">
+            <p><strong>Organizers:</strong></p>
+            <div class="one-event-contact">
+                @foreach (var organizer in ViewBag.Organizers)
+                {
+                <div>
+                    <div class="one-event-contact-name">
+                        @organizer.Name
+                    </div>
+                    <div class="one-event-contact-number">
+                        @organizer.PhoneNumber
+                    </div>
+                    <div class="one-event-contact-email">
+                        @organizer.Email
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

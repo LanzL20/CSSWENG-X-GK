@@ -25,6 +25,7 @@ namespace CSSWENGxGK.Models
         [Required]
         public string EventLocation { get; set; }
 
+        [StringLength(280, ErrorMessage = "Event Description should be less than 280 characters.")]
         public string EventShortDesc { get; set; }
 
         public string EventLongDesc { get; set; }
