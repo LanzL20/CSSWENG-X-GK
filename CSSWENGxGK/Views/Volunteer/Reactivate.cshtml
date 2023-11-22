@@ -1,0 +1,75 @@
+@model LogInfo
+@{
+    ViewData["Title"] = "Welcome to Gawad Kalinga";
+}
+
+<style>
+    /* Add any additional styles here */
+    .disabled-button {
+        pointer-events: none;
+        opacity: 0.5; /* You can adjust the opacity to visually indicate the button is disabled */
+    }
+</style>
+
+<div class="reactivate-card">
+    <div class="reactivate-title">
+        Reactivate Account
+    </div>
+
+    <form method="post" asp-controller="Volunteer" asp-action="Login">
+        <div class="form-group">
+            <label asp-for="Email" class="reactivate-label"></label>
+            <input asp-for="Email" class="reactivate-input" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password" class="reactivate-label">One Time Password</label>
+            <div class="reactivate-otp-container">
+                <input asp-for="Password" autocomplete="off" class="reactivate-otp-input" />
+                <a class="reactivate-otp-button" id="getCodeButton" onclick="generateOtp()">Get Code</a>
+            </div>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <br>
+        <div class="reactivate-button">
+            <button type="submit">Reactivate</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    function generateOtp() {
+        // Disable the button and add the 'disabled-button' class
+        var button = document.getElementById("getCodeButton");
+        button.disabled = true;
+        button.classList.add("disabled-button");
+
+        // Get the email value from the input field
+        var email = $("#Email").val();
+
+        // Make an AJAX request to the server
+        $.ajax({
+            url: "/Volunteer/GenerateOtp",
+            type: "POST",
+            data: { email: email },
+            success: function (data) {
+                // Handle the success response if needed
+                console.log("Success:", data);
+            },
+            error: function (error) {
+                // Handle the error response if needed
+                console.log("Error:", error);
+            },
+            complete: function () {
+                // Set a timeout to remove the 'disabled-button' class and enable the button after 1 minute (60,000 milliseconds)
+                setTimeout(function () {
+                    button.disabled = false;
+                    button.classList.remove("disabled-button");
+                }, 60000); // 1 minute cooldown
+            }
+        });
+    }
+</script>

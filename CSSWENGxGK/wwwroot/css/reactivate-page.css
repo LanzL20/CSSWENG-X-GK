@@ -1,0 +1,158 @@
+.reactivate-card {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 5em 15em;
+	background-color: var(--white);
+	box-shadow: var(--drop-shadow);
+	border-radius: var(--corner-radius);
+    width: 90%;
+}
+
+.reactivate-title {
+	font-weight: bolder;
+	font-size: var(--font-size-header);
+	color: var(--accent);
+}
+
+.reactivate-label {
+	font-size: var(--font-size-small);
+	color: var(--grey);
+	margin-top: 1em;
+}
+
+.reactivate-otp-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.reactivate-otp-input{ 
+	padding: 5px 10px;
+}
+
+.reactivate-otp-button {
+	font-size: var(--font-size-small);
+	border: 0px;
+	padding: 0.5em 1.5em;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--white);
+	background-color: var(--accent);
+	font-weight: bold;
+	outline: 0px solid;
+	text-decoration: none;
+	margin-left: 2em;
+	transition:all 250ms ease-out;
+	transform: scale(1);
+	white-space: nowrap;
+	resize: horizontal;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.reactivate-otp-button:hover {
+	background-color: var(--white);
+	color: var(--accent);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.reactivate-otp-button:active {
+	background-color: var(--white);
+	color: var(--accent);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+.reactivate-remember-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.reactivate-remember{
+    align-self: center;
+    font-size: var(--font-size-smaller);
+}
+
+.reactivate-button { 
+	display: flex; 
+}
+
+.reactivate-button > button {
+	font-size: var(--font-size-regular);
+	padding: 0.5em 2em;
+	max-width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	border: 0px;
+	border-radius: var(--corner-radius);
+	box-shadow: var(--drop-shadow);
+	color: var(--accent);
+	background-color: var(--white);
+	font-weight: bold;
+	outline: 0px solid;
+
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.reactivate-button > button:hover {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 50ms ease-out;
+	transform: scale(1);
+}
+
+.reactivate-button > button:active {
+	background-color: var(--accent);
+	color: var(--white);
+	transition:all 10ms ease-out;
+	transform: scale(1.1);
+}
+
+.reactivate-link-text {
+	display: flex;
+}
+
+.reactivate-link-text > a, .link-text a:visited{
+	margin: auto;
+	color: var(--black);
+	text-decoration: none;
+	transition:all 250ms ease-out;
+	transform: scale(1);
+}
+
+.reactivate-link-text > a:hover{
+	text-decoration: underline;
+	transition:all 10ms ease-out;
+	transform: scale(1);
+}
+
+.reactivate-link-text > a:active {
+	color: var(--accent);
+	transition:all 10ms ease-out;
+	transform: scale(1);
+}
+
+/* For Mobile View */
+@media screen and (max-width: 900px) {
+	.reactivate-card {
+		padding: 3em 5em;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.reactivate-card {
+		padding: 3em 3em;
+	}
+
+	.reactivate-button > button {
+		font-size: var(--font-size-small);
+	}
+}

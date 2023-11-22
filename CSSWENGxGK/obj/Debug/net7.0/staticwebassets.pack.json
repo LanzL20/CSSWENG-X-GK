@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\css\\profile-page.css"
     },
     {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\reactivate-page.css",
+      "PackagePath": "staticwebassets\\css\\reactivate-page.css"
+    },
+    {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\register-page.css",
       "PackagePath": "staticwebassets\\css\\register-page.css"
     },

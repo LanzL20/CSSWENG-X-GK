@@ -2,14 +2,16 @@ using CSSWENGxGK.Data;
 using CSSWENGxGK.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 using System.Data.SqlClient;
+using BCrypt.Net;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 using ZXing;
 using ZXing.Windows.Compatibility;
-using System.Text;
-using System.Globalization;
-using System.Security.Cryptography;
 
 namespace CSSWENGxGK.Controllers
 {
@@ -36,6 +38,11 @@ namespace CSSWENGxGK.Controllers
         {
             return View();
         }
+
+        public IActionResult Reactivate()
+        {
+            return View();
+        }
         
         public static string GenerateQRCode(string text, int size = 300)
         {
@@ -54,6 +61,18 @@ namespace CSSWENGxGK.Controllers
             {
                 g.Clear(Color.White);
                 g.DrawImage(qrCodeBitmap, Point.Empty);
+
+                // Draw the Volunteer ID text
+                using (Font font = new Font(FontFamily.GenericSansSerif, 12))
+                {
+                    string volunteerIdText = $"Volunteer ID: {text}";
+
+                    // Calculate the position to center the text
+                    float x = (qrCodeBitmap.Width - g.MeasureString(volunteerIdText, font).Width) / 2;
+                    float y = qrCodeBitmap.Height - 30;
+
+                    g.DrawString(volunteerIdText, font, Brushes.Black, new PointF(x, y));
+                }
             }
 
             // Convert the borderless QR code bitmap to a byte array
@@ -69,7 +88,6 @@ namespace CSSWENGxGK.Controllers
 
             return dataUri;
         }
-
 
         public IActionResult Sign_Out()
         {
@@ -412,21 +430,17 @@ namespace CSSWENGxGK.Controllers
 
                     int generatedID = 0;
 
-                    string salt = new Random().Next(100000, 999999).ToString();
-                    string combinedString = model.Email + salt;
+                    // Use current timestamp to ensure uniqueness
+                    long timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
 
-                    // Use SHA-256 hash
-                    using (SHA256 sha256 = SHA256.Create())
-                    {
-                        byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(combinedString));
-                        string hashedString = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+                    // Generate a random 3-digit number
+                    int randomPart = new Random().Next(100, 999);
 
-                        // Hash the result with BCrypt
-                        string finalHash = BCrypt.Net.BCrypt.HashPassword(hashedString, 16);
+                    // Combine timestamp and random number
+                    long combinedValue = long.Parse($"{timestamp}{randomPart}");
 
-                        // Take the first 9 characters of the combined hash and convert to integer
-                        generatedID = int.Parse(finalHash.Substring(0, 9), NumberStyles.HexNumber);
-                    }
+                    // Take the last 9 digits as the unique ID
+                    generatedID = (int)(combinedValue % 1_000_000_000);
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1K/nzmG6re3E/E0zyXgGxZFpbcw5p6l7lr2R7ogQwo4=",
+  "Hash": "ru0vYikGG+kf4BnQ7oEsi8B3GzSwaW1CVuy6zWlp8QY=",
   "Source": "CSSWENGxGK",
   "BasePath": "_content/CSSWENGxGK",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\profile-page.css"
+    },
+    {
+      "Identity": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\reactivate-page.css",
+      "SourceId": "CSSWENGxGK",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\",
+      "BasePath": "_content/CSSWENGxGK",
+      "RelativePath": "css/reactivate-page.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\reactivate-page.css"
     },
     {
       "Identity": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\register-page.css",
