@@ -5,9 +5,9 @@ namespace CSSWENGxGK.Models
 {
     public class Event
     {
-        public const int Ongoing = 1;
-        public const int Finished = 2;
-        public const int Canceled = 3;
+        public const int Ongoing = 0;
+        public const int Finished = 1;
+        public const int Canceled = 2;
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -59,7 +59,7 @@ var user = await _userManager.FindByNameAsync(userIdString);
                 </div>
                 <div class="edit-one-event-textbox">
                     <label>Status:</label>
-                    <select asp-for="Event.EventStatus" class="form-control edit-one-event-forminput">
+                    <select asp-for="Event.EventStatus" class="form-control edit-one-event-forminput" style="appearance: menulist;">
                         <option hidden value="@ViewBag.EventStatus">@ViewBag.EventStatusString</option>
                         <option value="0">Ongoing</option>
                         <option value="1">Finished</option>
