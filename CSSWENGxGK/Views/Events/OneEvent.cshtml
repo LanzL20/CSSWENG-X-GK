@@ -46,15 +46,15 @@
     }
 
     <div class="one-event-body">
-        <img src="data:image/jpeg;base64,@Convert.ToBase64String(@ViewBag.EventInfo.EventImage)" alt="Event Image" style="padding-top: 0;" />
+        <img src="data:image/jpeg;base64,@Convert.ToBase64String(ViewBag.EventInfo.EventImage)" alt="Event Image" style="padding-top: 0;" />
         <p>@ViewBag.EventInfo.EventLongDesc</p>
 
         <div class="one-event-container">
             <div class="one-event-date">
-                <strong>Date:</strong> @ViewBag.EventInfo.EventDate.ToString("MM/dd/yyyy") - @ViewBag.EventInfo.EventEndDate.ToString("MM/dd/yyyy")
+                <strong>Start Date:</strong> @ViewBag.EventInfo.EventDate.ToString("MM/dd/yyyy") @ViewBag.EventInfo.EventDate.ToString("hh:mm tt")
             </div>
             <div class="one-event-time">
-                <strong>Time:</strong> @ViewBag.EventInfo.EventDate.ToString("hh:mm tt")
+                <strong>End Date:</strong> @ViewBag.EventInfo.EventEndDate.ToString("MM/dd/yyyy") @ViewBag.EventInfo.EventEndDate.ToString("hh:mm tt")
             </div>
             <div class="one-event-location">
                 <strong>Location:</strong> @ViewBag.EventInfo.EventLocation

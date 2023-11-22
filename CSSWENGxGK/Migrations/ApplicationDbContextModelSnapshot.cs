@@ -33,6 +33,9 @@ namespace CSSWENGxGK.Migrations
                     b.Property<DateTime>("EventDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("EventEndDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<byte[]>("EventImage")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
@@ -52,7 +55,8 @@ namespace CSSWENGxGK.Migrations
 
                     b.Property<string>("EventShortDesc")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(280)
+                        .HasColumnType("nvarchar(280)");
 
                     b.Property<int>("EventStatus")
                         .HasColumnType("int");
@@ -183,16 +187,16 @@ namespace CSSWENGxGK.Migrations
 
                     b.Property<string>("BRGY_CODE")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Country")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -242,8 +246,8 @@ namespace CSSWENGxGK.Migrations
 
                     b.Property<string>("PROV_CODE")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -251,8 +255,8 @@ namespace CSSWENGxGK.Migrations
 
                     b.Property<string>("TOWN_CODE")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("YearStarted")
                         .HasColumnType("int");

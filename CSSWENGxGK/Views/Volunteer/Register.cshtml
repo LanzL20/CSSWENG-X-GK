@@ -303,7 +303,8 @@
                 <label>Province Name</label>
                 @* <input asp-for="PROV_CODE" id="provinceInput" class="form-control forminput" list="provinceList" placeholder="Provice Name"> *@
                 <select asp-for="PROV_CODE" id="provinceInput" class="form-control forminput" style="appearance: menulist;">
-                    <option value="" selected disabled hidden>Select Province:</option>
+                    <option value="" disabled hidden>Select Province:</option>
+                    <option value="-1" hidden></option>
                     <option value="Abra">Abra</option> 
                     <option value="Agusan del Norte">Agusan del Norte</option>
                     <option value="Agusan del Sur">Agusan del Sur</option>

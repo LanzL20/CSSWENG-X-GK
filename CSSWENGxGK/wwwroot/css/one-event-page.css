@@ -93,8 +93,8 @@
 .one-event-body > img{
     position: relative;
     align-self: center;
-    width: 80%;
-    padding-top: 45%;
+    max-width: 80%;
+    height: 45%;
     margin-bottom: 2.5em;
 }
 
@@ -108,8 +108,10 @@
 
 .one-event-contact{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+	width: 100%;
+	justify-content: space-evenly;
 }
 
 /* For Mobile View */
@@ -145,7 +147,7 @@
 	}
 
 	.one-event-contact{
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -163,6 +165,6 @@
 	}
 
 	.one-event-contact{
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 	}
 }

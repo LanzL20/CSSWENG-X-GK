@@ -39,23 +39,22 @@ namespace CSSWENGxGK.Models
         public string Gender { get; set; }
 
         [Required(ErrorMessage = "Country is required.")]
-        [StringLength(30, ErrorMessage = "Country should be less than 30 characters.")]
+        [StringLength(50, ErrorMessage = "Country should be less than 50 characters.")]
         public string Country { get; set; }
 
-        [Required(ErrorMessage = "Province Code is required.")]
-        [StringLength(10, ErrorMessage = "Province Code should be less than 10 characters.")]
+        [Required(ErrorMessage = "Province Name is required.")]
+        [StringLength(50, ErrorMessage = "Province Name should be less than 50 characters.")]
         public string PROV_CODE { get; set; }
 
-        [Required(ErrorMessage = "Town Code is required.")]
-        [StringLength(10, ErrorMessage = "Town Code should be less than 10 characters.")]
+        [Required(ErrorMessage = "Town Name is required.")]
+        [StringLength(50, ErrorMessage = "Town Name should be less than 50 characters.")]
         public string TOWN_CODE { get; set; }
 
-        [Required(ErrorMessage = "Barangay Code is required.")]
-        [StringLength(10, ErrorMessage = "Barangay Code should be less than 10 characters.")]
+        [Required(ErrorMessage = "Barangay is required.")]
+        [StringLength(50, ErrorMessage = "Barangay should be less than 50 characters.")]
         public string BRGY_CODE { get; set; }
 
         [Required(ErrorMessage = "Year Started is required.")]
-        [Range(1900, 2023, ErrorMessage = "Year Started should be between 1900 and 2023.")]
         public int YearStarted { get; set; }
 
         [Required]

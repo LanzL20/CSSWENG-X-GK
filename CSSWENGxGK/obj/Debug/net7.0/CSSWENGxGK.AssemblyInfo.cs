@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSSWENGxGK")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ba9387a87785019de613c818274d2da0f1eeb20")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7ab54b128c02912343c7ad293879554db413255")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSSWENGxGK")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSSWENGxGK")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

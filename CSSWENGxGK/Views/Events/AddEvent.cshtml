@@ -15,140 +15,146 @@ var user = await _userManager.FindByNameAsync(userIdString);
 }
 
 
-if (user != null)
+@if (user != null)
 {
     var userRoles = await _userManager.GetRolesAsync(user);
-    if (userRoles.Contains("Admin"))
+    @if (userRoles.Contains("Admin"))
     {
-
-    <form method="post" asp-action="AddEvent" id="addevent" class="edit-one-event-card" enctype="multipart/form-data">
-        <div class="edit-one-event-top">
-            <div class="profile-textbox">
-                <label>Title</label>
-                <input asp-for="Event.EventName" class="form-control profile-forminput">
-            </div>
-        </div>
-
-        <div class="edit-one-event-body">
-            <img src="https://files.catbox.moe/bpyplc.png" alt="Current Event Image" id="current-image" style="padding-top: 0;">
-
-
-            <div class="edit-one-event-textbox">
-                <label>Upload Image</label>
-                <input type="file" id="event-image" name="EventImage" class="form-control edit-one-event-forminput" accept="image/*">
-            </div>
-
-            <div class="edit-one-event-textbox">
-                <label>Preview Description</label>
-                <input asp-for="Event.EventShortDesc" class="form-control edit-one-event-forminput">
-            </div>
-
-            <div class="edit-one-event-textbox">
-                <label>Full Description</label>
-                <textarea asp-for="Event.EventLongDesc" class="form-control edit-one-event-forminput"></textarea>
-            </div>
-
-            <div class="edit-one-event-container">
-                <div class="edit-one-event-textbox">
-                    <label>Date & Time:</label>
-                    <input asp-for="Event.EventDate" class="form-control edit-one-event-forminput">
-                </div>
-                <div class="edit-one-event-textbox">
-                    <label>End Date & Time:</label>
-                    <input asp-for="Event.EventEndDate" class="form-control edit-one-event-forminput">
-                </div>
-                <div class="edit-one-event-textbox">
-                    <label>Location</label>
-                    <input asp-for="Event.EventLocation" class="form-control edit-one-event-forminput">
+        <form method="post" asp-action="AddEvent" id="addevent" class="edit-one-event-card" enctype="multipart/form-data">
+            <div class="edit-one-event-top">
+                <div class="profile-textbox">
+                    <label>Title</label>
+                    <input asp-for="Event.EventName" class="form-control profile-forminput">
                 </div>
             </div>
 
-            <div class="edit-one-event-container">
-                <p><strong>Organizers:</strong></p>
-                <div class="edit-one-event-contact">
-                    <div>
-                        <div class="edit-one-event-contact-textbox">
-                            <label>Name</label>
-                            <input asp-for="Organizers[0].Name" class="form-control edit-one-event-contact-forminput">
-                        </div>
-                        <div class="edit-one-event-contact-textbox">
-                            <label>Contact Number</label>
-                            <input asp-for="Organizers[0].PhoneNumber" class="form-control edit-one-event-contact-forminput">
-                        </div>
-                        <div class="edit-one-event-contact-textbox">
-                            <label>Email Address</label>
-                            <input asp-for="Organizers[0].Email" class="form-control edit-one-event-contact-forminput">
-                        </div>
+            <div class="edit-one-event-body">
+                <img src="https://files.catbox.moe/bpyplc.png" alt="Current Event Image" id="current-image" style="padding-top: 0;">
+
+
+                <div class="edit-one-event-textbox">
+                    <label>Upload Image</label>
+                    <input type="file" id="event-image" name="EventImage" class="form-control edit-one-event-forminput" accept="image/*">
+                </div>
+
+                <div class="edit-one-event-textbox">
+                    <label>Preview Description</label>
+                    <input asp-for="Event.EventShortDesc" class="form-control edit-one-event-forminput">
+                </div>
+
+                <div class="edit-one-event-textbox">
+                    <label>Full Description</label>
+                    <textarea asp-for="Event.EventLongDesc" class="form-control edit-one-event-forminput"></textarea>
+                </div>
+
+                <div class="edit-one-event-container">
+                    <div class="edit-one-event-textbox">
+                        <label>Date & Time:</label>
+                        <input asp-for="Event.EventDate" id="event-start-date" class="form-control edit-one-event-forminput" onchange="updateMinEndDate()">
                     </div>
-                    <div class="edit-one-event-add-contact">
-                        <span class="material-symbols-outlined">add_box</span>
+                    <div class="edit-one-event-textbox">
+                        <label>End Date & Time:</label>
+                        <input asp-for="Event.EventEndDate" id="event-end-date" class="form-control edit-one-event-forminput">
+                    </div>
+                    <div class="edit-one-event-textbox">
+                        <label>Location</label>
+                        <input asp-for="Event.EventLocation" class="form-control edit-one-event-forminput">
                     </div>
                 </div>
+
+                <div class="edit-one-event-container">
+                    <p><strong>Organizers:</strong></p>
+                    <div class="edit-one-event-contact">
+                        <div>
+                            <div class="edit-one-event-contact-textbox">
+                                <label>Name</label>
+                                <input asp-for="Organizers[0].Name" class="form-control edit-one-event-contact-forminput">
+                            </div>
+                            <div class="edit-one-event-contact-textbox">
+                                <label>Contact Number</label>
+                                <input asp-for="Organizers[0].PhoneNumber" class="form-control edit-one-event-contact-forminput">
+                            </div>
+                            <div class="edit-one-event-contact-textbox">
+                                <label>Email Address</label>
+                                <input asp-for="Organizers[0].Email" class="form-control edit-one-event-contact-forminput">
+                            </div>
+                        </div>
+                        <div class="edit-one-event-add-contact">
+                            <span class="material-symbols-outlined">add_box</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-one-event-button">
+                    <a href="AllEvents" class="edit-one-event-discard-button">Cancel</a>
+                    <button type="submit" class="edit-one-event-save-button">Add Event</button>
+                </div>
             </div>
-            <div class="edit-one-event-button">
-                <a href="AllEvents" class="edit-one-event-discard-button">Cancel</a>
-                <button type="submit" class="edit-one-event-save-button">Add Event</button>
-            </div>
-
-        </div>
-    </form>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        const imageUpload = document.getElementById('event-image');
-        const currentImage = document.getElementById('current-image');
-
-        imageUpload.addEventListener('change', function () {
-            const file = imageUpload.files[0];
-
-            // Show preview if an image file is selected
-            if (file) {
-                const reader = new FileReader();
-
-                reader.onload = function (e) {
-                    currentImage.src = e.target.result;
-                    currentImage.style.display = 'block';
-                };
-
-                reader.readAsDataURL(file);
-            } else {
-                currentImage.src = 'https://files.catbox.moe/bpyplc.png'; // Show the current image
-            }
-        });
-
-        const addContact = document.querySelector('.edit-one-event-add-contact');
-        const contactContainer = document.querySelector('.edit-one-event-contact');
-        let organizerCount = 0;
-
-        addContact.addEventListener('click', function () {
-            const contact = document.createElement('div');
-
-            organizerCount++;
-            const newOrganizerFields = `
-                                <div class="edit-one-event-contact-textbox">
-                                    <label>Name</label>
-                                    <input type="text" name="Organizers[${organizerCount}].Name" class="form-control edit-one-event-contact-forminput">
-                                </div>
-                                <div class="edit-one-event-contact-textbox">
-                                    <label>Contact Number</label>
-                                    <input type="text" name="Organizers[${organizerCount}].PhoneNumber" class="form-control edit-one-event-contact-forminput">
-                                </div>
-                                <div class="edit-one-event-contact-textbox">
-                                    <label>Email Address</label>
-                                    <input type="text" name="Organizers[${organizerCount}].Email" class="form-control edit-one-event-contact-forminput">
-                                </div>
-                            `;
-
-            contact.innerHTML += newOrganizerFields;
-
-            contactContainer.insertBefore(contact, addContact);
-
-        });
-    </script>
+        </form>
     }
-}else
+}
+else
 {
     <div class="warning-message">
         <p>No access to this page.</p>
     </div>
 }
+
+<script>
+    const imageUpload = document.getElementById('event-image');
+    const currentImage = document.getElementById('current-image');
+
+    imageUpload.addEventListener('change', function () {
+        const file = imageUpload.files[0];
+
+        // Show preview if an image file is selected
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                currentImage.src = e.target.result;
+                currentImage.style.display = 'block';
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            currentImage.src = 'https://files.catbox.moe/bpyplc.png'; // Show the current image
+        }
+    });
+
+    const addContact = document.querySelector('.edit-one-event-add-contact');
+    const contactContainer = document.querySelector('.edit-one-event-contact');
+    let organizerCount = 0;
+
+    addContact.addEventListener('click', function () {
+        const contact = document.createElement('div');
+
+        organizerCount++;
+        const newOrganizerFields = `
+                            <div class="edit-one-event-contact-textbox">
+                                <label>Name</label>
+                                <input type="text" name="Organizers[${organizerCount}].Name" class="form-control edit-one-event-contact-forminput">
+                            </div>
+                            <div class="edit-one-event-contact-textbox">
+                                <label>Contact Number</label>
+                                <input type="text" name="Organizers[${organizerCount}].PhoneNumber" class="form-control edit-one-event-contact-forminput">
+                            </div>
+                            <div class="edit-one-event-contact-textbox">
+                                <label>Email Address</label>
+                                <input type="text" name="Organizers[${organizerCount}].Email" class="form-control edit-one-event-contact-forminput">
+                            </div>
+                        `;
+
+        contact.innerHTML += newOrganizerFields;
+
+        contactContainer.insertBefore(contact, addContact);
+
+    });
+
+    function updateMinEndDate() {
+        var startDateInput = document.getElementById("event-start-date");
+        var endDateInput = document.getElementById("event-end-date");
+
+        // Set the min attribute of the endDateInput to the value of startDateInput
+        endDateInput.min = startDateInput.value;
+    }
+</script>
