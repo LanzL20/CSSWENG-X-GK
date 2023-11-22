@@ -384,6 +384,7 @@
                     <label>Province Name</label>
                     <select asp-for="PROV_CODE" id="provinceInput" class="form-control profile-forminput" style="appearance: menulist;">
                         <option value="@ViewBag.Province" hidden>@ViewBag.Province</option>
+                        <option value="-1" hidden></option> 
                         <option value="Abra">Abra</option> 
                         <option value="Agusan del Norte">Agusan del Norte</option>
                         <option value="Agusan del Sur">Agusan del Sur</option>
