@@ -50,7 +50,7 @@
             @* TODO: Connect their given db *@
             <div class="textbox">
                 <label>Country</label>
-                <select asp-for="Country" class="form-control forminput" placeholder="Country" style="appearance: menulist;">
+                <select asp-for="Country" id="countryInput" class="form-control forminput" onchange="toggleInputs()" style="appearance: menulist;">
                     <option value="" selected disabled hidden>Select Country:</option>
                     <option value="Philippines">Philippines</option>
                     <option value="Afghanistan">Afghanistan</option>
@@ -298,23 +298,23 @@
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
             </div>
-            <div class="textbox">
+            <div id="provinceContainer" class="textbox">
                 <label>Province Name</label>
-                <input asp-for="PROV_CODE" class="form-control forminput">
+                <input asp-for="PROV_CODE" id="provinceInput" class="form-control forminput" list="provinceList">
                 @* <select asp-for="PROV_CODE" class="form-control forminput" style="appearance: menulist;">
 
                 </select>*@
             </div>
-            <div class="textbox">
+            <div id="townContainer" class="textbox">
                 <label>Town Code</label>
-                <input asp-for="TOWN_CODE" class="form-control forminput" placeholder="Town Code">
+                <input asp-for="TOWN_CODE" id="townInput" class="form-control forminput" placeholder="Town Code">
                 @* <select asp-for="TOWN_CODE" class="form-control forminput" placeholder="Town Code">
 
                 </select> *@
             </div>
-            <div class="textbox">
+            <div id="barangayContainer" class="textbox">
                 <label>Barangay Code</label>
-                <input asp-for="BRGY_CODE" class="form-control forminput" placeholder="Barangay Code">
+                <input asp-for="BRGY_CODE" id="barangayInput" class="form-control forminput" placeholder="Barangay Code">
                 @* <select asp-for="BRGY_CODE" class="form-control forminput" placeholder="Barangay Code">
                     
                 </select> *@
@@ -351,10 +351,33 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-            var currentYear = new Date().getFullYear();
-            var startYearSelect = document.getElementById('VolunteerStartYear');
+        var currentYear = new Date().getFullYear();
+        var startYearSelect = document.getElementById('VolunteerStartYear');
 
-            startYearSelect.setAttribute('min', 1900);
-            startYearSelect.setAttribute('max', currentYear);
-        });
+        startYearSelect.setAttribute('min', 1900);
+        startYearSelect.setAttribute('max', currentYear);
+    });
+
+    function toggleInputs() {
+        var countryInput = document.getElementById('countryInput');
+        var provinceContainer = document.getElementById('provinceContainer');
+        var provinceInput = document.getElementById('provinceInput');
+        var townContainer = document.getElementById('townContainer');
+        var townInput = document.getElementById('townInput');
+        var barangayContainer = document.getElementById('barangayContainer');
+        var barangayInput = document.getElementById('barangayInput');
+
+        if (countryInput.value === 'Philippines') {
+            provinceInput.style.display = 'block';
+            townInput.style.display = 'block';
+            barangayInput.style.display = 'block';
+        } else {
+            provinceContainer.style.display = 'none';
+            provinceInput.value = '-1';
+            townContainer.style.display = 'none';
+            townInput.value = '-1';
+            barangayContainer.style.display = 'none';
+            barangayInput.value = '-1';
+        }
+    }
 </script>
