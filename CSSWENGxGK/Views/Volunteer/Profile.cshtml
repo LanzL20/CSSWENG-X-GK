@@ -133,7 +133,7 @@
                 <div class="profile-textbox">
                     <label>Country</label>
                     <select asp-for="Country" id="countryInput" class="form-control profile-forminput" onchange="toggleCountryInputs()" style="appearance: menulist;">
-                        <option value="@ViewBag.Country" selected hidden>@ViewBag.Country</option>
+                        <option value="@ViewBag.Country" hidden>@ViewBag.Country</option>
                         <option value="Philippines">Philippines</option>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Åland Islands</option>
@@ -383,7 +383,7 @@
                 <div id="provinceContainer" class="profile-textbox">
                     <label>Province Name</label>
                     <select asp-for="PROV_CODE" id="provinceInput" class="form-control profile-forminput" style="appearance: menulist;">
-                        <option value="@ViewBag.Province" selected hidden>@ViewBag.Province</option>
+                        <option value="@ViewBag.Province" hidden>@ViewBag.Province</option>
                         <option value="Abra">Abra</option> 
                         <option value="Agusan del Norte">Agusan del Norte</option>
                         <option value="Agusan del Sur">Agusan del Sur</option>
