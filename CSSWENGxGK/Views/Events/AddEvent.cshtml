@@ -15,7 +15,7 @@ var user = await _userManager.FindByNameAsync(userIdString);
 }
 
 
-@if (user != null)
+if (user != null)
 {
     var userRoles = await _userManager.GetRolesAsync(user);
     if (userRoles.Contains("Admin"))
@@ -52,6 +52,10 @@ var user = await _userManager.FindByNameAsync(userIdString);
                 <div class="edit-one-event-textbox">
                     <label>Date & Time:</label>
                     <input asp-for="Event.EventDate" class="form-control edit-one-event-forminput">
+                </div>
+                <div class="edit-one-event-textbox">
+                    <label>End Date & Time:</label>
+                    <input asp-for="Event.EventEndDate" class="form-control edit-one-event-forminput">
                 </div>
                 <div class="edit-one-event-textbox">
                     <label>Location</label>

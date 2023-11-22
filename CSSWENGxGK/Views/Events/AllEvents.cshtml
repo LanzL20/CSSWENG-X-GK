@@ -51,7 +51,7 @@
                 <p class="all-events-short-description">@eventItem.EventShortDesc</p>
                 <div class="all-events-container">
                     <div class="all-events-date">
-                        <strong>Date:</strong> @eventItem.EventDate.ToString("MM/dd/yyyy")
+                        <strong>Date:</strong> @eventItem.EventDate.ToString("MM/dd/yyyy") - @eventItem.EventEndDate.ToString("MM/dd/yyyy")
                     </div>
                     <div class="all-events-time">
                         <strong>Time:</strong> @eventItem.EventDate.ToString("hh:mm tt")
