@@ -21,7 +21,7 @@ namespace CSSWENGxGK.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
-        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -539,13 +539,12 @@ namespace CSSWENGxGK.Controllers
                                 if (!EmailExists(model.Email) || model.Email.Equals(current_Email))
                                 {
 
-                                    string updateQuery = "UPDATE T_Volunteer SET FirstName = @FirstName, LastName = @LastName, Email = @Email, MobileNumber = @MobileNumber, BirthDate = @BirthDate, Gender = @Gender, Country = @Country, PROV_CODE = @PROV_CODE, TOWN_CODE = @TOWN_CODE, BRGY_CODE = @BRGY_CODE, YearStarted = @YearStarted, IsNotify = @IsNotify WHERE VolunteerID = @VolunteerID";
+                                    string updateQuery = "UPDATE T_Volunteer SET FirstName = @FirstName, LastName = @LastName, MobileNumber = @MobileNumber, BirthDate = @BirthDate, Gender = @Gender, Country = @Country, PROV_CODE = @PROV_CODE, TOWN_CODE = @TOWN_CODE, BRGY_CODE = @BRGY_CODE, YearStarted = @YearStarted, IsNotify = @IsNotify WHERE VolunteerID = @VolunteerID";
 
                                     using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
                                     {
                                         updateCommand.Parameters.AddWithValue("@FirstName", model.FirstName);
                                         updateCommand.Parameters.AddWithValue("@LastName", model.LastName);
-                                        updateCommand.Parameters.AddWithValue("@Email", model.Email);
                                         updateCommand.Parameters.AddWithValue("@MobileNumber", model.MobileNumber);
                                         updateCommand.Parameters.AddWithValue("@BirthDate", model.BirthDate);
                                         updateCommand.Parameters.AddWithValue("@Gender", model.Gender);

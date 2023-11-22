@@ -19,12 +19,14 @@
 .one-event-top-container{
 	display: flex;
 	align-items: center;
+	max-width: 85%;
 }
 
 .one-event-title {
 	font-weight: bolder;
 	font-size: var(--font-size-header);
 	color: var(--accent);
+	max-width: 90%;
 }
 
 .one-event-edit {

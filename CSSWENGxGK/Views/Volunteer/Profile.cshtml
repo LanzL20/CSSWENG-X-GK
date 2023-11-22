@@ -82,9 +82,11 @@
                 </tr>
             </table> 
 
-            <div class="profile-button">
-                <a class="profile-reactivate-button" asp-controller="Volunteer" asp-action="Renew">Reactivate Account</a>
-            </div>
+            @if (((DateTime.Now.Year - ViewBag.LastUpdateDate.Year)* 12 + DateTime.Now.Month - ViewBag.lastUpdateDate.Month) > 5) {
+                <div class="profile-button">
+                    <a class="profile-reactivate-button" asp-controller="Volunteer" asp-action="Renew">Reactivate Account</a>
+                </div>
+            }
             <div class="profile-button">
                 <a class="profile-sign-out-button" form asp-controller="Volunteer" asp-action="Sign_Out">Sign Out</a>
             </div>
@@ -494,8 +496,6 @@
         </form>
     </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
     // Get a reference to the "Save QR" link and the QR code image
