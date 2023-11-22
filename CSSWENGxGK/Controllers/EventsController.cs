@@ -3,17 +3,21 @@ using CSSWENGxGK.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using System.Data.SqlClient;
+using Microsoft.AspNetCore.Identity;
 
 namespace CSSWENGxGK.Controllers;
 public class EventsController : Controller
 {
 	private readonly ApplicationDbContext _db;
-	string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+    private readonly UserManager<User> _userManager;
+    string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
     Emailer emailer = new Emailer();
-    public EventsController(ApplicationDbContext db)
-	{
-		_db = db;
-	}
+
+    public EventsController(ApplicationDbContext db, UserManager<User> userManager)
+    {
+        _db = db;
+        _userManager = userManager;
+    }
 
     private int MapEventStatus(string EventStatus)
     {
@@ -49,8 +53,13 @@ public class EventsController : Controller
         return "Not Found";
     }
 
-    public IActionResult AllEvents(string searchQuery, string sortOrder, int pageNumber = 1)
+    public async Task<IActionResult> AllEvents(string searchQuery, string sortOrder, int pageNumber = 1)
     {
+        int? userIdNullable = HttpContext.Session.GetInt32("User_ID");
+        string userIdString = userIdNullable?.ToString() ?? "0";
+
+        var user = await _userManager.FindByNameAsync(userIdString);
+
         int pageSize = 9; // Number of events per page
 
         // Ensure that pageNumber is at least 1
@@ -63,12 +72,22 @@ public class EventsController : Controller
         // Query the database to retrieve the total number of events
         IQueryable<Event> eventsQuery = _db.T_Event;
 
+        // Check if the user is an admin
+        bool isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+
         // Apply search filter if a search query is provided
         if (!string.IsNullOrEmpty(searchQuery))
         {
             eventsQuery = eventsQuery.Where(e =>
                 e.EventName.Contains(searchQuery) ||
                 e.EventShortDesc.Contains(searchQuery));
+        }
+
+        // Apply filtering based on user role
+        if (!isAdmin)
+        {
+            // For non-admin users, only show events with EventStatus = 0
+            eventsQuery = eventsQuery.Where(e => e.EventStatus == 0);
         }
 
         // Apply sorting based on sortOrder parameter
@@ -108,8 +127,6 @@ public class EventsController : Controller
 
         return View(events);
     }
-
-
 
     public IActionResult OneEvent(string eventId)
 	{
