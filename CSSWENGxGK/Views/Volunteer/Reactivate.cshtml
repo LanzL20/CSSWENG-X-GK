@@ -58,17 +58,30 @@
             success: function (data) {
                 // Handle the success response if needed
                 console.log("Success:", data);
+
+                // Check if the response indicates success
+                if (data && data.message === "OTP generated successfully") {
+                    // Set a timeout to remove the 'disabled-button' class and enable the button after 1 minute (60,000 milliseconds)
+                    setTimeout(function () {
+                        button.disabled = false;
+                        button.classList.remove("disabled-button");
+                    }, 60000); // 1 minute cooldown
+                } else {
+                    // If email doesn't exist, show an alert without setting a timeout
+                    alert("Email not found. Please check your email and try again.");
+                    // Enable the button immediately
+                    button.disabled = false;
+                    button.classList.remove("disabled-button");
+                }
             },
             error: function (error) {
                 // Handle the error response if needed
                 console.log("Error:", error);
-            },
-            complete: function () {
-                // Set a timeout to remove the 'disabled-button' class and enable the button after 1 minute (60,000 milliseconds)
-                setTimeout(function () {
-                    button.disabled = false;
-                    button.classList.remove("disabled-button");
-                }, 60000); // 1 minute cooldown
+                // If there's an error, show an alert without setting a timeout
+                alert("An error occurred. Please try again.");
+                // Enable the button immediately
+                button.disabled = false;
+                button.classList.remove("disabled-button");
             }
         });
     }
