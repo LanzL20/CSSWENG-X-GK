@@ -21,7 +21,7 @@ namespace CSSWENGxGK.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<User> _userManager;
         Emailer emailer = new Emailer();
-        string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public VolunteerController(ApplicationDbContext db, UserManager<User> userManager)
         {
@@ -140,7 +140,7 @@ namespace CSSWENGxGK.Controllers
         {
             return View();
         }
-        
+
         //add verification like duplciate emails and other things
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -151,7 +151,7 @@ namespace CSSWENGxGK.Controllers
             if (ModelState.IsValid)
             {
                 if (EmailExists(model.Email))
-                { 
+                {
                     ViewBag.EmailErrorMessage = "Email Already Exists";
                     return View("Register", model);
                 }
@@ -269,7 +269,7 @@ namespace CSSWENGxGK.Controllers
                 return View("Register", model);
             }
         }
-        
+
         private string GenerateRandomPassword()
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -283,6 +283,13 @@ namespace CSSWENGxGK.Controllers
         [HttpPost]
         public async Task<IActionResult> GenerateOtp(string email)
         {
+            if (!EmailExists(email))
+            {
+                ViewBag.EmailErrorMessage = "Account Does Not Exist";
+                ModelState.AddModelError(string.Empty, "User not found.");
+                return View("Login");
+            }
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -414,7 +421,7 @@ namespace CSSWENGxGK.Controllers
 
             return RedirectToAction("Login");
         }
-        
+
         public static string GenerateQRCode(string text, int size = 300)
         {
             var barcodeWriter = new BarcodeWriter();
@@ -507,7 +514,7 @@ namespace CSSWENGxGK.Controllers
 
             return RedirectToAction("Profile");
         }
-    
+
         //Fix this function cant change to same email
         [HttpPost]
         public IActionResult Save_Profile_Changes(Volunteer model)
