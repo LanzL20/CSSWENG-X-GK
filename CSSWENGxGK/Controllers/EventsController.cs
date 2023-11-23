@@ -10,7 +10,7 @@ public class EventsController : Controller
 {
 	private readonly ApplicationDbContext _db;
     private readonly UserManager<User> _userManager;
-    string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+    string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
     Emailer emailer = new Emailer();
 
     public EventsController(ApplicationDbContext db, UserManager<User> userManager)
@@ -60,11 +60,6 @@ public class EventsController : Controller
 
         var user = await _userManager.FindByNameAsync(userIdString);
 
-        int pageSize = 9; // Number of events per page
-
-        // Ensure that pageNumber is at least 1
-        pageNumber = Math.Max(pageNumber, 1);
-
         // Store current sort parameter and search query in TempData
         TempData["SortOrder"] = sortOrder ?? "";
         TempData["SearchQuery"] = searchQuery ?? "";
@@ -110,22 +105,9 @@ public class EventsController : Controller
 
         int totalEvents = eventsQuery.Count();
 
-        // Calculate the total number of pages
-        int totalPages = Math.Max((int)Math.Ceiling((double)totalEvents / pageSize), 1);
-
-        // Calculate the start and end index for the events to retrieve
-        int startIndex = (pageNumber - 1) * pageSize;
-        int endIndex = pageNumber * pageSize;
-
         // Query the database to retrieve the events in the specified range
-        var events = eventsQuery
-            .Skip(startIndex)
-            .Take(pageSize)
-            .ToList();
+        var events = eventsQuery.ToList();
 
-        // Pass additional information to the view
-        ViewData["TotalPages"] = totalPages;
-        ViewData["CurrentPage"] = pageNumber;
         ViewData["SearchQuery"] = TempData["SearchQuery"]; // Retrieve searchQuery from TempData
 
         return View(events);
@@ -685,69 +667,6 @@ public class EventsController : Controller
         }
 
         return RedirectToAction("OneEvent", new {eventId = updatedEvent.Event.EventID});
-    }
-
-    public IActionResult EventPagePrevious()
-    {
-        // Get the current page number from the session, default to 1 if not set
-        int pageNumber = HttpContext.Session.GetInt32("Page_number") ?? 1;
-
-        // Set page_number to max(1, page_number - 1)
-        pageNumber = Math.Max(1, pageNumber - 1);
-
-        // Update the session with the new page number
-        HttpContext.Session.SetInt32("Page_number", pageNumber);
-
-        // Retrieve current search and sort parameters from the session
-        string searchQuery = HttpContext.Session.GetString("SearchQuery") ?? "";
-        string sortOrder = HttpContext.Session.GetString("SortOrder") ?? "";
-
-        // Redirect to AllEvents with the current search and sort parameters
-        return RedirectToAction("AllEvents", new { searchQuery, sortOrder, pageNumber });
-    }
-
-    public IActionResult EventPageNext()
-    {
-        // Retrieve current search and sort parameters from the session
-        string searchQuery = HttpContext.Session.GetString("SearchQuery") ?? "";
-        string sortOrder = HttpContext.Session.GetString("SortOrder") ?? "";
-
-        // Get the current page number from the session, default to 1 if not set
-        int pageNumber = HttpContext.Session.GetInt32("Page_number") ?? 1;
-
-        try
-        {
-            using (var connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                // SQL command to get the total number of events
-                var totalEventsQuery = "SELECT COUNT(*) FROM T_Event";
-
-                using (var command = new SqlCommand(totalEventsQuery, connection))
-                {
-                    int totalEvents = (int)command.ExecuteScalar();
-
-                    // Calculate the maximum page number based on the total number of events
-                    int maxPageNumber = (int)Math.Ceiling((double)totalEvents / 9);
-
-                    // Set page_number to min(pageNumber + 1, maxPageNumber)
-                    pageNumber = Math.Min(pageNumber + 1, maxPageNumber);
-
-                    // Update the session with the new page number
-                    HttpContext.Session.SetInt32("Page_number", pageNumber);
-                }
-            }
-
-            // Redirect to AllEvents with the current search and sort parameters
-            return RedirectToAction("AllEvents", new { searchQuery, sortOrder, pageNumber });
-        }
-        catch (Exception ex)
-        {
-            // Log or handle the exception appropriately
-            // Redirect to AllEvents even if an error occurs
-            return RedirectToAction("AllEvents", new { searchQuery, sortOrder });
-        }
     }
 
     public IActionResult PastEvents()
