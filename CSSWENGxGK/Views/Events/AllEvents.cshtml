@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Welcome to Gawad Kalinga";
 }
 
@@ -63,31 +63,6 @@
             </a>
         }
     </div>
-
-    <div class="all-events-pagination">
-        <ul class="pagination">
-            <li class="page-item @(Convert.ToInt32(ViewData["CurrentPage"]) == 1 ? "disabled" : "")">
-                <a class="page-link"
-                   asp-controller="Events"
-                   asp-action="AllEvents"
-                   asp-route-searchQuery="@ViewData["SearchQuery"]"
-                   asp-route-sortOrder="@ViewData["SortOrder"]"
-                   asp-route-pageNumber="@(Convert.ToInt32(ViewData["CurrentPage"]) - 1)">Previous</a>
-            </li>
-            <li class="page-item disabled">
-                <a class="page-link">Page @(ViewData["CurrentPage"] ?? 1) of @(ViewData["TotalPages"] ?? 1)</a>
-            </li>
-            <li class="page-item @(Convert.ToInt32(ViewData["CurrentPage"]) == Convert.ToInt32(ViewData["TotalPages"]) ? "disabled" : "")">
-                <a class="page-link"
-                   asp-controller="Events"
-                   asp-action="AllEvents"
-                   asp-route-searchQuery="@ViewData["SearchQuery"]"
-                   asp-route-sortOrder="@ViewData["SortOrder"]"
-                   asp-route-pageNumber="@(Convert.ToInt32(ViewData["CurrentPage"]) + 1)">Next</a>
-            </li>
-        </ul>
-    </div>
-
 
     @if (user != null)
     {
