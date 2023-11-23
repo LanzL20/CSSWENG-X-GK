@@ -99,6 +99,41 @@ class Emailer
         }
     }
 
+    public bool Send_Near_Expire(List<string> bccRecipients)
+    {
+        try
+        {
+            var message = new MailMessage
+            {
+                From = new MailAddress(senderEmail),
+                Subject = "Account almost inactive",
+                Body = "Your account is becoming inactive in a month please go yo your profile page and reactive your account",
+                IsBodyHtml = false
+            };
+
+            // Add Bcc recipients
+            foreach (var recipient in bccRecipients)
+            {
+                message.Bcc.Add(recipient);
+            }
+
+            using (var client = new SmtpClient("smtp.office365.com"))
+            {
+                client.Port = 587;
+                client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
+                client.EnableSsl = true;
+
+                client.Send(message); // Synchronous sending for Bcc email
+                return true;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending Bcc email: {ex.Message}");
+            return false;
+        }
+    }
+
     static string GenerateOtp()
     {
         Random random = new Random();
