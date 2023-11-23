@@ -100,7 +100,7 @@
 	box-shadow: var(--drop-shadow);
 	border-radius: var(--corner-radius);
     width: 95%;
-    height: max-content;
+    min-height: 100%;
     padding: 1.5em;
 	margin: auto;
 	text-decoration: none;
@@ -250,6 +250,10 @@
 
 	.all-events-display{
 		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.all-events-individual-display{
+		height: max-content;
 	}
 
 	.all-events-individual-title{
