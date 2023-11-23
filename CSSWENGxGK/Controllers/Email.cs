@@ -1,30 +1,32 @@
+using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
 using CSSWENGxGK.Models;
 
 class Emailer
 {
-    private readonly string senderEmail = "CSSWENGGROUP6@outlook.com";
-    private readonly string senderAppPassword = "Larvi!n<_>";
+    private readonly string senderEmail = "ccapdev.lll@gmail.com";
+    private readonly string elasticEmailApiKey = "AB2E904233C7375FA5EFD7F8D8045FF4CA55";
 
     public async Task<string> Send_OTP(string recipientEmail)
     {
         try
         {
-            // Use a more secure method for OTP generation
             string otp = GenerateOtp();
 
             var message = new MailMessage(senderEmail, recipientEmail)
             {
                 Subject = "Gawad Kalinga Login OTP",
-                Body = otp,
+                Body = $"Your one-time password (OTP) is: {otp}",
                 IsBodyHtml = false
             };
 
-            using (var client = new SmtpClient("smtp.office365.com"))
+            using (var client = new SmtpClient("smtp.elasticemail.com"))
             {
-                client.Port = 587;
-                client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
+                client.Port = 2525;
+                client.Credentials = new NetworkCredential(senderEmail, elasticEmailApiKey);
                 client.EnableSsl = true;
                 await client.SendMailAsync(message);
                 return otp;
@@ -32,6 +34,7 @@ class Emailer
         }
         catch (Exception ex)
         {
+            // Log or handle the exception appropriately
             Console.WriteLine($"Error sending OTP email: {ex.Message}");
             return "-1";
         }
@@ -44,14 +47,14 @@ class Emailer
             var message = new MailMessage(senderEmail, recipientEmail)
             {
                 Subject = "Welcome to Gawad Kalinga",
-                Body = "Your account has been successfully registered. You may now login with this email address.",
+                Body = "Your account has been successfully registered. You may now log in with this email address.",
                 IsBodyHtml = false
             };
 
-            using (var client = new SmtpClient("smtp.office365.com"))
+            using (var client = new SmtpClient("smtp.elasticemail.com"))
             {
-                client.Port = 587;
-                client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
+                client.Port = 2525;
+                client.Credentials = new NetworkCredential(senderEmail, elasticEmailApiKey);
                 client.EnableSsl = true;
                 await client.SendMailAsync(message);
                 return true;
@@ -59,6 +62,7 @@ class Emailer
         }
         catch (Exception ex)
         {
+            // Log or handle the exception appropriately
             Console.WriteLine($"Error sending welcome email: {ex.Message}");
             return false;
         }
@@ -82,10 +86,10 @@ class Emailer
                 message.Bcc.Add(recipient);
             }
 
-            using (var client = new SmtpClient("smtp.office365.com"))
+            using (var client = new SmtpClient("smtp.elasticemail.com"))
             {
-                client.Port = 587;
-                client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
+                client.Port = 2525;
+                client.Credentials = new NetworkCredential(senderEmail, elasticEmailApiKey);
                 client.EnableSsl = true;
 
                 client.Send(message); // Synchronous sending for Bcc email
@@ -94,6 +98,7 @@ class Emailer
         }
         catch (Exception ex)
         {
+            // Log or handle the exception appropriately
             Console.WriteLine($"Error sending Bcc email: {ex.Message}");
             return false;
         }
@@ -107,7 +112,7 @@ class Emailer
             {
                 From = new MailAddress(senderEmail),
                 Subject = "Account almost inactive",
-                Body = "Your account is becoming inactive in a month please go yo your profile page and reactive your account",
+                Body = "Your account is becoming inactive in a month. Please go to your profile page and reactivate your account.",
                 IsBodyHtml = false
             };
 
@@ -117,10 +122,10 @@ class Emailer
                 message.Bcc.Add(recipient);
             }
 
-            using (var client = new SmtpClient("smtp.office365.com"))
+            using (var client = new SmtpClient("smtp.elasticemail.com"))
             {
-                client.Port = 587;
-                client.Credentials = new NetworkCredential(senderEmail, senderAppPassword);
+                client.Port = 2525;
+                client.Credentials = new NetworkCredential(senderEmail, elasticEmailApiKey);
                 client.EnableSsl = true;
 
                 client.Send(message); // Synchronous sending for Bcc email
@@ -129,13 +134,15 @@ class Emailer
         }
         catch (Exception ex)
         {
+            // Log or handle the exception appropriately
             Console.WriteLine($"Error sending Bcc email: {ex.Message}");
             return false;
         }
     }
 
-    static string GenerateOtp()
+    private static string GenerateOtp()
     {
+        // Use a more secure method for OTP generation
         Random random = new Random();
         return random.Next(100000, 999999).ToString();
     }
