@@ -4,7 +4,8 @@ using System.Data.SqlClient;
 
 public class ActiveChecker
 {
-    string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+    Emailer emailer = new Emailer();
+    string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
     public void PerformDatabaseCheck()
     {
@@ -16,6 +17,7 @@ public class ActiveChecker
                 connection.Open();
 
                 List<int> volunteerIDs = new List<int>();
+                List<string> closeExpireEmails = new List<string>();
 
                 string selectQuery = "SELECT VolunteerID FROM T_Volunteer WHERE LastUpdateDate < @CutoffDate";
 
@@ -36,6 +38,25 @@ public class ActiveChecker
                         }
                     }
                 }
+
+                string selectCloseExpireQuery = "SELECT Email FROM T_Volunteer WHERE LastUpdateDate = @CutoffDate";
+
+                using (SqlCommand selectCommand = new SqlCommand(selectCloseExpireQuery, connection))
+                {
+                    // 1 month before now
+                    selectCommand.Parameters.AddWithValue("@CutoffDate", DateTime.Now.AddMonths(-1));
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string email = reader.GetString(0);
+                            closeExpireEmails.Add(email);
+                        }
+                    }
+                }
+
+                emailer.Send_Near_Expire(closeExpireEmails);
 
                 // Update isActive status to false
                 string updateQuery = "UPDATE T_Volunteer SET IsActive = 0 WHERE VolunteerID = @VolunteerID";
