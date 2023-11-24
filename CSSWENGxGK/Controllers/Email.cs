@@ -8,7 +8,9 @@ using CSSWENGxGK.Models;
 class Emailer
 {
     private readonly string senderEmail = "ccapdev.lll@gmail.com";
-    private readonly string elasticEmailApiKey = "AB2E904233C7375FA5EFD7F8D8045FF4CA55";
+    private readonly string sendInBlueApiKey = "DMtZGbrOxFI1QJcN";
+    private readonly string smtpHost = "smtp-relay.sendinblue.com";
+    private readonly int smtpPort = 587;
 
     public async Task<string> Send_OTP(string recipientEmail)
     {
@@ -23,10 +25,10 @@ class Emailer
                 IsBodyHtml = false
             };
 
-            using (var client = new SmtpClient("smtp.elasticemail.com"))
+            using (var client = new SmtpClient(smtpHost))
             {
-                client.Port = 2525;
-                client.Credentials = new NetworkCredential(senderEmail, elasticEmailApiKey);
+                client.Port = smtpPort;
+                client.Credentials = new NetworkCredential(senderEmail, sendInBlueApiKey);
                 client.EnableSsl = true;
                 await client.SendMailAsync(message);
                 return otp;
@@ -51,10 +53,10 @@ class Emailer
                 IsBodyHtml = false
             };
 
-            using (var client = new SmtpClient("smtp.elasticemail.com"))
+            using (var client = new SmtpClient(smtpHost))
             {
-                client.Port = 2525;
-                client.Credentials = new NetworkCredential(senderEmail, elasticEmailApiKey);
+                client.Port = smtpPort;
+                client.Credentials = new NetworkCredential(senderEmail, sendInBlueApiKey);
                 client.EnableSsl = true;
                 await client.SendMailAsync(message);
                 return true;
@@ -80,25 +82,22 @@ class Emailer
                 IsBodyHtml = false
             };
 
-            // Add Bcc recipients
             foreach (var recipient in bccRecipients)
             {
                 message.Bcc.Add(recipient);
             }
 
-            using (var client = new SmtpClient("smtp.elasticemail.com"))
+            using (var client = new SmtpClient(smtpHost))
             {
-                client.Port = 2525;
-                client.Credentials = new NetworkCredential(senderEmail, elasticEmailApiKey);
+                client.Port = smtpPort;
+                client.Credentials = new NetworkCredential(senderEmail, sendInBlueApiKey);
                 client.EnableSsl = true;
-
-                client.Send(message); // Synchronous sending for Bcc email
+                client.Send(message);
                 return true;
             }
         }
         catch (Exception ex)
         {
-            // Log or handle the exception appropriately
             Console.WriteLine($"Error sending Bcc email: {ex.Message}");
             return false;
         }
@@ -116,25 +115,22 @@ class Emailer
                 IsBodyHtml = false
             };
 
-            // Add Bcc recipients
             foreach (var recipient in bccRecipients)
             {
                 message.Bcc.Add(recipient);
             }
 
-            using (var client = new SmtpClient("smtp.elasticemail.com"))
+            using (var client = new SmtpClient(smtpHost))
             {
-                client.Port = 2525;
-                client.Credentials = new NetworkCredential(senderEmail, elasticEmailApiKey);
+                client.Port = smtpPort;
+                client.Credentials = new NetworkCredential(senderEmail, sendInBlueApiKey);
                 client.EnableSsl = true;
-
-                client.Send(message); // Synchronous sending for Bcc email
+                client.Send(message);
                 return true;
             }
         }
         catch (Exception ex)
         {
-            // Log or handle the exception appropriately
             Console.WriteLine($"Error sending Bcc email: {ex.Message}");
             return false;
         }
