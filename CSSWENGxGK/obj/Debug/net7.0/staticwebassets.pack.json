@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\login-page.css"
     },
     {
+      "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\navbar.css",
+      "PackagePath": "staticwebassets\\css\\navbar.css"
+    },
+    {
       "Id": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\one-event-page.css",
       "PackagePath": "staticwebassets\\css\\one-event-page.css"
     },

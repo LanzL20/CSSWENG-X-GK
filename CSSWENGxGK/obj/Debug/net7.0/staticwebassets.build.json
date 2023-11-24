@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ru0vYikGG+kf4BnQ7oEsi8B3GzSwaW1CVuy6zWlp8QY=",
+  "Hash": "NYDmjtqXmD7/FBNUdzMlHdnlEijHeZUUKz8rRmhTkAM=",
   "Source": "CSSWENGxGK",
   "BasePath": "_content/CSSWENGxGK",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\login-page.css"
+    },
+    {
+      "Identity": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\navbar.css",
+      "SourceId": "CSSWENGxGK",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\",
+      "BasePath": "_content/CSSWENGxGK",
+      "RelativePath": "css/navbar.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\navbar.css"
     },
     {
       "Identity": "D:\\Codes\\CSSWENG-X-GK\\CSSWENGxGK\\wwwroot\\css\\one-event-page.css",
