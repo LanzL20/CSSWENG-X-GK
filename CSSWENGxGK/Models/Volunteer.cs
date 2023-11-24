@@ -43,6 +43,7 @@ namespace CSSWENGxGK.Models
         public string Country { get; set; }
 
         [Required(ErrorMessage = "Province Name is required.")]
+        [RegularExpression("^[A-Za-z\\s]+$", ErrorMessage = "Province Name is required.")]
         [StringLength(50, ErrorMessage = "Province Name should be less than 50 characters.")]
         public string PROV_CODE { get; set; }
 

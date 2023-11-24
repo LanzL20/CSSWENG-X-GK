@@ -303,8 +303,7 @@
                 <label>Province Name</label>
                 @* <input asp-for="PROV_CODE" id="provinceInput" class="form-control forminput" list="provinceList" placeholder="Provice Name"> *@
                 <select asp-for="PROV_CODE" id="provinceInput" class="form-control forminput" style="appearance: menulist;">
-                    <option value="" disabled hidden>Select Province:</option>
-                    <option value="-1" hidden></option>
+                    <option value="-1" hidden>Select Province:</option>
                     <option value="Abra">Abra</option> 
                     <option value="Agusan del Norte">Agusan del Norte</option>
                     <option value="Agusan del Sur">Agusan del Sur</option>
@@ -428,6 +427,26 @@
 </form>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var countryInput = document.getElementById('countryInput');
+        var provinceContainer = document.getElementById('provinceContainer');
+        var provinceInput = document.getElementById('provinceInput');
+        var townContainer = document.getElementById('townContainer');
+        var townInput = document.getElementById('townInput');
+        var barangayContainer = document.getElementById('barangayContainer');
+        var barangayInput = document.getElementById('barangayInput');
+
+        if (countryInput.value === 'Philippines') {
+            provinceContainer.style.display = 'block';
+            townContainer.style.display = 'block';
+            barangayContainer.style.display = 'block';
+        } else {
+            provinceContainer.style.display = 'none';
+            townContainer.style.display = 'none';
+            barangayContainer.style.display = 'none';
+        }
+    });
+
     document.addEventListener("DOMContentLoaded", function () {
         var today = new Date().toISOString().split('T')[0];
 
