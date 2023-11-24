@@ -32,6 +32,10 @@ html {
 	}
 }
 
+.card {
+	position: static;
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
 	box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -78,7 +82,7 @@ input[type="checkbox"]:focus {
 	outline: transparent;
 }
 
-.forminput, .login-otp-input, .login-input, .all-events-search-bar, .reactivate-input, .reactivate-otp-input {
+.forminput, .login-otp-input, .login-input, .all-events-search-bar {
 	border-radius: var(--corner-radius);
 	font-size: var(--font-size-regular);
 	font-family: var(--font-family);
@@ -89,12 +93,13 @@ input[type="checkbox"]:focus {
 	border: 4px solid var(--white);
 	width: 100%;
 	box-sizing: border-box;
-
+	z-index: 0;
+	position: relative;
 	transition:all 250ms ease-out;
 	transform: scale(1);
 }
 
-.forminput:focus, .login-otp-input:focus, .login-input:focus, .all-events-search-bar:focus, .reactivate-input:focus, .reactivate-otp-input:focus{
+.forminput:focus, .login-otp-input:focus, .login-input:focus, .all-events-search-bar:focus{
 	border-color: var(--accent);
 	box-shadow: var(--drop-shadow);
 
