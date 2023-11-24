@@ -117,7 +117,7 @@
                 </div>
                 <div class="profile-textbox">
                     <label>Birthday</label>
-                    <input asp-for="BirthDate" class="form-control profile-forminput" type="date" value="@((ViewBag.BirthDate as DateTime?)?.ToString("yyyy-MM-dd"))">
+                    <input asp-for="BirthDate" class="form-control profile-forminput" type="date" id="BirthDate" value="@((ViewBag.BirthDate as DateTime?)?.ToString("yyyy-MM-dd"))">
                     <span asp-validation-for="BirthDate" class="text-danger"></span>
                 </div>
                 <div class="profile-textbox">
@@ -480,7 +480,7 @@
                 </div>
                 <div class="profile-textbox">
                     <label>Year Started as GK Volunteer?</label>
-                    <input asp-for="YearStarted" class="form-control profile-forminput" value="@ViewBag.YearStarted">
+                    <input asp-for="YearStarted" class="form-control profile-forminput" id="VolunteerStartYear" value="@ViewBag.YearStarted">
                     <span asp-validation-for="YearStarted" class="text-danger"></span>
                 </div>
                 <br>
@@ -518,6 +518,23 @@
 
         // Trigger a click event on the download link
         downloadLink.click();
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var today = new Date().toISOString().split('T')[0];
+
+        var birthdateInput = document.getElementById('BirthDate');
+        if (birthdateInput) {
+            birthdateInput.setAttribute('max', today);
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var currentYear = new Date().getFullYear();
+        var startYearSelect = document.getElementById('VolunteerStartYear');
+
+        startYearSelect.setAttribute('min', 1900);
+        startYearSelect.setAttribute('max', currentYear);
     });
 
     document.addEventListener("DOMContentLoaded", function () {

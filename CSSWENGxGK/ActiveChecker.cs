@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 public class ActiveChecker
 {
     Emailer emailer = new Emailer();
-    string connectionString = "Server=DESKTOP-SERVS0D;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
+    string connectionString = "Server=localhost\\SQLEXPRESS;Database=cssweng;Trusted_Connection=True;TrustServerCertificate=True;";
 
     public void PerformDatabaseCheck()
     {

@@ -8,12 +8,10 @@ namespace CSSWENGxGK.Models
         public int VolunteerID { get; set; }
 
         [Required(ErrorMessage = "First Name is required.")]
-        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only letters are allowed.")]
         [StringLength(30, MinimumLength = 2, ErrorMessage = "First Name should be between 2 and 30 characters.")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Last Name is required.")]
-        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only letters are allowed.")]
         [StringLength(30, MinimumLength = 2, ErrorMessage = "Last Name should be between 2 and 30 characters.")]
         public string LastName { get; set; }
 
@@ -21,8 +19,7 @@ namespace CSSWENGxGK.Models
         [EmailAddress(ErrorMessage = "Invalid Email Address.")]
         [StringLength(100, ErrorMessage = "Email should be less than 100 characters.")]
         public string Email { get; set; }
-
-        [Required]
+        
         public string Password{ get; set; }
 
         [Required(ErrorMessage = "Mobile Number is required.")]
@@ -43,7 +40,6 @@ namespace CSSWENGxGK.Models
         public string Country { get; set; }
 
         [Required(ErrorMessage = "Province Name is required.")]
-        [RegularExpression("^[A-Za-z\\s]+$", ErrorMessage = "Province Name is required.")]
         [StringLength(50, ErrorMessage = "Province Name should be less than 50 characters.")]
         public string PROV_CODE { get; set; }
 

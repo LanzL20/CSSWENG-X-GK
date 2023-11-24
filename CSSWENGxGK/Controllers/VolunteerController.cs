@@ -163,8 +163,6 @@ namespace CSSWENGxGK.Controllers
                     return View("Register", model);
                 }
 
-                string query2 = "SELECT COUNT(*) FROM T_Volunteer";
-
                 // Define the SQL insert query
                 string query = "SET IDENTITY_INSERT T_Volunteer ON;" +
                               "INSERT INTO T_Volunteer (VolunteerID, CreatedDate, LastUpdateDate, IsDeleted, IsActive, IsNotify, Password, FirstName, LastName, Email, MobileNumber, BirthDate, Gender, Country, PROV_CODE, TOWN_CODE, BRGY_CODE, YearStarted, LastOtpTime, OtpUsed) " +
