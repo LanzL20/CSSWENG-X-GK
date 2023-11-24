@@ -49,10 +49,13 @@
     padding: 1.5em;
 	margin: auto;
 	text-decoration: none;
+	transition:all 250ms ease-out;
+	transform: scale(1);
 }
 
 .past-events-individual-display:hover {
-    transform: translate(.25em, -.25em);
+	transform: scale(1.01) translateY(-2px);
+	transition:all 50ms ease-out;
 }
 
 .past-events-individual-display > img{
