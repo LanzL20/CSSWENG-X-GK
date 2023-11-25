@@ -15,4 +15,7 @@
 3. Under the _RoleId_ column, change the number.
     1. 1 for Admin Role
     2. 2 for User Role
-    3. You can go to the `dbo.ASPNetUsers` table to find which Id corresponds to which user. 
+    3. You can go to the `dbo.ASPNetUsers` table to find which Id corresponds to which user.
+
+### Limitations
+1. Events cannot be created in the same time
