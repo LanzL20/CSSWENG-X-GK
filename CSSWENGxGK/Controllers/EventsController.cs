@@ -299,6 +299,11 @@ public class EventsController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult AddEvent(EventOrganizers model, IFormFile EventImage)
     {
+        if (!ModelState.IsValid)
+        {
+            return View("AddEvent", model);
+        }
+
         try
         {
             if (EventImage != null)
@@ -475,6 +480,11 @@ public class EventsController : Controller
     [HttpPost]
     public IActionResult EditEvent(EventOrganizers updatedEvent, IFormFile EventImage)
     {
+        if (!ModelState.IsValid)
+        {
+            return View("EditEvent");
+        }
+
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();

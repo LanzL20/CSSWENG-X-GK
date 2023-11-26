@@ -156,13 +156,6 @@ namespace CSSWENGxGK.Controllers
                     return View("Register", model);
                 }
 
-                bool real_email = await emailer.Send_Welcome(model.Email);
-
-                if (!real_email)
-                {
-                    return View("Register", model);
-                }
-
                 // Define the SQL insert query
                 string query = "SET IDENTITY_INSERT T_Volunteer ON;" +
                               "INSERT INTO T_Volunteer (VolunteerID, CreatedDate, LastUpdateDate, IsDeleted, IsActive, IsNotify, Password, FirstName, LastName, Email, MobileNumber, BirthDate, Gender, Country, PROV_CODE, TOWN_CODE, BRGY_CODE, YearStarted, LastOtpTime, OtpUsed) " +
@@ -249,6 +242,8 @@ namespace CSSWENGxGK.Controllers
                         await _userManager.AddToRoleAsync(new_user, "User");
 
                         var roles = await _userManager.GetRolesAsync(new_user);
+
+                        await emailer.Send_Welcome(model.Email);
 
                         return RedirectToAction("Login");
                     }

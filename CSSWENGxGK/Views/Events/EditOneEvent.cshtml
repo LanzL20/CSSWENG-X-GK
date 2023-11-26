@@ -29,6 +29,7 @@ var user = await _userManager.FindByNameAsync(userIdString);
             <div class="profile-textbox">
                 <label>Title</label>
                 <input asp-for="Event.EventName" class="form-control edit-one-event-forminput" value="@ViewBag.EventName">
+                <span asp-validation-for="Event.EventName" class="text-danger"></span>
             </div>
         </div>
 
@@ -41,25 +42,30 @@ var user = await _userManager.FindByNameAsync(userIdString);
             <div class="edit-one-event-textbox">
                 <label>Preview Description</label>
                 <input asp-for="Event.EventShortDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventShortDesc">
+                <span asp-validation-for="Event.EventShortDesc" class="text-danger"></span>
             </div>
 
             <div class="edit-one-event-textbox">
                 <label>Full Description</label>
                 <input asp-for="Event.EventLongDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventLongDesc">
+                <span asp-validation-for="Event.EventLongDesc" class="text-danger"></span>
             </div>
 
             <div class="edit-one-event-container">
                 <div class="edit-one-event-textbox">
                     <label>Date & Time: @ViewBag.EventDate</label>
                     <input asp-for="Event.EventDate" class="form-control edit-one-event-forminput" value="@ViewBag.EventDate">
+                    <span asp-validation-for="Event.EventDate" class="text-danger"></span>
                 </div>
                 <div class="edit-one-event-textbox">
                     <label>End Date & Time: @ViewBag.EventEndDate</label>
                     <input asp-for="Event.EventEndDate" class="form-control edit-one-event-forminput" value="@ViewBag.EventEndDate">
+                    <span asp-validation-for="Event.EventEndDate" class="text-danger"></span>
                 </div>
                 <div class="edit-one-event-textbox">
                     <label>Location:</label>
                     <input asp-for="Event.EventLocation" class="form-control edit-one-event-forminput" value="@ViewBag.EventLocation">
+                    <span asp-validation-for="Event.EventLocation" class="text-danger"></span>
                 </div>
                 <div class="edit-one-event-textbox">
                     <label>Status:</label>
@@ -81,14 +87,17 @@ var user = await _userManager.FindByNameAsync(userIdString);
                         <div class="edit-one-event-contact-textbox">
                             <label>Name</label>
                             <input asp-for="Organizers[i].Name" class="form-control edit-one-event-contact-forminput" value="@ViewBag.Organizers[i].Name">
+                            <span asp-validation-for="Organizers[i].Name" class="text-danger"></span>
                         </div>
                         <div class="edit-one-event-contact-textbox">
                             <label>Contact Number</label>
                             <input asp-for="Organizers[i].PhoneNumber" class="form-control edit-one-event-contact-forminput" value="@ViewBag.Organizers[i].PhoneNumber">
+                            <span asp-validation-for="Organizers[i].PhoneNumber" class="text-danger"></span>
                         </div>
                         <div class="edit-one-event-contact-textbox">
                             <label>Email Address</label>
                             <input asp-for="Organizers[i].Email" class="form-control edit-one-event-contact-forminput" value="@ViewBag.Organizers[i].Email">
+                            <span asp-validation-for="Organizers[i].Email" class="text-danger"></span>
                         </div>
                     </div>
                         }
@@ -143,14 +152,17 @@ var user = await _userManager.FindByNameAsync(userIdString);
                         <div class="edit-one-event-contact-textbox">
                             <label>Name</label>
                             <input type="text" name="Organizers[${organizerCount}].Name" class="form-control edit-one-event-contact-forminput">
+                            <span asp-validation-for="Organizers[${organizerCount}].Name" class="text-danger"></span>
                         </div>
                         <div class="edit-one-event-contact-textbox">
                             <label>Contact Number</label>
                             <input type="text" name="Organizers[${organizerCount}].PhoneNumber" class="form-control edit-one-event-contact-forminput">
+                            <span asp-validation-for="Organizers[${organizerCount}].PhoneNumber" class="text-danger"></span>
                         </div>
                         <div class="edit-one-event-contact-textbox">
                             <label>Email Address</label>
                             <input type="text" name="Organizers[${organizerCount}].Email" class="form-control edit-one-event-contact-forminput">
+                            <span asp-validation-for="Organizers[${organizerCount}].Email" class="text-danger"></span>
                         </div>
                     `;
 
