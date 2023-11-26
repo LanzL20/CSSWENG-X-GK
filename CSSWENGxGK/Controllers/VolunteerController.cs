@@ -243,7 +243,7 @@ namespace CSSWENGxGK.Controllers
 
                         var roles = await _userManager.GetRolesAsync(new_user);
 
-                        await emailer.Send_Welcome(model.Email);
+                        emailer.Send_Welcome(model.Email);
 
                         return RedirectToAction("Login");
                     }
