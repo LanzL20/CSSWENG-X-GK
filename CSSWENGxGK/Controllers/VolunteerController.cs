@@ -654,7 +654,8 @@ namespace CSSWENGxGK.Controllers
                                         // It returns a JSON object indicating an error condition.
                                         return Json(new Successful_Volunteer
                                         {
-                                            found = false,
+                                            found = true,
+                                            active = false,
                                             volunteerID = 0,
                                             firstName = "Volunteer",
                                             lastName = "Not Found"
@@ -665,6 +666,7 @@ namespace CSSWENGxGK.Controllers
                                     Successful_Volunteer newVolunteer = new Successful_Volunteer
                                     {
                                         found = true,
+                                        active = true,
                                         volunteerID = (int)volunteerID,
                                         firstName = (string)firstName,
                                         lastName = (string)lastName
@@ -714,6 +716,7 @@ namespace CSSWENGxGK.Controllers
                                     return Json(new Successful_Volunteer
                                     {
                                         found = false,
+                                        active = false,
                                         volunteerID = 0,
                                         firstName = "Volunteer",
                                         lastName = "Not Found"
@@ -728,6 +731,7 @@ namespace CSSWENGxGK.Controllers
                         return Json(new Successful_Volunteer
                         {
                             found = false,
+                            active = false,
                             volunteerID = 0,
                             firstName = "Error",
                             lastName = ex.Message
@@ -742,6 +746,7 @@ namespace CSSWENGxGK.Controllers
                 return Json(new Successful_Volunteer
                 {
                     found = false,
+                    active = false,
                     volunteerID = 0,
                     firstName = "Invalid",
                     lastName = "Volunteer ID"

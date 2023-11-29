@@ -61,6 +61,10 @@ var user = await _userManager.FindByNameAsync(userIdString);
         </div>
 
         <div>
+            <p class="scan-inactive">Volunteer Not Active.</p>
+        </div>
+
+        <div>
             <p class="scan-failed">Volunteer Not Found.</p>
         </div>
     </div>
@@ -79,7 +83,7 @@ var user = await _userManager.FindByNameAsync(userIdString);
 
 <script>
     $(document).ready(function () {
-        $(".scan-successful, .scan-failed").hide();
+        $(".scan-successful, .scan-inactive, .scan-failed").hide();
     });
 
     // Get a reference to the video element
@@ -124,17 +128,26 @@ var user = await _userManager.FindByNameAsync(userIdString);
             method: 'POST',
             data: formData,
             success: function (response) {
-                if (response.found) {
+                if (response.found && response.active) {
                     // Show the successful message and hide the failure message
                     $(".scan-successful").show();
+                    $(".scan-inactive").hide();
                     $(".scan-failed").hide();
 
                     // Change the content of the div elements with specific IDs
                     $("#Volunteer_ID").text(response.volunteerID);
                     $("#Full_name").text(response.firstName + " " + response.lastName);
-                } else {
+                }
+                else if (response.found && !response.active) {
+                    // Show the inactive message and hide the successful and failure messages
+                    $(".scan-successful").hide();
+                    $(".scan-inactive").show();
+                    $(".scan-failed").hide();
+                }
+                else {
                     // Show the failure message and hide the successful message
                     $(".scan-successful").hide();
+                    $(".scan-inactive").hide();
                     $(".scan-failed").show();
 
                     // Handle the case when "found" is false

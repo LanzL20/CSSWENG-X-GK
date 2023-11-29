@@ -158,6 +158,13 @@
 	text-align: center;
 }
 
+.scan-inactive{
+	font-size: var(--font-size-small);
+	color: rgb(220, 4, 4);
+	font-weight: bold;
+	text-align: center;
+}
+
 .scan-failed{
 	font-size: var(--font-size-small);
 	color: rgb(220, 4, 4);
@@ -202,6 +209,10 @@
 		color: rgb(3, 159, 3);
 	}
 	
+	.scan-inactive{
+		font-size: 14px;
+	}
+
 	.scan-failed{
 		font-size: 14px;
 	}

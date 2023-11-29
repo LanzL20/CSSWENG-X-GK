@@ -172,11 +172,14 @@ var user = await _userManager.FindByNameAsync(userIdString);
                 contactContainer.insertBefore(contact, addContact);
 
             });
+        
+        window.onload = function() {
+            var textarea = document.getElementById("eventLongDesc");
+            var tempElement = document.createElement("div");
+            tempElement.innerHTML = @Html.Raw(Json.Serialize(ViewBag.EventLongDesc));
 
-        var textarea = document.getElementById("eventLongDesc");
-
-        // Set the value of the textarea to the data from the database
-        textarea.value = `@ViewBag.EventLongDesc`;
+            textarea.value = tempElement.innerText;
+        }
     </script>
     }
 }else
