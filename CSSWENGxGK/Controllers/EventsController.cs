@@ -610,9 +610,9 @@ public class EventsController : Controller
             }
 
             int j = 0;
-            String OrganizerName = "NULL";
-            String OrganizerEmail = "NULL";
-            String OrganizerPhoneNum = "NULL";
+            string OrganizerName = "NULL";
+            string OrganizerEmail = "NULL";
+            string OrganizerPhoneNum = "NULL";
 
             for (int i = 0; i < currentOrganizers && j < organizerIds.Count; i++)
             {
