@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
 
 namespace CSSWENGxGK.Controllers;
 public class EventsController : Controller
@@ -615,48 +616,65 @@ public class EventsController : Controller
 
             for (int i = 0; i < currentOrganizers && j < organizerIds.Count; i++)
             {
-				string eventQuery = $"SELECT Name, Email, PhoneNumber " +
+                if (updatedEvent.Organizers[i].Name == null && updatedEvent.Organizers[i].Email == null && updatedEvent.Organizers[i].PhoneNumber == null)
+                {
+                    SqlTransaction transaction = connection.BeginTransaction();
+                    string deleteOrganizerQuery = "DELETE FROM T_Organizer WHERE OrganizerID = @OrganizerID";
+					
+
+					using (SqlCommand deleteOrganizerCommand = new SqlCommand(deleteOrganizerQuery, connection, transaction))
+				    {
+				    	deleteOrganizerCommand.Parameters.AddWithValue("@OrganizerID", organizerIds[j]);
+				    	deleteOrganizerCommand.ExecuteNonQuery();
+				    }
+
+					transaction.Commit();
+				}
+				else
+                {
+                    string eventQuery = $"SELECT Name, Email, PhoneNumber " +
 									   $"FROM T_Organizer WHERE OrganizerID = {organizerIds[j]}";
-				using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
-				{
-					using (SqlDataReader eventReader = eventCommand.ExecuteReader())
-					{
-						if (eventReader.Read())
-						{
-                            OrganizerName = eventReader["Name"].ToString();
-                            OrganizerEmail = eventReader["Email"].ToString();
-							OrganizerPhoneNum = eventReader["PhoneNumber"].ToString();
-						}
-					}
-				}
+				    using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
+				    {
+				    	using (SqlDataReader eventReader = eventCommand.ExecuteReader())
+				    	{
+				    		if (eventReader.Read())
+				    		{
+                                OrganizerName = eventReader["Name"].ToString();
+                                OrganizerEmail = eventReader["Email"].ToString();
+					    		OrganizerPhoneNum = eventReader["PhoneNumber"].ToString();
+						    }
+					    }
+				    }
 
-				if (updatedEvent.Organizers[i].Name != null)
-				{
-                    OrganizerName = updatedEvent.Organizers[i].Name;
-                }
-                if (updatedEvent.Organizers[i].Email != null)
-                {
-					OrganizerEmail = updatedEvent.Organizers[i].Email;
-				}
-                if (updatedEvent.Organizers[i].PhoneNumber != null)
-                {
-					OrganizerPhoneNum = updatedEvent.Organizers[i].PhoneNumber;
-				}
+				    if (updatedEvent.Organizers[i].Name != null)
+				    {
+                        OrganizerName = updatedEvent.Organizers[i].Name;
+                    }
+                    if (updatedEvent.Organizers[i].Email != null)
+                    {
+				    	OrganizerEmail = updatedEvent.Organizers[i].Email;
+				    }
+                    if (updatedEvent.Organizers[i].PhoneNumber != null)
+                    {
+					    OrganizerPhoneNum = updatedEvent.Organizers[i].PhoneNumber;
+				    }
 
-                Console.WriteLine(i);
-                Console.WriteLine(OrganizerName);
-                Console.WriteLine(OrganizerEmail);
-                Console.WriteLine(OrganizerPhoneNum);
+                    Console.WriteLine(i);
+                    Console.WriteLine(OrganizerName);
+                    Console.WriteLine(OrganizerEmail);
+                    Console.WriteLine(OrganizerPhoneNum);
 
-                string updateOrganizerQuery = $"UPDATE T_Organizer SET Name = '{OrganizerName}', " +
+                    string updateOrganizerQuery = $"UPDATE T_Organizer SET Name = '{OrganizerName}', " +
                                                   $"PhoneNumber = '{OrganizerPhoneNum}', " +
                                                   $"Email = '{OrganizerEmail}' " +
                                                   $"WHERE OrganizerID = {organizerIds[j]}";
-                using (SqlCommand organizerCommand = new SqlCommand(updateOrganizerQuery, connection))
-                {
-                    organizerCommand.ExecuteNonQuery();
+                    using (SqlCommand organizerCommand = new SqlCommand(updateOrganizerQuery, connection))
+                    {
+                        organizerCommand.ExecuteNonQuery();
+                    }   
+                    j++;
                 }
-                j++;
             }
 
             Console.WriteLine("\nNew Organizers:");
