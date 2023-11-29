@@ -47,7 +47,8 @@ var user = await _userManager.FindByNameAsync(userIdString);
 
             <div class="edit-one-event-textbox">
                 <label>Full Description</label>
-                <input asp-for="Event.EventLongDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventLongDesc">
+                @* <input asp-for="Event.EventLongDesc" class="form-control edit-one-event-forminput" value="@ViewBag.EventLongDesc"> *@
+                <textarea asp-for="Event.EventLongDesc" id="eventLongDesc" class="form-control edit-one-event-forminput" rows="5"></textarea>
                 <span asp-validation-for="Event.EventLongDesc" class="text-danger"></span>
             </div>
 
@@ -119,32 +120,32 @@ var user = await _userManager.FindByNameAsync(userIdString);
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-            const imageUpload = document.getElementById('event-image');
-            const currentImage = document.getElementById('current-image');
+        const imageUpload = document.getElementById('event-image');
+        const currentImage = document.getElementById('current-image');
 
-            imageUpload.addEventListener('change', function () {
-                const file = imageUpload.files[0];
+        imageUpload.addEventListener('change', function () {
+            const file = imageUpload.files[0];
 
-                // Show preview if an image file is selected
-                if (file) {
-                    const reader = new FileReader();
+            // Show preview if an image file is selected
+            if (file) {
+                const reader = new FileReader();
 
-                    reader.onload = function (e) {
-                        currentImage.src = e.target.result;
-                        currentImage.style.display = 'block';
-                    };
+                reader.onload = function (e) {
+                    currentImage.src = e.target.result;
+                    currentImage.style.display = 'block';
+                };
 
-                    reader.readAsDataURL(file);
-                } else {
-                    currentImage.src = 'data:image/jpeg;base64,@Convert.ToBase64String(@ViewBag.EventImage)'; // Show the current image
-                }
-            });
+                reader.readAsDataURL(file);
+            } else {
+                currentImage.src = 'data:image/jpeg;base64,@Convert.ToBase64String(@ViewBag.EventImage)'; // Show the current image
+            }
+        });
 
-            const addContact = document.querySelector('.edit-one-event-add-contact');
-            const contactContainer = document.querySelector('.edit-one-event-contact');
-            let organizerCount = @ViewBag.Organizers.Count - 1;
+        const addContact = document.querySelector('.edit-one-event-add-contact');
+        const contactContainer = document.querySelector('.edit-one-event-contact');
+        let organizerCount = @ViewBag.Organizers.Count - 1;
 
-            addContact.addEventListener('click', function () {
+        addContact.addEventListener('click', function () {
                 const contact = document.createElement('div');
 
                 organizerCount++;
@@ -171,6 +172,11 @@ var user = await _userManager.FindByNameAsync(userIdString);
                 contactContainer.insertBefore(contact, addContact);
 
             });
+
+        var textarea = document.getElementById("eventLongDesc");
+
+        // Set the value of the textarea to the data from the database
+        textarea.value = `@ViewBag.EventLongDesc`;
     </script>
     }
 }else
