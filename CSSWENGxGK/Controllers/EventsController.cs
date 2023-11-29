@@ -616,7 +616,8 @@ public class EventsController : Controller
 
             for (int i = 0; i < currentOrganizers && j < organizerIds.Count; i++)
             {
-                if (updatedEvent.Organizers[i].Name == null && updatedEvent.Organizers[i].Email == null && updatedEvent.Organizers[i].PhoneNumber == null)
+				Console.WriteLine(j + ": " + organizerIds[j]);
+				if (updatedEvent.Organizers[i].Name == null && updatedEvent.Organizers[i].Email == null && updatedEvent.Organizers[i].PhoneNumber == null)
                 {
                     SqlTransaction transaction = connection.BeginTransaction();
                     string deleteOrganizerQuery = "DELETE FROM T_Organizer WHERE OrganizerID = @OrganizerID";
@@ -628,6 +629,7 @@ public class EventsController : Controller
 				    	deleteOrganizerCommand.ExecuteNonQuery();
 				    }
 
+                    Console.WriteLine(organizerIds[j]);
 					transaction.Commit();
 				}
 				else
@@ -672,9 +674,9 @@ public class EventsController : Controller
                     using (SqlCommand organizerCommand = new SqlCommand(updateOrganizerQuery, connection))
                     {
                         organizerCommand.ExecuteNonQuery();
-                    }   
-                    j++;
+                    }
                 }
+                j++;
             }
 
             Console.WriteLine("\nNew Organizers:");
