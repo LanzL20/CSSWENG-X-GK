@@ -39,13 +39,17 @@ public class ActiveChecker
                     }
                 }
 
-                string selectCloseExpireQuery = "SELECT Email FROM T_Volunteer WHERE LastUpdateDate = @CutoffDate";
-
+                string selectCloseExpireQuery = "SELECT Email FROM T_Volunteer WHERE LastUpdateDate >= @StartDate AND LastUpdateDate < @EndDate";
+                
                 using (SqlCommand selectCommand = new SqlCommand(selectCloseExpireQuery, connection))
                 {
-                    // 1 month before now
-                    selectCommand.Parameters.AddWithValue("@CutoffDate", DateTime.Now.AddMonths(-1));
-
+                    // Set the date range to a month before the current date
+                    DateTime startDate = DateTime.Now.AddMonths(-1).Date;  // Midnight of a month before the current date
+                    DateTime endDate = DateTime.Now.Date;  // Midnight of the current date
+                
+                    selectCommand.Parameters.AddWithValue("@StartDate", startDate);
+                    selectCommand.Parameters.AddWithValue("@EndDate", endDate);
+                
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())
