@@ -344,28 +344,32 @@ public class EventsController : Controller
 
                 for (int i = 0; i < updatedOrganizerCount; i++)
                 {
-                    string insertOrganizerQuery = "SET IDENTITY_INSERT T_Organizer ON;" +
-                        "INSERT INTO T_Organizer (OrganizerID, EventID, Name, PhoneNumber, Email) " +
-                        "VALUES (@newOrgID, @GeneratedID, @Name, @PhoneNumber, @Email);" +
-                        "SET IDENTITY_INSERT T_Organizer OFF;";
-
-                    using (SqlCommand command = new SqlCommand(insertOrganizerQuery, connection))
+					if (model.Organizers[i].Name != null && model.Organizers[i].Email != null && model.Organizers[i].PhoneNumber != null)
                     {
-                        var organizers = _db.T_Organizer.Select(d => new Organizer
+                        string insertOrganizerQuery = "SET IDENTITY_INSERT T_Organizer ON;" +
+                                                    "INSERT INTO T_Organizer (OrganizerID, EventID, Name, PhoneNumber, Email) " +
+                                                    "VALUES (@newOrgID, @GeneratedID, @Name, @PhoneNumber, @Email);" +
+                                                    "SET IDENTITY_INSERT T_Organizer OFF;";
+
+                        using (SqlCommand command = new SqlCommand(insertOrganizerQuery, connection))
                         {
-                            OrganizerID = d.OrganizerID
-                        }).ToList();
-                        int newOrgID = organizers.Any() ? organizers.Max(d => d.OrganizerID) + 1 : 1;
+                           var organizers = _db.T_Organizer.Select(d => new Organizer
+                           {
+                               OrganizerID = d.OrganizerID
+                           }).ToList();
+                           int newOrgID = organizers.Any() ? organizers.Max(d => d.OrganizerID) + 1 : 1;
+    
+                           command.Parameters.AddWithValue("@newOrgID", newOrgID);
+                           command.Parameters.AddWithValue("@GeneratedID", generatedID);
+                            command.Parameters.AddWithValue("@Name", model.Organizers[i].Name);
+                           command.Parameters.AddWithValue("@PhoneNumber", model.Organizers[i].PhoneNumber);
+                            command.Parameters.AddWithValue("@Email", model.Organizers[i].Email);
 
-                        command.Parameters.AddWithValue("@newOrgID", newOrgID);
-                        command.Parameters.AddWithValue("@GeneratedID", generatedID);
-                        command.Parameters.AddWithValue("@Name", model.Organizers[i].Name);
-                        command.Parameters.AddWithValue("@PhoneNumber", model.Organizers[i].PhoneNumber);
-                        command.Parameters.AddWithValue("@Email", model.Organizers[i].Email);
-
-                        command.ExecuteNonQuery();
+                            command.ExecuteNonQuery();
+                        }
                     }
                 }
+						
 
                 List<string> bccRecipients = _db.T_Volunteer
                     .Where(v => v.IsActive && v.IsNotify)
@@ -605,17 +609,49 @@ public class EventsController : Controller
             }
 
             int j = 0;
+            String OrganizerName = "NULL";
+            String OrganizerEmail = "NULL";
+            String OrganizerPhoneNum = "NULL";
 
             for (int i = 0; i < currentOrganizers && j < organizerIds.Count; i++)
             {
+				string eventQuery = $"SELECT Name, Email, PhoneNumber " +
+									   $"FROM T_Organizer WHERE OrganizerID = {organizerIds[j]}";
+				using (SqlCommand eventCommand = new SqlCommand(eventQuery, connection))
+				{
+					using (SqlDataReader eventReader = eventCommand.ExecuteReader())
+					{
+						if (eventReader.Read())
+						{
+                            OrganizerName = eventReader["Name"].ToString();
+                            OrganizerEmail = eventReader["Email"].ToString();
+							OrganizerPhoneNum = eventReader["PhoneNumber"].ToString();
+						}
+					}
+				}
+
+				if (updatedEvent.Organizers[i].Name != null)
+				{
+                    OrganizerName = updatedEvent.Organizers[i].Name;
+                }
+                if (updatedEvent.Organizers[i].Email != null)
+                {
+					OrganizerEmail = updatedEvent.Organizers[i].Email;
+				}
+                if (updatedEvent.Organizers[i].PhoneNumber != null)
+                {
+					OrganizerPhoneNum = updatedEvent.Organizers[i].PhoneNumber;
+				}
+
                 Console.WriteLine(i);
-                Console.WriteLine(updatedEvent.Organizers[i].Name);
-                Console.WriteLine(updatedEvent.Organizers[i].Email);
-                Console.WriteLine(updatedEvent.Organizers[i].PhoneNumber);
-                string updateOrganizerQuery = $"UPDATE T_Organizer SET Name = '{updatedEvent.Organizers[i].Name}', " +
-                                              $"PhoneNumber = '{updatedEvent.Organizers[i].PhoneNumber}', " +
-                                              $"Email = '{updatedEvent.Organizers[i].Email}' " +
-                                              $"WHERE OrganizerID = {organizerIds[j]}";
+                Console.WriteLine(OrganizerName);
+                Console.WriteLine(OrganizerEmail);
+                Console.WriteLine(OrganizerPhoneNum);
+
+                string updateOrganizerQuery = $"UPDATE T_Organizer SET Name = '{OrganizerName}', " +
+                                                  $"PhoneNumber = '{OrganizerPhoneNum}', " +
+                                                  $"Email = '{OrganizerEmail}' " +
+                                                  $"WHERE OrganizerID = {organizerIds[j]}";
                 using (SqlCommand organizerCommand = new SqlCommand(updateOrganizerQuery, connection))
                 {
                     organizerCommand.ExecuteNonQuery();
@@ -630,40 +666,37 @@ public class EventsController : Controller
             {
                 for (int i = currentOrganizers; i < updatedOrganizerCount; i++)
                 {
-                    string insertOrganizerQuery = "SET IDENTITY_INSERT T_Organizer ON;" +
+					if (updatedEvent.Organizers[i].Name != null && updatedEvent.Organizers[i].Email != null && updatedEvent.Organizers[i].PhoneNumber != null)
+					{
+						string insertOrganizerQuery = "SET IDENTITY_INSERT T_Organizer ON;" +
                                                     "INSERT INTO T_Organizer (OrganizerID, EventID, Name, PhoneNumber, Email) " +
                                                     "VALUES (@newOrgID, @GeneratedID, @Name, @PhoneNumber, @Email);" +
                                                     "SET IDENTITY_INSERT T_Organizer OFF;";
 
-                    using (SqlCommand command = new SqlCommand(insertOrganizerQuery, connection))
-                    {
-                        var organizers = _db.T_Organizer.Select(d => new Organizer
+                        using (SqlCommand command = new SqlCommand(insertOrganizerQuery, connection))
                         {
-                            OrganizerID = d.OrganizerID
-                        }).ToList();
-                        Console.WriteLine(i);
-                        Console.WriteLine(updatedEvent.Organizers[i].Name);
-                        Console.WriteLine(updatedEvent.Organizers[i].Email);
-                        Console.WriteLine(updatedEvent.Organizers[i].PhoneNumber);
-                        int newOrgID = organizers.Any() ? organizers.Max(d => d.OrganizerID) + 1 : 1;
+                            var organizers = _db.T_Organizer.Select(d => new Organizer
+                            {
+                                OrganizerID = d.OrganizerID
+                            }).ToList();
+                            Console.WriteLine(i);
+                            Console.WriteLine(updatedEvent.Organizers[i].Name);
+                            Console.WriteLine(updatedEvent.Organizers[i].Email);
+                            Console.WriteLine(updatedEvent.Organizers[i].PhoneNumber);
+                            int newOrgID = organizers.Any() ? organizers.Max(d => d.OrganizerID) + 1 : 1;
 
-                        command.Parameters.AddWithValue("@newOrgID", newOrgID);
-                        command.Parameters.AddWithValue("@GeneratedID", updatedEvent.Event.EventID);
-                        command.Parameters.AddWithValue("@Name", updatedEvent.Organizers[i].Name);
-                        command.Parameters.AddWithValue("@PhoneNumber", updatedEvent.Organizers[i].PhoneNumber);
-                        command.Parameters.AddWithValue("@Email", updatedEvent.Organizers[i].Email);
+                            command.Parameters.AddWithValue("@newOrgID", newOrgID);
+                            command.Parameters.AddWithValue("@GeneratedID", updatedEvent.Event.EventID);
+                            command.Parameters.AddWithValue("@Name", updatedEvent.Organizers[i].Name);
+                            command.Parameters.AddWithValue("@PhoneNumber", updatedEvent.Organizers[i].PhoneNumber);
+                            command.Parameters.AddWithValue("@Email", updatedEvent.Organizers[i].Email);
 
-                        command.ExecuteNonQuery();
-                    }
+                            command.ExecuteNonQuery();
+                        }
+					}
+					
                 }
             }
-
-            Console.WriteLine("");
-            Console.WriteLine(updatedEvent.Event.EventName);
-            Console.WriteLine("EventID:");
-            Console.WriteLine(updatedEvent.Event.EventID);
-
-            
         }
 
         return RedirectToAction("OneEvent", new {eventId = updatedEvent.Event.EventID});
