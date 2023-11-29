@@ -19,3 +19,8 @@
 
 ### Limitations
 1. Events cannot be created in the same time
+
+### Recommendations
+1. Creating an Event
+    1. Photo be 16:9 aspect ratio
+    2. Preview text/short description be less than 280 characters 
