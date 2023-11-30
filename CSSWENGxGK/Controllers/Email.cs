@@ -111,7 +111,7 @@ class Emailer
             {
                 From = new MailAddress(senderEmail),
                 Subject = "Account almost inactive",
-                Body = "Your account is becoming inactive in a month. Please go to your profile page and reactivate your account.",
+                Body = "Your account will be inactive in a month. Please go to your profile page and reactivate your account.",
                 IsBodyHtml = false
             };
 
