@@ -143,6 +143,9 @@ var user = await _userManager.FindByNameAsync(userIdString);
                     $(".scan-successful").hide();
                     $(".scan-inactive").show();
                     $(".scan-failed").hide();
+
+                    $("#Volunteer_ID").text(response.volunteerID);
+                    $("#Full_name").text(response.firstName + " " + response.lastName);
                 }
                 else {
                     // Show the failure message and hide the successful message
@@ -150,6 +153,8 @@ var user = await _userManager.FindByNameAsync(userIdString);
                     $(".scan-inactive").hide();
                     $(".scan-failed").show();
 
+                    $("#Volunteer_ID").text(" ");
+                    $("#Full_name").text(" ");
                     // Handle the case when "found" is false
                     // For example, show an error message or clear the content
                 }

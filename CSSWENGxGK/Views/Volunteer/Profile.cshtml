@@ -82,7 +82,7 @@
                 </tr>
             </table> 
 
-            @if (((DateTime.Now.Year - ViewBag.LastUpdateDate.Year)* 12 + DateTime.Now.Month - ViewBag.lastUpdateDate.Month) > 5) {
+            @if (((DateTime.Now.Year - ViewBag.LastUpdateDate.Year)* 12 + DateTime.Now.Month - ViewBag.lastUpdateDate.Month) >= 5) {
                 <div class="profile-button">
                     <a class="profile-reactivate-button" asp-controller="Volunteer" asp-action="Renew">Reactivate Account</a>
                 </div>
